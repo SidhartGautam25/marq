@@ -1,3 +1,4 @@
+
 import { HomeOne, NavBar } from "./comp";
 import img1 from "../public/images/img1.jpg";
 import Image from "next/image";
