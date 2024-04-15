@@ -6,7 +6,7 @@ export default function Homethree() {
           <div className="left w-1/2 p-5">
             <p className=" mb-16 text-3xl font-bold leading-[50px]">
               The global market is defined by its complexity and fluidity.
-              That's where we come in.Marqstats offers a range of solutions to
+              That&apos;s where we come in.Marqstats offers a range of solutions to
               support your goal.
             </p>
             <button className="btn-blue text-lg flex items-center border-2 border-blue-500 p-3 hover:bg-blue-500 text-blue-500 hover:text-white">
