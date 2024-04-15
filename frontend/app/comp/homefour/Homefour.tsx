@@ -1,5 +1,8 @@
 import Image from "next/image";
 import img1 from "../../../public/assets/img1.jpg";
+import ins1 from "@/public/images/insight1.png";
+import ins2 from "@/public/images/insight2.png";
+import ins3 from "@/public/images/insight3.png";
 import calender from "@/public/assets/calendar.png";
 export default function Homefour() {
   return (
@@ -11,7 +14,7 @@ export default function Homefour() {
         <div className="cards flex justify-center mt-10">
           <div className="card m-4 flex flex-col items-center border-2 border-gray-100 hover:scale-105 ease-in duration-300 drop-shadow-lg rounded-2xl">
             <Image
-              src={img1}
+              src={ins1}
               className="w-[25rem] h-[27rem]"
               alt="Picture of the author"
             />
@@ -29,7 +32,7 @@ export default function Homefour() {
             </div>
           </div>
           <div className="card m-4 flex flex-col items-center border-2 border-gray-100 hover:scale-105 ease-in duration-300 drop-shadow-lg rounded-2xl">
-            <Image src={img1} className="w-[25rem] h-[27rem]" alt="" />
+            <Image src={ins2} className="w-[25rem] h-[27rem]" alt="" />
             <p className="w-[20rem] mt-10 text-xl">
               Swappable Electric Vehicle Battery Market
             </p>
@@ -43,7 +46,7 @@ export default function Homefour() {
             </div>
           </div>
           <div className="card m-4 flex flex-col items-center border-2 border-gray-100 hover:scale-105 ease-in duration-300 drop-shadow-lg rounded-2xl">
-            <Image src={img1} className=" w-[25rem] h-[27rem]" alt="" />
+            <Image src={ins3} className=" w-[25rem] h-[27rem]" alt="" />
             <p className="w-[20rem] mt-10 text-xl">
               How Generative AI Could Revolutionize the Auto Industry
             </p>
