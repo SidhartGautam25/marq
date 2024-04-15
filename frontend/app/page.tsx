@@ -1,9 +1,9 @@
 
-
-
-import { HomeOne, NavBar, Footer } from "./comp";
+import { HomeOne, NavBar, Footer, Slid, Vision } from "./comp";
 import img1 from "../public/images/img1.jpg";
 import Image from "next/image";
+import Homefour from "./comp/homefour/Homefour";
+import Homesix from "./comp/homesix/Homesix";
 export default function Home() {
   return (
     <div className="flex flex-col w-dvw">
@@ -24,10 +24,12 @@ export default function Home() {
         </div>
       </div>
       <div className="">
+        <Homesix />
+        <Vision />
+        <Slid />
+        <Homefour />
         <Footer />
       </div>
-
-
 
     </div>
   );
