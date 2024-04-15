@@ -1,0 +1,48 @@
+.slidermain {
+  height: 300px;
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.slider {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  position: relative;
+  width: 90%;
+  height: 200px;
+  margin: auto;
+}
+.ourclients {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  margin: 15px;
+  font-weight: 800;
+}
+.slidercom {
+  width: 300px;
+  height: 200px;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+}
+.logoimg {
+  height: 150px;
+  width: 300px;
+}
+.slidertrack {
+  display: flex;
+  width: calc(250px * 12);
+  animation: scroll 70s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 6));
+  }
+}
