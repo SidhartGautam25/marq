@@ -33,7 +33,7 @@ export default function HomeOne() {
           </div>
         </div>
         <div className="flex mt-7 p-2  rounded-md border-2 border-black bg-black hover:bg-white hover:text-black text-white text-base w-fit">
-          LET'S WORK TOGETHER{" "}
+          LET'S WORK TOGETHER
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 15"

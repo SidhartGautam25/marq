@@ -4,12 +4,14 @@ import HomeOne from "./homeone/Homeone";
 import Footer from "./footer/Footer";
 import Slid from "./slid/Slid";
 import Vision from "./vision/Vision";
+import Homefour from "./homefour/Homefour";
+import Homesix from "./homesix/Homesix";
 export {
   
   NavBar,
   HomeOne,
   Footer,
   Slid,
-  Vision
+  Vision,
 
 };
