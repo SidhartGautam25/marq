@@ -2,7 +2,7 @@
 
 export default function HomeOne() {
   return (
-    <div className="flex h-[86vh] w-full bg-img1 z-10">
+    <div className="flex h-[86vh] w-full bg-img1 z-50">
       <div className="w-[45vw] "></div>
       <div className="w-[55vw]   flex flex-col justify-center">
         <div className="text-[3rem] font-bold mb-3 font-serif text-white">

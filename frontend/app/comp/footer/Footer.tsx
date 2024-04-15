@@ -5,8 +5,8 @@ import Link from "next/link";
 import img2 from "@/public/youtube_1384060.png";
 import img3 from "@/public/instagram_2111463.png";
 import img4 from "@/public/linkedin_145807.png";
-export default function NavBar() {
-    return (
+export default function Footer() {
+  return (
     <footer className="bg-white text-gray-600 body-font">
       <div className="container px-20 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         {/* Follow Us Section */}
@@ -41,7 +41,9 @@ export default function NavBar() {
             </div>
             {/* Newsletter Form */}
             <div className="mt-4">
-              <h2 className="text-lg font-semibold">Subscribe to our Newsletter</h2>
+              <h2 className="text-lg font-semibold">
+                Subscribe to our Newsletter
+              </h2>
               <form className="mt-2">
                 <input
                   className="w-full p-2 text-sm bg-gray-100 rounded"
@@ -62,69 +64,95 @@ export default function NavBar() {
         {/* Offerings, Coverage, and Quick Links Sections */}
         <div className="flex-grow flex flex-wrap -mb-10 md:pl-20 md:mt-0 mt-10 md:text-left text-center justify-around">
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-gray-900 tracking-widest text-3xl mb-5">Our Offerings</h2>
+            <h2 className="title-font font-medium text-gray-900 tracking-widest text-3xl mb-5">
+              Our Offerings
+            </h2>
             <nav className="list-none mb-10 flex gap-5 font-medium flex-col">
               {/* Repeat for other offerings */}
               <li>
                 <Link href="/">
-                  <div className="text-gray-600 hover:text-gray-800">Market Assessment</div>
+                  <div className="text-gray-600 hover:text-gray-800">
+                    Market Assessment
+                  </div>
                 </Link>
               </li>
               <li>
                 <Link href="/">
-                  <div className="text-gray-600 hover:text-gray-800">Data Resource</div>
+                  <div className="text-gray-600 hover:text-gray-800">
+                    Data Resource
+                  </div>
                 </Link>
               </li>
               <li>
                 <Link href="/">
-                  <div className="text-gray-600 hover:text-gray-800">consulting services</div>
+                  <div className="text-gray-600 hover:text-gray-800">
+                    consulting services
+                  </div>
                 </Link>
               </li>
               <li>
                 <Link href="/">
-                  <div className="text-gray-600 hover:text-gray-800">Market Research reports</div>
+                  <div className="text-gray-600 hover:text-gray-800">
+                    Market Research reports
+                  </div>
                 </Link>
               </li>
               <li>
                 <Link href="/">
-                  <div className="text-gray-600 hover:text-gray-800">Custom Research srvices</div>
+                  <div className="text-gray-600 hover:text-gray-800">
+                    Custom Research srvices
+                  </div>
                 </Link>
               </li>
               <li>
                 <Link href="/">
-                  <div className="text-gray-600 hover:text-gray-800">Subscription</div>
+                  <div className="text-gray-600 hover:text-gray-800">
+                    Subscription
+                  </div>
                 </Link>
               </li>
               {/* ... */}
             </nav>
           </div>
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-gray-900 tracking-widest text-3xl mb-5">Our Coverage</h2>
+            <h2 className="title-font font-medium text-gray-900 tracking-widest text-3xl mb-5">
+              Our Coverage
+            </h2>
             <nav className="list-none mb-10 flex gap-5 font-medium flex-col">
               {/* Repeat for other coverage items */}
-              <li >
+              <li>
                 <Link href="/">
-                  <div className="text-gray-600 hover:text-gray-800">Electric and Hybrid Vehicles</div>
+                  <div className="text-gray-600 hover:text-gray-800">
+                    Electric and Hybrid Vehicles
+                  </div>
                 </Link>
               </li>
               <li>
                 <Link href="/">
-                  <div className="text-gray-600 hover:text-gray-800">Electrical & Electronics Equip.</div>
+                  <div className="text-gray-600 hover:text-gray-800">
+                    Electrical & Electronics Equip.
+                  </div>
                 </Link>
               </li>
               <li>
                 <Link href="/">
-                  <div className="text-gray-600 hover:text-gray-800">Shared Mobility</div>
+                  <div className="text-gray-600 hover:text-gray-800">
+                    Shared Mobility
+                  </div>
                 </Link>
               </li>
               <li>
                 <Link href="/">
-                  <div className="text-gray-600 hover:text-gray-800">Vehicles and Components</div>
+                  <div className="text-gray-600 hover:text-gray-800">
+                    Vehicles and Components
+                  </div>
                 </Link>
               </li>
               <li>
                 <Link href="/">
-                  <div className="text-gray-600 hover:text-gray-800">Connectivity Technology</div>
+                  <div className="text-gray-600 hover:text-gray-800">
+                    Connectivity Technology
+                  </div>
                 </Link>
               </li>
               <li>
@@ -136,7 +164,9 @@ export default function NavBar() {
             </nav>
           </div>
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-gray-900 tracking-widest text-3xl mb-5 ">Quick Links</h2>
+            <h2 className="title-font font-medium text-gray-900 tracking-widest text-3xl mb-5 ">
+              Quick Links
+            </h2>
             <nav className="list-none mb-10 flex gap-5 font-medium flex-col">
               {/* Repeat for other quick links */}
               <li>
@@ -146,27 +176,37 @@ export default function NavBar() {
               </li>
               <li>
                 <Link href="/">
-                  <div className="text-gray-600 hover:text-gray-800">How to Order</div>
+                  <div className="text-gray-600 hover:text-gray-800">
+                    How to Order
+                  </div>
                 </Link>
               </li>
               <li>
                 <Link href="/">
-                  <div className="text-gray-600 hover:text-gray-800">Privacy Policy</div>
+                  <div className="text-gray-600 hover:text-gray-800">
+                    Privacy Policy
+                  </div>
                 </Link>
               </li>
               <li>
                 <Link href="/">
-                  <div className="text-gray-600 hover:text-gray-800">Terms & Conditions</div>
+                  <div className="text-gray-600 hover:text-gray-800">
+                    Terms & Conditions
+                  </div>
                 </Link>
               </li>
               <li>
                 <Link href="/">
-                  <div className="text-gray-600 hover:text-gray-800">Research Methodology</div>
+                  <div className="text-gray-600 hover:text-gray-800">
+                    Research Methodology
+                  </div>
                 </Link>
               </li>
               <li>
                 <Link href="/">
-                  <div className="text-gray-600 hover:text-gray-800">Career</div>
+                  <div className="text-gray-600 hover:text-gray-800">
+                    Career
+                  </div>
                 </Link>
               </li>
               {/* ... */}
