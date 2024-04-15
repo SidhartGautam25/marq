@@ -1,11 +1,15 @@
 
-// import NavBar from "./Navbar";
-// import HomeOne from "./homeone/Homeone";
-import Homefour from "./homefour/Homefour";
+import NavBar from "./navbar/Navbar";
+import HomeOne from "./homeone/Homeone";
+import Footer from "./footer/Footer";
+import Slid from "./slid/Slid";
+import Vision from "./vision/Vision";
 export {
   
-  // NavBar,
-  // HomeOne
-  Homefour
- 
+  NavBar,
+  HomeOne,
+  Footer,
+  Slid,
+  Vision
+
 };
