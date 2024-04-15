@@ -64,7 +64,7 @@ export default function Footer() {
         {/* Offerings, Coverage, and Quick Links Sections */}
         <div className="flex-grow flex flex-wrap -mb-10 md:pl-20 md:mt-0 mt-10 md:text-left text-center justify-around">
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-gray-900 tracking-widest text-3xl mb-5">
+            <h2 className="title-font font-medium text-gray-900 tracking-widest text-2xl mb-5">
               Our Offerings
             </h2>
             <nav className="list-none mb-10 flex gap-5 font-medium flex-col">
@@ -115,7 +115,7 @@ export default function Footer() {
             </nav>
           </div>
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-gray-900 tracking-widest text-3xl mb-5">
+            <h2 className="title-font font-medium text-gray-900 tracking-widest text-2xl mb-5">
               Our Coverage
             </h2>
             <nav className="list-none mb-10 flex gap-5 font-medium flex-col">
@@ -164,7 +164,7 @@ export default function Footer() {
             </nav>
           </div>
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-gray-900 tracking-widest text-3xl mb-5 ">
+            <h2 className="title-font font-medium text-gray-900 tracking-widest text-2xl mb-5 ">
               Quick Links
             </h2>
             <nav className="list-none mb-10 flex gap-5 font-medium flex-col">
