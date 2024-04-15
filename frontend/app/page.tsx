@@ -1,4 +1,6 @@
+
 import { HomeOne, NavBar, Footer, Slid, Vision, Homefive,Homefour ,Homesix,Homethree} from "./comp";
+
 import img1 from "../public/images/img1.jpg";
 import Image from "next/image";
 export default function Home() {
@@ -24,6 +26,7 @@ export default function Home() {
         <Homethree/>
         <Homesix />
         <Vision />
+        <Work/>
         <Slid />
         <Homefour />
         <Homefive />

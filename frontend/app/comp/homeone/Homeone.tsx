@@ -32,7 +32,7 @@ export default function HomeOne() {
             all stakeholders.
           </div>
         </div>
-        <div className="flex mt-7 p-2  rounded-md border-2 border-black bg-black hover:bg-white hover:text-black text-white text-base w-fit">
+        <div className="flex mt-7 p-2  rounded-md border-2 border-white bg-white hover:text-white hover:bg-black  text-base w-fit">
           LETS WORK TOGETHER
           <svg
             xmlns="http://www.w3.org/2000/svg"
