@@ -7,6 +7,7 @@ import Vision from "./vision/Vision";
 import Homefour from "./homefour/Homefour";
 import Homesix from "./homesix/Homesix";
 import Homefive from "./homefive/Homefive";
+import Work from "./work/Work";
 export {
   
   NavBar,
@@ -15,5 +16,5 @@ export {
   Slid,
   Vision,
   Homefive,
-
+  Work
 };
