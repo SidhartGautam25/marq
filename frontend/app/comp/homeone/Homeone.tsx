@@ -6,7 +6,7 @@ export default function HomeOne() {
       <div className="w-[45vw] "></div>
       <div className="w-[55vw]   flex flex-col justify-center">
         <div className="text-[3rem] font-bold mb-3 font-serif text-white">
-          Helping You Think{" "}
+          Helping You Think
         </div>
         <div className="text-[3rem] font-bold mb-3 font-serif  text-white">
           Strategically & Execute
@@ -20,7 +20,7 @@ export default function HomeOne() {
             expertise to
           </div>
           <div className="mt-1 mb-1 font-semibold text-lg  text-white">
-            accelerate progress.{" "}
+            accelerate progress.
           </div>
         </div>
         <div>
@@ -33,7 +33,7 @@ export default function HomeOne() {
           </div>
         </div>
         <div className="flex mt-7 p-2  rounded-md border-2 border-black bg-black hover:bg-white hover:text-black text-white text-base w-fit">
-          LET'S WORK TOGETHER{" "}
+          LETS WORK TOGETHER
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 15"
