@@ -6,7 +6,7 @@ export default function HomeOne() {
       <div className="w-[45vw] "></div>
       <div className="w-[55vw]   flex flex-col justify-center">
         <div className="text-[3rem] font-bold mb-3 font-serif text-white">
-          Helping You Think{" "}
+          Helping You Think
         </div>
         <div className="text-[3rem] font-bold mb-3 font-serif  text-white">
           Strategically & Execute
@@ -20,7 +20,7 @@ export default function HomeOne() {
             expertise to
           </div>
           <div className="mt-1 mb-1 font-semibold text-lg  text-white">
-            accelerate progress.{" "}
+            accelerate progress.
           </div>
         </div>
         <div>
