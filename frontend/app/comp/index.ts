@@ -6,6 +6,7 @@ import Slid from "./slid/Slid";
 import Vision from "./vision/Vision";
 import Homefour from "./homefour/Homefour";
 import Homesix from "./homesix/Homesix";
+import Homefive from "./homefive/Homefive";
 export {
   
   NavBar,
@@ -13,5 +14,6 @@ export {
   Footer,
   Slid,
   Vision,
+  Homefive,
 
 };

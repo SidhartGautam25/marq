@@ -63,7 +63,7 @@ export default function NavBar() {
             {/* <Image src={img1} alt="" className='w-4 h-4'/> */}
             {isDropdownOpen && (
               <ul
-                className="absolute left-0 mt-2 py-2 w-48 bg-gray-400 rounded shadow-xl z-20"
+                className="absolute left-0 top-6 mt-2 py-2 w-48 bg-gray-400 rounded shadow-xl z-20"
                 onMouseEnter={() => setIsDropdownOpen(true)}
                 onMouseLeave={() => setIsDropdownOpen(false)}
               >
@@ -112,7 +112,7 @@ export default function NavBar() {
             </Link>
             {isDropdownOpens && (
               <ul
-                className="absolute left-0 mt-2 py-2 w-48 bg-gray-400 rounded shadow-xl z-20"
+                className="absolute left-0 top-6 mt-2 py-2 w-48 bg-gray-400 rounded shadow-xl z-20"
                 onMouseEnter={() => setIsDropdownOpens(true)}
                 onMouseLeave={() => setIsDropdownOpens(false)}
               >
