@@ -23,8 +23,8 @@ export default function Homefive() {
               <div className="card w-1/2 h-1/2 p-8 ease-in duration-300 hover:shadow-2xl">
                 <p className="mb-5">
                   They were very supportive and thorough in understanding our
-                  company's requirements. The solution I finally purchased was
-                  quite different from what I first intended.
+                  company&lsquo;s requirements. The solution I finally purchased
+                  was quite different from what I first intended.
                 </p>
                 <span className="font-bold">
                   EXECUTIVE VICE PRESIDENT, STRATEGY
