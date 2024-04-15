@@ -8,6 +8,9 @@ import Homefour from "./homefour/Homefour";
 import Homesix from "./homesix/Homesix";
 import Homefive from "./homefive/Homefive";
 import Work from "./work/Work";
+import ServiceHero from "./serviceHero/ServiceHero";
+import ServiceOffer from "./serviceOffer/ServiceOffer";
+
 export {
   
   NavBar,
@@ -16,5 +19,7 @@ export {
   Slid,
   Vision,
   Homefive,
-  Work
+  Work,
+  ServiceHero,
+  ServiceOffer
 };
