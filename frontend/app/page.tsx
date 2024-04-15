@@ -1,9 +1,12 @@
-import { HomeOne, NavBar } from "./comp";
+import { Homefour } from "./comp";
+import Homesix from "./comp/homesix/Homesix";
 export default function Home() {
   return (
-    <div className="flex h-dvh w-dvw border-4 border-green-700">
-      <NavBar />
-      <HomeOne />
+    <div className="h-dvh w-dvw">
+      {/* <NavBar />
+      <HomeOne /> */}
+      {/* <Homefour/> */}
+      <Homesix/>
     </div>
   );
 }
