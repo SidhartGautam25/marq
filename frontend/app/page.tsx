@@ -1,3 +1,4 @@
+
 import { HomeOne, NavBar, Footer } from "./comp";
 import img1 from "../public/images/img1.jpg";
 import Image from "next/image";
@@ -23,6 +24,7 @@ export default function Home() {
       <div className="">
         <Footer />
       </div>
+
     </div>
   );
 }
