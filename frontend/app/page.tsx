@@ -1,4 +1,5 @@
 import { Homefour } from "./comp";
+import Homefive from "./comp/homefive/Homefive";
 import Homesix from "./comp/homesix/Homesix";
 export default function Home() {
   return (
@@ -6,7 +7,8 @@ export default function Home() {
       {/* <NavBar />
       <HomeOne /> */}
       {/* <Homefour/> */}
-      <Homesix/>
+      <Homefive/>
+      {/* <Homesix/> */}
     </div>
   );
 }
