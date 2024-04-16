@@ -12,6 +12,10 @@ import Homethree from "./homethree/Homethree";
 
 import Work from "./work/Work";
 
+import ServiceHero from "./serviceHero/ServiceHero";
+import ServiceOffer from "./serviceOffer/ServiceOffer";
+
+
 export {
   
   NavBar,
@@ -20,6 +24,11 @@ export {
   Slid,
   Vision,
   Homefive,
+
+  Work,
+  ServiceHero,
+  ServiceOffer,
+
 
   Homefour,
   Homesix,
@@ -30,5 +39,6 @@ export {
 
 
   Work
+
 
 };
