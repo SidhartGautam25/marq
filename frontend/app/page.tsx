@@ -1,5 +1,5 @@
 
-import { HomeOne, NavBar, Footer, Slid, Vision, Homefive,Homefour ,Homesix,Homethree} from "./comp";
+import { HomeOne, NavBar, Footer, Slid, Vision, Homefive,Homefour ,Homesix,Homethree,Work} from "./comp";
 
 import img1 from "../public/images/img1.jpg";
 import Image from "next/image";
