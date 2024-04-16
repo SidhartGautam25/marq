@@ -25,7 +25,7 @@ export {
   Vision,
   Homefive,
 
-  Work,
+  
   ServiceHero,
   ServiceOffer,
 
