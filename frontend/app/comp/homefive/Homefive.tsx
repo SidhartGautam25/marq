@@ -4,7 +4,7 @@ export default function Homefive() {
       <div className="homefive flex justify-center p-20 bg-gray-50">
         <div className="main w-[90%]">
           <div className="">
-            <span className="text-blue-500">TESTIMONIALS</span>
+            <span className="text-blue-500 font-bold">TESTIMONIALS</span>
             <h1 className="text-3xl font-bold mt-10">
               What Clients Are Saying
             </h1>

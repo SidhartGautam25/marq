@@ -1,11 +1,11 @@
 .slidermain {
   /* height: 300px; */
   width: 100%;
-  margin-top: 40px;
+  /* margin-top: 40px; */
   margin-bottom: 20px;
   background-color: rgb(240, 244, 246);
   /* border: 2px solid blue; */
-  padding-top:10px;
+  padding-top:30px;
   padding-bottom: 20px;
 }
 .slider {
