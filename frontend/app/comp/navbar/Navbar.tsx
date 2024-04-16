@@ -2,6 +2,8 @@
 // import Image from 'next/image';
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
+import logo from "@/public/images/logo.png";
 // import img1 from '../../../public/icon-dropdown.svg';
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,10 +12,10 @@ export default function NavBar() {
 
   return (
     <nav className="z-[10] border-gray-500 border-t-[0.1px] border-b-[0.1px] h-[14vh] p-4 lg:p-6 lg:flex w-full">
-      <div className="flex items-center justify-between ml-20">
+      <div className="flex items-center justify-between ml-20 ">
         <Link href="/">
-          <span className="text-white font-semibold text-xl tracking-tight">
-            Marqstats
+          <span className="tracking-tight p-8 ">
+            <Image src={logo} alt="" className=" h-16 w-36" />
           </span>
         </Link>
         <button
@@ -63,7 +65,7 @@ export default function NavBar() {
             {/* <Image src={img1} alt="" className='w-4 h-4'/> */}
             {isDropdownOpen && (
               <ul
-                className="absolute left-0 mt-2 py-2 w-48 bg-gray-400 rounded shadow-xl z-20"
+                className="absolute left-0 top-6 mt-2 py-2 w-48 bg-gray-400 rounded shadow-xl z-20"
                 onMouseEnter={() => setIsDropdownOpen(true)}
                 onMouseLeave={() => setIsDropdownOpen(false)}
               >
@@ -112,7 +114,7 @@ export default function NavBar() {
             </Link>
             {isDropdownOpens && (
               <ul
-                className="absolute left-0 mt-2 py-2 w-48 bg-gray-400 rounded shadow-xl z-20"
+                className="absolute left-0 top-6 mt-2 py-2 w-48 bg-gray-400 rounded shadow-xl z-20"
                 onMouseEnter={() => setIsDropdownOpens(true)}
                 onMouseLeave={() => setIsDropdownOpens(false)}
               >
@@ -139,7 +141,7 @@ export default function NavBar() {
               </ul>
             )}
           </div>
-          <Link href="/">
+          <Link href="/report-store">
             <span className="block px-2 py-1 text-white font-semibold rounded hover:bg-gray-700 lg:mt-0">
               Report Store
             </span>
