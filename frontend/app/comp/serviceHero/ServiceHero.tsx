@@ -9,7 +9,7 @@ export default function ServiceHero() {
       <div className="max-w-6xl mx-28 flex flex-col md:flex-row md:justify-between gap-24">
         <div className="md:w-1/2 space-y-4">
           <p className="text-5xl font-semibold">
-            We are committed to deliver lasting value - that's our defining characteristic.
+            We are committed to deliver lasting value - thats our defining characteristic.
           </p>
         </div>
         <div className="md:w-1/2 mt-8 md:mt-0 space-y-4">
