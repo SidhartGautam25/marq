@@ -7,9 +7,14 @@ import Vision from "./vision/Vision";
 import Homefour from "./homefour/Homefour";
 import Homesix from "./homesix/Homesix";
 import Homefive from "./homefive/Homefive";
+
+import Homethree from "./homethree/Homethree";
+
 import Work from "./work/Work";
+
 import ServiceHero from "./serviceHero/ServiceHero";
 import ServiceOffer from "./serviceOffer/ServiceOffer";
+
 
 export {
   
@@ -19,7 +24,21 @@ export {
   Slid,
   Vision,
   Homefive,
+
   Work,
   ServiceHero,
-  ServiceOffer
+  ServiceOffer,
+
+
+  Homefour,
+  Homesix,
+  Homethree,
+
+
+
+
+
+  Work
+
+
 };
