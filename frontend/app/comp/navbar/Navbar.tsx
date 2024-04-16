@@ -139,7 +139,7 @@ export default function NavBar() {
               </ul>
             )}
           </div>
-          <Link href="/">
+          <Link href="/report-store">
             <span className="block px-2 py-1 text-white font-semibold rounded hover:bg-gray-700 lg:mt-0">
               Report Store
             </span>
