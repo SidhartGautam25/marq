@@ -16,8 +16,8 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="flex flex-col w-dvw">
-      <div className="h-dvh w-dvw ">
-        <div className="relative w-dvw">
+      <div className="min-h-dvh w-dvw ">
+        {/* <div className="relative w-dvw">
           <div className="absolute top-0 left-0 z-0">
             <Image
               src={img1}
@@ -25,9 +25,9 @@ export default function Home() {
               className="object-fill h-dvh w-dvw brightness-[0.5]"
             />
           </div>
-        </div>
+        </div> */}
 
-        <div className="absolute z-10">
+        <div className="bg-[url('/images/img11.jpg')]">
           <NavBar />
           <HomeOne />
         </div>

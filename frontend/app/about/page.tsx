@@ -2,7 +2,7 @@ import Image from "next/image";
 import about from "@/public/about.png";
 import { NavBar, Footer } from "../comp";
 
-export default function Home() {
+export default function About() {
   return (
     <div>
         <div className="bg-[#1B1F29]">
