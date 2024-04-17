@@ -195,7 +195,7 @@ export default function Contact() {
               READY TO WORK WITH US?
             </h1>
             <p className="py-2 lg:py-6 font-semibold text-3xl md:pr-6">
-              If You're Ready to Step into a Bigger Picture of Success, Let's
+              If You are Ready to Step into a Bigger Picture of Success, Lets
               Talk.
             </p>
             <p className="py-2 md:pr-20 text-lg font-light  lg:py-6">
