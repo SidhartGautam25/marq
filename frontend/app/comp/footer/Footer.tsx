@@ -7,10 +7,10 @@ import img3 from "@/public/instagram_2111463.png";
 import img4 from "@/public/linkedin_145807.png";
 export default function Footer() {
   return (
-    <footer className="bg-white text-gray-600 body-font ">
-      <div className="container px-20 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+    <footer className="bg-white text-gray-600 body-font border border-black-600 ">
+      <div className="container px-10 lg:px-20 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col justify-center border border-red-600">
         {/* Follow Us Section */}
-        <div className="w-64 m flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+        <div className="w-64 m flex-shrink-0 md:mx-0 mx-auto text-center md:text-left border border-blue-600">
           <Link href="/">
             <div className="flex title-font font-medium items-center md:justify-start justify-center text-black text-3xl">
               {/* <Image src="/logo.svg" alt="Marqstats logo" width={120} height={60} /> */}
@@ -21,7 +21,7 @@ export default function Footer() {
             <h2 className="text-lg font-semibold">Follow Us</h2>
             {/* Social Icons */}
             {/* Include the actual paths to the social icons in the src attributes */}
-            <div className="flex mt-4 mb-6 gap-4">
+            <div className="flex mt-4 mb-6 gap-4 border border-green-600">
               <Link href="https://linkedin.com">
                 <div className="text-gray-600 hover:text-gray-800">
                   <Image src={img4} alt="LinkedIn" width={24} height={24} />
@@ -63,7 +63,7 @@ export default function Footer() {
         </div>
         {/* Offerings, Coverage, and Quick Links Sections */}
         <div className="flex-grow flex flex-wrap -mb-10 md:pl-20 md:mt-0 mt-10 md:text-left text-center justify-around">
-          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+          <div className="lg:w-1/4 md:w-1/2 w-full px-4 border border-red-600">
             <h2 className="title-font font-medium text-gray-900 tracking-widest text-2xl mb-5">
               Our Offerings
             </h2>
@@ -114,7 +114,7 @@ export default function Footer() {
               {/* ... */}
             </nav>
           </div>
-          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+          <div className="lg:w-1/4 md:w-1/2 w-full px-4 border border-red-600">
             <h2 className="title-font font-medium text-gray-900 tracking-widest text-2xl mb-5">
               Our Coverage
             </h2>
@@ -163,7 +163,7 @@ export default function Footer() {
               {/* ... */}
             </nav>
           </div>
-          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+          <div className="lg:w-1/4 md:w-1/2 w-full px-4 border border-red-600">
             <h2 className="title-font font-medium text-gray-900 tracking-widest text-2xl mb-5 ">
               Quick Links
             </h2>
