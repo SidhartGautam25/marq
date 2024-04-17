@@ -1,5 +1,15 @@
-
-import { HomeOne, NavBar, Footer, Slid, Vision, Homefive,Homefour ,Homesix,Homethree,Work} from "./comp";
+import {
+  HomeOne,
+  NavBar,
+  Footer,
+  Slid,
+  Vision,
+  Homefive,
+  Homefour,
+  Homesix,
+  Homethree,
+  Work,
+} from "./comp";
 
 import img1 from "../public/images/img1.jpg";
 import Image from "next/image";
@@ -23,13 +33,18 @@ export default function Home() {
         </div>
       </div>
       <div className="">
-        <Homethree/>
-        <Homesix />
+        <Work />
+
+        <Homethree />
         <Vision />
-        <Work/>
+        <div className="">
+          <Homefour />
+        </div>
+
         <Slid />
-        <Homefour />
         <Homefive />
+        <Homesix />
+
         <Footer />
       </div>
     </div>

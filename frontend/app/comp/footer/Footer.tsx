@@ -7,7 +7,7 @@ import img3 from "@/public/instagram_2111463.png";
 import img4 from "@/public/linkedin_145807.png";
 export default function Footer() {
   return (
-    <footer className="bg-white text-gray-600 body-font">
+    <footer className="bg-white text-gray-600 body-font ">
       <div className="container px-20 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         {/* Follow Us Section */}
         <div className="w-64 m flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
