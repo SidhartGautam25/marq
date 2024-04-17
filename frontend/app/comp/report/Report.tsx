@@ -1,5 +1,5 @@
 
-import Card from "../card/Card";
+import Card from "../report-card/Card";
 import Buttons from "../buttons-report/Buttons";
 export default function Page() {
   return (

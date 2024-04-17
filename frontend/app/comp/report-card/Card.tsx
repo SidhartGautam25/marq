@@ -1,12 +1,12 @@
 import Image from "next/image";
-import cardimg from "@/public/assets/card-img-report.jpg";
+import img1 from "@/public/assets/report-img1.png";
 export default function Card(){
   
     return(
       <>
         <div className="card md:flex md:ml-7 bg-white shadow-xl shadow-gray-200 rounded-[5px]">
             <div className="left  md:flex-[6]">
-               <Image src={cardimg} alt="" className="w-full object-cover md:rounded-tr-[4rem] md:rounded-br-[4rem] h-[17rem]"/>
+               <Image src={img1} alt="" className="w-full object-cover md:rounded-tr-[4rem] md:rounded-br-[4rem] h-[17rem]"/>
             </div>
             <div className="right flex-[6] flex flex-col justify-center p-6 md:p-10">
                 <span className="text-xl font-medium mb-10">Global Unmanned Aerial Vehicles UAV Market</span>

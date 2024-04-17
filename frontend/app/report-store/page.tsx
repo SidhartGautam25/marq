@@ -1,5 +1,5 @@
 import Image from "next/image";
-import car from "@/public/assets/city-car.jpg";
+import car from "@/public/assets/report.jpg";
 import Report from "../comp/report/Report"
 export default function Page() {
   return (

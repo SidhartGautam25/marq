@@ -151,7 +151,7 @@ export default function NavBar() {
               Contact
             </span>
           </Link>
-          <Link href="/">
+          <Link href="/about">
             <span className="block px-2 py-1 text-white font-semibold rounded hover:bg-gray-700 lg:mt-0">
               About
             </span>
