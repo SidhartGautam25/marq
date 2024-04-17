@@ -11,12 +11,12 @@ export default function NavBar() {
   const [isDropdownOpens, setIsDropdownOpens] = useState(false);
 
   return (
-    <nav className="z-[10] border-gray-500 border-t-[0.1px] border-b-[0.1px] h-[14vh] p-4 lg:p-6 lg:flex w-full">
-      <div className="flex items-center justify-between ml-20 ">
+    <nav className="z-[10] border-gray-500 border-t-[0.1px] border-b-[0.1px] min-h-[14vh] p-4 lg:p-6 lg:flex w-full">
+      <div className="flex items-center justify-between lg:ml-20 ">
         <Link href="/">
-          <span className="tracking-tight p-8 ">
+          <div className="tracking-tight ">
             <Image src={logo} alt="" className=" h-16 w-36" />
-          </span>
+          </div>
         </Link>
         <button
           className="text-white inline-flex items-center justify-center p-2 rounded-md lg:hidden"
