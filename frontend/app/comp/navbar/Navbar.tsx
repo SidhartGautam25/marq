@@ -119,22 +119,22 @@ export default function NavBar() {
                 onMouseLeave={() => setIsDropdownOpens(false)}
               >
                 <li className="block px-4 py-2 text-sm hover:bg-gray-600 hover:text-white">
-                  <Link href="/electric-hybrid-vehicles">
+                  <Link href="/services/industry-expertise">
                     <span>Industry Expertise</span>
                   </Link>
                 </li>
                 <li className="block px-4 py-2 text-sm hover:bg-gray-600 hover:text-white">
-                  <Link href="/vehicles-components">
+                  <Link href="/services/market-assessment">
                     <span>Market Assessment</span>
                   </Link>
                 </li>
                 <li className="block px-4 py-2 text-sm hover:bg-gray-600 hover:text-white">
-                  <Link href="/shared-mobility">
-                    <span>Shared Mobility</span>
+                  <Link href="/services/data-resource">
+                    <span>Data Resources</span>
                   </Link>
                 </li>
                 <li className="block px-4 py-2 text-sm hover:bg-gray-600 hover:text-white">
-                  <Link href="/shared-mobility">
+                  <Link href="/">
                     <span>Business Consulting</span>
                   </Link>
                 </li>
