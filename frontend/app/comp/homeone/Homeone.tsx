@@ -5,13 +5,13 @@ export default function HomeOne() {
     <div className="flex h-[86vh] w-full bg-img1 z-50 ">
       <div className="lg:w-[45vw] "></div>
       <div className="w-dvw lg:w-[55vw]   flex flex-col justify-center ">
-        <div className="text-[3rem] font-bold mb-3 font-serif text-white pl-5 lg:pl-0">
+        <div className="text-[2rem] lg:text-[3rem] font-bold mb-2 lg:mb-3 font-serif text-white pl-5 lg:pl-0">
           Helping You Think
         </div>
-        <div className="text-[3rem] font-bold mb-3 font-serif  text-white pl-5 lg:pl-0">
+        <div className="text-[2rem] lg:text-[3rem] font-bold mb-2 lg:mb-3 font-serif  text-white pl-5 lg:pl-0">
           Strategically & Execute
         </div>
-        <div className="text-[3rem] font-bold mb-3 font-serif  text-white pl-5 lg:pl-0">
+        <div className="text-[2rem] lg:text-[3rem] font-bold mb-2 lg:mb-3 font-serif  text-white pl-5 lg:pl-0">
           Brilliantly.
         </div>
         <div>
