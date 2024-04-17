@@ -20,15 +20,9 @@ export {
   Slid,
   Vision,
   Homefive,
-
   Homefour,
   Homesix,
   Homethree,
-
-
-
-
-
   Work
 
 };

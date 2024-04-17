@@ -13,7 +13,7 @@ export default function Home() {
           Across industries and regions, the competitive environment today is far more unpredictable than it was even a decade ago, with disruption arising from all directions.
         </p>
         <p className="text-md md:text-md mb-6">
-          We put ourselves in our clients’ shoes, selling outcomes, not projects to unlock the full potential of their business. Our solutions build our clients’ capabilities, and our values mean we do the right thing — always.
+          We put ourselves in our clients shoes, selling outcomes, not projects to unlock the full potential of their business. Our solutions build our clients capabilities, and our values mean we do the right thing — always.
         </p>
         <button className="btn-blue text-lg flex items-center border-2 border-blue-500 p-3 hover:bg-blue-500 text-blue-500 hover:text-white">
           Read More
