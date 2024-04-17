@@ -8,10 +8,10 @@ export default function Homefour() {
   return (
     <>
       <div className=" flex flex-col items-center bg-[url('/images/back10.jpg')] bg-no-repeat bg-cover">
-        <h1 className="text-4xl text font-medium mt-4 border-b-4 border-r-4 rounded-full border-gray-300 p-3">
+        <div className="text-2xl lg:text-4xl text font-medium mt-6 lg:mt-4 border-b-4 border-r-4 rounded-full border-gray-300 p-3">
           Explore Our Latest Insights
-        </h1>
-        <div className="cards flex justify-center mt-10">
+        </div>
+        <div className="cards flex flex-col md:flex-row justify-center mt-10">
           <div className="pb-8 card m-4 flex flex-col items-center border-2 border-gray-100 hover:scale-105 ease-in duration-300 drop-shadow-sm rounded-2xl">
             <Image
               src={ins1}

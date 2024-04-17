@@ -24,21 +24,12 @@ export {
   Slid,
   Vision,
   Homefive,
-
-  
-  ServiceHero,
-  ServiceOffer,
-
-
   Homefour,
   Homesix,
   Homethree,
-
-
-
-
-
-  Work
+  Work,
+  ServiceHero,
+  ServiceOffer
 
 
 };

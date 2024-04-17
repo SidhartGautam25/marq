@@ -70,7 +70,7 @@ export default function NavBar() {
                 onMouseLeave={() => setIsDropdownOpen(false)}
               >
                 <li className="block px-4 py-2 text-sm hover:bg-gray-600 hover:text-white">
-                  <Link href="/electric-hybrid-vehicles">
+                  <Link href="/electric-and-hybrid-vehicles">
                     <span>Electric and Hybrid Vehicles</span>
                   </Link>
                 </li>
@@ -85,17 +85,17 @@ export default function NavBar() {
                   </Link>
                 </li>
                 <li className="block px-4 py-2 text-sm hover:bg-gray-600 hover:text-white">
-                  <Link href="/shared-mobility">
+                  <Link href="/tire">
                     <span>Tire</span>
                   </Link>
                 </li>
                 <li className="block px-4 py-2 text-sm hover:bg-gray-600 hover:text-white">
-                  <Link href="/shared-mobility">
+                  <Link href="/connectivity-technology">
                     <span>Connectivity Technology</span>
                   </Link>
                 </li>
                 <li className="block px-4 py-2 text-sm hover:bg-gray-600 hover:text-white">
-                  <Link href="/shared-mobility">
+                  <Link href="/sensors-electronics-and-electrical-equipment">
                     <span>Sensors, Electronics, and Electrical Equipment</span>
                   </Link>
                 </li>
