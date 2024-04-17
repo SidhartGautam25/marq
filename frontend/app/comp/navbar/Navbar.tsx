@@ -103,7 +103,7 @@ export default function NavBar() {
             )}
           </div>
           <div className="relative">
-            <Link href="/">
+            <Link href="/services">
               <span
                 onMouseEnter={() => setIsDropdownOpens(true)}
                 onMouseLeave={() => setIsDropdownOpens(false)}
@@ -146,12 +146,12 @@ export default function NavBar() {
               Report Store
             </span>
           </Link>
-          <Link href="/">
+          <Link href="/contact">
             <span className="block px-2 py-1 text-white font-semibold rounded hover:bg-gray-700 lg:mt-0">
               Contact
             </span>
           </Link>
-          <Link href="/">
+          <Link href="/about">
             <span className="block px-2 py-1 text-white font-semibold rounded hover:bg-gray-700 lg:mt-0">
               About
             </span>
