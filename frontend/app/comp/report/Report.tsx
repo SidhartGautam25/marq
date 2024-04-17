@@ -1,6 +1,7 @@
 
-import Card from "../card/Card";
+import Card from "../report-card/Card";
 import Buttons from "../buttons-report/Buttons";
+import Link from "next/link";
 export default function Page() {
   return (
     <>
@@ -21,8 +22,8 @@ export default function Page() {
                 <Buttons />
               </div>
             </div>
-            <div className=" p-5 md:p-14 md:pt-6">
-              <div className="bg-black text-white p-8 flex flex-col gap-10">
+            <div className="p-5 md:p-14">
+              <div className="bg-black text-white p-4 md:p-8 flex flex-col gap-10">
                 <div className="flex flex-col gap-5">
                   <span>CUSTOMIZED REPORT SOLUTION</span>
                   <p>
@@ -40,8 +41,9 @@ export default function Page() {
                     </li>
                   </ul>
                 </div>
-                <button className="flex justify-center bg-white text-black p-3 rounded-[10px] gap-5 mt-8">
-                  Contect Us
+                <Link className="flex justify-center bg-white text-black p-2 md:p-3 rounded-[10px]  mt-8" href="/contact">
+                <button className="flex gap-5 ">
+                  Contact Us
                   <svg
                     width="24"
                     height="24"
@@ -57,6 +59,7 @@ export default function Page() {
                     />
                   </svg>
                 </button>
+                </Link>
               </div>
             </div>
           </div>
