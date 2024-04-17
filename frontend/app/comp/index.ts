@@ -24,20 +24,9 @@ export {
   Slid,
   Vision,
   Homefive,
-
-  
-  ServiceHero,
-  ServiceOffer,
-
-
   Homefour,
   Homesix,
   Homethree,
-
-
-
-
-
   Work
 
 
