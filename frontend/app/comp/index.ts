@@ -27,7 +27,9 @@ export {
   Homefour,
   Homesix,
   Homethree,
-  Work
+  Work,
+  ServiceHero,
+  ServiceOffer
 
 
 };
