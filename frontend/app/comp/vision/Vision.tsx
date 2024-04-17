@@ -1,8 +1,8 @@
 import React from "react";
 export default function Home() {
   return (
-    <div className="flex flex-col md:flex-row items-center md:mx-20 mx-5 px-4 md:px-10 py-10 ">
-      <div className="flex-1 m-10">
+    <div className="flex flex-col md:flex-row items-center md:mx-20 lg:mx-5 lg:px-4 md:px-10 lg:py-10 my-16 ">
+      <div className="flex-1 ml-5 mb-16 lg:my-10 lg:m-10 ">
         <h2 className="text-xl md:text-2xl font-semibold uppercase mb-10 text-blue-600">
           Our Vision
         </h2>
@@ -11,7 +11,7 @@ export default function Home() {
           sustainable growth.
         </p>
       </div>
-      <div className="flex-1 m-10 mt-20">
+      <div className="flex-1 mx-5 lg:m-10 lg:mt-20 ">
         <p className="text-md md:text-md mb-6">
           Across industries and regions, the competitive environment today is
           far more unpredictable than it was even a decade ago, with disruption
@@ -23,7 +23,7 @@ export default function Home() {
           our clients’ capabilities, and our values mean we do the right thing —
           always.
         </p>
-        <button className="btn-blue text-sm pr-8 pl-8 font-bold flex items-center border-[1px] rounded border-blue-500 p-3 hover:bg-blue-500 text-blue-500 hover:text-white">
+        <button className="btn-blue mt-10 lg:mt-0 text-sm pr-8 pl-8 font-bold flex items-center border-[1px] rounded border-blue-500 p-3 hover:bg-blue-500 text-blue-500 hover:text-white">
           Read More
           <svg
             className="ml-2 w-4 h-4"
