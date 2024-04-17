@@ -1,9 +1,13 @@
 import Image from "next/image";
 import car from "@/public/assets/report.jpg";
 import Report from "../comp/report/Report"
+import { NavBar } from "../comp";
 export default function Page() {
   return (
     <>
+    <div className="bg-gray-900">
+    <NavBar/>
+    </div>
       <div className="main bg-gray-100">
         <div className="">
           <Image
