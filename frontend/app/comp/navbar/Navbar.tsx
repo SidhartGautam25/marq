@@ -134,7 +134,7 @@ export default function NavBar() {
                   </Link>
                 </li>
                 <li className="block px-4 py-2 text-sm hover:bg-gray-600 hover:text-white">
-                  <Link href="/">
+                  <Link href="/services/business-consulting">
                     <span>Business Consulting</span>
                   </Link>
                 </li>
