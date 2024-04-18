@@ -2,6 +2,7 @@
 import Card from "../report-card/Card";
 import Buttons from "../buttons-report/Buttons";
 import Link from "next/link";
+import Footer from "../footer/Footer";
 export default function Page() {
   return (
     <>
@@ -64,6 +65,7 @@ export default function Page() {
             </div>
           </div>
         </div>
+        <Footer/>
       </div>
     </>
   );
