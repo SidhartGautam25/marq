@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { Footer, NavBar } from "../comp";
 import Comp1 from "../comp/industry-comp1/Comp1";
@@ -5,6 +6,8 @@ import Comp2 from "../comp/industry-comp2/Comp2";
 import img1 from "@/public/assets/indus-comp3.jpeg";
 import Link from "next/link";
 import { Fragment } from "react";
+import { motion } from "framer-motion";
+
 export default function Page() {
   interface obj {
     id: number;
@@ -57,6 +60,10 @@ export default function Page() {
       para: "The tire industry, plays a crucial role in ensuring the smooth functioning of transportation and mobility. The tire industry focuses on the production, distribution, and utilization of tires for various vehicles, including cars, trucks, motorcycles, and airplanes. As technology continues to evolve, the tire industry has witnessed significant advancements to meet the demands of modern transportation needs. Lets delve into the latest trends, technologies, and solutions shaping the future of the tire industry.",
     },
   ];
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
   return (
     <>
       <div className="bg-gray-800">
@@ -67,13 +74,21 @@ export default function Page() {
       {data.map((items, indx) => {
         return (
           <Fragment key={indx}>
-            <Comp2
-              id={items.id}
-              img={items.img}
-              para={items.para}
-              heading={items.heading}
-              link={items.link}
-            />
+            <motion.div
+              variants={itemVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: indx * 0.1 }}
+            >
+              <Comp2
+                id={items.id}
+                img={items.img}
+                para={items.para}
+                heading={items.heading}
+                link={items.link}
+              />
+            </motion.div>
           </Fragment>
         );
       })}
