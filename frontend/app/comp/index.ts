@@ -7,11 +7,12 @@ import Vision from "./vision/Vision";
 import Homefour from "./homefour/Homefour";
 import Homesix from "./homesix/Homesix";
 import Homefive from "./homefive/Homefive";
-
+import Priv from "./priv/Priv";
 import Homethree from "./homethree/Homethree";
-
+import Term from "./term/Term";
 import Work from "./work/Work";
 import Buss from "./buss/Buss";
+import HowToOrder from "./howToOrder/HowToOrder";
 import ServiceHero from "./serviceHero/ServiceHero";
 import ServiceOffer from "./serviceOffer/ServiceOffer";
 import Industryser from "./industryser/Industryser";
@@ -39,8 +40,9 @@ Automative,
   Homefour,
   Homesix,
   Homethree,
-  Work
-  
-
+  Work,
+  Term,
+  Priv,
+  HowToOrder
 
 };
