@@ -61,7 +61,7 @@ export default function Page() {
     },
   ];
   const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 150 },
     visible: { opacity: 1, y: 0 },
   };
   return (
@@ -79,7 +79,7 @@ export default function Page() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: indx * 0.1 }}
+              transition={{ duration: 0.8, delay: indx * 0.1 }}
             >
               <Comp2
                 id={items.id}
