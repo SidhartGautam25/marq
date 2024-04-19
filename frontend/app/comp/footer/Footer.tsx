@@ -70,28 +70,28 @@ export default function Footer() {
             <nav className="list-none mb-10 flex gap-5 font-medium flex-col">
               {/* Repeat for other offerings */}
               <li>
-                <Link href="/">
+                <Link href="/services/market-assessment">
                   <div className="text-gray-600 hover:text-gray-800">
                     Market Assessment
                   </div>
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="/services/data-resource">
                   <div className="text-gray-600 hover:text-gray-800">
                     Data Resource
                   </div>
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="/services/business-consulting">
                   <div className="text-gray-600 hover:text-gray-800">
                     consulting services
                   </div>
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="/report-store">
                   <div className="text-gray-600 hover:text-gray-800">
                     Market Research reports
                   </div>
@@ -121,42 +121,42 @@ export default function Footer() {
             <nav className="list-none mb-10 flex gap-5 font-medium flex-col">
               {/* Repeat for other coverage items */}
               <li>
-                <Link href="/">
+                <Link href="/electric-and-hybrid-vehicles">
                   <div className="text-gray-600 hover:text-gray-800">
                     Electric and Hybrid Vehicles
                   </div>
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="/sensors-electronics-and-electrical-equipment">
                   <div className="text-gray-600 hover:text-gray-800">
                     Electrical & Electronics Equip.
                   </div>
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="/shared-mobility">
                   <div className="text-gray-600 hover:text-gray-800">
                     Shared Mobility
                   </div>
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="/vehicles-components">
                   <div className="text-gray-600 hover:text-gray-800">
                     Vehicles and Components
                   </div>
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="/connectivity-technology">
                   <div className="text-gray-600 hover:text-gray-800">
                     Connectivity Technology
                   </div>
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="/tire">
                   <div className="text-gray-600 hover:text-gray-800">Tire</div>
                 </Link>
               </li>
@@ -203,7 +203,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="/career">
                   <div className="text-gray-600 hover:text-gray-800">
                     Career
                   </div>

@@ -2,7 +2,40 @@
 import Card from "../report-card/Card";
 import Buttons from "../buttons-report/Buttons";
 import Link from "next/link";
+import Footer from "../footer/Footer";
+import { Fragment } from "react";
 export default function Page() {
+  interface obj{
+     link:string;
+     heading:string
+  }
+  const data:obj[]=[
+     { 
+      link:"/electric-and-hybrid-vehicles",
+      heading:"Electric And Hybrid Vehicles"
+     },
+     { 
+      link:"/vehicles-components",
+      heading:"Vehicles Components"
+     },
+     { 
+      link:"/shared-mobility",
+      heading:"Shared Mobility"
+     },
+     { 
+      link:"/tire",
+      heading:"Tire"
+     },
+     { 
+      link:"/connectivity-technology",
+      heading:"Connectivity Technology"
+     },
+     { 
+      link:"/sensors-electronics-and-electrical-equipment",
+      heading:"Sensors Electronics And Electrical Equipment"
+     },
+
+  ]
   return (
     <>
       <div className="main bg-gray-100 p-3 md:p-0">
@@ -17,9 +50,16 @@ export default function Page() {
                 <span className="md:mt-0 mt-6">Industries We Serve</span>
               </div>
               <div className="buttans flex flex-col items-center">
-                <Buttons />
-                <Buttons />
-                <Buttons />
+                {
+                    data.map((item,index)=>{
+                      return(
+                        <Fragment key={index}>
+                           <Buttons link={item.link} heading={item.heading}/>
+                        </Fragment>
+                      )
+                    })
+                }
+                
               </div>
             </div>
             <div className="p-5 md:p-14">
@@ -64,6 +104,7 @@ export default function Page() {
             </div>
           </div>
         </div>
+        <Footer/>
       </div>
     </>
   );

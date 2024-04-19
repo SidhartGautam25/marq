@@ -1,29 +1,34 @@
 import React from "react";
 import Image from "next/image";
 import backgroundImage from "@/public/workback.jpg";
+import Link from "next/link";
 
 const services = [
   {
     id: "01.",
     title: "Industry Expertise",
+    page:"/services/industry-expertise",
     description:
       "Here are the industries where we have class leading expertise.",
   },
   {
     id: "02.",
     title: "Market Assessment",
+    page:"/services/market-assessment",
     description:
       "In-depth market assessment, coupled with extensive experience.",
   },
   {
     id: "03.",
     title: "Data Resource",
+    page:"/services/data-resource",
     description:
       "Data only service providing essential information at a global, country, and city level.",
   },
   {
     id: "04.",
     title: "Business Consulting",
+    page:"/services/business-consulting",
     description:
       "We partner with you to help your organization innovate in a way that drives results.",
   },
@@ -47,6 +52,7 @@ export default function ServiceHero() {
               {service.title}
             </h3>
             <p className="my-5 text-gray-400">{service.description}</p>
+            <Link href={service.page}>
             <button className="bg-blue-600 hover:bg-blue-800 py-2 my-8 px-4 rounded inline-flex items-center">
               <span>Get Started Now</span>
               <svg
@@ -61,6 +67,7 @@ export default function ServiceHero() {
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
             </button>
+            </Link>
           </div>
         ))}
       </div>
