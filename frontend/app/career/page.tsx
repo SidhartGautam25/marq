@@ -1,6 +1,7 @@
 import { Footer, NavBar } from "../comp";
 import Link from "next/link";
 import Career from "../comp/career-card/Career";
+import { Fragment } from "react";
 export default function career() {
   interface obj {
     arr: string[];
@@ -75,7 +76,11 @@ export default function career() {
           {/* <hr className="bg-black"/> */}
           <div className="w-[90%] md:w-[73%] mt-10">
             {data.map((items, index) => {
-              return <Career obj={items} key={index} />;
+              return (
+              <Fragment key={index}>
+                 <Career obj={items} key={index} />
+              </Fragment>
+            );
             })}
           </div>
         </div>

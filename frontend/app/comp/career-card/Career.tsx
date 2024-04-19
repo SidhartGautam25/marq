@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+
 interface getprops{
     obj:{arr:Array<string>; heading:string}
 }
@@ -12,7 +14,9 @@ export default function Career(props:getprops){
                     {
                         props.obj.arr.map((item,index)=>{
                             return (
-                                <li className="list-disc" key={index}>{item}</li>
+                                <Fragment key={index}>
+                                   <li className="list-disc" key={index}>{item}</li>
+                                </Fragment>
                             )
                          })
                     }
