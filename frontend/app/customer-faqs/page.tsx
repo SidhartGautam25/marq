@@ -19,7 +19,7 @@ export default function Page() {
       para: "Discover answers to commonly asked questions about our market research reports and services, ensuring a seamless experience for your data-driven decision-making.",
       arr: [
         {
-          que: "I’m visiting this website for the first time. How can I ensure the quality of your services?",
+          que: "I am visiting this website for the first time. How can I ensure the quality of your services?",
           ans: "Please explore our website to find relevant content. Afterward, reach out to our sales team (at sales@marq-stats.com) to request complimentary sample copies of the studies you are interested in and schedule follow-up calls with our analysts for a detailed product review.",
         },
         {
@@ -123,7 +123,7 @@ export default function Page() {
           </h1>
         </div>
         <div className="flex justify-center bg-[url('/assets/faq-bg.jpg')] bg-contain">
-          <div className="justify-around flex  w-full md:w-[80%] p-5 md:p-10 flex-wrap">
+          <div className="justify-around flex  w-full md:w-[80%] p-3 md:p-10 flex-wrap">
             {data.map((item, indx) => {
               return (
                 <Fragment key={indx}>

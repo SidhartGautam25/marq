@@ -23,7 +23,7 @@ export default function Homesix() {
             />
             
             <span className="text-xl text-black font-600 mt-5">Quality</span>
-            <p className="w-[20rem] mt-5 text-xl leading-8">
+            <p className="w-[20rem] mt-5 text-xl leading-8 text-center">
               Our unwavering commitment lies in delivering information with
               unparalleled accuracy. Through meticulous quality checking
               processes, we empower you with the insights necessary for
@@ -41,7 +41,7 @@ export default function Homesix() {
             <span className="text-xl text-black font-600 mt-5">
               Transparency
             </span>
-            <p className="w-[20rem] mt-5 text-xl leading-8">
+            <p className="w-[20rem] mt-5 text-xl leading-8  text-center">
               Unlike majority of the industry that hide their sources behind
               proprietary models, we proudly disclose the origins of our
               information. This transparency builds trust and confidence,
@@ -56,7 +56,7 @@ export default function Homesix() {
               className="md:w-10 md:h-10 w-8 h-9 text-blue-600"
             />
             <span className="text-xl text-black font-600 mt-5">Security</span>
-            <p className="w-[20rem] mt-5 text-xl leading-8">
+            <p className="w-[20rem] mt-5 text-xl leading-8  text-center">
               We give utmost priority to the protection of your information and
               to keep it confidential at every level. At Marqstats, our
               commitment to data security is unwavering, and we diligently
