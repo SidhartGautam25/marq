@@ -13,8 +13,6 @@ export default function Faq({ heading, para, arr }: getprops) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleItem = (index: number) => {
-    
-
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
@@ -26,17 +24,31 @@ export default function Faq({ heading, para, arr }: getprops) {
           {arr.map((faq, index) => (
             <div key={index} className="mb-4">
               <div
-                onClick={() =>toggleItem(index)}
+                onClick={() => toggleItem(index)}
                 className="cursor-pointer text-blue-900 font-semibold py-2 px-4 border-b flex justify-between items-center"
               >
                 <span>{faq.que}</span>
-                <span >{openIndex === index ? "▲" : "▼"}</span>
+                <span>{openIndex === index ? "▲" : "▼"}</span>
               </div>
+              <div style={{
+                    maxHeight: openIndex === index ? "500px" : "0", // adjust this value based on your content
+                    overflow: "hidden",
+                    transition: "all 0.3s ease-in",
+                    paddingTop: openIndex === index ? "0.2rem" : "0",
+                    paddingBottom: openIndex === index ? "0.2rem" : "0",
+                    marginTop: openIndex === index ? "0.2rem" : "0",
+                    marginBottom: openIndex === index ? "0.2rem" : "0",
+                  }}>
+
               {openIndex === index && (
-                <div className={`mt-2 p-4 text-gray-500`}>
+                  <div
+                  className={`mt-2 p-4 text-gray-500`}
+                  
+                  >
                   {faq.ans}
                 </div>
               )}
+              </div>
             </div>
           ))}
         </div>
@@ -44,3 +56,4 @@ export default function Faq({ heading, para, arr }: getprops) {
     </>
   );
 }
+//mt-2 p-4 text-gray-500

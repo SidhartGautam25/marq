@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Footer, NavBar } from "../comp";
 import Slide1 from "@/public/Slide1.png";
 import Faq from "../comp/faq-card/Faq";
-import bg from "@/public/assets/faq-bg.jpg";
 import { Fragment } from "react";
 interface FaqItem {
   que: string;
@@ -123,12 +122,7 @@ export default function Page() {
             Frequently Asked Questions
           </h1>
         </div>
-        <div className="flex justify-center bg-[url('/assets/faq-bg.jpg')] bg-cover">
-          {/* <Image
-            src={bg}
-            alt=""
-            className="object-cover w-full opacity-20"
-          /> */}
+        <div className="flex justify-center bg-[url('/assets/faq-bg.jpg')] bg-contain">
           <div className="justify-around flex  w-full md:w-[80%] p-5 md:p-10 flex-wrap">
             {data.map((item, indx) => {
               return (
