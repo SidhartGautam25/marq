@@ -9,6 +9,7 @@ import {
   Homesix,
   Homethree,
   Work,
+  Blogs,
 } from "./comp";
 
 import img1 from "../public/images/img1.jpg";
@@ -40,7 +41,7 @@ export default function Home() {
         <div className="">
           <Homefour />
         </div>
-
+        {/* <Blogs/> */}
         <Slid />
         <Homefive />
         <Homesix />

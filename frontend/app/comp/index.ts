@@ -14,6 +14,7 @@ import Work from "./work/Work";
 
 import ServiceHero from "./serviceHero/ServiceHero";
 import ServiceOffer from "./serviceOffer/ServiceOffer";
+import Blogs from "./blogs/Blogs";
 
 
 export {
@@ -29,7 +30,8 @@ export {
   Homethree,
   Work,
   ServiceHero,
-  ServiceOffer
+  ServiceOffer,
+  Blogs
 
 
 };
