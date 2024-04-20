@@ -51,15 +51,27 @@ export default function HowToOrder() {
             <span className="text-blue-900 font-bold">Order by delivery</span>
             <span>{openSection === 1 ? "-" : "+"}</span>
           </button>
-          {openSection === 1 && (
-            <div className="mt-2 py-4 border-t">
-              <p>
-                If you are placing an order on behalf of a company, please
-                ensure that you have the necessary authorization. You can place
-                your order using the following methods:.
-              </p>
-            </div>
-          )}
+          <div
+            style={{
+              maxHeight: openSection === 1 ? "500px" : "0", // adjust this value based on your content
+              overflow: "hidden",
+              transition: "all 0.3s ease-in",
+              paddingTop: openSection === 1 ? "0.2rem" : "0",
+              paddingBottom: openSection === 1 ? "0.2rem" : "0",
+              marginTop: openSection === 1 ? "0.2rem" : "0",
+              marginBottom: openSection === 1 ? "0.2rem" : "0",
+            }}
+          >
+            {openSection === 1 && (
+              <div className="mt- py-2 border-t">
+                <p>
+                  If you are placing an order on behalf of a company, please
+                  ensure that you have the necessary authorization. You can
+                  place your order using the following methods:.
+                </p>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Repeat for each accordion item */}
@@ -73,14 +85,26 @@ export default function HowToOrder() {
             </span>
             <span>{openSection === 2 ? "-" : "+"}</span>
           </button>
-          {openSection === 2 && (
-            <div className="mt-2 py-4 border-t">
-              <p>
-                Contact our customer service representative at +91-93418-00264
-                to place your order.
-              </p>
-            </div>
-          )}
+          <div
+            style={{
+              maxHeight: openSection === 2 ? "500px" : "0", // adjust this value based on your content
+              overflow: "hidden",
+              transition: "all 0.3s ease-in",
+              paddingTop: openSection === 2 ? "0.2rem" : "0",
+              paddingBottom: openSection === 2 ? "0.2rem" : "0",
+              marginTop: openSection === 2 ? "0.2rem" : "0",
+              marginBottom: openSection === 2 ? "0.2rem" : "0",
+            }}
+          >
+            {openSection === 2 && (
+              <div className="mt-2 py-4 border-t">
+                <p>
+                  Contact our customer service representative at +91-93418-00264
+                  to place your order.
+                </p>
+              </div>
+            )}
+          </div>
         </div>
         <div className="border p-3">
           <button
@@ -90,16 +114,28 @@ export default function HowToOrder() {
             <span className="text-blue-900 font-bold">Ordering by Email</span>
             <span>{openSection === 3 ? "-" : "+"}</span>
           </button>
-          {openSection === 3 && (
-            <div className="mt-2 pt-2 border-t">
-              <p>
-                Send your requirements and inquiries to sales@marq-stats.com,
-                including all necessary details such as billing and delivery
-                address, along with your preferred payment method. Our team will
-                respond within one business day.
-              </p>
-            </div>
-          )}
+          <div
+            style={{
+              maxHeight: openSection === 3 ? "500px" : "0", // adjust this value based on your content
+              overflow: "hidden",
+              transition: "all 0.3s ease-in",
+              paddingTop: openSection === 3 ? "0.2rem" : "0",
+              paddingBottom: openSection === 3 ? "0.2rem" : "0",
+              marginTop: openSection === 3 ? "0.2rem" : "0",
+              marginBottom: openSection === 3 ? "0.2rem" : "0",
+            }}
+          >
+            {openSection === 3 && (
+              <div className="mt-2 pt-2 border-t">
+                <p>
+                  Send your requirements and inquiries to sales@marq-stats.com,
+                  including all necessary details such as billing and delivery
+                  address, along with your preferred payment method. Our team
+                  will respond within one business day.
+                </p>
+              </div>
+            )}
+          </div>
         </div>
         <div className="border p-3">
           <button
@@ -109,14 +145,27 @@ export default function HowToOrder() {
             <span className="text-blue-900 font-bold">Digital Delivery</span>
             <span>{openSection === 4 ? "-" : "+"}</span>
           </button>
-          {openSection === 4 && (
-            <div className="mt-2 py-4 border-t">
-              <p>
-                Published reports will be delivered to your email address as a
-                PDF file within 24 to 48 working hours upon receipt of payment.
-              </p>
-            </div>
-          )}
+          <div
+            style={{
+              maxHeight: openSection === 4 ? "500px" : "0", // adjust this value based on your content
+              overflow: "hidden",
+              transition: "all 0.3s ease-in",
+              paddingTop: openSection === 4 ? "0.2rem" : "0",
+              paddingBottom: openSection === 4 ? "0.2rem" : "0",
+              marginTop: openSection === 4 ? "0.2rem" : "0",
+              marginBottom: openSection === 4 ? "0.2rem" : "0",
+            }}
+          >
+            {openSection === 4 && (
+              <div className="mt-2 py-4 border-t">
+                <p>
+                  Published reports will be delivered to your email address as a
+                  PDF file within 24 to 48 working hours upon receipt of
+                  payment.
+                </p>
+              </div>
+            )}
+          </div>
         </div>
         <div className="border p-3">
           <button
@@ -126,17 +175,30 @@ export default function HowToOrder() {
             <span className="text-blue-900 font-bold">Customization</span>
             <span>{openSection === 5 ? "-" : "+"}</span>
           </button>
-          {openSection === 5 && (
-            <div className="mt-2 py-4 border-t">
-              <p>
-                Marqstat Intelligence Pvt. Ltd. offers a level of customization
-                in market reports to align with your specific requirements.
-                However, the feasibility and time required for customization
-                will be assessed by our analysts based on complexity, time
-                constraints, and unique aspects of the requested customization.
-              </p>
-            </div>
-          )}
+          <div
+            style={{
+              maxHeight: openSection === 5 ? "500px" : "0", // adjust this value based on your content
+              overflow: "hidden",
+              transition: "all 0.3s ease-in",
+              paddingTop: openSection === 5 ? "0.2rem" : "0",
+              paddingBottom: openSection === 5 ? "0.2rem" : "0",
+              marginTop: openSection === 5 ? "0.2rem" : "0",
+              marginBottom: openSection === 5 ? "0.2rem" : "0",
+            }}
+          >
+            {openSection === 5 && (
+              <div className="mt-2 py-4 border-t">
+                <p>
+                  Marqstat Intelligence Pvt. Ltd. offers a level of
+                  customization in market reports to align with your specific
+                  requirements. However, the feasibility and time required for
+                  customization will be assessed by our analysts based on
+                  complexity, time constraints, and unique aspects of the
+                  requested customization.
+                </p>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Repeat for Digital Delivery and Customization */}
