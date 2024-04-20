@@ -1,6 +1,7 @@
 import Image from "next/image";
 import about from "@/public/about.png";
 import { NavBar, Footer } from "../comp";
+import Blogs from "../comp/blogs/Blogs";
 
 export default function About() {
   return (
@@ -50,6 +51,7 @@ export default function About() {
           </div>
         </div>
         <Footer />
+        <Blogs/>
       </div>
     </div>
   );
