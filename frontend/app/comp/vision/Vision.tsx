@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
           We put ourselves in our clients shoes, selling outcomes, not projects to unlock the full potential of their business. Our solutions build our clients capabilities, and our values mean we do the right thing — always.
 
         </p>
+        <Link href="/about">
         <button className="btn-blue mt-10 lg:mt-0 text-sm pr-8 pl-8 font-bold flex items-center border-[1px] rounded border-blue-500 p-3 hover:bg-blue-500 text-blue-500 hover:text-white">
           Read More
           <svg
@@ -36,6 +38,7 @@ export default function Home() {
             <path d="M5 12h14M12 5l7 7-7 7"></path>
           </svg>
         </button>
+        </Link>
       </div>
     </div>
   );

@@ -47,13 +47,8 @@ Automative,
   Homesix,
   Homethree,
   Work,
-
-  Blogs
-
-
+  Blogs,
   Term,
   Priv,
   HowToOrder
-
-
 };

@@ -51,7 +51,6 @@ export default function About() {
           </div>
         </div>
         <Footer />
-        <Blogs/>
       </div>
     </div>
   );
