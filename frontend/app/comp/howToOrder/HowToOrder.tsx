@@ -74,7 +74,6 @@ export default function HowToOrder() {
           </div>
         </div>
 
-        {/* Repeat for each accordion item */}
         <div className="border p-3">
           <button
             className="flex justify-between items-center w-full text-left"
@@ -200,8 +199,6 @@ export default function HowToOrder() {
             )}
           </div>
         </div>
-
-        {/* Repeat for Digital Delivery and Customization */}
       </div>
     </>
   );
