@@ -1,17 +1,19 @@
 "use client";
 
+import Link from "next/link";
+
 export default function HomeOne() {
   return (
     <div className="flex h-[86vh] w-full bg-img1 z-50 ">
       <div className="lg:w-[45vw] "></div>
       <div className="w-dvw lg:w-[55vw]   flex flex-col justify-center ">
-        <div className="text-[3rem] font-bold mb-3 font-serif text-white pl-5 lg:pl-0">
+        <div className="text-[2rem] lg:text-[3rem] font-bold mb-2 lg:mb-3 font-serif text-white pl-5 lg:pl-0">
           Helping You Think
         </div>
-        <div className="text-[3rem] font-bold mb-3 font-serif  text-white pl-5 lg:pl-0">
+        <div className="text-[2rem] lg:text-[3rem] font-bold mb-2 lg:mb-3 font-serif  text-white pl-5 lg:pl-0">
           Strategically & Execute
         </div>
-        <div className="text-[3rem] font-bold mb-3 font-serif  text-white pl-5 lg:pl-0">
+        <div className="text-[2rem] lg:text-[3rem] font-bold mb-2 lg:mb-3 font-serif  text-white pl-5 lg:pl-0">
           Brilliantly.
         </div>
         <div>
@@ -25,14 +27,15 @@ export default function HomeOne() {
         </div>
         <div>
           <div className="mt-2 mb-1 font-semibold text-lg  text-white pl-5 lg:pl-0">
-            What’s the result? Transformed experiences, decisive actions and
+            What&#39;s the result? Transformed experiences, decisive actions and
             long-term value for
           </div>
           <div className="mt-1 font-semibold text-lg  text-white pl-5 lg:pl-0">
             all stakeholders.
           </div>
         </div>
-        <div className="flex ml-5 lg:ml-0 mt-7 p-2  rounded-md border-2 border-white bg-white hover:text-white hover:bg-black  text-base w-fit pl-5 lg:pl-0 ">
+        <Link href="/services">
+        <div className="flex ml-5 lg:ml-0 mt-7 p-2  rounded-md border-2 border-white bg-white hover:text-white hover:bg-black  text-base w-fit pl-5">
           LETS WORK TOGETHER
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -47,6 +50,7 @@ export default function HomeOne() {
             />
           </svg>
         </div>
+        </Link>
       </div>
     </div>
   );

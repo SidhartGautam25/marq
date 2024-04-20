@@ -1,7 +1,41 @@
 
-import Card from "../card/Card";
+import Card from "../report-card/Card";
 import Buttons from "../buttons-report/Buttons";
+import Link from "next/link";
+import Footer from "../footer/Footer";
+import { Fragment } from "react";
 export default function Page() {
+  interface obj{
+     link:string;
+     heading:string
+  }
+  const data:obj[]=[
+     { 
+      link:"/electric-and-hybrid-vehicles",
+      heading:"Electric And Hybrid Vehicles"
+     },
+     { 
+      link:"/vehicles-components",
+      heading:"Vehicles Components"
+     },
+     { 
+      link:"/shared-mobility",
+      heading:"Shared Mobility"
+     },
+     { 
+      link:"/tire",
+      heading:"Tire"
+     },
+     { 
+      link:"/connectivity-technology",
+      heading:"Connectivity Technology"
+     },
+     { 
+      link:"/sensors-electronics-and-electrical-equipment",
+      heading:"Sensors Electronics And Electrical Equipment"
+     },
+
+  ]
   return (
     <>
       <div className="main bg-gray-100 p-3 md:p-0">
@@ -16,13 +50,20 @@ export default function Page() {
                 <span className="md:mt-0 mt-6">Industries We Serve</span>
               </div>
               <div className="buttans flex flex-col items-center">
-                <Buttons />
-                <Buttons />
-                <Buttons />
+                {
+                    data.map((item,index)=>{
+                      return(
+                        <Fragment key={index}>
+                           <Buttons link={item.link} heading={item.heading}/>
+                        </Fragment>
+                      )
+                    })
+                }
+                
               </div>
             </div>
-            <div className=" p-5 md:p-14 md:pt-6">
-              <div className="bg-black text-white p-8 flex flex-col gap-10">
+            <div className="p-5 md:p-14">
+              <div className="bg-black text-white p-4 md:p-8 flex flex-col gap-10">
                 <div className="flex flex-col gap-5">
                   <span>CUSTOMIZED REPORT SOLUTION</span>
                   <p>
@@ -40,8 +81,9 @@ export default function Page() {
                     </li>
                   </ul>
                 </div>
-                <button className="flex justify-center bg-white text-black p-3 rounded-[10px] gap-5 mt-8">
-                  Contect Us
+                <Link className="flex justify-center bg-white text-black p-2 md:p-3 rounded-[10px]  mt-8" href="/contact">
+                <button className="flex gap-5 ">
+                  Contact Us
                   <svg
                     width="24"
                     height="24"
@@ -57,10 +99,12 @@ export default function Page() {
                     />
                   </svg>
                 </button>
+                </Link>
               </div>
             </div>
           </div>
         </div>
+        <Footer/>
       </div>
     </>
   );

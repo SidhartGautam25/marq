@@ -15,14 +15,15 @@ export default function Homesix() {
           exceed expectations with unwavering dedication.
         </div>
         <div className="cards flex w-[96vw] md:w-auto flex-col md:flex-row justify-center mt-10">
-          <div className="card ml-1 mr-1 m-4 text-gray-500 flex flex-col items-center border-2 border-gray-300 hover:bg-blue-700 hover:text-white drop-shadow-lg  p-10 bg-white ease-in duration-300">
+          <div className="card ml-1 mr-1 m-4 text-gray-500 flex flex-col items-center border-2 border-gray-300 hover:bg-blue-500 hover:text-white drop-shadow-lg  p-10 bg-white ease-in duration-300">
             <Image
               src={cheak}
               alt="cheak"
-              className="md:w-10 md:h-10 w-8 h-9 text-blue-600"
+              className="md:w-10 md:h-10 w-8 h-9"
             />
+            
             <span className="text-xl text-black font-600 mt-5">Quality</span>
-            <p className="w-[20rem] mt-5 text-xl leading-8">
+            <p className="w-[20rem] mt-5 text-xl leading-8 text-center">
               Our unwavering commitment lies in delivering information with
               unparalleled accuracy. Through meticulous quality checking
               processes, we empower you with the insights necessary for
@@ -30,16 +31,17 @@ export default function Homesix() {
               success.
             </p>
           </div>
-          <div className="card ml-1 mr-1 m-4 text-gray-500 flex flex-col items-center border-2 border-gray-300 hover:bg-blue-700 hover:text-white drop-shadow-lg  p-10 bg-white ease-in duration-300">
+          <div className="card ml-1 mr-1 m-4 text-gray-500 flex flex-col items-center border-2 border-gray-300 hover:bg-blue-500 hover:text-white drop-shadow-lg  p-10 bg-white ease-in duration-300">
             <Image
               src={file}
               alt="cheak"
               className="md:w-10 md:h-10 w-8 h-9 text-blue-600"
             />
+
             <span className="text-xl text-black font-600 mt-5">
               Transparency
             </span>
-            <p className="w-[20rem] mt-5 text-xl leading-8">
+            <p className="w-[20rem] mt-5 text-xl leading-8  text-center">
               Unlike majority of the industry that hide their sources behind
               proprietary models, we proudly disclose the origins of our
               information. This transparency builds trust and confidence,
@@ -47,14 +49,14 @@ export default function Homesix() {
               data.
             </p>
           </div>
-          <div className="card ml-1 mr-1 m-4 text-gray-500 flex flex-col items-center border-2 border-gray-300 hover:bg-blue-700 hover:text-white drop-shadow-lg  p-10 bg-white ease-in duration-200">
+          <div className="card ml-1 mr-1 m-4 text-gray-500 flex flex-col items-center border-2 border-gray-300 hover:bg-blue-500 hover:text-white drop-shadow-lg  p-10 bg-white ease-in duration-200">
             <Image
               src={lock}
               alt="cheak"
               className="md:w-10 md:h-10 w-8 h-9 text-blue-600"
             />
             <span className="text-xl text-black font-600 mt-5">Security</span>
-            <p className="w-[20rem] mt-5 text-xl leading-8">
+            <p className="w-[20rem] mt-5 text-xl leading-8  text-center">
               We give utmost priority to the protection of your information and
               to keep it confidential at every level. At Marqstats, our
               commitment to data security is unwavering, and we diligently

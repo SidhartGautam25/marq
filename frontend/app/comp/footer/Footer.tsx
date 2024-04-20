@@ -8,9 +8,9 @@ import img4 from "@/public/linkedin_145807.png";
 export default function Footer() {
   return (
     <footer className="bg-white text-gray-600 body-font ">
-      <div className="container px-20 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+      <div className="container px-10 lg:px-20 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col justify-center ">
         {/* Follow Us Section */}
-        <div className="w-64 m flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+        <div className="w-64 m flex-shrink-0 md:mx-0 mx-auto text-center md:text-left ">
           <Link href="/">
             <div className="flex title-font font-medium items-center md:justify-start justify-center text-black text-3xl">
               {/* <Image src="/logo.svg" alt="Marqstats logo" width={120} height={60} /> */}
@@ -21,7 +21,7 @@ export default function Footer() {
             <h2 className="text-lg font-semibold">Follow Us</h2>
             {/* Social Icons */}
             {/* Include the actual paths to the social icons in the src attributes */}
-            <div className="flex mt-4 mb-6 gap-4">
+            <div className="flex justify-center mt-4 mb-6 gap-4 ">
               <Link href="https://linkedin.com">
                 <div className="text-gray-600 hover:text-gray-800">
                   <Image src={img4} alt="LinkedIn" width={24} height={24} />
@@ -63,35 +63,35 @@ export default function Footer() {
         </div>
         {/* Offerings, Coverage, and Quick Links Sections */}
         <div className="flex-grow flex flex-wrap -mb-10 md:pl-20 md:mt-0 mt-10 md:text-left text-center justify-around">
-          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+          <div className="lg:w-1/4 md:w-1/2 w-full px-4 ">
             <h2 className="title-font font-medium text-gray-900 tracking-widest text-2xl mb-5">
               Our Offerings
             </h2>
             <nav className="list-none mb-10 flex gap-5 font-medium flex-col">
               {/* Repeat for other offerings */}
               <li>
-                <Link href="/">
+                <Link href="/services/market-assessment">
                   <div className="text-gray-600 hover:text-gray-800">
                     Market Assessment
                   </div>
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="/services/data-resource">
                   <div className="text-gray-600 hover:text-gray-800">
                     Data Resource
                   </div>
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="/services/business-consulting">
                   <div className="text-gray-600 hover:text-gray-800">
                     consulting services
                   </div>
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="/report-store">
                   <div className="text-gray-600 hover:text-gray-800">
                     Market Research reports
                   </div>
@@ -114,82 +114,82 @@ export default function Footer() {
               {/* ... */}
             </nav>
           </div>
-          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+          <div className="lg:w-1/4 md:w-1/2 w-full px-4 ">
             <h2 className="title-font font-medium text-gray-900 tracking-widest text-2xl mb-5">
               Our Coverage
             </h2>
             <nav className="list-none mb-10 flex gap-5 font-medium flex-col">
               {/* Repeat for other coverage items */}
               <li>
-                <Link href="/">
+                <Link href="/electric-and-hybrid-vehicles">
                   <div className="text-gray-600 hover:text-gray-800">
                     Electric and Hybrid Vehicles
                   </div>
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="/sensors-electronics-and-electrical-equipment">
                   <div className="text-gray-600 hover:text-gray-800">
                     Electrical & Electronics Equip.
                   </div>
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="/shared-mobility">
                   <div className="text-gray-600 hover:text-gray-800">
                     Shared Mobility
                   </div>
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="/vehicles-components">
                   <div className="text-gray-600 hover:text-gray-800">
                     Vehicles and Components
                   </div>
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="/connectivity-technology">
                   <div className="text-gray-600 hover:text-gray-800">
                     Connectivity Technology
                   </div>
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="/tire">
                   <div className="text-gray-600 hover:text-gray-800">Tire</div>
                 </Link>
               </li>
               {/* ... */}
             </nav>
           </div>
-          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+          <div className="lg:w-1/4 md:w-1/2 w-full px-4 ">
             <h2 className="title-font font-medium text-gray-900 tracking-widest text-2xl mb-5 ">
               Quick Links
             </h2>
             <nav className="list-none mb-10 flex gap-5 font-medium flex-col">
               {/* Repeat for other quick links */}
               <li>
-                <Link href="/">
+                <Link href="/customer-faqs">
                   <div className="text-gray-600 hover:text-gray-800">FAQs</div>
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="/how-to-order">
                   <div className="text-gray-600 hover:text-gray-800">
                     How to Order
                   </div>
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="/privacy-policy-2">
                   <div className="text-gray-600 hover:text-gray-800">
                     Privacy Policy
                   </div>
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="/terms-conditions">
                   <div className="text-gray-600 hover:text-gray-800">
                     Terms & Conditions
                   </div>
@@ -203,7 +203,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="/career">
                   <div className="text-gray-600 hover:text-gray-800">
                     Career
                   </div>
