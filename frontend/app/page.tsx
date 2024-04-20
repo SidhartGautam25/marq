@@ -41,7 +41,7 @@ export default function Home() {
         <div className="">
           <Homefour />
         </div>
-        {/* <Blogs/> */}
+        <Blogs/>
         <Slid />
         <Homefive />
         <Homesix />
