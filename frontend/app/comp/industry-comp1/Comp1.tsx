@@ -2,7 +2,7 @@ import Image from "next/image";
 export default function Comp1() {
   return (
     <>
-      <div className="relative">
+      <div className="md:relative">
         <div className="w-full md:h-[100vh] flex flex-col gap-14 bg-[url('/assets/industry-nav.jpg')]  justify-center">
           <div className="flex flex-col gap-7 md:gap-10 md:ml-32 md:w-[50rem] p-5 mb-10">
             <div className="flex gap-6">
@@ -28,8 +28,8 @@ export default function Comp1() {
             </button>
           </div>
         </div>
-        <div className="flex justify-center items-center w-full h-[30rem] md:h-[23rem] mb-14 md:mb-0">
-          <div className="md:w-[70%] w-[90%] flex flex-col justify-center items-center md:bottom-14 gap-8 md:p-16 shadow-2xl absolute bg-white">
+        <div className="flex justify-center items-center w-full md:h-[23rem]">
+          <div className="md:w-[70%] w-[90%] flex flex-col justify-center items-center md:bottom-14 gap-8 md:p-16 shadow-2xl md:absolute bg-white mt-10">
             <div className="text-3xl font-semibold text-gray-600 text-center mt-10">
               Unleashing Auto Industrys Potential
             </div>

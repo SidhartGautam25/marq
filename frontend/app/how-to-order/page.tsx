@@ -13,12 +13,12 @@ export default function Home() {
           <Image src={Slide1} alt="" className="h-full w-full object-cover" />
         </div>
         <div className="absolute inset-0 bg-black opacity-10"></div>
-        <h1 className="text-4xl md:text-7xl text-white  font-bold z-50">
-          Privacy Policy
+        <h1 className="text-4xl md:text-7xl text-white  font-bold z-50">   
+           How To Order
         </h1>
       </div>
       <HowToOrder />
-      <div className="lg:mx-36 xl:mx-36 mx-4 md:mx-20"></div>
+      {/* <div className="lg:mx-36 xl:mx-36 mx-4 md:mx-20"></div> */}
       <Footer />
     </div>
   );

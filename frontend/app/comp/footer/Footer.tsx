@@ -170,7 +170,7 @@ export default function Footer() {
             <nav className="list-none mb-10 flex gap-5 font-medium flex-col">
               {/* Repeat for other quick links */}
               <li>
-                <Link href="/">
+                <Link href="/customer-faqs">
                   <div className="text-gray-600 hover:text-gray-800">FAQs</div>
                 </Link>
               </li>
