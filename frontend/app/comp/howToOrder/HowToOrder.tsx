@@ -52,15 +52,18 @@ export default function HowToOrder() {
             <span>{openSection === 1 ? "-" : "+"}</span>
           </button>
           <div
-            style={{
-              maxHeight: openSection === 1 ? "500px" : "0", // adjust this value based on your content
-              overflow: "hidden",
-              transition: "all 0.3s ease-in",
-              paddingTop: openSection === 1 ? "0.2rem" : "0",
-              paddingBottom: openSection === 1 ? "0.2rem" : "0",
-              marginTop: openSection === 1 ? "0.2rem" : "0",
-              marginBottom: openSection === 1 ? "0.2rem" : "0",
-            }}
+            // style={{
+            //   maxHeight: openSection === 1 ? "500px" : "0", // adjust this value based on your content
+            //   overflow: "hidden",
+            //   transition: "all 0.3s ease-in",
+            //   paddingTop: openSection === 1 ? "0.2rem" : "0",
+            //   paddingBottom: openSection === 1 ? "0.2rem" : "0",
+            //   marginTop: openSection === 1 ? "0.2rem" : "0",
+            //   marginBottom: openSection === 1 ? "0.2rem" : "0",
+            // }}
+            className={`overflow-hidden transition-[max-height] duration-1000 ease-in ${
+              openSection === 1 ? 'max-h-96' : 'max-h-0'
+            }`}
           >
             {openSection === 1 && (
               <div className="mt- py-2 border-t">
@@ -86,15 +89,9 @@ export default function HowToOrder() {
             <span>{openSection === 2 ? "-" : "+"}</span>
           </button>
           <div
-            style={{
-              maxHeight: openSection === 2 ? "500px" : "0", // adjust this value based on your content
-              overflow: "hidden",
-              transition: "all 0.3s ease-in",
-              paddingTop: openSection === 2 ? "0.2rem" : "0",
-              paddingBottom: openSection === 2 ? "0.2rem" : "0",
-              marginTop: openSection === 2 ? "0.2rem" : "0",
-              marginBottom: openSection === 2 ? "0.2rem" : "0",
-            }}
+            className={`overflow-hidden transition-[max-height] duration-1000 ease-in ${
+              openSection === 2 ? 'max-h-96' : 'max-h-0'
+            }`}
           >
             {openSection === 2 && (
               <div className="mt-2 py-4 border-t">
@@ -115,15 +112,9 @@ export default function HowToOrder() {
             <span>{openSection === 3 ? "-" : "+"}</span>
           </button>
           <div
-            style={{
-              maxHeight: openSection === 3 ? "500px" : "0", // adjust this value based on your content
-              overflow: "hidden",
-              transition: "all 0.3s ease-in",
-              paddingTop: openSection === 3 ? "0.2rem" : "0",
-              paddingBottom: openSection === 3 ? "0.2rem" : "0",
-              marginTop: openSection === 3 ? "0.2rem" : "0",
-              marginBottom: openSection === 3 ? "0.2rem" : "0",
-            }}
+            className={`overflow-hidden transition-[max-height] duration-1000 ease-in ${
+              openSection === 3 ? 'max-h-96' : 'max-h-0'
+            }`}
           >
             {openSection === 3 && (
               <div className="mt-2 pt-2 border-t">
@@ -146,15 +137,9 @@ export default function HowToOrder() {
             <span>{openSection === 4 ? "-" : "+"}</span>
           </button>
           <div
-            style={{
-              maxHeight: openSection === 4 ? "500px" : "0", // adjust this value based on your content
-              overflow: "hidden",
-              transition: "all 0.3s ease-in",
-              paddingTop: openSection === 4 ? "0.2rem" : "0",
-              paddingBottom: openSection === 4 ? "0.2rem" : "0",
-              marginTop: openSection === 4 ? "0.2rem" : "0",
-              marginBottom: openSection === 4 ? "0.2rem" : "0",
-            }}
+            className={`overflow-hidden transition-[max-height] duration-1000 ease-in ${
+              openSection === 4 ? 'max-h-96' : 'max-h-0'
+            }`}
           >
             {openSection === 4 && (
               <div className="mt-2 py-4 border-t">
@@ -176,15 +161,9 @@ export default function HowToOrder() {
             <span>{openSection === 5 ? "-" : "+"}</span>
           </button>
           <div
-            style={{
-              maxHeight: openSection === 5 ? "500px" : "0", // adjust this value based on your content
-              overflow: "hidden",
-              transition: "all 0.3s ease-in",
-              paddingTop: openSection === 5 ? "0.2rem" : "0",
-              paddingBottom: openSection === 5 ? "0.2rem" : "0",
-              marginTop: openSection === 5 ? "0.2rem" : "0",
-              marginBottom: openSection === 5 ? "0.2rem" : "0",
-            }}
+            className={`overflow-hidden transition-[max-height] duration-1000 ease-in ${
+              openSection === 5 ? 'max-h-96' : 'max-h-0'
+            }`}
           >
             {openSection === 5 && (
               <div className="mt-2 py-4 border-t">
