@@ -6,7 +6,7 @@ export default function Card(){
       <>
         <div className="card md:flex md:ml-7 bg-white shadow-xl shadow-gray-200 rounded-[5px]">
             <div className="left  md:flex-[6] overflow-hidden md:rounded-tr-[4rem] md:rounded-br-[4rem]">
-               <Image src={img1} alt="" className="w-full object-cover  h-[17rem] inline-block  ease-in-out duration-500 hover:scale-105 hover:opacity-75"/>
+               <Image src={img1} alt="" className="md:w-full object-contain md:object-cover  h-[15rem] md:h-[18rem]  inline-block  ease-in-out duration-500 hover:scale-105 hover:opacity-75"/>
                
             </div>
             <div className="right flex-[6] flex flex-col justify-center p-6 md:p-10">
