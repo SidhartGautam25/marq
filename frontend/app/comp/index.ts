@@ -17,11 +17,8 @@ import ServiceHero from "./serviceHero/ServiceHero";
 import ServiceOffer from "./serviceOffer/ServiceOffer";
 
 import Blogs from "./blogs/Blogs";
-import PdfDescription from "./admincomp/pdfdescription/pdfdescription";
-import Pdfren from "./admincomp/pdfren/Pdfren";
-import Sidebtn from "./admincomp/sidebtn/Sidebtn";
-import RightHero from "./admincomp/righthero/RightHero";
-import Relatedarticle from "./admincomp/relatedarticle/Relatedarticle";
+
+
 
 import Industryser from "./industryser/Industryser";
 import Automative from "./automative/Automative";
@@ -31,11 +28,6 @@ import DataResources from "./dataResources/DataResources";
 import Conserv from "./conserv/Conserv";
 
 export {
-  PdfDescription,
-  Pdfren,
-  Sidebtn,
-  RightHero,
-  Relatedarticle,
   Marketass,
   Conserv,
   NavBar,
