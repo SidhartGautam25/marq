@@ -4,6 +4,7 @@ import Buttons from "../buttons-report/Buttons";
 import Link from "next/link";
 import Footer from "../footer/Footer";
 import { Fragment } from "react";
+//this is report page
 export default function Page() {
   interface obj{
      link:string;
