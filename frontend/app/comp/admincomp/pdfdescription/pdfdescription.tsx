@@ -24,7 +24,7 @@ const PdfDescription: React.FC<DynamicProps> = () => {
   // const titleNew =
   //   title?.length > 80 ? `${rep?.title.substring(0, 80)}...` : title;
   // console.log("title is ", rep);
-
+  //this
   return (
     <div className="h-[500px] flex shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
       <div className="w-1/2 px-8 flex justify-center flex-col border-2 bg-slate-50">
