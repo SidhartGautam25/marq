@@ -4,6 +4,7 @@ import Buttons from "../buttons-report/Buttons";
 import Link from "next/link";
 import Footer from "../footer/Footer";
 import { Fragment } from "react";
+//this is report page
 export default function Page() {
   interface obj{
      link:string;
@@ -39,12 +40,12 @@ export default function Page() {
   return (
     <>
       <div className="main bg-gray-100 p-3 md:p-0">
-        <div className="main2 mt-8 md:flex sm:flex md:mt-10">
-          <div className="left flex-[10] flex flex-col gap-3">
+        <div className="main2 mt-8 md:flex sm:flex md:mt-10 flex-row-reverse">
+          <div className="right flex-[10] flex flex-col gap-3 bg-blue-100 p-3 md:mr-8">
             <Card />
             <Card />
           </div>
-          <div className="right flex-[4]">
+          <div className="left flex-[4]">
             <div className="p-5 pt-0">
               <div className="titel flex justify-center text-2xl font-semibold">
                 <span className="md:mt-0 mt-6">Industries We Serve</span>
