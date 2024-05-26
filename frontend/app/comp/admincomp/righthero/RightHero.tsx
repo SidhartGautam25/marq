@@ -18,3 +18,4 @@ const RightHero: React.FC<ChildComponentProps> = () => {
   );
 };
 export default RightHero;
+//this
