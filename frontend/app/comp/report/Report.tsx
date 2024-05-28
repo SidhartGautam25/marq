@@ -17,6 +17,8 @@ const Report: React.FC<MyComponentProps> = ({ ind }) => {
   const sub = industries[ind];
   const [subind, setSubind] = useState([...sub]);
   const [reports, setReports] = useState<Record<string, any>[]>([]);
+  const dev_url = "http://localhost:8800";
+  const prod_url = "https://admin-backend-1-ekoa.onrender.com";
 
   useEffect(() => {
     // Code inside this function will run after every render
@@ -25,7 +27,7 @@ const Report: React.FC<MyComponentProps> = ({ ind }) => {
     // For example, you can fetch data from an API
     const fetchReport = async () => {
       console.log("fetch report called");
-      let url = `http://localhost:8800/api/getall/reports?industry=${ind}`;
+      let url = `${prod_url}/api/getall/reports?industry=${ind}`;
       console.log(
         "url is ",
         `http://localhost:8800/api/getall/reports?industry=${ind}`
