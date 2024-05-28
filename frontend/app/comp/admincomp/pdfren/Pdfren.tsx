@@ -1,9 +1,6 @@
 "use client";
 import { Worker } from "@react-pdf-viewer/core";
 import Image from "next/image";
-import left from "@/public/left-chevron.png";
-import right from "@/public/right-chevron.png";
-// Import the main component
 import { Viewer } from "@react-pdf-viewer/core";
 import { toolbarPlugin } from "@react-pdf-viewer/toolbar";
 import { bookmarkPlugin } from "@react-pdf-viewer/bookmark";
@@ -15,59 +12,43 @@ import "@react-pdf-viewer/toolbar/lib/styles/index.css";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import Sidebtn from "../sidebtn/Sidebtn";
 import PdfDescription from "../pdfdescription/pdfdescription";
+import { ReportContext, ReportContextType } from "@/app/context/reportContext";
 import exp from "constants";
 //this
 interface ChildComponentProps {
   reports: Record<string, any>[];
 }
 
-const Pdfren: React.FC<ChildComponentProps> = () => {
+//const Pdfren: React.FC<ChildComponentProps> = () => {
+function Pdfren() {
   // const bookmarkPluginInstance = bookmarkPlugin();
   // const { Bookmarks } = bookmarkPluginInstance;
   // const defaultLayoutPluginInstance = defaultLayoutPlugin();
   const [currentpage, setCurrentpage] = useState(0);
-  // const { state, dispatch } = useContext(ReportContext) as ReportContextType;
-  // console.log("we are at pdf ren");
-  // console.log("reports ");
-  // console.log(reports);
-  // console.log("state ");
-  // console.log(state);
-  // console.log("reports cid ", reports[state.cid]);
-  const [bar, setbar] = useState<boolean>(false);
-  // console.log("state cid is ", state.cid);
-  // const pdfurl = reports[state?.cid]?.linkp;
-  // // console.log("pdfrul is ", pdfurl);
-  // console.log("reports 0 is ", reports[0]?.linkp);
-  // const repos = reports[state?.cid];
-  // console.log("we are on pdfren repos ", repos);
-  // console.log(typeof repos);
+  const [bar, setbar] = useState<boolean>(true);
 
-  // const handleGoToSection = () => {
-  //   // Calculate the position of the specific section on the page
-  //   // For example, if you want to scroll to 50% of the page, you can set it like this
-  //   const position = (currentpage + 1) * window.innerHeight * 0.5; // 50% of the page height
-
-  //   // Scroll to the calculated position
-  //   window.scrollTo(0, position);
-  // };
+  const { state, dispatch } = useContext(ReportContext) as ReportContextType;
+  let pdfurl = state.linkp;
+  // let left = state.linki;
+  // let right = state.linki;
   return (
     <div className="flex">
       {/* <Bookmarks /> */}
-      {bar ? (
-        <Image
-          src={left}
-          alt="left icon"
-          className="h-[30px] w-[30px] self-center ease-in duration-300"
-          onClick={() => setbar(!bar)}
-        />
+      {/* {bar ? (
+        // <Image
+        //   src={left}
+        //   alt="left icon"
+        //   className="h-[30px] w-[30px] self-center ease-in duration-300"
+        //   onClick={() => setbar(!bar)}
+        // />
       ) : (
-        <Image
-          src={right}
-          alt=""
-          className="h-[30px] w-[30px] self-center ease-in duration-300"
-          onClick={() => setbar(!bar)}
-        />
-      )}
+        // <Image
+        //   src={right}
+        //   alt=""
+        //   className="h-[30px] w-[30px] self-center ease-in duration-300"
+        //   onClick={() => setbar(!bar)}
+        // />
+      )} */}
       {bar && (
         <div>
           {" "}
@@ -76,11 +57,11 @@ const Pdfren: React.FC<ChildComponentProps> = () => {
       )}
       <div className="w-full overflow-scroll h-[680px]">
         <div className="">
-          <PdfDescription />
+          <PdfDescription rep={state} />
         </div>
         <div className="border">
           {/* {state.cid && reports ? `${reports[state.cid].link1}` : "nothing"} */}
-          {/* <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
+          <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
             <Viewer
               fileUrl={
                 pdfurl
@@ -91,11 +72,11 @@ const Pdfren: React.FC<ChildComponentProps> = () => {
               initialPage={currentpage}
               onPageChange={({ currentPage }) => setCurrentpage(currentPage)}
             />
-          </Worker> */}
+          </Worker>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default Pdfren;

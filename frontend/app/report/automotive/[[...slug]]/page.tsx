@@ -1,5 +1,7 @@
+"use client";
 import { Footer, NavBar } from "@/app/comp";
 import PdfDescription from "@/app/comp/admincomp/pdfdescription/pdfdescription";
+import Pdfren from "@/app/comp/admincomp/pdfren/Pdfren";
 import { type } from "os";
 
 export default function Page({ params }: { params: { slug?: string[] } }) {
@@ -15,7 +17,13 @@ export default function Page({ params }: { params: { slug?: string[] } }) {
         <NavBar />
       </div>
       {/* <h1>My Page info is :{typeof params.slug}</h1>; */}
-      <PdfDescription />
+      {/* <PdfDescription /> */}
+      <div className="">
+        <div className="w-4/5 block ml-auto mr-auto">
+          <Pdfren />
+        </div>
+      </div>
+
       <Footer />
     </div>
   );
