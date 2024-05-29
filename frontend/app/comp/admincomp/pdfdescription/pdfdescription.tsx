@@ -32,30 +32,16 @@ const NoSSR: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
 const PdfDescription: React.FC<DynamicProps> = ({ rep }) => {
   const [selectedOption, setSelectedOption] = React.useState<string>("single");
-  let imageurl;
-  let des;
-  let title;
-  let titleNew;
+  let imageurl = rep?.linki;
+  let des = rep?.desc;
+  let title = rep?.title;
+  let titleNew =
+    title?.length > 80 ? `${rep?.title.substring(0, 80)}...` : title;
+  let date = rep?.createdAt;
 
-  let date;
-
-  let year;
-  let mon;
-  let month;
-
-  useEffect(() => {
-    imageurl = rep?.linki;
-    des = rep?.desc;
-    title = rep?.title;
-    titleNew = title?.length > 80 ? `${rep?.title.substring(0, 80)}...` : title;
-    date = rep?.createdAt;
-
-    year = date?.substring(0, 4);
-    mon = date?.substring(5, 7);
-    month = convert(mon);
-
-    return () => {};
-  }, []);
+  let year = date?.substring(0, 4);
+  let mon = date?.substring(5, 7);
+  let month = convert(mon);
 
   return (
     <NoSSR>
