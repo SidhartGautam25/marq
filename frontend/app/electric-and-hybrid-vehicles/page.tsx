@@ -9,13 +9,13 @@ export default function Page() {
   let head = "Electric and Hybrid Vehicles";
   return (
     <>
-      {/* <div className="bg-gray-900">
-     <NavBar/>
-      <div className="main bg-gray-100">
-        <Industry imgs={ele.src} para={str} heading={head}/>
-        <Report/>
+      <div className="bg-gray-900">
+        <NavBar />
+        <div className="main bg-gray-100">
+          <Industry imgs={ele.src} para={str} heading={head} />
+          {/* <Report/> */}
+        </div>
       </div>
-    </div> */}
     </>
   );
 }
