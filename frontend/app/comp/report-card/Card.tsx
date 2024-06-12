@@ -42,11 +42,11 @@ const Card: React.FC<RepProps> = ({ rep }) => {
   return (
     <>
       <div
-        className="card md:flex bg-gray-100 rounded-[5px] md:rounded-br-[4rem] border-2 border-black"
+        className="card md:flex bg-gray-100 rounded-[5px] md:rounded-br-[4rem] border-2 border-black h-[17rem]"
         onClick={clickfun}
       >
         <div
-          className="left relative md:flex-[6] overflow-hidden  md:flex md:items-center p-3 "
+          className="left relative md:flex-[6] overflow-hidden  md:flex md:items-center p-3"
           style={{
             backgroundImage: `url(${rep.linki})`,
             backgroundSize: "cover",
@@ -64,11 +64,9 @@ const Card: React.FC<RepProps> = ({ rep }) => {
           </div>
         </div>
 
-        <div className="right flex-[6] flex flex-col p-6 md:ml-5 md:p-5 md:gap-14">
+        <div className="right flex-[6] flex flex-col justify-between p-6 md:ml-5 md:p-5 md:gap-14">
           <div className=" text-gray-600">
-            <ul className="list-disc">
-              <li className="">{rep.desc}</li>
-            </ul>
+            <div className="line-clamp-4">{rep.desc}</div>
           </div>
           <div className=" text-gray-900 flex flex-col justify-center bg-white items-center">
             <div className="">Study Period: 2019-2029</div>
