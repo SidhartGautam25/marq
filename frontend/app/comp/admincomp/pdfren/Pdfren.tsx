@@ -25,14 +25,13 @@ function Pdfren() {
   // const { Bookmarks } = bookmarkPluginInstance;
   // const defaultLayoutPluginInstance = defaultLayoutPlugin();
   const [currentpage, setCurrentpage] = useState(0);
-  const [bar, setbar] = useState<boolean>(true);
 
   const { state, dispatch } = useContext(ReportContext) as ReportContextType;
   let pdfurl = state.linkp;
   // let left = state.linki;
   // let right = state.linki;
   return (
-    <div className="flex">
+    <div className="w-full">
       {/* <Bookmarks /> */}
       {/* {bar ? (
         // <Image
@@ -49,17 +48,15 @@ function Pdfren() {
         //   onClick={() => setbar(!bar)}
         // />
       )} */}
-      {bar && (
-        <div>
-          {" "}
+
+      <div className="">
+        <PdfDescription rep={state} />
+      </div>
+      <div className="flex w-full">
+        <div className=" h-[40rem]">
           <Sidebtn />
         </div>
-      )}
-      <div className="w-full overflow-scroll h-[680px]">
-        <div className="">
-          <PdfDescription rep={state} />
-        </div>
-        <div className="border">
+        <div className="border w-full">
           {/* {state.cid && reports ? `${reports[state.cid].link1}` : "nothing"} */}
           <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
             <Viewer

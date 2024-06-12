@@ -45,7 +45,7 @@ const PdfDescription: React.FC<DynamicProps> = ({ rep }) => {
 
   return (
     <NoSSR>
-      <div className="h-[500px] flex shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
+      <div className="h-[500px] flex ">
         <div className="w-1/2 px-8 flex justify-center flex-col border-2 bg-slate-50">
           <div className="w-[100px] h-[10px] bg-red-500"></div>
           <div className="my-8 font-bold text-3xl ">{rep?.title}</div>
