@@ -11,14 +11,18 @@ import axios from "axios";
 interface MyComponentProps {
   ind: string;
 }
-
-const ReportOne: React.FC<MyComponentProps> = ({ ind }) => {
-  ind = decodeURIComponent(ind as string);
-  const sub = industries[ind];
-  const [subind, setSubind] = useState([...sub]);
+export default function ServiceHero() {
   const [reports, setReports] = useState<Record<string, any>[]>([]);
   const dev_url = "http://localhost:8800";
   const prod_url = "https://admin-backend-1-ekoa.onrender.com";
+  const industries = [
+    "Electric and Hybrid Vehicles",
+    "Vehicles and Components",
+    "Shared Mobility",
+    "Tire",
+    "Connectivity Technology",
+    "Sensors, Electronics, and Electrical Equipment",
+  ];
 
   useEffect(() => {
     // Code inside this function will run after every render
@@ -27,7 +31,7 @@ const ReportOne: React.FC<MyComponentProps> = ({ ind }) => {
     // For example, you can fetch data from an API
     const fetchReport = async () => {
       console.log("fetch report called");
-      let url = `${prod_url}/api/getall/reports?industry=${ind}`;
+      let url = `${prod_url}/api/getall/report`;
       console.log(
         "url is ",
         `http://localhost:8800/api/getall/reports?industry=${ind}`
@@ -71,7 +75,7 @@ const ReportOne: React.FC<MyComponentProps> = ({ ind }) => {
                 <span className="md:mt-0 mt-6">Sub Industries </span>
               </div>
               <div className="buttans flex flex-col items-center">
-                {subind.map((item, index) => {
+                {industries.map((item, index) => {
                   return (
                     <Fragment key={index}>
                       <Buttons link="" heading={item} />
@@ -129,6 +133,4 @@ const ReportOne: React.FC<MyComponentProps> = ({ ind }) => {
       </div>
     </>
   );
-};
-
-export default Report;
+}

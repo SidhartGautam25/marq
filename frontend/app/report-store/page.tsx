@@ -1,13 +1,13 @@
 "use client";
 import Image from "next/image";
 import car from "@/public/assets/report.jpg";
-import Report from "../../comp/report/Report";
-import { NavBar } from "../../comp";
+
+import { NavBar } from "../comp";
 import { useContext, useState } from "react";
 import { ReportContext, ReportContextType } from "@/app/context/reportContext";
 
-export default function Page({ params }: { params: { slug: string } }) {
-  const [industry, setIndustry] = useState(params.slug);
+export default function Page() {
+  const [industry, setIndustry] = useState("all");
   console.log("industry is   ", industry);
 
   const { state, dispatch } = useContext(ReportContext) as ReportContextType;
@@ -30,7 +30,6 @@ export default function Page({ params }: { params: { slug: string } }) {
             Latest Published Report
           </span>
         </div>
-        <Report ind={industry} />
       </div>
     </>
   );

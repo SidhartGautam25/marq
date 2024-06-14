@@ -147,56 +147,14 @@ export default function NavBar() {
               Insight
             </span>
           </Link>
-          <div className="relative">
-            <Link href="/industry-page">
-              <span
-                onMouseEnter={() => setIsDropOpen(true)}
-                onMouseLeave={() => setIsDropOpen(false)}
-                className="block px-2 py-1 text-white font-semibold rounded hover:bg-gray-700 lg:mt-0"
-              >
-                Report Store
-              </span>
-            </Link>
-            {/* <Image src={img1} alt="" className='w-4 h-4'/> */}
-            {isDropOpen && (
-              <ul
-                className="absolute left-0 top-6 mt-2 py-2 w-48 bg-gray-400 rounded shadow-xl z-20"
-                onMouseEnter={() => setIsDropOpen(true)}
-                onMouseLeave={() => setIsDropOpen(false)}
-              >
-                <li className="block px-4 py-2 text-sm hover:bg-gray-600 hover:text-white">
-                  <Link href="/report-store/Electric and Hybrid Vehicles">
-                    <span>Electric and Hybrid Vehicles</span>
-                  </Link>
-                </li>
-                <li className="block px-4 py-2 text-sm hover:bg-gray-600 hover:text-white">
-                  <Link href="/report-store/Vehicles and Components">
-                    <span>Vehicles and Components</span>
-                  </Link>
-                </li>
-                <li className="block px-4 py-2 text-sm hover:bg-gray-600 hover:text-white">
-                  <Link href="/report-store/Shared Mobility">
-                    <span>Shared Mobility</span>
-                  </Link>
-                </li>
-                <li className="block px-4 py-2 text-sm hover:bg-gray-600 hover:text-white">
-                  <Link href="/report-store/Tire">
-                    <span>Tire</span>
-                  </Link>
-                </li>
-                <li className="block px-4 py-2 text-sm hover:bg-gray-600 hover:text-white">
-                  <Link href="/report-store/Connectivity Technology">
-                    <span>Connectivity Technology</span>
-                  </Link>
-                </li>
-                <li className="block px-4 py-2 text-sm hover:bg-gray-600 hover:text-white">
-                  <Link href="/report-store/Sensors, Electronics, and Electrical Equipment">
-                    <span>Sensors, Electronics, and Electrical Equipment</span>
-                  </Link>
-                </li>
-              </ul>
-            )}
-          </div>
+
+          <Link href="/report-store">
+            <span className="block px-2 py-1 text-white font-semibold rounded hover:bg-gray-700 lg:mt-0">
+              Report Store
+            </span>
+          </Link>
+          {/* <Image src={img1} alt="" className='w-4 h-4'/> */}
+
           <Link href="/contact">
             <span className="block px-2 py-1 text-white font-semibold rounded hover:bg-gray-700 lg:mt-0">
               Contact
