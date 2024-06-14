@@ -6,6 +6,8 @@ import Footer from "../footer/Footer";
 import { Fragment, useEffect, useState } from "react";
 import industries from "@/app/utility/subind";
 import axios from "axios";
+import load from "@/public/assets/load.gif"
+import Image from "next/image";
 //this is report page
 
 interface MyComponentProps {
@@ -19,7 +21,7 @@ const Report: React.FC<MyComponentProps> = ({ ind }) => {
   const [reports, setReports] = useState<Record<string, any>[]>([]);
   const dev_url = "http://localhost:8800";
   const prod_url = "https://admin-backend-1-ekoa.onrender.com";
-
+  const [loading,setLoading] =useState<boolean>(true);
   useEffect(() => {
     // Code inside this function will run after every render
     // You can perform side effects, such as data fetching, subscriptions, or DOM manipulations here
@@ -34,6 +36,7 @@ const Report: React.FC<MyComponentProps> = ({ ind }) => {
       );
       try {
         const daata = await axios.get(url);
+        setLoading(false);
 
         console.log("daata on leftb hero is ", daata.data);
         if (daata) {
@@ -51,12 +54,13 @@ const Report: React.FC<MyComponentProps> = ({ ind }) => {
       // You can perform cleanup tasks here, such as unsubscribing from subscriptions or clearing timers
     };
   }, []);
-
+  
   return (
     <>
       <div className="main bg-gray-100 p-3 md:p-0">
         <div className="main2 mt-8 md:flex sm:flex md:mt-10 flex-row-reverse">
           <div className="right flex-[10] flex flex-col gap-3 bg-blue-100 p-3 md:mr-8">
+            {loading && <div className="flex justify-center mt-4"><Image src={load} alt="load gif" className="w-[4rem]"/></div>}
             {reports.map((item, index) => {
               return (
                 <Fragment key={index}>
@@ -64,6 +68,11 @@ const Report: React.FC<MyComponentProps> = ({ ind }) => {
                 </Fragment>
               );
             })}
+            <div className={`flex justify-center gap-5 items-center mt-5 ${loading?"hidden": "block"}`}>
+              <button className=" bg-black text-white p-2 w-[5rem]">PREVIES</button>
+              <span className="">1 To 50</span>
+              <button className="bg-black text-white p-2 w-[5rem]">NEXT</button>
+            </div>
           </div>
           <div className="left flex-[4]">
             <div className="p-5 pt-0">
