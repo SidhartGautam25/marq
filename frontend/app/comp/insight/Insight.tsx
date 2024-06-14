@@ -216,7 +216,15 @@ export default function Insight() {
               />
             </div>
           ))}
+          
         </div>
+        <div
+            className={`flex justify-center gap-5 items-center mt-5`}
+          >
+            <button className=" bg-black text-white p-2 w-[5rem]">PREVIES</button>
+            <span className="">1 To 50</span>
+            <button className="bg-black text-white p-2 w-[5rem]">NEXT</button>
+          </div>
       </div>
     </div>
   );
