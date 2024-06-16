@@ -4,25 +4,22 @@ import Buttons from "../buttons-report/Buttons";
 import Link from "next/link";
 import Footer from "../footer/Footer";
 import { Fragment, useEffect, useState } from "react";
-import industries from "@/app/utility/subind";
+import {indus} from "@/app/utility/subind";
 import axios from "axios";
+import load from "@/public/assets/load.gif"
+import Image from "next/image";
+import { IoMdMail } from "react-icons/io";
 //this is report page
 
 interface MyComponentProps {
   ind: string;
 }
-export default function ServiceHero() {
+export default function Report() {
   const [reports, setReports] = useState<Record<string, any>[]>([]);
   const dev_url = "http://localhost:8800";
   const prod_url = "https://admin-backend-1-ekoa.onrender.com";
-  const industries = [
-    "Electric and Hybrid Vehicles",
-    "Vehicles and Components",
-    "Shared Mobility",
-    "Tire",
-    "Connectivity Technology",
-    "Sensors, Electronics, and Electrical Equipment",
-  ];
+  
+  const [loading,setLoading] =useState<boolean>(true);
 
   useEffect(() => {
     // Code inside this function will run after every render
@@ -32,13 +29,10 @@ export default function ServiceHero() {
     const fetchReport = async () => {
       console.log("fetch report called");
       let url = `${prod_url}/api/getall/report`;
-      console.log(
-        "url is ",
-        `http://localhost:8800/api/getall/reports?industry=${ind}`
-      );
+     
       try {
         const daata = await axios.get(url);
-
+        setLoading(false);
         console.log("daata on leftb hero is ", daata.data);
         if (daata) {
           console.log("daaaaaattatatata is ", daata);
@@ -61,6 +55,7 @@ export default function ServiceHero() {
       <div className="main bg-gray-100 p-3 md:p-0">
         <div className="main2 mt-8 md:flex sm:flex md:mt-10 flex-row-reverse">
           <div className="right flex-[10] flex flex-col gap-3 bg-blue-100 p-3 md:mr-8">
+          {loading && <div className="flex justify-center mt-4"><Image src={load} alt="load gif" className="w-[4rem]"/></div>}
             {reports.map((item, index) => {
               return (
                 <Fragment key={index}>
@@ -68,17 +63,23 @@ export default function ServiceHero() {
                 </Fragment>
               );
             })}
+            <div className={`flex justify-center gap-5 items-center mt-5 ${loading?"hidden": "block"}`}>
+              <button className=" bg-black text-white p-2 w-[5rem]">PREVIES</button>
+              <span className="">1 To 50</span>
+              <button className="bg-black text-white p-2 w-[5rem]">NEXT</button>
+            </div>
           </div>
+
           <div className="left flex-[4]">
             <div className="p-5 pt-0">
               <div className="titel flex justify-center text-2xl font-semibold">
-                <span className="md:mt-0 mt-6">Sub Industries </span>
+                <span className="md:mt-0 mt-6">Industries </span>
               </div>
               <div className="buttans flex flex-col items-center">
-                {industries.map((item, index) => {
+                {indus.map((item, index) => {
                   return (
                     <Fragment key={index}>
-                      <Buttons link="" heading={item} />
+                      <Buttons link={item.link} heading={item.head} />
                     </Fragment>
                   );
                 })}
@@ -109,20 +110,7 @@ export default function ServiceHero() {
                 >
                   <button className="flex gap-5 ">
                     Contact Us
-                    <svg
-                      width="24"
-                      height="24"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M3 5h18a2 2 0 012 2v10a2 2 0 01-2 2H3a2 2 0 01-2-2V7a2 2 0 012-2zm0 2v10h18V7m-18 0l9 5.5L21 7"
-                      />
-                    </svg>
+                    <IoMdMail className=" text-xl"/>
                   </button>
                 </Link>
               </div>

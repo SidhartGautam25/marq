@@ -8,13 +8,13 @@ export default function Page() {
   let head = "Vehicles and Components";
   return (
     <>
-      {/* <div className="bg-gray-900">
+      <div className="bg-gray-900">
      <NavBar/>
       <div className="main bg-gray-100">
         <Industry imgs={ele.src} para={str} heading={head}/>
-        <Report/>
+        <Report ind={head}/>
       </div>
-    </div> */}
+    </div>
     </>
   );
 }

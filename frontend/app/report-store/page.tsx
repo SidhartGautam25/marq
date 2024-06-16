@@ -5,6 +5,7 @@ import car from "@/public/assets/report.jpg";
 import { NavBar } from "../comp";
 import { useContext, useState } from "react";
 import { ReportContext, ReportContextType } from "@/app/context/reportContext";
+import Report from "../comp/report-two/Report";
 
 export default function Page() {
   const [industry, setIndustry] = useState("all");
@@ -30,6 +31,7 @@ export default function Page() {
             Latest Published Report
           </span>
         </div>
+        <Report/>
       </div>
     </>
   );
