@@ -1,6 +1,10 @@
 interface Industry {
   [key: string]: string[];
 }
+interface butt {
+   head:string,
+   link:string
+}
 
 export function convert(mon: string) {
   let month;
@@ -32,6 +36,32 @@ export function convert(mon: string) {
   return month;
 }
 
+const indus: butt[] = [
+  {
+    head:"Electric and Hybrid Vehicles",
+    link:"/electric-and-hybrid-vehicles"
+  },
+  {
+    head:"Vehicles and Components",
+    link:"/vehicles-components"
+  },
+  {
+    head:"Shared Mobility",
+    link:"/shared-mobility"
+  },
+  {
+    head:"Tire",
+    link:"/tire"
+  },
+  {
+    head:"Connectivity Technology",
+    link:"/connectivity-technology"
+  },
+  {
+    head:"Sensors, Electronics, and Electrical Equipment",
+    link:"/sensors-electronics-and-electrical-equipment"
+  },
+]
 
 const industries: Industry = {
   "Electric and Hybrid Vehicles": [
@@ -81,4 +111,4 @@ const industries: Industry = {
 // Example usage
 console.log(industries["Electric and Hybrid Vehicles"]);
 console.log(industries["Shared Mobility"]);
-export default industries;
+export  {industries,indus};

@@ -4,17 +4,18 @@ import Buttons from "../buttons-report/Buttons";
 import Link from "next/link";
 import Footer from "../footer/Footer";
 import { Fragment, useEffect, useState } from "react";
-import industries from "@/app/utility/subind";
+import {industries} from "@/app/utility/subind";
 import axios from "axios";
 import load from "@/public/assets/load.gif"
 import Image from "next/image";
+import { IoMdMail } from "react-icons/io";
 //this is report page
 
 interface MyComponentProps {
   ind: string;
 }
 
-const ReportOne: React.FC<MyComponentProps> = ({ ind }) => {
+const Report: React.FC<MyComponentProps> = ({ ind }) => {
   ind = decodeURIComponent(ind as string);
   const sub = industries[ind];
   const [subind, setSubind] = useState([...sub]);
@@ -114,20 +115,7 @@ const ReportOne: React.FC<MyComponentProps> = ({ ind }) => {
                 >
                   <button className="flex gap-5 ">
                     Contact Us
-                    <svg
-                      width="24"
-                      height="24"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M3 5h18a2 2 0 012 2v10a2 2 0 01-2 2H3a2 2 0 01-2-2V7a2 2 0 012-2zm0 2v10h18V7m-18 0l9 5.5L21 7"
-                      />
-                    </svg>
+                    <IoMdMail className=" text-xl"/>
                   </button>
                 </Link>
               </div>
