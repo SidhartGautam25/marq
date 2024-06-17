@@ -1,5 +1,5 @@
 "use client";
-import { NavBar } from "@/app/comp";
+import { NavBar, Insightcom1, Insightcomp2, Footer } from "@/app/comp";
 import axios from "axios";
 import { useEffect, useState } from "react";
 interface BlogInt {
@@ -39,8 +39,20 @@ export default function Page({ params }: { params: { slug: string } }) {
   }, []);
   return (
     <>
-      <NavBar />
-      <div>{blog?.title}</div>
+      <div className="bg-gray-800">
+        <NavBar />
+      </div>
+      <Insightcom1 />
+      <div className="flex mx-20">
+        <div className="flex-[4]">PDF RENDER HERE</div>
+        <div className="flex-[1]">
+          <h1 className="text-3xl font-semibold my-2">Similar Insight</h1>
+          <Insightcomp2 />
+          <Insightcomp2 />
+          <Insightcomp2 />
+        </div>
+      </div>
+      <Footer />
     </>
   );
 }
