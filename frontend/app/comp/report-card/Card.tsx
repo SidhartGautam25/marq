@@ -31,6 +31,8 @@ const Card: React.FC<RepProps> = ({ rep }) => {
         createdAt: rep.createdAt,
         industry: rep.industry,
         subind: rep.subind,
+        linkt: rep.linkt,
+        linkf: rep.linkf,
         cpage: 0,
       },
     });

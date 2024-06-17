@@ -21,6 +21,8 @@ type State = {
   createdAt: any;
   desc: any;
   cpage: any;
+  linkt: any;
+  linkf: any;
 };
 
 const INITIAL_STATE: State = {
@@ -56,6 +58,14 @@ const INITIAL_STATE: State = {
     typeof window !== "undefined"
       ? localStorage.getItem("marq-rep-createdAt") || null
       : null,
+  linkf:
+    typeof window !== "undefined"
+      ? localStorage.getItem("marq-rep-linkf") || null
+      : null,
+  linkt:
+    typeof window !== "undefined"
+      ? localStorage.getItem("marq-rep-linkt") || null
+      : null,
 };
 
 export type ReportContextType = {
@@ -77,6 +87,8 @@ const Reducer = (state: State, action: Action): State => {
         desc: action.payload.desc,
         linki: action.payload.linki,
         linkp: action.payload.linkp,
+        linkf: action.payload.linkf,
+        linkt: action.payload.linkt,
         industry: action.payload.industry,
         subind: action.payload.subind,
         createdAt: action.payload.createdAt,
@@ -92,6 +104,8 @@ const Reducer = (state: State, action: Action): State => {
         subind: action.payload.subind,
         createdAt: action.payload.createdat,
         cpage: action.payload.page,
+        linkt: action.payload.linkt,
+        linkf: action.payload.linkf,
       };
     default:
       return state;
@@ -110,6 +124,8 @@ export const ReportContextProvider: React.FC<ReportProviderProps> = ({
     subind: "",
     createdAt: "",
     cpage: 0,
+    linkf: "",
+    linkt: "",
   };
 
   const [state, dispatch] = useReducer(Reducer, INITIAL_STATE);
@@ -123,6 +139,8 @@ export const ReportContextProvider: React.FC<ReportProviderProps> = ({
     localStorage.setItem("marq-rep-linkp", state.linkp);
     localStorage.setItem("marq-rep-createdAt", state.createdAt);
     localStorage.setItem("reportpage", state.cpage);
+    localStorage.setItem("marq-rep-linkt", state.linkt);
+    localStorage.setItem("marq-rep-linkf", state.linkf);
   }, [state]);
 
   // Here, we're casting the value to UserContextType because we're certain it matches the shape

@@ -1,8 +1,9 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import InsightCard from "../insightCard/InsightCard";
 
 import { useState } from "react";
+import axios from "axios";
 
 interface RadioOption {
   id: string; // Unique identifier for each radio button
@@ -12,6 +13,11 @@ interface RadioOption {
 interface ListItem {
   name: string;
   children: string[]; // Optional children for nested lists
+}
+interface Ins {
+  title: string;
+  type: string;
+  linkt: string;
 }
 
 const listData: ListItem[] = [
@@ -150,16 +156,107 @@ export default function Insight() {
   const [selectedOption, setSelectedOption] = useState<string>("null");
   const [subIndustries, setSubIndustries] = useState<string[]>();
   const [subIndustryOption, setSubIndustryOption] = useState<string>("null");
+  const [page, setPage] = useState(1);
+  const [len, setLen] = useState(1);
+  const [end, setEnd] = useState(1);
+  const [blogs, setBlogs] = useState<Ins[]>([]);
+  const dev_url = "http://localhost:8800";
+  const prod_url = "https://admin-backend-1-ekoa.onrender.com";
+  const [loading, setLoading] = useState(false);
+  // const [ind, setInd] = useState("none");
+  // const [subind, setSubind] = useState("none");
 
-  const handleChangeSubIndustry = (item: string) => {
+  const handleChangeSubIndustry = async (item: string) => {
     setSubIndustryOption(item);
+    setPage(1);
+    let url = `${dev_url}/api/getall/blogs?industry=${selectedOption}&page=${1}&subind=${item}`;
+    try {
+      const daata = await axios.get(url);
+      setLoading(false);
+
+      console.log("daata on leftb hero is ", daata.data);
+      if (daata) {
+        console.log("daaaaaattatatata is ", daata);
+        setBlogs([...daata.data.blogs]);
+
+        setLen(daata.data.len);
+        setEnd(Math.floor(daata.data.len / 5 + 1));
+      }
+    } catch (err) {}
   };
 
-  const handleChangeIndustry = (option: string) => {
+  const handleChangeIndustry = async (option: string) => {
     setSelectedOption(option);
     const selected = listData.find((item) => item.name === option);
     setSubIndustries(selected ? selected.children : []);
+    let url = `${dev_url}/api/getall/blogs?industry=${option}&page=${1}`;
+    setPage(1);
+    try {
+      const daata = await axios.get(url);
+      setLoading(false);
+
+      console.log("daata on leftb hero is ", daata.data);
+      if (daata) {
+        console.log("daaaaaattatatata is ", daata);
+        setBlogs([...daata.data.blogs]);
+
+        setLen(daata.data.len);
+        setEnd(Math.floor(daata.data.len / 5 + 1));
+      }
+    } catch (err) {}
   };
+
+  function prev() {
+    if (page > 1) {
+      setPage(page - 1);
+    }
+  }
+
+  function next() {
+    if (page < end) {
+      setPage(page + 1);
+    }
+  }
+
+  useEffect(() => {
+    // Code inside this function will run after every render
+    // You can perform side effects, such as data fetching, subscriptions, or DOM manipulations here
+
+    // For example, you can fetch data from an API
+    const fetchReport = async () => {
+      console.log("fetch report called");
+      let url;
+      if (selectedOption == "null") {
+        url = `${dev_url}/api/getall/blogs?page=${page}`;
+      } else if (selectedOption != "null" && subIndustryOption == "null") {
+        url = `${dev_url}/api/getall/blogs?industry=${selectedOption}&page=${page}`;
+      } else {
+        url = `${dev_url}/api/getall/blogs?industry=${selectedOption}&page=${page}&subind=${subIndustryOption}`;
+      }
+      try {
+        const daata = await axios.get(url);
+        setLoading(false);
+
+        console.log("daata on leftb hero is ", daata.data);
+        if (daata) {
+          console.log("daaaaaattatatata is ", daata);
+          setBlogs([...daata.data.blogs]);
+
+          setLen(daata.data.len);
+          setEnd(Math.floor(daata.data.len / 5 + 1));
+        }
+      } catch (err) {}
+    };
+    fetchReport();
+
+    // You can also return a cleanup function from useEffect
+    // This cleanup function will be executed before the component is unmounted or re-rendered
+    return () => {
+      // Code inside this cleanup function will run before the component is unmounted or re-rendered
+      // You can perform cleanup tasks here, such as unsubscribing from subscriptions or clearing timers
+    };
+  }, [page]);
+
   return (
     <div className="min-h-screen bg-gray-100 py-12">
       <div className="container mx-auto px-4">
@@ -206,25 +303,28 @@ export default function Insight() {
           </div>
         </div>
         <div className="flex flex-wrap justify-center">
-          {insights.map((insight, index) => (
+          {blogs.map((insight, index) => (
             <div key={index} className="p-4">
               <InsightCard
-                imageSrc={insight.imageSrc}
+                imageSrc={insight.linkt}
                 title={insight.title}
                 // description={insight.description}
-                category={insight.category}
+                category={insight.type}
               />
             </div>
           ))}
-          
         </div>
-        <div
-            className={`flex justify-center gap-5 items-center mt-5`}
-          >
-            <button className=" bg-black text-white p-2 w-[5rem]">PREVIES</button>
-            <span className="">1 To 50</span>
-            <button className="bg-black text-white p-2 w-[5rem]">NEXT</button>
-          </div>
+        <div className={`flex justify-center gap-5 items-center mt-5`}>
+          <button className=" bg-black text-white p-2 w-[5rem]" onClick={prev}>
+            PREV
+          </button>
+          <span className="">
+            {page} To {end}
+          </span>
+          <button className="bg-black text-white p-2 w-[5rem]" onClick={next}>
+            NEXT
+          </button>
+        </div>
       </div>
     </div>
   );
