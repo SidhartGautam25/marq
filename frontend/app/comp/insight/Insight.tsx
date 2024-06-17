@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import InsightCard from "../insightCard/InsightCard";
+import { useRouter } from "next/navigation";
 
 import { useState } from "react";
 import axios from "axios";
@@ -163,8 +164,15 @@ export default function Insight() {
   const dev_url = "http://localhost:8800";
   const prod_url = "https://admin-backend-1-ekoa.onrender.com";
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
+
+  // function clickfun() {
   // const [ind, setInd] = useState("none");
   // const [subind, setSubind] = useState("none");
+
+  //   function click(tit:string) {
+  //     router.push(`/insight/${tit}`);
+  //  }
 
   const handleChangeSubIndustry = async (item: string) => {
     setSubIndustryOption(item);
@@ -304,7 +312,13 @@ export default function Insight() {
         </div>
         <div className="flex flex-wrap justify-center">
           {blogs.map((insight, index) => (
-            <div key={index} className="p-4">
+            <div
+              key={index}
+              className="p-4"
+              onClick={() => {
+                router.push(`/insight/${insight.title}`);
+              }}
+            >
               <InsightCard
                 imageSrc={insight.linkt}
                 title={insight.title}

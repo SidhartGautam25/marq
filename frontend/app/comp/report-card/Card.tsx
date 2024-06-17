@@ -36,9 +36,8 @@ const Card: React.FC<RepProps> = ({ rep }) => {
         cpage: 0,
       },
     });
-    router.push(
-      `/report/automotive/${rep.industry}/${rep.subind}/${rep.title}`
-    );
+    let temp = rep.title.replace(/\s/g, "-");
+    router.push(`/report/${temp}`);
   }
 
   return (
