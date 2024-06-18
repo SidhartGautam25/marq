@@ -31,12 +31,13 @@ const Card: React.FC<RepProps> = ({ rep }) => {
         createdAt: rep.createdAt,
         industry: rep.industry,
         subind: rep.subind,
+        linkt: rep.linkt,
+        linkf: rep.linkf,
         cpage: 0,
       },
     });
-    router.push(
-      `/report/automotive/${rep.industry}/${rep.subind}/${rep.title}`
-    );
+    let temp = rep.title.replace(/\s/g, "-");
+    router.push(`/report/${temp}`);
   }
 
   return (

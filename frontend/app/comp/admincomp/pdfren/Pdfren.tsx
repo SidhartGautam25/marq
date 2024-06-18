@@ -22,61 +22,120 @@ interface ChildComponentProps {
 
 //const Pdfren: React.FC<ChildComponentProps> = () => {
 function Pdfren() {
-  // const bookmarkPluginInstance = bookmarkPlugin();
-  // const { Bookmarks } = bookmarkPluginInstance;
-  // const defaultLayoutPluginInstance = defaultLayoutPlugin();
   const [currentpage, setCurrentpage] = useState(0);
+  const [num, setNum] = useState<Number>(1);
 
   const { state, dispatch } = useContext(ReportContext) as ReportContextType;
   let pdfurl = state.linkp;
-  // let left = state.linki;
-  // let right = state.linki;
+  let turl = state.linkt;
+  let furl = state.linkf;
+
+  function click(n: Number) {
+    setNum(n);
+    console.log("num is ", n);
+  }
+
   return (
     <div className="w-full">
-      {/* <Bookmarks /> */}
-      {/* {bar ? (
-        // <Image
-        //   src={left}
-        //   alt="left icon"
-        //   className="h-[30px] w-[30px] self-center ease-in duration-300"
-        //   onClick={() => setbar(!bar)}
-        // />
-      ) : (
-        // <Image
-        //   src={right}
-        //   alt=""
-        //   className="h-[30px] w-[30px] self-center ease-in duration-300"
-        //   onClick={() => setbar(!bar)}
-        // />
-      )} */}
-
       <div className="">
         <PdfDescription rep={state} />
       </div>
       <div className="flex justify-center">
         <div className="flex justify-between p-4">
-          <button className="w-[235px] border bg-slate-700 p-3 text-white" >Report Description</button>
-          <button className="w-[235px] border bg-slate-700 p-3 text-white">Table of Contents</button>
-          <button className="w-[235px] border bg-slate-700 p-3 text-white">FAQs</button>
-          <button className="w-[235px] border bg-slate-700 p-3 text-white">Request Sample</button>
+          <button
+            className="w-[235px] border bg-slate-700 p-3 text-white"
+            onClick={() => {
+              click(1);
+            }}
+          >
+            Report Description
+          </button>
+          <button
+            className="w-[235px] border bg-slate-700 p-3 text-white"
+            onClick={() => {
+              click(2);
+            }}
+          >
+            Table of Contents
+          </button>
+          <button
+            className="w-[235px] border bg-slate-700 p-3 text-white"
+            onClick={() => {
+              click(3);
+            }}
+          >
+            FAQs
+          </button>
+          <button
+            className="w-[235px] border bg-slate-700 p-3 text-white"
+            onClick={() => {
+              click(4);
+            }}
+          >
+            Request Sample
+          </button>
         </div>
       </div>
-      <Form/>
+      {num == 4 ? <Form /> : <span></span>}
       <div className="flex w-full">
         <div className="border w-full">
           {/* {state.cid && reports ? `${reports[state.cid].link1}` : "nothing"} */}
-          <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
-            <Viewer
-              fileUrl={
-                pdfurl
-                  ? pdfurl
-                  : "https://res.cloudinary.com/dkzpbucfz/image/upload/v1713940823/pics/lu1fo2x4kk4v9qmd5r6s.pdf"
-              }
-              // fileUrl="https://res.cloudinary.com/dkzpbucfz/image/upload/v1713940823/pics/lu1fo2x4kk4v9qmd5r6s.pdf"
-              initialPage={currentpage}
-              onPageChange={({ currentPage }) => setCurrentpage(currentPage)}
-            />
-          </Worker>
+
+          {num != 4 ? (
+            <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
+              {num === 1 ? (
+                <Viewer
+                  fileUrl={
+                    pdfurl
+                      ? pdfurl
+                      : "https://res.cloudinary.com/dkzpbucfz/image/upload/v1713940823/pics/lu1fo2x4kk4v9qmd5r6s.pdf"
+                  }
+                  // fileUrl="https://res.cloudinary.com/dkzpbucfz/image/upload/v1713940823/pics/lu1fo2x4kk4v9qmd5r6s.pdf"
+                  initialPage={currentpage}
+                  onPageChange={({ currentPage }) =>
+                    setCurrentpage(currentPage)
+                  }
+                />
+              ) : (
+                <span></span>
+              )}
+
+              {num === 2 ? (
+                <Viewer
+                  fileUrl={
+                    turl
+                      ? turl
+                      : "https://res.cloudinary.com/dkzpbucfz/image/upload/v1713940823/pics/lu1fo2x4kk4v9qmd5r6s.pdf"
+                  }
+                  // fileUrl="https://res.cloudinary.com/dkzpbucfz/image/upload/v1713940823/pics/lu1fo2x4kk4v9qmd5r6s.pdf"
+                  initialPage={currentpage}
+                  onPageChange={({ currentPage }) =>
+                    setCurrentpage(currentPage)
+                  }
+                />
+              ) : (
+                <span></span>
+              )}
+              {num === 3 ? (
+                <Viewer
+                  fileUrl={
+                    furl
+                      ? furl
+                      : "https://res.cloudinary.com/dkzpbucfz/image/upload/v1713940823/pics/lu1fo2x4kk4v9qmd5r6s.pdf"
+                  }
+                  // fileUrl="https://res.cloudinary.com/dkzpbucfz/image/upload/v1713940823/pics/lu1fo2x4kk4v9qmd5r6s.pdf"
+                  initialPage={currentpage}
+                  onPageChange={({ currentPage }) =>
+                    setCurrentpage(currentPage)
+                  }
+                />
+              ) : (
+                <span></span>
+              )}
+            </Worker>
+          ) : (
+            <span></span>
+          )}
         </div>
       </div>
     </div>

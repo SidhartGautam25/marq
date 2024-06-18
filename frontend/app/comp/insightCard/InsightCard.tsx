@@ -15,7 +15,7 @@ const InsightCard: React.FC<InsightCardProps> = ({
 }) => {
   return (
     <div className="max-w-sm flex gap-4 flex-col rounded overflow-hidden shadow-lg">
-      <Image
+      <img
         className="w-full"
         src={imageSrc}
         alt={title}
