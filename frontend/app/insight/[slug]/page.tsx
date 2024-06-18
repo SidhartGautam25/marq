@@ -66,8 +66,8 @@ export default function Page({ params }: { params: { slug: string } }) {
       </div>
       {console.log("before going ", blog.title)}
       <Insightcom1 title={blog.title} linkp={blog.linkp} linkt={blog.linkt} />
-      <div className="flex mx-20">
-        <div className="flex-[4]">
+      <div className="flex">
+        <div className="flex-[6]">
           <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
             <Viewer
               fileUrl={
@@ -81,11 +81,13 @@ export default function Page({ params }: { params: { slug: string } }) {
             />
           </Worker>
         </div>
-        <div className="flex-[1]">
-          <h1 className="text-3xl font-semibold my-2">Similar Insight</h1>
-          <Insightcomp2 />
-          <Insightcomp2 />
-          <Insightcomp2 />
+        <div className="flex-[2] flex flex-col gap-2 items-center">
+          <h1 className="text-3xl font-semibold uppercase text">Similar Insight</h1>
+          <div className="w-[80%] flex flex-col gap-5">
+            <Insightcomp2 />
+            <Insightcomp2 />
+            <Insightcomp2 />
+          </div>
         </div>
       </div>
       <Footer />
