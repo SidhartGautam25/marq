@@ -2,11 +2,29 @@
 import { NavBar, Insightcom1, Insightcomp2, Footer } from "@/app/comp";
 import axios from "axios";
 import { useEffect, useState } from "react";
+
+import { Worker } from "@react-pdf-viewer/core";
+import { Viewer } from "@react-pdf-viewer/core";
+
+// Import styles
+import "@react-pdf-viewer/toolbar/lib/styles/index.css";
+// Import the styles
+import "@react-pdf-viewer/core/lib/styles/index.css";
+
 interface BlogInt {
   title: string;
+  linkp: string;
+  linkt: string;
 }
 export default function Page({ params }: { params: { slug: string } }) {
-  const [blog, setBlog] = useState<BlogInt>({ title: "" });
+  const [blog, setBlog] = useState<BlogInt>({
+    title: "",
+    linkp: "",
+    linkt: "",
+  });
+  console.log("blog is ", blog);
+  let pdfurl = blog.linkp;
+  // let daata;
 
   useEffect(() => {
     // Code inside this function will run after every render
@@ -24,8 +42,12 @@ export default function Page({ params }: { params: { slug: string } }) {
       try {
         console.log("request sent");
         const daata = await axios.get(url);
-        console.log("data is ", daata.data);
-        setBlog(daata.data);
+        console.log("data is ", daata.data[0].title);
+        setBlog({
+          title: daata.data[0].title,
+          linkp: daata.data[0].linkp,
+          linkt: daata.data[0].linkt,
+        });
       } catch (err) {}
     };
     fetchReport();
@@ -42,9 +64,23 @@ export default function Page({ params }: { params: { slug: string } }) {
       <div className="bg-gray-800">
         <NavBar />
       </div>
-      <Insightcom1 />
+      {console.log("before going ", blog.title)}
+      <Insightcom1 title={blog.title} linkp={blog.linkp} linkt={blog.linkt} />
       <div className="flex mx-20">
-        <div className="flex-[4]">PDF RENDER HERE</div>
+        <div className="flex-[4]">
+          <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
+            <Viewer
+              fileUrl={
+                pdfurl
+                  ? pdfurl
+                  : "https://res.cloudinary.com/dkzpbucfz/image/upload/v1713940823/pics/lu1fo2x4kk4v9qmd5r6s.pdf"
+              }
+              // fileUrl="https://res.cloudinary.com/dkzpbucfz/image/upload/v1713940823/pics/lu1fo2x4kk4v9qmd5r6s.pdf"
+              // initialPage={currentpage}
+              // onPageChange={({ currentPage }) => setCurrentpage(currentPage)}
+            />
+          </Worker>
+        </div>
         <div className="flex-[1]">
           <h1 className="text-3xl font-semibold my-2">Similar Insight</h1>
           <Insightcomp2 />

@@ -3,12 +3,19 @@ import Image from "next/image";
 import print from "@/public/printer-svgrepo-com.svg";
 import share from "@/public/share-svgrepo-com.svg";
 
-export default function Insightcom1() {
+interface Bloog {
+  title: string;
+  linkp: string;
+  linkt: string;
+}
+
+const Insightcom1: React.FC<Bloog> = ({ title, linkp, linkt }) => {
+  console.log("title is in is comp1 ", title);
   return (
     <div className="">
       <div className="relative flex justify-center items-center">
-        <Image
-          src={ele}
+        <img
+          src={linkt}
           alt="top photo"
           className="w-full pt-0 h-[25rem] blur-[2px]"
           width={200}
@@ -16,8 +23,7 @@ export default function Insightcom1() {
         />
         <div className="absolute mt-auto p-8 md:w-[60%] flex flex-col md:items-center text-white gap-10 ">
           <h1 className="text-2xl font-bold md:text-4xl sm:text-3xl md:text-center">
-            Is mastering procurement the key to navigating airlines' modern
-            challenges?
+            {title}
           </h1>
         </div>
       </div>
@@ -34,4 +40,6 @@ export default function Insightcom1() {
       </div>
     </div>
   );
-}
+};
+
+export default Insightcom1;
