@@ -75,8 +75,9 @@ const Report: React.FC<MyComponentProps> = ({ ind }) => {
               <button className="bg-black text-white p-2 w-[5rem]">NEXT</button>
             </div>
           </div>
-          <div className="left flex-[4]">
-            <div className="p-5 pt-0">
+          <div className="left flex-[4] flex justify-center">
+            <div className="w-[80%] flex flex-col gap-11 items-center pb-6">
+            <div className="">
               <div className="titel flex justify-center text-2xl font-semibold">
                 <span className="md:mt-0 mt-6">Sub Industries </span>
               </div>
@@ -90,7 +91,7 @@ const Report: React.FC<MyComponentProps> = ({ ind }) => {
                 })}
               </div>
             </div>
-            <div className="p-5 md:p-14">
+            <div className="w-[20rem] flex justify-center">
               <div className="bg-black text-white p-4 md:p-8 flex flex-col gap-10">
                 <div className="flex flex-col gap-5">
                   <span>CUSTOMIZED REPORT SOLUTION</span>
@@ -119,6 +120,7 @@ const Report: React.FC<MyComponentProps> = ({ ind }) => {
                   </button>
                 </Link>
               </div>
+            </div>
             </div>
           </div>
         </div>
