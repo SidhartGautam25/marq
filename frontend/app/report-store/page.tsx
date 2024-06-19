@@ -5,7 +5,8 @@ import car from "@/public/assets/report.jpg";
 import { NavBar } from "../comp";
 import { useContext, useState } from "react";
 import { ReportContext, ReportContextType } from "@/app/context/reportContext";
-import Report from "../comp/report-two/Report";
+import Report from "../comp/report-two/Reporttwo";
+import Report2 from "../comp/report-two/Reporttwo";
 
 export default function Page() {
   const [industry, setIndustry] = useState("all");
@@ -28,10 +29,10 @@ export default function Page() {
         </div>
         <div className="flex justify-center mt-5">
           <span className="self-center text-2xl font-medium">
-            Latest Published Report
+            Latest Published Reports
           </span>
         </div>
-        <Report/>
+        <Report2 />
       </div>
     </>
   );
