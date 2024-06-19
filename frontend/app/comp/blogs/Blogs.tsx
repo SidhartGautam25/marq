@@ -3,8 +3,41 @@ import Image from "next/image";
 import blog2 from "@/public/blog2.png";
 import blog3 from "@/public/blog3.png";
 import blog4 from "@/public/blog4.png";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+interface Rep {
+  title: string;
+  linki: string;
+}
 
 export default function Blogs() {
+  const [report, setReports] = useState<Rep[]>([]);
+
+  const dev_url = "http://localhost:8800";
+  const prod_url = "https://admin-backend-1-ekoa.onrender.com";
+
+  let url = `${dev_url}/api/getall/pin-report`;
+
+  useEffect(() => {
+    const fetchReport = async () => {
+      try {
+        const daata = await axios.get(url);
+        if (daata) {
+          setReports([...daata.data.reports]);
+        }
+      } catch (err) {}
+    };
+    fetchReport();
+
+    // You can also return a cleanup function from useEffect
+    // This cleanup function will be executed before the component is unmounted or re-rendered
+    return () => {
+      // Code inside this cleanup function will run before the component is unmounted or re-rendered
+      // You can perform cleanup tasks here, such as unsubscribing from subscriptions or clearing timers
+    };
+  }, []);
+
   return (
     <div className="flex flex-col">
       <div className="flex flex-col md:flex-row">
