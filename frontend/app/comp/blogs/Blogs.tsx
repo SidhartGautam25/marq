@@ -21,6 +21,8 @@ export default function Blogs() {
   const prod_url = "https://admin-backend-1-ekoa.onrender.com";
 
   let url = `${dev_url}/api/getall/pinned-report`;
+  const [back, setBack] = useState("");
+  let background;
 
   let year1 = "",
     month1 = "",
@@ -47,6 +49,9 @@ export default function Blogs() {
           console.log("data in blog section is ", daata);
           let rep = daata.data.reports;
           setReport([...daata.data.reports]);
+          background = "bg-[url(" + daata.data.reports[0]?.linki + ")]";
+          setBack(daata.data.reports[0]?.linki);
+          console.log("background is ", background);
           if (rep.length >= 5) {
             year1 = rep[0].substring(0, 4);
             year2 = rep[1].substring(0, 4);
@@ -77,14 +82,18 @@ export default function Blogs() {
       <div className="flex flex-col md:flex-row">
         {/* 1st card */}
         <div className="overflow-hidden w-full md:w-1/2 h-[24rem] md:h-auto">
-          <div className=" w-full h-full flex flex-col-reverse group  bg-cover hover:scale-105 duration-1000">
-            <img
+          <div
+            style={{ backgroundImage: `url(${back})` }}
+            className="w-full h-full flex flex-col-reverse group   bg-cover hover:scale-105 duration-1000"
+          >
+            {/* <img
               src={report[0]?.linki}
               alt="blog1"
               className=" group-hover:scale-110 duration-1000  object-cover w-full h-full absolute flex justify-center mix-blend-overlay "
-            />
+            /> */}
+
             <div className=" bg-gradient-to-t from-white h-fit group-hover:translate-y-2 duration-1000 p-10 group-hover:text-blue-600 flex  flex-col ">
-              <span className="group-hover:text-blue-600 ">
+              <span className="group-hover:text-blue-600 text-black ">
                 {month1} {year1}
               </span>
               <h1 className="md:text-3xl text-xl font-medium group-hover:text-blue-600 ">
@@ -98,11 +107,11 @@ export default function Blogs() {
           {/* 2nd card */}
           <div className="relative group h-[60%] lg:flex">
             <div className=" overflow-hidden w-full md:w-1/2">
-              {/* <img
+              <img
                 src={report[1]?.linki}
                 className="duration-1000 group-hover:scale-110 h-full w-full"
                 alt="blog2"
-              /> */}
+              />
             </div>
             <div className="absolute bg-gradient-to-t from-black  md:bg-none bottom-0 md:static p-10 group-hover:translate-y-2 duration-1000  group-hover:text-blue-600 w-full md:w-1/2 flex justify-center flex-col">
               <span className="group-hover:text-blue-600 font-semibold  text-white md:text-black">
@@ -142,11 +151,11 @@ export default function Blogs() {
             </h1>
           </div>
           <div className=" overflow-hidden md:w-1/2">
-            {/* <img
-              src={report[2]?.linki}
+            <img
+              src={report[3]?.linki}
               className="group-hover:scale-110 h-full duration-1000"
               alt="blog3"
-            /> */}
+            />
           </div>
         </div>
 
@@ -169,11 +178,11 @@ export default function Blogs() {
             </div>
           </div>
           <div className="md:w-1/2 overflow-hidden">
-            {/* <img
-              src={report[3]?.linki}
+            <img
+              src={report[4]?.linki}
               className="group-hover:scale-110 duration-1000"
               alt="blog4"
-            /> */}
+            />
           </div>
         </div>
       </div>
