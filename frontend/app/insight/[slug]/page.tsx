@@ -81,9 +81,9 @@ export default function Page({ params }: { params: { slug: string } }) {
             />
           </Worker>
         </div>
-        <div className="flex-[2] flex flex-col gap-2 items-center">
-          <h1 className="text-3xl font-semibold uppercase text">Similar Insight</h1>
-          <div className="w-[80%] flex flex-col gap-5">
+        <div className="flex-[2] flex flex-col gap-5 items-center">
+          <h1 className="text-3xl font-semibold uppercase">Similar Insight</h1>
+          <div className="w-[85%] flex flex-col gap-5">
             <Insightcomp2 />
             <Insightcomp2 />
             <Insightcomp2 />
