@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Insightcomp2card() {
   return (
-    <div className="bg-stone-200 shadow-xl hover:scale-105 hover:shadow-2xl ease-in-out duration-300 shadow-gray-400 hover:shadow-gray-700">
+    <div className="bg-stone-200 shadow-md hover:scale-105 ease-in-out duration-300 shadow-gray-300">
       <Image
         src={ele}
         alt="ele"
