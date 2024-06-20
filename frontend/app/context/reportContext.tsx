@@ -23,6 +23,11 @@ type State = {
   cpage: any;
   linkt: any;
   linkf: any;
+  study?: any;
+  forcast?: any;
+  base?: any;
+  dataSuite?: any;
+  insightReport?: any;
 };
 
 const INITIAL_STATE: State = {
@@ -66,6 +71,26 @@ const INITIAL_STATE: State = {
     typeof window !== "undefined"
       ? localStorage.getItem("marq-rep-linkt") || null
       : null,
+  study:
+    typeof window !== "undefined"
+      ? localStorage.getItem("marq-rep-study") || null
+      : null,
+  base:
+    typeof window !== "undefined"
+      ? localStorage.getItem("marq-rep-base") || null
+      : null,
+  forcast:
+    typeof window !== "undefined"
+      ? localStorage.getItem("marq-rep-forcast") || null
+      : null,
+  dataSuite:
+    typeof window !== "undefined"
+      ? localStorage.getItem("marq-rep-dataSuite") || null
+      : null,
+  insightReport:
+    typeof window !== "undefined"
+      ? localStorage.getItem("marq-rep-insightReport") || null
+      : null,
 };
 
 export type ReportContextType = {
@@ -93,6 +118,11 @@ const Reducer = (state: State, action: Action): State => {
         subind: action.payload.subind,
         createdAt: action.payload.createdAt,
         cpage: 0,
+        study: action.payload.study,
+        base: action.payload.base,
+        forcast: action.payload.forcast,
+        dataSuite: action.payload.dataSuite,
+        insightReport: action.payload.insightReport,
       };
     case "SET_CURR_PAGE":
       return {
@@ -106,6 +136,11 @@ const Reducer = (state: State, action: Action): State => {
         cpage: action.payload.page,
         linkt: action.payload.linkt,
         linkf: action.payload.linkf,
+        study: action.payload.study,
+        base: action.payload.base,
+        forcast: action.payload.forcast,
+        dataSuite: action.payload.dataSuite,
+        insightReport: action.payload.insightReport,
       };
     default:
       return state;
@@ -126,6 +161,11 @@ export const ReportContextProvider: React.FC<ReportProviderProps> = ({
     cpage: 0,
     linkf: "",
     linkt: "",
+    study: "",
+    base: "",
+    forcast: "",
+    dataSuite: "",
+    insightReport: "",
   };
 
   const [state, dispatch] = useReducer(Reducer, INITIAL_STATE);
@@ -141,6 +181,11 @@ export const ReportContextProvider: React.FC<ReportProviderProps> = ({
     localStorage.setItem("reportpage", state.cpage);
     localStorage.setItem("marq-rep-linkt", state.linkt);
     localStorage.setItem("marq-rep-linkf", state.linkf);
+    localStorage.setItem("marq-rep-study", state.study);
+    localStorage.setItem("marq-rep-base", state.base);
+    localStorage.setItem("marq-rep-forcast", state.forcast);
+    localStorage.setItem("marq-rep-forcast", state.dataSuite);
+    localStorage.setItem("marq-rep-forcast", state.insightReport);
   }, [state]);
 
   // Here, we're casting the value to UserContextType because we're certain it matches the shape
