@@ -128,7 +128,7 @@ export default function Report2() {
               </div>
             </div>
             <div className="p-5 md:p-14">
-              <div className="bg-black text-white p-4 md:p-8 flex flex-col gap-10">
+              <div className="bg-black text-white p-6 md:p-8 flex flex-col gap-10 items-center">
                 <div className="flex flex-col gap-5">
                   <span>CUSTOMIZED REPORT SOLUTION</span>
                   <p>

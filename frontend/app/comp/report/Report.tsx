@@ -124,7 +124,7 @@ const Report: React.FC<MyComponentProps> = ({ ind }) => {
     <>
       <div className="main bg-gray-100 p-3 md:p-0">
         <div className="main2 mt-8 md:flex sm:flex md:mt-10 flex-row-reverse">
-          <div className="right flex-[10] flex flex-col gap-3 bg-blue-100 p-3 md:mr-8">
+          <div className="right flex-[2] flex flex-col gap-3 bg-blue-100 p-3 md:mr-8">
             {loading && (
               <div className="flex justify-center mt-4">
                 <Image src={load} alt="load gif" className="w-[4rem]" />
@@ -160,7 +160,7 @@ const Report: React.FC<MyComponentProps> = ({ ind }) => {
               </button>
             </div>
           </div>
-          <div className="left flex-[4] flex justify-center">
+          <div className="left flex-[1] flex justify-center">
             <div className="w-[80%] flex flex-col gap-11 items-center pb-6">
             <div className="">
               <div className="titel flex justify-center text-2xl font-semibold">
@@ -182,8 +182,8 @@ const Report: React.FC<MyComponentProps> = ({ ind }) => {
                 })}
               </div>
             </div>
-            <div className="w-[20rem] flex justify-center">
-              <div className="bg-black text-white p-4 md:p-8 flex flex-col gap-10">
+            <div className="p-5 md:p-14">
+              <div className="bg-black text-white p-6 md:p-8 flex flex-col gap-10 items-center">
                 <div className="flex flex-col gap-5">
                   <span>CUSTOMIZED REPORT SOLUTION</span>
                   <p>

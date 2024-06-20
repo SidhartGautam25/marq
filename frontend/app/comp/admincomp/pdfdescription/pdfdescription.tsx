@@ -45,28 +45,28 @@ const PdfDescription: React.FC<DynamicProps> = ({ rep }) => {
 
   return (
     <NoSSR>
-      <div className="h-[500px] flex ">
-        <div className="w-1/2 px-8 flex justify-center flex-col border-2 bg-slate-50">
-          <div className="w-[100px] h-[10px] bg-red-500"></div>
+      <div className="md:h-[500px] flex flex-col md:flex-row md:gap-0 gap-6 ">
+        <div className="flex-[1] md:px-8 px-3 flex justify-center flex-col md:border-2 md:bg-slate-50">
+          <div className="w-[100px] h-[10px] bg-red-500 md:mt-1 mt-10"></div>
           <div className="my-8 font-bold text-3xl ">{rep?.title}</div>
           <div className="my-4">{rep?.desc}</div>
           <div className=" border-t-2 border-gray-300 my-4 font-extralight"></div>
-          <div className="bg-blue-400 p-3 w-[10rem] text-white flex justify-center items-center rounded-sm">
+          <div className="bg-blue-400 p-3 w-[10rem] text-white flex justify-center items-center rounded-sm mb-5 md:mb-1">
             <span>
               {month} {year}{" "}
             </span>
           </div>
         </div>
-        <div className="w-1/2 px-6 py-6 bg-blue-200">
+        <div className="flex-[1] md:px-0 md:py-0 bg-blue-200">
           <div
-            className="h-3/5 flex items-center justify-center"
+            className="md:h-3/5 h-[15rem] flex items-center justify-center"
             style={{
               backgroundImage: `url(${rep?.linki})`,
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
             }}
           ></div>
-          <div className="h-2/5 pt-2">
+          <div className="h-2/5 pt-2 flex flex-col gap-3 p-3 md:p-5">
             <span className="text-black">Choose your best option</span>
             <div className="flex items-center space-x-4 mb-4">
               {options.map((option, i) => (
