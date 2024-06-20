@@ -166,8 +166,7 @@ export default function Blogs() {
                 {month3} {year3}
               </div>
               <h1 className="text-xl group-hover:text-blue-600 ">
-                Marqstats is ecosystem of strategic alliances brings the power
-                of generative AI to clients
+                {report[2]?.title}
               </h1>
             </div>
           </div>
@@ -187,8 +186,7 @@ export default function Blogs() {
               {month4} {year4}
             </span>
             <h1 className="text-xl group-hover:text-blue-600 ">
-              Marqstats convenes leaders to prepare for AI effect on New York
-              region and beyond
+              {report[3]?.title}
             </h1>
           </div>
           <div className=" overflow-hidden md:w-1/2">
@@ -213,8 +211,7 @@ export default function Blogs() {
                 {month5} {year5}
               </span>
               <h1 className="text-xl group-hover:text-blue-600 ">
-                Marqstats and Celonis bring the power of process mining to
-                business transformations
+                {report[4]?.title}
               </h1>
             </div>
             <div className=" flex bg-blue-600 hover:bg-blue-700 p-5 w-full">
