@@ -40,7 +40,7 @@ function Pdfren() {
       <div className="md:mt-7">
         <PdfDescription rep={state} />
       </div>
-      <div className="flex">
+      <div className="flex justify-center">
         <div className="flex justify-between mt-5 md:mt-10 mb-5 md:mb-10 border-2 border-black cursor-pointer border-l-0 items-center md:font-bold">
           <div
             className={`flex justify-center items-center py-2 ease-in-out duration-700 md:w-[235px] border-r border-l-2 border-black ${num===1?"bg-slate-700 text-white":"bg-white text-black"} md:p-3 p-[5px] text-[11px] md:text-[15px]`}
