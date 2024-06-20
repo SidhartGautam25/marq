@@ -1,9 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ReportContext, ReportContextType } from "@/app/context/reportContext";
+import { useContext } from "react";
 import axios from "axios";
 import { convert } from "@/app/utility/subind";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface Rep {
   title: string;
@@ -31,6 +34,27 @@ export default function Blogs() {
   let url = `${dev_url}/api/getall/pinned-report`;
   const [back, setBack] = useState("");
   let background;
+  const { state, dispatch } = useContext(ReportContext) as ReportContextType;
+  const router = useRouter();
+  function clickfun(rep: Record<string, any>) {
+    dispatch({
+      type: "SET_CURRENT",
+      payload: {
+        title: rep.title,
+        desc: rep.desc,
+        linki: rep.linki,
+        linkp: rep.linkp,
+        createdAt: rep.createdAt,
+        industry: rep.industry,
+        subind: rep.subind,
+        linkt: rep.linkt,
+        linkf: rep.linkf,
+        cpage: 0,
+      },
+    });
+    let temp = rep.title.replace(/\s/g, "-");
+    router.push(`/report/${temp}`);
+  }
 
   // const date = rep.createdAt;
   // const year = date?.substring(0, 4);
@@ -50,12 +74,11 @@ export default function Blogs() {
           setBack(daata.data.reports[0]?.linki);
           // console.log("background is ", rep.length);
           if (rep.length > 4) {
-          
-            setyear1(rep[0].createdAt.substring(0, 4))
-            setyear2(rep[1].createdAt.substring(0, 4))
-            setyear3(rep[2].createdAt.substring(0, 4))
-            setyear4(rep[3].createdAt.substring(0, 4))
-            setyear5(rep[4].createdAt.substring(0, 4))
+            setyear1(rep[0].createdAt.substring(0, 4));
+            setyear2(rep[1].createdAt.substring(0, 4));
+            setyear3(rep[2].createdAt.substring(0, 4));
+            setyear4(rep[3].createdAt.substring(0, 4));
+            setyear5(rep[4].createdAt.substring(0, 4));
             setmonth1(convert(rep[0].createdAt.substring(5, 7)));
             setmonth2(convert(rep[1].createdAt.substring(5, 7)));
             setmonth3(convert(rep[2].createdAt.substring(5, 7)));
@@ -79,7 +102,12 @@ export default function Blogs() {
     <div className="flex flex-col">
       <div className="flex flex-col md:flex-row">
         {/* 1st card */}
-        <div className="overflow-hidden w-full md:w-1/2 h-[24rem] md:h-auto">
+        <div
+          className="overflow-hidden w-full md:w-1/2 h-[24rem] md:h-auto"
+          onClick={() => {
+            clickfun(report[0]);
+          }}
+        >
           <div
             style={{ backgroundImage: `url(${back})` }}
             className="w-full h-full flex flex-col-reverse group   md:bg-cover hover:scale-105 duration-1000 bg-contain"
@@ -103,7 +131,12 @@ export default function Blogs() {
         {/* 2nd card and 3rd card */}
         <div className=" w-full md:w-1/2 lg:flex lg:flex-col">
           {/* 2nd card */}
-          <div className="relative group h-[60%] lg:flex">
+          <div
+            className="relative group h-[60%] lg:flex"
+            onClick={() => {
+              clickfun(report[1]);
+            }}
+          >
             <div className=" overflow-hidden w-full md:w-1/2">
               <img
                 src={report[1]?.linki}
@@ -122,7 +155,12 @@ export default function Blogs() {
           </div>
 
           {/* 3rd card */}
-          <div className="group md:h-[40%] h-auto w-full bg-[#1b1f29] text-white lg:flex lg:flex-col justify-center">
+          <div
+            className="group md:h-[40%] h-auto w-full bg-[#1b1f29] text-white lg:flex lg:flex-col justify-center"
+            onClick={() => {
+              clickfun(report[2]);
+            }}
+          >
             <div className="lg:w-1/2 p-10 duration-1000 group-hover:translate-y-2 group-hover:text-blue-600">
               <div className="pt-40 md:pt-0 font-bold group-hover:text-blue-600 mb-3 md:text-xl text-sm">
                 {month3} {year3}
@@ -138,7 +176,12 @@ export default function Blogs() {
 
       <div className="md:h-[400px] h-auto flex md:flex-row flex-col">
         {/* 4th card */}
-        <div className="flex md:w-1/2 w-full group md:flex-row overflow-hidden flex-col-reverse relative">
+        <div
+          className="flex md:w-1/2 w-full group md:flex-row overflow-hidden flex-col-reverse relative"
+          onClick={() => {
+            clickfun(report[3]);
+          }}
+        >
           <div className=" md:bg-none absolute md:static bg-gradient-to-t from-black text-white md:text-black justify-center  duration-1000 p-10 group-hover:translate-y-2 group-hover:text-blue-600 flex flex-col md:w-1/2 z-50">
             <span className=" font-semibold group-hover:text-blue-600 md:text-xl text-sm  mb-3">
               {month4} {year4}
@@ -160,9 +203,14 @@ export default function Blogs() {
         {/* 5th card */}
         <div className="relative group md:w-1/2 flex overflow-hidden  md:flex-row flex-col-reverse">
           <div className="flex flex-col md:w-1/2 justify-end absolute bg-gradient-to-t from-white md:static text-white md:text-black z-50">
-            <div className="p-10 group-hover:translate-y-2 duration-1000 flex flex-col">
+            <div
+              className="p-10 group-hover:translate-y-2 duration-1000 flex flex-col"
+              onClick={() => {
+                clickfun(report[4]);
+              }}
+            >
               <span className="font-semibold group-hover:text-blue-600 md:text-xl text-sm mb-3">
-              {month5} {year5}
+                {month5} {year5}
               </span>
               <h1 className="text-xl group-hover:text-blue-600 ">
                 Marqstats and Celonis bring the power of process mining to
@@ -171,9 +219,9 @@ export default function Blogs() {
             </div>
             <div className=" flex bg-blue-600 hover:bg-blue-700 p-5 w-full">
               <Link href="/report-store">
-              <button className="px-5 text-white font-semibold flex gap-3">
-                Read more on our Blog <span>-{">"} </span>
-              </button>
+                <button className="px-5 text-white font-semibold flex gap-3">
+                  Read more on our Blog <span>-{">"} </span>
+                </button>
               </Link>
             </div>
           </div>
