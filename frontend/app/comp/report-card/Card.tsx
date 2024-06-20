@@ -34,6 +34,9 @@ const Card: React.FC<RepProps> = ({ rep }) => {
         linkt: rep.linkt,
         linkf: rep.linkf,
         cpage: 0,
+        study: rep.study,
+        base: rep.base,
+        forcast: rep.forcast,
       },
     });
     let temp = rep.title.replace(/\s/g, "-");
@@ -56,9 +59,7 @@ const Card: React.FC<RepProps> = ({ rep }) => {
           <div className="w-full ">
             {/* <Image src={img1} alt="" className="md:w-full object-contain md:object-cover  h-[15rem] md:h-[18rem]  inline-block"/> */}
             <div className=" p-8 bg-white opacity-80 w-full">
-              <div className="text-[13px]">
-              {rep.title}
-              </div>
+              <div className="text-[13px]">{rep.title}</div>
               <div className="h-[1px] w-full bg-black mt-2"></div>
             </div>
             <span className=" p-3 bg-blue-500 absolute bottom-0 right-0">
@@ -72,9 +73,9 @@ const Card: React.FC<RepProps> = ({ rep }) => {
             <div className="md:line-clamp-4 line-clamp-3">{rep.desc}</div>
           </div>
           <div className=" text-gray-900 flex flex-col justify-center bg-white items-center">
-            <div className="">Study Period: 2019-2029</div>
-            <div className="">Base Year: 2023</div>
-            <div className="">Forecost Period: 2024-2030</div>
+            <div className="">Study Period: {rep.study}</div>
+            <div className="">Base Year: {rep.base}</div>
+            <div className="">Forecost Period: {rep.forcast}</div>
           </div>
         </div>
       </div>
