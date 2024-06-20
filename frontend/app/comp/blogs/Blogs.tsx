@@ -1,12 +1,9 @@
 "use client";
-import Image from "next/image";
-// import blog1 from "@/public/blog1.png";
-import blog2 from "@/public/blog2.png";
-import blog3 from "@/public/blog3.png";
-import blog4 from "@/public/blog4.png";
+
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { convert } from "@/app/utility/subind";
+import Link from "next/link";
 
 interface Rep {
   title: string;
@@ -16,6 +13,17 @@ interface Rep {
 
 export default function Blogs() {
   const [report, setReport] = useState<Rep[]>([]);
+  //year and month states
+  const [year1, setyear1] = useState<string>("");
+  const [month1, setmonth1] = useState<string>("");
+  const [year2, setyear2] = useState<string>("");
+  const [month2, setmonth2] = useState<string>("");
+  const [year3, setyear3] = useState<string>("");
+  const [month3, setmonth3] = useState<string>("");
+  const [year4, setyear4] = useState<string>("");
+  const [month4, setmonth4] = useState<string>("");
+  const [year5, setyear5] = useState<string>("");
+  const [month5, setmonth5] = useState<string>("");
 
   const dev_url = "http://localhost:8800";
   const prod_url = "https://admin-backend-1-ekoa.onrender.com";
@@ -23,17 +31,6 @@ export default function Blogs() {
   let url = `${dev_url}/api/getall/pinned-report`;
   const [back, setBack] = useState("");
   let background;
-
-  let year1 = "",
-    month1 = "",
-    year2 = "",
-    month2 = "",
-    year3 = "",
-    month3 = "",
-    year4 = "",
-    month4 = "",
-    year5 = "",
-    month5 = "";
 
   // const date = rep.createdAt;
   // const year = date?.substring(0, 4);
@@ -51,18 +48,19 @@ export default function Blogs() {
           setReport([...daata.data.reports]);
           background = "bg-[url(" + daata.data.reports[0]?.linki + ")]";
           setBack(daata.data.reports[0]?.linki);
-          console.log("background is ", background);
-          if (rep.length >= 5) {
-            year1 = rep[0].substring(0, 4);
-            year2 = rep[1].substring(0, 4);
-            year3 = rep[2].substring(0, 4);
-            year4 = rep[3].substring(0, 4);
-            year5 = rep[4].substring(0, 4);
-            month1 = convert(rep[0].substring(5, 7));
-            month2 = convert(rep[1].substring(5, 7));
-            month3 = convert(rep[2].substring(5, 7));
-            month4 = convert(rep[3].substring(5, 7));
-            month5 = convert(rep[5].substring(5, 7));
+          // console.log("background is ", rep.length);
+          if (rep.length > 4) {
+          
+            setyear1(rep[0].createdAt.substring(0, 4))
+            setyear2(rep[1].createdAt.substring(0, 4))
+            setyear3(rep[2].createdAt.substring(0, 4))
+            setyear4(rep[3].createdAt.substring(0, 4))
+            setyear5(rep[4].createdAt.substring(0, 4))
+            setmonth1(convert(rep[0].createdAt.substring(5, 7)));
+            setmonth2(convert(rep[1].createdAt.substring(5, 7)));
+            setmonth3(convert(rep[2].createdAt.substring(5, 7)));
+            setmonth4(convert(rep[3].createdAt.substring(5, 7)));
+            setmonth5(convert(rep[4].createdAt.substring(5, 7)));
           }
         }
       } catch (err) {}
@@ -84,7 +82,7 @@ export default function Blogs() {
         <div className="overflow-hidden w-full md:w-1/2 h-[24rem] md:h-auto">
           <div
             style={{ backgroundImage: `url(${back})` }}
-            className="w-full h-full flex flex-col-reverse group   bg-cover hover:scale-105 duration-1000"
+            className="w-full h-full flex flex-col-reverse group   md:bg-cover hover:scale-105 duration-1000 bg-contain"
           >
             {/* <img
               src={report[0]?.linki}
@@ -93,7 +91,7 @@ export default function Blogs() {
             /> */}
 
             <div className=" bg-gradient-to-t from-white h-fit group-hover:translate-y-2 duration-1000 p-10 group-hover:text-blue-600 flex  flex-col ">
-              <span className="group-hover:text-blue-600 text-black ">
+              <span className="group-hover:text-blue-600 text-black font-bold md:text-xl text-sm  mb-3">
                 {month1} {year1}
               </span>
               <h1 className="md:text-3xl text-xl font-medium group-hover:text-blue-600 ">
@@ -114,7 +112,7 @@ export default function Blogs() {
               />
             </div>
             <div className="absolute bg-gradient-to-t from-black  md:bg-none bottom-0 md:static p-10 group-hover:translate-y-2 duration-1000  group-hover:text-blue-600 w-full md:w-1/2 flex justify-center flex-col">
-              <span className="group-hover:text-blue-600 font-semibold  text-white md:text-black">
+              <span className="group-hover:text-blue-600 font-semibold  text-white md:text-black md:text-xl text-sm  mb-3">
                 {month2} {year2}
               </span>
               <h1 className="group-hover:text-blue-600 text-xl text-white md:text-black">
@@ -126,7 +124,7 @@ export default function Blogs() {
           {/* 3rd card */}
           <div className="group md:h-[40%] h-auto w-full bg-[#1b1f29] text-white lg:flex lg:flex-col justify-center">
             <div className="lg:w-1/2 p-10 duration-1000 group-hover:translate-y-2 group-hover:text-blue-600">
-              <div className="pt-40 md:pt-0 font-semibold group-hover:text-blue-600 ">
+              <div className="pt-40 md:pt-0 font-bold group-hover:text-blue-600 mb-3 md:text-xl text-sm">
                 {month3} {year3}
               </div>
               <h1 className="text-xl group-hover:text-blue-600 ">
@@ -141,9 +139,9 @@ export default function Blogs() {
       <div className="md:h-[400px] h-auto flex md:flex-row flex-col">
         {/* 4th card */}
         <div className="flex md:w-1/2 w-full group md:flex-row overflow-hidden flex-col-reverse relative">
-          <div className=" md:bg-none absolute md:static bg-gradient-to-t from-black text-white md:text-black justify-center  duration-1000 p-10 group-hover:translate-y-2 group-hover:text-blue-600 flex flex-col md:w-1/2">
-            <span className=" font-semibold group-hover:text-blue-600 ">
-              March 26,2024
+          <div className=" md:bg-none absolute md:static bg-gradient-to-t from-black text-white md:text-black justify-center  duration-1000 p-10 group-hover:translate-y-2 group-hover:text-blue-600 flex flex-col md:w-1/2 z-50">
+            <span className=" font-semibold group-hover:text-blue-600 md:text-xl text-sm  mb-3">
+              {month4} {year4}
             </span>
             <h1 className="text-xl group-hover:text-blue-600 ">
               Marqstats convenes leaders to prepare for AI effect on New York
@@ -153,7 +151,7 @@ export default function Blogs() {
           <div className=" overflow-hidden md:w-1/2">
             <img
               src={report[3]?.linki}
-              className="group-hover:scale-110 h-full duration-1000"
+              className="group-hover:scale-110 h-full duration-1000 md:w-full"
               alt="blog3"
             />
           </div>
@@ -161,10 +159,10 @@ export default function Blogs() {
 
         {/* 5th card */}
         <div className="relative group md:w-1/2 flex overflow-hidden  md:flex-row flex-col-reverse">
-          <div className="flex flex-col md:w-1/2 justify-end absolute bg-gradient-to-t from-white md:static text-white md:text-black">
+          <div className="flex flex-col md:w-1/2 justify-end absolute bg-gradient-to-t from-white md:static text-white md:text-black z-50">
             <div className="p-10 group-hover:translate-y-2 duration-1000 flex flex-col">
-              <span className="font-semibold group-hover:text-blue-600 ">
-                March 15,2024
+              <span className="font-semibold group-hover:text-blue-600 md:text-xl text-sm mb-3">
+              {month5} {year5}
               </span>
               <h1 className="text-xl group-hover:text-blue-600 ">
                 Marqstats and Celonis bring the power of process mining to
@@ -172,15 +170,17 @@ export default function Blogs() {
               </h1>
             </div>
             <div className=" flex bg-blue-600 hover:bg-blue-700 p-5 w-full">
-              <button className="px-5 text-white font-semibold">
+              <Link href="/report-store">
+              <button className="px-5 text-white font-semibold flex gap-3">
                 Read more on our Blog <span>-{">"} </span>
               </button>
+              </Link>
             </div>
           </div>
           <div className="md:w-1/2 overflow-hidden">
             <img
               src={report[4]?.linki}
-              className="group-hover:scale-110 duration-1000"
+              className="group-hover:scale-110 duration-1000 md:h-full md:w-full"
               alt="blog4"
             />
           </div>

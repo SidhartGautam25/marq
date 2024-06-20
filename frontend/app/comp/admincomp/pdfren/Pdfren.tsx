@@ -37,48 +37,48 @@ function Pdfren() {
 
   return (
     <div className="w-full">
-      <div className="">
+      <div className="md:mt-7">
         <PdfDescription rep={state} />
       </div>
-      <div className="flex justify-center">
-        <div className="flex justify-between p-4">
-          <button
-            className="w-[235px] border bg-slate-700 p-3 text-white"
+      <div className="flex">
+        <div className="flex justify-between mt-5 md:mt-10 mb-5 md:mb-10 border-2 border-black cursor-pointer border-l-0 items-center md:font-bold">
+          <div
+            className={`flex justify-center items-center py-2 ease-in-out duration-700 md:w-[235px] border-r border-l-2 border-black ${num===1?"bg-slate-700 text-white":"bg-white text-black"} md:p-3 p-[5px] text-[11px] md:text-[15px]`}
             onClick={() => {
               click(1);
             }}
           >
             Report Description
-          </button>
-          <button
-            className="w-[235px] border bg-slate-700 p-3 text-white"
+          </div>
+          <div
+            className={`flex justify-center items-center py-2 ease-in-out duration-700 md:w-[235px] border-r border-l border-black ${num===2?"bg-slate-700 text-white":"bg-white text-black"} md:p-3 p-[5px] text-[11px] md:text-[15px]`}
             onClick={() => {
               click(2);
             }}
           >
             Table of Contents
-          </button>
-          <button
-            className="w-[235px] border bg-slate-700 p-3 text-white"
+          </div>
+          <div
+            className={`flex justify-center items-center py-2 ease-in-out duration-700 md:w-[235px] border-r border-l border-black ${num===3?"bg-slate-700 text-white":"bg-white text-black"} md:p-3 p-[5px] text-[11px] md:text-[15px]`}
             onClick={() => {
               click(3);
             }}
           >
             FAQs
-          </button>
-          <button
-            className="w-[235px] border bg-slate-700 p-3 text-white"
+          </div>
+          <div
+            className={`flex justify-center items-center py-2 ease-in-out duration-700 md:w-[235px] border-l border-black ${num===4?"bg-slate-700 text-white":"bg-white text-black"} md:p-3 p-[5px] text-[11px] md:text-[15px]`}
             onClick={() => {
               click(4);
             }}
           >
             Request Sample
-          </button>
+          </div>
         </div>
       </div>
       {num == 4 ? <Form /> : <span></span>}
       <div className="flex w-full">
-        <div className="border w-full">
+        <div className="md:border w-full">
           {/* {state.cid && reports ? `${reports[state.cid].link1}` : "nothing"} */}
 
           {num != 4 ? (
