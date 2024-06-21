@@ -266,10 +266,10 @@ export default function Insight() {
   }, [page]);
 
   return (
-    <div className="min-h-screen bg-gray-100 py-12">
+    <div className="min-h-screen bg-gray-100 md:py-12 py-5">
       <div className="container mx-auto px-4">
-        <div className="w-2/5 mx-20 border-2 border-gray-600 p-3">
-          <h2 className="text-xl font-bold text-center mb-8">
+        <div className="md:w-2/5 md:mx-20 border-2 border-gray-600 p-3">
+          <h2 className="md:text-xl text-[12px] font-bold text-center mb-8">
             LATEST INSIGHTS FROM MARQSTATS
           </h2>
           <div className="flex justify-center space-x-4 mb-8">
@@ -282,7 +282,7 @@ export default function Insight() {
               
             </select> */}
             <select
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 text-[9px] md:text-sm"
               id="industry"
               value={selectedOption}
               onChange={(e) => handleChangeIndustry(e.target.value)}
@@ -295,7 +295,7 @@ export default function Insight() {
               ))}
             </select>
             <select
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 text-[9px] md:text-sm"
               id="sub-industry"
               value={subIndustryOption}
               onChange={(e) => handleChangeSubIndustry(e.target.value)}
@@ -310,11 +310,11 @@ export default function Insight() {
             </select>
           </div>
         </div>
-        <div className="flex flex-wrap justify-center">
+        <div className="flex flex-wrap justify-center gap-5 mt-5">
           {blogs.map((insight, index) => (
             <div
               key={index}
-              className="p-4"
+              className=""
               onClick={() => {
                 router.push(`/insight/${insight.title}`);
               }}

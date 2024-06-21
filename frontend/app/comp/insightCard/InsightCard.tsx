@@ -14,23 +14,24 @@ const InsightCard: React.FC<InsightCardProps> = ({
   category,
 }) => {
   return (
-    <div className="max-w-sm flex gap-4 flex-col rounded overflow-hidden shadow-lg">
+    <div className=" flex gap-2 flex-col md:w-[435px] shadow-lg">
       <img
-        className="w-full"
+        className="w-full md:h-[360px] h-[250px] object-cover"
         src={imageSrc}
         alt={title}
         width={500}
         height={400}
       />
-      <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">{title}</div>
+      <div className="p-4 flex flex-col gap-5">
+        <div className="font-bold text-[18px] line-clamp-2 text-gray-600">{title}</div>
         {/* <p className="text-gray-700 text-base">{description}</p> */}
-      </div>
-      <div className="px-6 pt-4 pb-8">
-        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+        <div className="mt-5 mb-2">
+        <span className=" bg-gray-200 rounded-full  font-semibold text-gray-700 px-5 py-2">
           {category}
         </span>
       </div>
+      </div>
+      
     </div>
   );
 };
