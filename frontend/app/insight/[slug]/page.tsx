@@ -10,6 +10,8 @@ import { Viewer } from "@react-pdf-viewer/core";
 import "@react-pdf-viewer/toolbar/lib/styles/index.css";
 // Import the styles
 import "@react-pdf-viewer/core/lib/styles/index.css";
+import { useContext } from "react";
+import { BlogContext, BlogContextType } from "@/app/context/blogContext";
 
 interface BlogInt {
   title: string;
@@ -25,6 +27,8 @@ export default function Page({ params }: { params: { slug: string } }) {
   console.log("blog is ", blog);
   let pdfurl = blog.linkp;
   // let daata;
+  const { state, dispatch } = useContext(BlogContext) as BlogContextType;
+  console.log("state in insigth of a specific iis ", state);
 
   useEffect(() => {
     // Code inside this function will run after every render
@@ -35,14 +39,20 @@ export default function Page({ params }: { params: { slug: string } }) {
     const prod_url = "https://admin-backend-1-ekoa.onrender.com";
     const fetchReport = async () => {
       console.log("fetch report called");
-      let url = `${dev_url}/api/getall/blog?title=${params.slug}`;
+      console.log(
+        "params slug is  in insight is ",
+        decodeURIComponent(params.slug)
+      );
+      let url = `${dev_url}/api/getall/blog?title=${decodeURIComponent(
+        params.slug
+      )}`;
 
       //let url = `${dev_url}/api/getall/reports?industry=${ind}&page=${page}&subind=${query}`;
 
       try {
         console.log("request sent");
         const daata = await axios.get(url);
-        console.log("data is ", daata.data[0].title);
+        console.log("data is in insgiht ", daata);
         setBlog({
           title: daata.data[0].title,
           linkp: daata.data[0].linkp,
@@ -64,14 +74,18 @@ export default function Page({ params }: { params: { slug: string } }) {
       <div className="bg-gray-800">
         <NavBar />
       </div>
-      {console.log("before going ", blog.title)}
-      <Insightcom1 title={blog.title} linkp={blog.linkp} linkt={blog.linkt} />
+      {console.log("before going ", state.ctitle)}
+      <Insightcom1
+        title={blog.title}
+        linkp={state.clinkp}
+        linkt={state.clinkt}
+      />
       <div className="flex">
         <div className="flex-[6]">
           <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
             <Viewer
               fileUrl={
-                pdfurl
+                state.clinp
                   ? pdfurl
                   : "https://res.cloudinary.com/dkzpbucfz/image/upload/v1713940823/pics/lu1fo2x4kk4v9qmd5r6s.pdf"
               }

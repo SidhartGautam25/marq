@@ -1,8 +1,16 @@
+"use client";
 import Image from "next/image";
 import { Footer, Insight, NavBar } from "../comp";
 import Slide1 from "@/public/buss1.jpg";
 import Insi from "@/public/insi.png";
+
+import { BlogContext, BlogContextType } from "../context/blogContext";
+import { useContext } from "react";
+// import { BlogContext, BlogContextType } from "@/app/context/blogContext";
+
 export default function Home() {
+  const { state, dispatch } = useContext(BlogContext) as BlogContextType;
+
   return (
     <div className="">
       <div className=" bg-gray-900">
@@ -20,8 +28,8 @@ export default function Home() {
       <hr className="w-full h-[2px] my-6 bg-gray-400" />
       <div className="flex flex-col md:flex-row items-center bg-white p-8">
         <div className="md:w-1/2 w-full">
-          <Image
-            src={Insi}
+          <img
+            src={state.linkt}
             alt="Featured Insight"
             width={700}
             height={300}
@@ -30,11 +38,9 @@ export default function Home() {
         </div>
         <div className="md:w-1/2 w-full md:pl-8 pl-0 mt-4 md:mt-0">
           <h4 className="text-sm font-semibold text-gray-500">
-            Featured Insight
+            Latest Insight
           </h4>
-          <h2 className="text-3xl font-bold mt-2">
-            CLIMATE ACTION AT SCALE — TACKLING OBSTACLES AND DRIVING CHANGE
-          </h2>
+          <h2 className="text-3xl font-bold mt-2">{state.title}</h2>
           <p className="text-lg text-gray-700 mt-4">
             Aligning corporate and climate interests
           </p>

@@ -11,6 +11,7 @@ interface Bloog {
 
 const Insightcom1: React.FC<Bloog> = ({ title, linkp, linkt }) => {
   console.log("title is in is comp1 ", title);
+  console.log("image is in insightcom1 component ", linkt);
   return (
     <div className="">
       <div className="relative flex justify-center items-center">
