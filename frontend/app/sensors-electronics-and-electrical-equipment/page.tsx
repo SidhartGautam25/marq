@@ -12,7 +12,7 @@ export default function Page() {
         <NavBar />
         <div className="main bg-gray-100">
           <Industry imgs={ele.src} para={str} heading={head} />
-          {/* <Report /> */}
+          <Report ind={head}/>
         </div>
       </div>
     </>

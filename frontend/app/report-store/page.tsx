@@ -1,13 +1,15 @@
 "use client";
 import Image from "next/image";
 import car from "@/public/assets/report.jpg";
-import Report from "../../comp/report/Report";
-import { NavBar } from "../../comp";
+
+import { NavBar } from "../comp";
 import { useContext, useState } from "react";
 import { ReportContext, ReportContextType } from "@/app/context/reportContext";
+import Report from "../comp/report-two/Reporttwo";
+import Report2 from "../comp/report-two/Reporttwo";
 
-export default function Page({ params }: { params: { slug: string } }) {
-  const [industry, setIndustry] = useState(params.slug);
+export default function Page() {
+  const [industry, setIndustry] = useState("all");
   console.log("industry is   ", industry);
 
   const { state, dispatch } = useContext(ReportContext) as ReportContextType;
@@ -27,10 +29,10 @@ export default function Page({ params }: { params: { slug: string } }) {
         </div>
         <div className="flex justify-center mt-5">
           <span className="self-center text-2xl font-medium">
-            Latest Published Report
+            Latest Published Reports
           </span>
         </div>
-        <Report ind={industry} />
+        <Report2 />
       </div>
     </>
   );

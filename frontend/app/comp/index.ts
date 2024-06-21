@@ -17,17 +17,22 @@ import ServiceHero from "./serviceHero/ServiceHero";
 import ServiceOffer from "./serviceOffer/ServiceOffer";
 
 import Blogs from "./blogs/Blogs";
-
-
-
+import InsightCard from "./insightCard/InsightCard";
+import Insight from "./insight/Insight";
 import Industryser from "./industryser/Industryser";
 import Automative from "./automative/Automative";
 import Ict from "./ict/Ict";
 import Marketass from "./marketass/Marketass";
 import DataResources from "./dataResources/DataResources";
 import Conserv from "./conserv/Conserv";
+import Insightcom1 from "./insightcom1/Insightcom1";
+import Insightcomp2 from "./insightcomp2/Insightcomp2";
 
 export {
+  Insightcomp2,
+  Insightcom1,
+  InsightCard,
+  Insight,
   Marketass,
   Conserv,
   NavBar,

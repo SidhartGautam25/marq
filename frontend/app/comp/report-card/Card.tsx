@@ -31,31 +31,35 @@ const Card: React.FC<RepProps> = ({ rep }) => {
         createdAt: rep.createdAt,
         industry: rep.industry,
         subind: rep.subind,
+        linkt: rep.linkt,
+        linkf: rep.linkf,
         cpage: 0,
+        study: rep.study,
+        base: rep.base,
+        forcast: rep.forcast,
       },
     });
-    router.push(
-      `/report/automotive/${rep.industry}/${rep.subind}/${rep.title}`
-    );
+    let temp = rep.title.replace(/\s/g, "-");
+    router.push(`/report/${temp}`);
   }
 
   return (
     <>
       <div
-        className="card md:flex bg-gray-100 rounded-[5px] md:rounded-br-[4rem] border-2 border-black"
+        className="card md:flex bg-gray-100 rounded-[5px] md:rounded-br-[4rem] border-2 border-black md:h-[17rem]"
         onClick={clickfun}
       >
         <div
-          className="left relative md:flex-[6] overflow-hidden  md:flex md:items-center p-3 "
+          className="left relative md:flex-[1] md:flex md:items-center p-3 md:h-full"
           style={{
             backgroundImage: `url(${rep.linki})`,
             backgroundSize: "cover",
           }}
         >
-          <div className="w-full">
+          <div className="w-full ">
             {/* <Image src={img1} alt="" className="md:w-full object-contain md:object-cover  h-[15rem] md:h-[18rem]  inline-block"/> */}
             <div className=" p-8 bg-white opacity-80 w-full">
-              {rep.title}
+              <div className="text-[13px]">{rep.title}</div>
               <div className="h-[1px] w-full bg-black mt-2"></div>
             </div>
             <span className=" p-3 bg-blue-500 absolute bottom-0 right-0">
@@ -64,16 +68,14 @@ const Card: React.FC<RepProps> = ({ rep }) => {
           </div>
         </div>
 
-        <div className="right flex-[6] flex flex-col p-6 md:ml-5 md:p-5 md:gap-14">
+        <div className="right flex-[1] flex flex-col justify-between p-6 md:ml-5 md:p-5 md:gap-14 gap-3">
           <div className=" text-gray-600">
-            <ul className="list-disc">
-              <li className="">{rep.desc}</li>
-            </ul>
+            <div className="md:line-clamp-4 line-clamp-3">{rep.desc}</div>
           </div>
           <div className=" text-gray-900 flex flex-col justify-center bg-white items-center">
-            <div className="">Study Period: 2019-2029</div>
-            <div className="">Base Year: 2023</div>
-            <div className="">Forecost Period: 2024-2030</div>
+            <div className="">Study Period: {rep.study}</div>
+            <div className="">Base Year: {rep.base}</div>
+            <div className="">Forecost Period: {rep.forcast}</div>
           </div>
         </div>
       </div>
