@@ -3,8 +3,10 @@ import React, { useEffect } from "react";
 import InsightCard from "../insightCard/InsightCard";
 import { useRouter } from "next/navigation";
 
-import { useState } from "react";
+import { useState, useContext } from "react";
+
 import axios from "axios";
+import { BlogContext, BlogContextType } from "@/app/context/blogContext";
 
 interface RadioOption {
   id: string; // Unique identifier for each radio button
@@ -160,11 +162,12 @@ export default function Insight() {
   const [page, setPage] = useState(1);
   const [len, setLen] = useState(1);
   const [end, setEnd] = useState(1);
-  const [blogs, setBlogs] = useState<Ins[]>([]);
+  const [blogs, setBlogs] = useState<Record<string, any>[]>([]);
   const dev_url = "http://localhost:8800";
   const prod_url = "https://admin-backend-1-ekoa.onrender.com";
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const { state, dispatch } = useContext(BlogContext) as BlogContextType;
 
   // function clickfun() {
   // const [ind, setInd] = useState("none");
@@ -224,6 +227,24 @@ export default function Insight() {
     if (page < end) {
       setPage(page + 1);
     }
+  }
+
+  function clickedBlog(ind: number) {
+    let title = blogs[ind].title;
+    let rep = blogs[ind];
+    console.log("clicked blog is ", rep);
+    dispatch({
+      type: "SET_CURRENT",
+      payload: {
+        title: rep.title,
+        linkp: rep.linkp,
+        createdAt: rep.createdAt,
+        industry: rep.industry,
+        subind: rep.subind,
+        linkt: rep.linkt,
+      },
+    });
+    router.push(`/insight/${blogs[ind].title}`);
   }
 
   useEffect(() => {
@@ -316,7 +337,7 @@ export default function Insight() {
               key={index}
               className=""
               onClick={() => {
-                router.push(`/insight/${insight.title}`);
+                clickedBlog(index);
               }}
             >
               <InsightCard

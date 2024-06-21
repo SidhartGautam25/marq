@@ -71,7 +71,7 @@ const INITIAL_STATE: Record<string, any> = {
       : null,
   clinkp:
     typeof window !== "undefined"
-      ? localStorage.getItem("marq-blog-cinkp") || null
+      ? localStorage.getItem("marq-blog-clinkp") || null
       : null,
   cindustry:
     typeof window !== "undefined"

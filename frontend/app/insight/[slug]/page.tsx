@@ -18,14 +18,24 @@ interface BlogInt {
   linkp: string;
   linkt: string;
 }
+
+const NoSSR: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null;
+  }
+
+  return <>{children}</>;
+};
+
 export default function Page({ params }: { params: { slug: string } }) {
-  const [blog, setBlog] = useState<BlogInt>({
-    title: "",
-    linkp: "",
-    linkt: "",
-  });
-  console.log("blog is ", blog);
-  let pdfurl = blog.linkp;
+  const [blog, setBlog] = useState<Record<string, any>[]>([]);
+
   // let daata;
   const { state, dispatch } = useContext(BlogContext) as BlogContextType;
   console.log("state in insigth of a specific iis ", state);
@@ -43,9 +53,7 @@ export default function Page({ params }: { params: { slug: string } }) {
         "params slug is  in insight is ",
         decodeURIComponent(params.slug)
       );
-      let url = `${dev_url}/api/getall/blog?title=${decodeURIComponent(
-        params.slug
-      )}`;
+      let url = `${dev_url}/api/getall/related-blogs?industry=${state.industry}`;
 
       //let url = `${dev_url}/api/getall/reports?industry=${ind}&page=${page}&subind=${query}`;
 
@@ -53,11 +61,8 @@ export default function Page({ params }: { params: { slug: string } }) {
         console.log("request sent");
         const daata = await axios.get(url);
         console.log("data is in insgiht ", daata);
-        setBlog({
-          title: daata.data[0].title,
-          linkp: daata.data[0].linkp,
-          linkt: daata.data[0].linkt,
-        });
+        setBlog([...daata.data.related]);
+        console.log("related reports are ", daata);
       } catch (err) {}
     };
     fetchReport();
@@ -70,13 +75,13 @@ export default function Page({ params }: { params: { slug: string } }) {
     };
   }, []);
   return (
-    <>
+    <NoSSR>
       <div className="bg-gray-800">
         <NavBar />
       </div>
-      {console.log("before going ", state.ctitle)}
+
       <Insightcom1
-        title={blog.title}
+        title={state.ctitle}
         linkp={state.clinkp}
         linkt={state.clinkt}
       />
@@ -85,8 +90,8 @@ export default function Page({ params }: { params: { slug: string } }) {
           <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
             <Viewer
               fileUrl={
-                state.clinp
-                  ? pdfurl
+                state.clinkp
+                  ? state.clinkp
                   : "https://res.cloudinary.com/dkzpbucfz/image/upload/v1713940823/pics/lu1fo2x4kk4v9qmd5r6s.pdf"
               }
               // fileUrl="https://res.cloudinary.com/dkzpbucfz/image/upload/v1713940823/pics/lu1fo2x4kk4v9qmd5r6s.pdf"
@@ -105,6 +110,6 @@ export default function Page({ params }: { params: { slug: string } }) {
         </div>
       </div>
       <Footer />
-    </>
+    </NoSSR>
   );
 }
