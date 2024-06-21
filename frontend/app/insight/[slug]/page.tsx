@@ -86,7 +86,7 @@ export default function Page({ params }: { params: { slug: string } }) {
         linkt={state.clinkt}
       />
       <div className="flex">
-        <div className="flex-[6]">
+        {/* <div className="flex-[6]"> */}
           <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
             <Viewer
               fileUrl={
@@ -99,9 +99,9 @@ export default function Page({ params }: { params: { slug: string } }) {
               // onPageChange={({ currentPage }) => setCurrentpage(currentPage)}
             />
           </Worker>
-        </div>
-        <div className="flex-[2] flex flex-col gap-5 items-center">
-          <h1 className="text-3xl font-semibold uppercase">Similar Insight</h1>
+        {/* </div> */}
+        <div className=" flex flex-col gap-5 items-start">
+          <h1 className="text-3xl font-semibold uppercase mx-14">Similar Insight</h1>
           <div className="w-[85%] flex flex-col gap-5">
             <Insightcomp2 />
             <Insightcomp2 />
