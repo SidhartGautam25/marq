@@ -1,5 +1,7 @@
 const dev_url="http://localhost:8800"
-const my_url=dev_url
-const prod_url="https://admin-backend-1-ekoa.onrender.com";
+
+const prod_url1 = "https://admin-backend-1-ekoa.onrender.com";
+const prod_url2 = "https://api.rahulsinghwebsite.online"
+const my_url=prod_url2
 
 export {my_url}
