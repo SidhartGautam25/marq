@@ -9,6 +9,7 @@ import axios from "axios";
 import load from "@/public/assets/load.gif";
 import Image from "next/image";
 import { IoMdMail } from "react-icons/io";
+import { my_url } from "@/app/utility/varr";
 //this is report page
 
 interface MyComponentProps {
@@ -22,8 +23,8 @@ const Report: React.FC<MyComponentProps> = ({ ind }) => {
   const sub = industries[ind];
   const [subind, setSubind] = useState([...sub]);
   const [reports, setReports] = useState<Record<string, any>[]>([]);
-  const dev_url = "http://localhost:8800";
-  const prod_url = "https://admin-backend-1-ekoa.onrender.com";
+  // const dev_url = "http://localhost:8800";
+  // const prod_url = "https://admin-backend-1-ekoa.onrender.com";
   const [loading, setLoading] = useState<boolean>(true);
   const [page, setPage] = useState(1);
   const [len, setLen] = useState(1);
@@ -65,7 +66,7 @@ const Report: React.FC<MyComponentProps> = ({ ind }) => {
     setSubquery(sub);
     try {
       setLoading(true);
-      let url = `${dev_url}/api/getall/reports?industry=${ind}&page=${qpage}&subind=${sub}`;
+      let url = `${my_url}/api/getall/reports?industry=${ind}&page=${qpage}&subind=${sub}`;
       const daata = await axios.get(url);
       setLoading(false);
       if (daata) {
@@ -89,9 +90,9 @@ const Report: React.FC<MyComponentProps> = ({ ind }) => {
       console.log("fetch report called");
       let url;
       if (subquery == "none") {
-        url = `${dev_url}/api/getall/reports?industry=${ind}&page=${page}`;
+        url = `${my_url}/api/getall/reports?industry=${ind}&page=${page}`;
       } else {
-        url = `${dev_url}/api/getall/reports?industry=${ind}&page=${qpage}&subind=${subquery}`;
+        url = `${my_url}/api/getall/reports?industry=${ind}&page=${qpage}&subind=${subquery}`;
       }
       //let url = `${dev_url}/api/getall/reports?industry=${ind}&page=${page}&subind=${query}`;
       console.log(

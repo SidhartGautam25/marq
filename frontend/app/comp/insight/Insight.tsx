@@ -7,6 +7,7 @@ import { useState, useContext } from "react";
 
 import axios from "axios";
 import { BlogContext, BlogContextType } from "@/app/context/blogContext";
+import { my_url } from "@/app/utility/varr";
 
 interface RadioOption {
   id: string; // Unique identifier for each radio button
@@ -163,8 +164,8 @@ export default function Insight() {
   const [len, setLen] = useState(1);
   const [end, setEnd] = useState(1);
   const [blogs, setBlogs] = useState<Record<string, any>[]>([]);
-  const dev_url = "http://localhost:8800";
-  const prod_url = "https://admin-backend-1-ekoa.onrender.com";
+  // const dev_url = "http://localhost:8800";
+  // const prod_url = "https://admin-backend-1-ekoa.onrender.com";
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   const { state, dispatch } = useContext(BlogContext) as BlogContextType;
@@ -180,7 +181,7 @@ export default function Insight() {
   const handleChangeSubIndustry = async (item: string) => {
     setSubIndustryOption(item);
     setPage(1);
-    let url = `${dev_url}/api/getall/blogs?industry=${selectedOption}&page=${1}&subind=${item}`;
+    let url = `${my_url}/api/getall/blogs?industry=${selectedOption}&page=${1}&subind=${item}`;
     try {
       const daata = await axios.get(url);
       setLoading(false);
@@ -200,7 +201,7 @@ export default function Insight() {
     setSelectedOption(option);
     const selected = listData.find((item) => item.name === option);
     setSubIndustries(selected ? selected.children : []);
-    let url = `${dev_url}/api/getall/blogs?industry=${option}&page=${1}`;
+    let url = `${my_url}/api/getall/blogs?industry=${option}&page=${1}`;
     setPage(1);
     try {
       const daata = await axios.get(url);
@@ -256,11 +257,11 @@ export default function Insight() {
       console.log("fetch report called");
       let url;
       if (selectedOption == "null") {
-        url = `${dev_url}/api/getall/blogs?page=${page}`;
+        url = `${my_url}/api/getall/blogs?page=${page}`;
       } else if (selectedOption != "null" && subIndustryOption == "null") {
-        url = `${dev_url}/api/getall/blogs?industry=${selectedOption}&page=${page}`;
+        url = `${my_url}/api/getall/blogs?industry=${selectedOption}&page=${page}`;
       } else {
-        url = `${dev_url}/api/getall/blogs?industry=${selectedOption}&page=${page}&subind=${subIndustryOption}`;
+        url = `${my_url}/api/getall/blogs?industry=${selectedOption}&page=${page}&subind=${subIndustryOption}`;
       }
       try {
         const daata = await axios.get(url);

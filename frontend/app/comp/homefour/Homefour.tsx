@@ -8,13 +8,14 @@ import { useContext } from "react";
 
 import axios from "axios";
 import { BlogContext, BlogContextType } from "@/app/context/blogContext";
+import { my_url } from "@/app/utility/varr";
 
 export default function Homefour() {
   const [blogs, setBlogs] = useState<Record<string, any>[]>([]);
   const { state, dispatch } = useContext(BlogContext) as BlogContextType;
-  const dev_url = "http://localhost:8800";
-  const prod_url = "https://admin-backend-1-ekoa.onrender.com";
-  let url = `${dev_url}/api/getall/latest-blog`;
+  // const dev_url = "http://localhost:8800";
+  // const prod_url = "https://admin-backend-1-ekoa.onrender.com";
+  let url = `${my_url}/api/getall/latest-blog`;
   const router = useRouter();
 
   function clickfun(ind: number) {
