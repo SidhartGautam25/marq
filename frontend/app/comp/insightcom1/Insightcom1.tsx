@@ -1,8 +1,6 @@
 import ele from "@/public/assets/tech.jpg";
-import Image from "next/image";
-import print from "@/public/printer-svgrepo-com.svg";
-import share from "@/public/share-svgrepo-com.svg";
-
+import { IoMdShare } from "react-icons/io";
+import { IoPrintOutline } from "react-icons/io5";
 interface Bloog {
   title: string;
   linkp: string;
@@ -11,6 +9,7 @@ interface Bloog {
 
 const Insightcom1: React.FC<Bloog> = ({ title, linkp, linkt }) => {
   console.log("title is in is comp1 ", title);
+  console.log("image is in insightcom1 component ", linkt);
   return (
     <div className="">
       <div className="relative flex justify-center items-center">
@@ -27,16 +26,16 @@ const Insightcom1: React.FC<Bloog> = ({ title, linkp, linkt }) => {
           </h1>
         </div>
       </div>
-      <div className="ml-20 my-5">
+      <div className="md:ml-10 md:my-5 my-3 ml-7">
         <h1 className="text-blue-400">
           Transportation and travel /{" "}
           <span className="text-black">Article</span>
         </h1>
-        <div className="my-5 flex gap-5">
-          <Image src={share} alt="print" width={30} height={30} />
-          <Image src={print} alt="print" width={30} height={30} />
+        <div className="my-3 md:my-5 flex gap-5 text-2xl md:text-3xl">
+          <IoMdShare />
+          <IoPrintOutline/>
         </div>
-        <div className="my-5">3.10.2000</div>
+        <div className="md:my-5 my-3">3.10.2000</div>
       </div>
     </div>
   );

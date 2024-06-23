@@ -7,7 +7,7 @@ import axios from "axios";
 import { convert } from "@/app/utility/subind";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-
+import { my_url } from "@/app/utility/varr";
 interface Rep {
   title: string;
   linki: string;
@@ -28,10 +28,10 @@ export default function Blogs() {
   const [year5, setyear5] = useState<string>("");
   const [month5, setmonth5] = useState<string>("");
 
-  const dev_url = "http://localhost:8800";
-  const prod_url = "https://admin-backend-1-ekoa.onrender.com";
+  // const dev_url = "http://localhost:8800";
+  // const prod_url = "https://admin-backend-1-ekoa.onrender.com";
 
-  let url = `${dev_url}/api/getall/pinned-report`;
+  let url = `${my_url}/api/getall/pinned-report`;
   const [back, setBack] = useState("");
   let background;
   const { state, dispatch } = useContext(ReportContext) as ReportContextType;

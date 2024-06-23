@@ -9,12 +9,13 @@ import axios from "axios";
 import load from "@/public/assets/load.gif";
 import Image from "next/image";
 import { IoMdMail } from "react-icons/io";
+import { my_url } from "@/app/utility/varr";
 //this is report page
 
 export default function Report2() {
   const [reports, setReports] = useState<Record<string, any>[]>([]);
-  const dev_url = "http://localhost:8800";
-  const prod_url = "https://admin-backend-1-ekoa.onrender.com";
+  // const dev_url = "http://localhost:8800";
+  // const prod_url = "https://admin-backend-1-ekoa.onrender.com";
   const [len, setLen] = useState(0);
   const [end, setEnd] = useState(1);
   console.log("your end is ", end);
@@ -41,7 +42,7 @@ export default function Report2() {
     console.log("this is rep two rep comp");
     const fetchReport = async () => {
       console.log("fetch report called");
-      let url = `${dev_url}/api/getall/report?page=${page}`;
+      let url = `${my_url}/api/getall/report?page=${page}`;
 
       try {
         setLoading(true);

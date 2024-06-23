@@ -3,8 +3,11 @@ import React, { useEffect } from "react";
 import InsightCard from "../insightCard/InsightCard";
 import { useRouter } from "next/navigation";
 
-import { useState } from "react";
+import { useState, useContext } from "react";
+
 import axios from "axios";
+import { BlogContext, BlogContextType } from "@/app/context/blogContext";
+import { my_url } from "@/app/utility/varr";
 
 interface RadioOption {
   id: string; // Unique identifier for each radio button
@@ -160,11 +163,12 @@ export default function Insight() {
   const [page, setPage] = useState(1);
   const [len, setLen] = useState(1);
   const [end, setEnd] = useState(1);
-  const [blogs, setBlogs] = useState<Ins[]>([]);
-  const dev_url = "http://localhost:8800";
-  const prod_url = "https://admin-backend-1-ekoa.onrender.com";
+  const [blogs, setBlogs] = useState<Record<string, any>[]>([]);
+  // const dev_url = "http://localhost:8800";
+  // const prod_url = "https://admin-backend-1-ekoa.onrender.com";
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const { state, dispatch } = useContext(BlogContext) as BlogContextType;
 
   // function clickfun() {
   // const [ind, setInd] = useState("none");
@@ -177,7 +181,7 @@ export default function Insight() {
   const handleChangeSubIndustry = async (item: string) => {
     setSubIndustryOption(item);
     setPage(1);
-    let url = `${dev_url}/api/getall/blogs?industry=${selectedOption}&page=${1}&subind=${item}`;
+    let url = `${my_url}/api/getall/blogs?industry=${selectedOption}&page=${1}&subind=${item}`;
     try {
       const daata = await axios.get(url);
       setLoading(false);
@@ -197,7 +201,7 @@ export default function Insight() {
     setSelectedOption(option);
     const selected = listData.find((item) => item.name === option);
     setSubIndustries(selected ? selected.children : []);
-    let url = `${dev_url}/api/getall/blogs?industry=${option}&page=${1}`;
+    let url = `${my_url}/api/getall/blogs?industry=${option}&page=${1}`;
     setPage(1);
     try {
       const daata = await axios.get(url);
@@ -226,6 +230,24 @@ export default function Insight() {
     }
   }
 
+  function clickedBlog(ind: number) {
+    let title = blogs[ind].title;
+    let rep = blogs[ind];
+    console.log("clicked blog is ", rep);
+    dispatch({
+      type: "SET_CURRENT",
+      payload: {
+        title: rep.title,
+        linkp: rep.linkp,
+        createdAt: rep.createdAt,
+        industry: rep.industry,
+        subind: rep.subind,
+        linkt: rep.linkt,
+      },
+    });
+    router.push(`/insight/${blogs[ind].title}`);
+  }
+
   useEffect(() => {
     // Code inside this function will run after every render
     // You can perform side effects, such as data fetching, subscriptions, or DOM manipulations here
@@ -235,11 +257,11 @@ export default function Insight() {
       console.log("fetch report called");
       let url;
       if (selectedOption == "null") {
-        url = `${dev_url}/api/getall/blogs?page=${page}`;
+        url = `${my_url}/api/getall/blogs?page=${page}`;
       } else if (selectedOption != "null" && subIndustryOption == "null") {
-        url = `${dev_url}/api/getall/blogs?industry=${selectedOption}&page=${page}`;
+        url = `${my_url}/api/getall/blogs?industry=${selectedOption}&page=${page}`;
       } else {
-        url = `${dev_url}/api/getall/blogs?industry=${selectedOption}&page=${page}&subind=${subIndustryOption}`;
+        url = `${my_url}/api/getall/blogs?industry=${selectedOption}&page=${page}&subind=${subIndustryOption}`;
       }
       try {
         const daata = await axios.get(url);
@@ -266,10 +288,10 @@ export default function Insight() {
   }, [page]);
 
   return (
-    <div className="min-h-screen bg-gray-100 py-12">
+    <div className="min-h-screen bg-gray-100 md:py-12 py-5">
       <div className="container mx-auto px-4">
-        <div className="w-2/5 mx-20 border-2 border-gray-600 p-3">
-          <h2 className="text-xl font-bold text-center mb-8">
+        <div className="md:w-2/5 md:mx-20 border-2 border-gray-600 p-3">
+          <h2 className="md:text-xl text-[12px] font-bold text-center mb-8">
             LATEST INSIGHTS FROM MARQSTATS
           </h2>
           <div className="flex justify-center space-x-4 mb-8">
@@ -282,7 +304,7 @@ export default function Insight() {
               
             </select> */}
             <select
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 text-[9px] md:text-sm"
               id="industry"
               value={selectedOption}
               onChange={(e) => handleChangeIndustry(e.target.value)}
@@ -295,7 +317,7 @@ export default function Insight() {
               ))}
             </select>
             <select
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 text-[9px] md:text-sm"
               id="sub-industry"
               value={subIndustryOption}
               onChange={(e) => handleChangeSubIndustry(e.target.value)}
@@ -310,13 +332,13 @@ export default function Insight() {
             </select>
           </div>
         </div>
-        <div className="flex flex-wrap justify-center">
+        <div className="flex flex-wrap justify-center gap-5 mt-5">
           {blogs.map((insight, index) => (
             <div
               key={index}
-              className="p-4"
+              className=""
               onClick={() => {
-                router.push(`/insight/${insight.title}`);
+                clickedBlog(index);
               }}
             >
               <InsightCard

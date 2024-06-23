@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 import { ReportContextProvider } from "./context/reportContext";
+import { BlogContextProvider } from "./context/blogContext";
 
 export const metadata: Metadata = {
   title: "Marqstats",
@@ -17,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ReportContextProvider>{children}</ReportContextProvider>
+        <BlogContextProvider>
+          <ReportContextProvider>{children}</ReportContextProvider>
+        </BlogContextProvider>
       </body>
     </html>
   );
