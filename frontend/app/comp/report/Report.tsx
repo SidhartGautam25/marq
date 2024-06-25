@@ -127,7 +127,7 @@ const Report: React.FC<MyComponentProps> = ({ ind }) => {
     <>
       <div className="main bg-gray-100 p-3 md:p-0">
         <div className="main2 mt-8 md:flex sm:flex md:mt-10 flex-row-reverse">
-          <div className="right flex-[2] flex flex-col gap-3 bg-blue-100 p-3 md:mr-8">
+          <div className="right flex-[10] flex flex-col gap-3 bg-blue-100 p-3 md:mr-8">
             {loading && (
               <div className="flex justify-center mt-4">
                 <Image src={load} alt="load gif" className="w-[4rem]" />
@@ -163,9 +163,9 @@ const Report: React.FC<MyComponentProps> = ({ ind }) => {
               </button>
             </div>
           </div>
-          <div className="left flex-[1] flex justify-center">
-            <div className="w-[80%] flex flex-col gap-11 items-center pb-6">
-              <div className="">
+          <div className="flex justify-center flex-[4] w-full">
+            <div className="md:w-[80%] w-full">
+              <div className="p-5 pt-0">
                 <div className="titel flex justify-center text-2xl font-semibold">
                   <span className="md:mt-0 mt-6">Sub Industries </span>
                 </div>
@@ -185,36 +185,36 @@ const Report: React.FC<MyComponentProps> = ({ ind }) => {
                   })}
                 </div>
               </div>
-              <div className="p-5 md:p-14">
-                <div className="bg-black text-white p-6 md:p-8 flex flex-col gap-10 items-center">
-                  <div className="flex flex-col gap-5">
-                    <span>CUSTOMIZED REPORT SOLUTION</span>
-                    <p>
-                      Obtain a personalized market intelligence solution
-                      designed specifically for your business
-                    </p>
-                    <ul className="list-disc flex flex-col gap-3">
-                      <li>
-                        Choose customized report sections that align with your
-                        requirements
-                      </li>
-                      <li>
-                        Receive a report tailored to your specific needs and
-                        preferences
-                      </li>
-                    </ul>
-                  </div>
-                  <Link
-                    className="flex justify-center bg-white text-black p-2 md:p-3 rounded-[10px]  mt-8"
-                    href="/contact"
-                  >
-                    <button className="flex gap-5 ">
-                      Contact Us
-                      <IoMdMail className=" text-xl" />
-                    </button>
-                  </Link>
+              <div className="w-full p-8 md:p-2">
+              <div className="bg-black text-white p-6 md:p-8 flex flex-col gap-10 items-center w-full">
+                <div className="flex flex-col gap-5">
+                  <span>CUSTOMIZED REPORT SOLUTION</span>
+                  <p>
+                    Obtain a personalized market intelligence solution designed
+                    specifically for your business
+                  </p>
+                  <ul className="list-disc flex flex-col gap-3">
+                    <li>
+                      Choose customized report sections that align with your
+                      requirements
+                    </li>
+                    <li>
+                      Receive a report tailored to your specific needs and
+                      preferences
+                    </li>
+                  </ul>
                 </div>
+                <Link
+                  className="flex justify-center bg-white text-black p-2 md:p-3 rounded-[10px]  mt-8 w-full"
+                  href="/contact"
+                >
+                  <button className="flex gap-8 ">
+                    Contact Us
+                    <IoMdMail className=" text-xl" />
+                  </button>
+                </Link>
               </div>
+            </div>
             </div>
           </div>
         </div>
