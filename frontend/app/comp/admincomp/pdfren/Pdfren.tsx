@@ -86,7 +86,7 @@ function Pdfren() {
       </div>
       {num == 4 ? <Form /> : <span></span>}
       <div className="flex w-full">
-        <div className="md:border w-full">
+        <div className="w-full">
           {/* {state.cid && reports ? `${reports[state.cid].link1}` : "nothing"} */}
 
           {num != 4 ? (

@@ -48,16 +48,18 @@ const PdfDescription: React.FC<DynamicProps> = ({ rep }) => {
       <div className="md:min-h-[500px] flex flex-col md:flex-row md:gap-0 gap-6 ">
         <div className="flex-[1] md:px-8 flex flex-col gap-5 md:gap-10 md:border-2 md:bg-slate-50 mt-10 md:mt-0">
           <div className="w-[100px] h-[10px] bg-red-500 md:mt-12"></div>
-          <div className="my-0 font-bold md:text-3xl text-xl ">{rep?.title}</div>
+          <div className="my-0 font-bold md:text-3xl text-xl ">
+            {rep?.title}
+          </div>
           <div className="my-0 line-clamp-5 text-[14px]">{rep?.desc}</div>
           <div className=" border-t-2 border-gray-300 font-extralight"></div>
-          <div className="bg-blue-500 md:p-3 p-2 w-[10rem] text-white flex justify-center items-center rounded-sm mb-5 md:mb-1">
+          <div className="bg-gray-800 md:p-3 p-2 w-[10rem] text-white flex justify-center items-center rounded-sm mb-5 md:mb-1">
             <span>
               {month} {year}{" "}
             </span>
           </div>
         </div>
-        <div className="flex-[1] bg-blue-200">
+        <div className="flex-[1] bg-gray-200">
           <div
             className="md:h-2/3 h-[15rem] flex items-center justify-center"
             style={{
@@ -82,7 +84,7 @@ const PdfDescription: React.FC<DynamicProps> = ({ rep }) => {
                       onChange={() => setSelectedOption(option.value)}
                       className="text-blue-600 focus:ring-blue-500"
                     />
-                    <span className="text-red-700 group-hover:text-white text-[10px]">
+                    <span className="text-red-700 group-hover:text-white text-[14px]">
                       {option.label}
                     </span>
                   </label>
@@ -90,11 +92,11 @@ const PdfDescription: React.FC<DynamicProps> = ({ rep }) => {
               ))}
             </div>
             <div className="flex justify-between items-center">
-              <span className="md:text-2xl text-blue-600 font-bold">
+              <span className="md:text-2xl text-gray-600 font-bold">
                 $ 1,299.00 USD
               </span>
-              <button className=" bg-blue-500 font-font-semibold md:p-2 p-[5px] text-[8px] md:text-[15px] text-white rounded-sm hover:bg-blue-600 ease-in-out duration-300">
-                 Download Sample
+              <button className=" bg-gray-800 font-font-semibold md:p-2 p-[5px] text-[8px] md:text-[15px] text-white rounded-sm hover:bg-gray-900 ease-in-out duration-300">
+                Download Sample
               </button>
             </div>
           </div>

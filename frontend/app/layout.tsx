@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Noto_Serif_Georgian } from "next/font/google";
 import "./globals.css";
-const inter = Inter({ subsets: ["latin"] });
+// Open_Sans;
+// Noto_Sans;
+// Roboto_Serif;
+// Noto_Serif_Georgian;
+// Roboto_Slab;
+const inter = Noto_Serif_Georgian({ weight: "400", subsets: ["latin"] });
+
 import { ReportContextProvider } from "./context/reportContext";
 import { BlogContextProvider } from "./context/blogContext";
 
