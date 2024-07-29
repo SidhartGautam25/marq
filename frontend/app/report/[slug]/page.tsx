@@ -2,6 +2,7 @@
 import { Footer, NavBar } from "@/app/comp";
 import PdfDescription from "@/app/comp/admincomp/pdfdescription/pdfdescription";
 import Pdfren from "@/app/comp/admincomp/pdfren/Pdfren";
+import Pdfren2 from "@/app/comp/admincomp/pdfren2/Pdfren2";
 import { type } from "os";
 
 export default function Page({ params }: { params: { slug: string } }) {
@@ -20,7 +21,7 @@ export default function Page({ params }: { params: { slug: string } }) {
       {/* <PdfDescription /> */}
       <div className="">
         <div className="w-4/5 block ml-auto mr-auto">
-          <Pdfren />
+          <Pdfren2 />
         </div>
       </div>
 
