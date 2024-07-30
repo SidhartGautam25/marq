@@ -1,5 +1,7 @@
 "use client";
 import { useState, useContext } from "react";
+import Link from "next/link";
+import { IoMdMail } from "react-icons/io";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import PdfDescription from "../pdfdescription/pdfdescription";
 import { ReportContext, ReportContextType } from "@/app/context/reportContext";
@@ -15,6 +17,7 @@ import RecentDevelopments from "../recentDevelopments/RecentDevelopments";
 import Toc from "../toc/Toc";
 import ScopeReport from "../scopeReport/ScopeReport";
 import Faq from "../faq/Faq";
+import ReportContect from "../../report-contact/ReportContect";
 // import Faq from "../../faq-card/Faq";
 
 interface ChildComponentProps {
@@ -38,12 +41,12 @@ function Pdfren2() {
 
   return (
     <div className="w-full">
-      <div className="md:mt-7">
+      <div className="md:mt-7 md:mb-5">
         <PdfDescription rep={state} />
       </div>
-      <div className="flex my-10">
-        <div className="left w-1/4">
-          <div className="w-full bg-white shadow-lg p-4 sticky top-0">
+      <div className="flex">
+        <div className="left w-[20%]">
+          <div className=" bg-white shadow-lg p-4 sticky top-0">
             <nav className="space-y-6">
               <div
                 className="text-gray-900 cursor-pointer flex items-center"
@@ -95,8 +98,8 @@ function Pdfren2() {
             </nav>
           </div>
         </div>
-        <div className="right w-3/4 m-2">
-          <div className="w-full bg-white shadow-lg p-4">
+        <div className="right w-[60%]">
+          <div className=" bg-white shadow-lg p-4">
             <MarketSnapshot />
             <MarketOverview />
             <KeyMarket />
@@ -106,6 +109,37 @@ function Pdfren2() {
             <Toc />
             <ScopeReport />
             <Faq />
+          </div>
+        </div>
+        <div className="w-[20%]">
+          <ReportContect />
+          <div className="bg-black text-white p-6 md:p-8 flex flex-col gap-10 items-center w-[100%] mt-10 sticky top-0">
+            <div className="flex flex-col gap-5 ">
+              <span>CUSTOMIZED REPORT SOLUTION</span>
+              <p>
+                Obtain a personalized market intelligence solution designed
+                specifically for your business
+              </p>
+              <ul className="list-disc flex flex-col gap-3">
+                <li>
+                  Choose customized report sections that align with your
+                  requirements
+                </li>
+                <li>
+                  Receive a report tailored to your specific needs and
+                  preferences
+                </li>
+              </ul>
+            </div>
+            <Link
+              className="flex justify-center bg-white text-black p-2 md:p-3 rounded-[10px]  mt-8 w-full"
+              href="/contact"
+            >
+              <button className="flex gap-8 ">
+                Contact Us
+                <IoMdMail className=" text-xl" />
+              </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -20,7 +20,7 @@ export default function Page({ params }: { params: { slug: string } }) {
       {/* <h1>My Page info is :{typeof params.slug}</h1>; */}
       {/* <PdfDescription /> */}
       <div className="">
-        <div className="w-4/5 block ml-auto mr-auto">
+        <div className="w-[96%] ml-auto mr-auto">
           <Pdfren2 />
 
           {/* <!--         <div className="flex justify-center">
