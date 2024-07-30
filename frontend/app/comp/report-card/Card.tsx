@@ -50,7 +50,7 @@ const Card: React.FC<RepProps> = ({ rep }) => {
         onClick={clickfun}
       >
         <div
-          className="left relative md:flex-[1] md:flex md:items-center p-3 md:h-full"
+          className=" relative md:flex-[1] flex items-center p-3 md:h-full h-[15rem]"
           style={{
             backgroundImage: `url(${rep.linki})`,
             backgroundSize: "cover",
@@ -58,8 +58,8 @@ const Card: React.FC<RepProps> = ({ rep }) => {
         >
           <div className="w-full ">
             {/* <Image src={img1} alt="" className="md:w-full object-contain md:object-cover  h-[15rem] md:h-[18rem]  inline-block"/> */}
-            <div className=" p-8 bg-white opacity-80 w-full">
-              <div className="text-[13px]">{rep.title}</div>
+            <div className=" md:p-8 p-5 bg-white opacity-80 w-full">
+              <div className="md:text-[13px] text-[10px] line-clamp-3">{rep.title}</div>
               <div className="h-[1px] w-full bg-black mt-2"></div>
             </div>
             <span className=" p-3 bg-blue-500 absolute bottom-0 right-0">

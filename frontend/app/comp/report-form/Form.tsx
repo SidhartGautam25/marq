@@ -2,8 +2,8 @@ import React from 'react'
 
 const Form = () => {
   return (
-    <div>
-        <div className="p-3 border bg-gray-50">
+    <div className='flex justify-center'>
+        <div className="p-3 border bg-gray-50 px-5 md:w-[85%] rounded-sm">
         <form action="" className="flex flex-col gap-5">
           <div className="flex flex-col">
             <label htmlFor="">Name<span className="text-red-600">*</span></label>
