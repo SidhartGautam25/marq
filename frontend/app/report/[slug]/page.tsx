@@ -2,6 +2,7 @@
 import { Footer, NavBar } from "@/app/comp";
 import PdfDescription from "@/app/comp/admincomp/pdfdescription/pdfdescription";
 import Pdfren from "@/app/comp/admincomp/pdfren/Pdfren";
+
 import { type } from "os";
 
 export default function Page({ params }: { params: { slug: string } }) {
