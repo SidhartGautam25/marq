@@ -113,12 +113,13 @@ export default function Report2() {
             </div>
           </div>
 
-          <div className="left flex-[4]">
+          <div className="flex justify-center flex-[4] w-full">
+          <div className="md:w-[80%] w-full">
             <div className="p-5 pt-0">
               <div className="titel flex justify-center text-2xl font-semibold">
                 <span className="md:mt-0 mt-6">Industries </span>
               </div>
-              <div className="buttans flex flex-col items-center">
+              <div className="buttans flex flex-col items-center w-full">
                 {indus.map((item, index) => {
                   return (
                     <Fragment key={index}>
@@ -128,8 +129,8 @@ export default function Report2() {
                 })}
               </div>
             </div>
-            <div className="p-5 md:p-14">
-              <div className="bg-black text-white p-6 md:p-8 flex flex-col gap-10 items-center">
+            <div className="w-full p-8 md:p-2">
+              <div className="bg-black text-white p-6 md:p-8 flex flex-col gap-10 items-center w-full">
                 <div className="flex flex-col gap-5">
                   <span>CUSTOMIZED REPORT SOLUTION</span>
                   <p>
@@ -148,16 +149,17 @@ export default function Report2() {
                   </ul>
                 </div>
                 <Link
-                  className="flex justify-center bg-white text-black p-2 md:p-3 rounded-[10px]  mt-8"
+                  className="flex justify-center bg-white text-black p-2 md:p-3 rounded-[10px]  mt-8 w-full"
                   href="/contact"
                 >
-                  <button className="flex gap-5 ">
+                  <button className="flex gap-8 ">
                     Contact Us
                     <IoMdMail className=" text-xl" />
                   </button>
                 </Link>
               </div>
             </div>
+          </div>
           </div>
         </div>
         <Footer />

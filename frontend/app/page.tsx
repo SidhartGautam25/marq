@@ -1,3 +1,4 @@
+// no ssr code is in insight/page.tsx page
 import {
   HomeOne,
   NavBar,
@@ -28,7 +29,7 @@ export default function Home() {
         <div className="">
           <Homefour />
         </div>
-        <Blogs/>
+        <Blogs />
         <Slid />
         <Homefive />
         <Homesix />
