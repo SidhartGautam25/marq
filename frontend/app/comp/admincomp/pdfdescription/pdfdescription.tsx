@@ -1,6 +1,7 @@
 "use client";
+import { ReportContext, ReportContextType } from "@/app/context/reportContext";
 import { convert } from "@/app/utility/subind";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 interface Option {
   label: string;
@@ -31,6 +32,7 @@ const NoSSR: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 };
 
 const PdfDescription: React.FC<DynamicProps> = ({ rep }) => {
+  const { state, dispatch } = useContext(ReportContext) as ReportContextType;
   const [selectedOption, setSelectedOption] = React.useState<string>("single");
   let imageurl = rep?.linki;
   let des = rep?.desc;
@@ -49,10 +51,10 @@ const PdfDescription: React.FC<DynamicProps> = ({ rep }) => {
         <div className="flex-[1] md:px-8 flex flex-col gap-5 md:gap-10 md:border-2 md:bg-slate-50 mt-10 md:mt-0">
           <div className="w-[100px] h-[10px] bg-red-500 md:mt-12"></div>
           <div className="my-0 font-bold md:text-3xl text-xl ">
-            {rep?.title}
+            {state?.title}
           </div>
           <div className="my-0 line-clamp-5 text-[14px] text-gray-500">
-            {rep?.desc}
+            {state?.desc}
           </div>
           {/* <div className=" border-t-2 border-gray-300 font-extralight"></div> */}
           {/* <div className="flex justify-between">
@@ -79,7 +81,7 @@ const PdfDescription: React.FC<DynamicProps> = ({ rep }) => {
           <div
             className="md:h-full h-[15rem] flex items-center justify-center"
             style={{
-              backgroundImage: `url(${rep?.linki})`,
+              backgroundImage: `url(${state?.linki1})`,
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
             }}

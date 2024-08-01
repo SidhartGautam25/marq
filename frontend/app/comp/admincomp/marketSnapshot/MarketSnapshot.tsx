@@ -1,15 +1,14 @@
 import React from "react";
+import { useState, useContext } from "react";
+import { ReportContext, ReportContextType } from "@/app/context/reportContext";
 
 const MarketSnapshot = () => {
-  const data = [
-    { id: 1, name: "Alice", age: 25 },
-    { id: 2, name: "Bob", age: 30 },
-    { id: 3, name: "Charlie", age: 35 },
-  ];
+  const { state, dispatch } = useContext(ReportContext) as ReportContextType;
+  const data = state?.msTable;
 
   return (
     <div id="snap" className="container mx-auto p-4">
-      <h1 className="text-xl font-semibold mb-4">Market Snapshot</h1>
+      <h1 className="text-xl font-semibold mb-4">{state?.msHeading}</h1>
       <table className="min-w-full bg-white border border-gray-400">
         <thead className="border border-gray-200">
           <tr>
@@ -19,15 +18,19 @@ const MarketSnapshot = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item) => (
-            <tr key={item.id}>
-              <td className="py-2 px-4 border">{item.id}</td>
-              <td className="py-2 px-4 border">{item.name}</td>
-              <td className="py-2 px-4 border">{item.age}</td>
+          {data?.map((item: any, ind: any) => (
+            <tr key={ind}>
+              <td className="py-2 px-4 border">{ind + 1}</td>
+              <td className="py-2 px-4 border">{item.key}</td>
+              <td className="py-2 px-4 border">{item.value}</td>
             </tr>
           ))}
         </tbody>
       </table>
+      <div
+        // className="mt-6 border border-gray-300 p-4 min-h-[200px]"
+        dangerouslySetInnerHTML={{ __html: state?.msDesc }}
+      />
     </div>
   );
 };
