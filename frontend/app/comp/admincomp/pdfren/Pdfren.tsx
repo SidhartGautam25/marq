@@ -147,7 +147,7 @@ function Pdfren() {
             )}
           </div>
         </div>
-        <div className="w-full flex-[2] flex justify-center mt-5 md:mt-0 md:justify-start px-5 md:px-0">
+        <div className="w-full flex-[2] h-screen sticky top-0 flex justify-center mt-5 md:mt-0 md:justify-start px-5 md:px-0">
           <ReportContect/>
         </div>
       </div>
