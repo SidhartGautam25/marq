@@ -32,7 +32,7 @@ const Card: React.FC<RepProps> = ({ rep }) => {
   return (
     <>
       <div
-        className="card md:flex bg-gray-100 rounded-[5px] md:rounded-br-[4rem] border-2 border-black md:h-[17rem]"
+        className="card md:flex bg-gray-200 rounded-[5px] md:rounded-br-[4rem] border border-gray-400 md:h-[17rem] cursor-pointer"
         onClick={clickfun}
       >
         <div
@@ -50,7 +50,7 @@ const Card: React.FC<RepProps> = ({ rep }) => {
               </div>
               <div className="h-[1px] w-full bg-black mt-2"></div>
             </div>
-            <span className=" p-3 bg-blue-500 absolute bottom-0 right-0">
+            <span className=" p-3 bg-gray-600 absolute bottom-0 right-0 text-white">
               {month} {year}
             </span>
           </div>
