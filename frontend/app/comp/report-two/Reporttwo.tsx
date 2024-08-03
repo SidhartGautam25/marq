@@ -77,7 +77,7 @@ export default function Report2() {
       {/* <div>this is your functing component</div> */}
       <div className="main bg-gray-100 p-3 md:p-0">
         <div className="main2 mt-8 md:flex sm:flex md:mt-10 flex-row-reverse">
-          <div className="right flex-[10] flex flex-col gap-3 bg-blue-100 p-3 md:mr-8">
+          <div className="right flex-[10] flex flex-col gap-3 bg-gray-50 p-3 md:mr-8">
             {loading && (
               <div className="flex justify-center mt-4">
                 <Image src={load} alt="load gif" className="w-[4rem]" />
