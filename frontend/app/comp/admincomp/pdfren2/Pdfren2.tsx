@@ -40,7 +40,7 @@ const NoSSR: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 function Pdfren2() {
   const [currentpage, setCurrentpage] = useState(0);
   const [num, setNum] = useState<Number>(1);
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [isDropdownOpen, setDropdownOpen] = useState(true);
 
   const { state, dispatch } = useContext(ReportContext) as ReportContextType;
   // let pdfurl = state.linkp;
@@ -128,7 +128,7 @@ function Pdfren2() {
           </div>
           <div className="w-[20%]">
             <ReportContect />
-            <div className="bg-black text-white p-6 md:p-8 flex flex-col gap-10 items-center w-[100%] mt-10 sticky top-0">
+            <div className="bg-black text-white p-6 md:p-8 flex flex-col gap-12 items-center w-[100%] mt-10 sticky top-0">
               <div className="flex flex-col gap-5 ">
                 <span>CUSTOMIZED REPORT SOLUTION</span>
                 <p>
