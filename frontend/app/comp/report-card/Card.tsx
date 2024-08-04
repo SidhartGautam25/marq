@@ -25,7 +25,7 @@ const Card: React.FC<RepProps> = ({ rep }) => {
       type: "SET_CURRENT",
       payload: rep,
     });
-    let temp = rep.title.replace(/\s/g, "-");
+    let temp = rep.slug.replace(/\s/g, "-");
     router.push(`/report/${temp}`);
   }
 
