@@ -18,6 +18,7 @@ import Toc from "../toc/Toc";
 import ScopeReport from "../scopeReport/ScopeReport";
 import Faq from "../faq/Faq";
 import ReportContect from "../../report-contact/ReportContect";
+import OrderComponent from "../../report-order/OrderComponent";
 // import Faq from "../../faq-card/Faq";
 
 interface ChildComponentProps {
@@ -107,9 +108,11 @@ function Pdfren2() {
                     FREQUENTLY ASKED QUESTIONS
                   </a>
                 </div>
+                <Link href="/request-sample">
                 <button className="mt-6 w-full bg-red-600 text-white p-3 rounded">
-                  <i className="fas fa-download"></i> Download PDF
+                  <i className="fas fa-download"></i> Request Sample
                 </button>
+                </Link>
               </nav>
             </div>
           </div>
@@ -127,6 +130,7 @@ function Pdfren2() {
             </div>
           </div>
           <div className="w-[20%]">
+            <OrderComponent/>
             <ReportContect />
             <div className="bg-black text-white p-6 md:p-8 flex flex-col gap-12 items-center w-[100%] mt-10 sticky top-0">
               <div className="flex flex-col gap-5 ">
