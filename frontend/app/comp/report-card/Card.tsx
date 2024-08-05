@@ -25,7 +25,7 @@ const Card: React.FC<RepProps> = ({ rep }) => {
       type: "SET_CURRENT",
       payload: rep,
     });
-    let temp = rep.title.replace(/\s/g, "-");
+    let temp = rep.slug.replace(/\s/g, "-");
     router.push(`/report/${temp}`);
   }
 
@@ -58,7 +58,7 @@ const Card: React.FC<RepProps> = ({ rep }) => {
 
         <div className="right flex-[1] flex flex-col justify-between p-6 md:ml-5 md:p-5 md:gap-14 gap-3">
           <div className=" text-gray-600">
-            <div className="md:line-clamp-4 line-clamp-3">{rep.desc}</div>
+            <div className="md:line-clamp-4 line-clamp-3">{rep.subTitle}</div>
           </div>
           <div className=" text-gray-900 flex flex-col justify-center bg-white items-center">
             <div className="">Study Period: {rep.study}</div>
