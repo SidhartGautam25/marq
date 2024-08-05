@@ -32,11 +32,11 @@ const Card: React.FC<RepProps> = ({ rep }) => {
   return (
     <>
       <div
-        className="card md:flex bg-gray-200 rounded-[5px] md:rounded-br-[4rem] border border-gray-400 md:h-[17rem] cursor-pointer"
+        className="card md:flex bg-gray-200 rounded-[8px]  border border-gray-300 md:h-[17rem] cursor-pointer  ease-in-out duration-300 hover:scale-[1.02]"
         onClick={clickfun}
       >
         <div
-          className=" relative md:flex-[1] flex items-center p-3 md:h-full h-[15rem]"
+          className=" relative md:flex-[1] flex items-center p-3 md:h-full h-[15rem] rounded-bl-[8px] rounded-tl-[8px]"
           style={{
             backgroundImage: `url(${rep.linki2})`,
             backgroundSize: "cover",
@@ -50,7 +50,7 @@ const Card: React.FC<RepProps> = ({ rep }) => {
               </div>
               <div className="h-[1px] w-full bg-black mt-2"></div>
             </div>
-            <span className=" p-3 bg-gray-600 absolute bottom-0 right-0 text-white">
+            <span className=" p-3 bg-gray-600 absolute bottom-0 right-0 text-white text-[12px]">
               {month} {year}
             </span>
           </div>

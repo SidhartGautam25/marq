@@ -19,6 +19,8 @@ import ScopeReport from "../scopeReport/ScopeReport";
 import Faq from "../faq/Faq";
 import ReportContect from "../../report-contact/ReportContect";
 import { useInView } from "react-intersection-observer";
+import OrderComponent from "../../report-order/OrderComponent";
+// import Faq from "../../faq-card/Faq";
 
 const NoSSR: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [isClient, setIsClient] = useState(false);
@@ -203,9 +205,11 @@ function Pdfren2() {
                     FREQUENTLY ASKED QUESTIONS
                   </a>
                 </div>
-                <button className="mt-6 w-full bg-red-600 text-white p-3 rounded">
-                  Download PDF
-                </button>
+                <Link href="/request-sample">
+                  <button className="mt-6 w-full bg-red-600 text-white p-3 rounded">
+                    Request Sample
+                  </button>
+                </Link>
               </nav>
             </div>
           </div>
@@ -241,6 +245,7 @@ function Pdfren2() {
             </div>
           </div>
           <div className="w-[20%]">
+            <OrderComponent />
             <ReportContect />
             <div className="bg-black text-white p-6 md:p-8 flex flex-col gap-12 items-center w-[100%] mt-10 sticky top-0">
               <div className="flex flex-col gap-5 ">
