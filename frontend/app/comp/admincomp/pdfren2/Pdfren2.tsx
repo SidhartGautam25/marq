@@ -41,6 +41,12 @@ function Pdfren2() {
   const [isDropdownOpen, setDropdownOpen] = useState(true);
 
   const { state } = useContext(ReportContext) as ReportContextType;
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
 
   // Intersection observers for each section
   const { ref: snapRef, inView: snapInView } = useInView({ threshold: 0.1 });
@@ -110,8 +116,8 @@ function Pdfren2() {
                       href="#snap"
                       className={`block text-gray-600 p-2 ${
                         currentTab === "snap"
-                          ? "bg-gray-300"
-                          : "hover:bg-gray-200"
+                          ? "bg-gray-700/20"
+                          : "hover:bg-gray-700/10"
                       }`}
                       onClick={() => setCurrentTab("snap")}
                     >
@@ -121,8 +127,8 @@ function Pdfren2() {
                       href="#overview"
                       className={`block text-gray-600 p-2 ${
                         currentTab === "overview"
-                          ? "bg-gray-300"
-                          : "hover:bg-gray-200"
+                          ? "bg-gray-700/20"
+                          : "hover:bg-gray-700/10"
                       }`}
                       onClick={() => setCurrentTab("overview")}
                     >
@@ -132,8 +138,8 @@ function Pdfren2() {
                       href="#keymar"
                       className={`block text-gray-600 p-2 ${
                         currentTab === "keymar"
-                          ? "bg-gray-300"
-                          : "hover:bg-gray-200"
+                          ? "bg-gray-700/20"
+                          : "hover:bg-gray-700/10"
                       }`}
                       onClick={() => setCurrentTab("keymar")}
                     >
@@ -143,8 +149,8 @@ function Pdfren2() {
                       href="#compt"
                       className={`block text-gray-600 p-2 ${
                         currentTab === "compt"
-                          ? "bg-gray-300"
-                          : "hover:bg-gray-200"
+                          ? "bg-gray-700/20"
+                          : "hover:bg-gray-700/10"
                       }`}
                       onClick={() => setCurrentTab("compt")}
                     >
@@ -154,8 +160,8 @@ function Pdfren2() {
                       href="#players"
                       className={`block text-gray-600 p-2 ${
                         currentTab === "players"
-                          ? "bg-gray-300"
-                          : "hover:bg-gray-200"
+                          ? "bg-gray-700/20"
+                          : "hover:bg-gray-700/10"
                       }`}
                       onClick={() => setCurrentTab("players")}
                     >
@@ -165,8 +171,8 @@ function Pdfren2() {
                       href="#recent"
                       className={`block text-gray-600 p-2 ${
                         currentTab === "recent"
-                          ? "bg-gray-300"
-                          : "hover:bg-gray-200"
+                          ? "bg-gray-700/20"
+                          : "hover:bg-gray-700/10"
                       }`}
                       onClick={() => setCurrentTab("recent")}
                     >
@@ -178,7 +184,7 @@ function Pdfren2() {
                   <a
                     href="#toc"
                     className={`text-gray-900 p-2  ${
-                      currentTab === "toc" ? "bg-gray-300" : "hover:bg-gray-200"
+                      currentTab === "toc" ? "bg-gray-700/20" : "hover:bg-gray-700/10"
                     }`}
                     onClick={() => setCurrentTab("toc")}
                   >
@@ -188,8 +194,8 @@ function Pdfren2() {
                     href="#scope"
                     className={`block text-gray-900 p-2  ${
                       currentTab === "scope"
-                        ? "bg-gray-300"
-                        : "hover:bg-gray-200"
+                        ? "bg-gray-700/20"
+                        : "hover:bg-gray-700/10"
                     }`}
                     onClick={() => setCurrentTab("scope")}
                   >
@@ -198,18 +204,76 @@ function Pdfren2() {
                   <a
                     href="#faq"
                     className={`block text-gray-900 p-2 ${
-                      currentTab === "faq" ? "bg-gray-300" : "hover:bg-gray-200"
+                      currentTab === "faq" ? "bg-gray-700/20" : "hover:bg-gray-700/10"
                     }`}
                     onClick={() => setCurrentTab("faq")}
                   >
                     FREQUENTLY ASKED QUESTIONS
                   </a>
                 </div>
-                <Link href="/request-sample">
-                  <button className="mt-6 w-full bg-red-600 text-white p-3 rounded">
+                <div>
+                  <button className="mt-6 w-full bg-red-600 text-white p-3 rounded" onClick={toggleModal}>
                     Request Sample
                   </button>
-                </Link>
+                  {isModalOpen&&(<div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="relative p-5 border bg-gray-50 rounded-md w-[90%] md:w-[50%]">
+            <button
+              onClick={toggleModal}
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl"
+            >
+              &times;
+            </button>
+            <form action="" className="flex flex-col gap-5">
+              <div className="flex flex-col">
+                <label htmlFor="name">
+                  Name<span className="text-red-600">*</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Enter Name "
+                  className="focus:outline-none p-3 border rounded-md"
+                  id="name"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="email">
+                  Email<span className="text-red-600">*</span>
+                </label>
+                <input
+                  type="email"
+                  placeholder="Enter email "
+                  className="focus:outline-none p-3 border rounded-md"
+                  id="email"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="contact">
+                  Contact Number<span className="text-red-600">*</span>
+                </label>
+                <input
+                  type="number"
+                  placeholder="(Country code)-Phone-Number"
+                  className="focus:outline-none p-3 border rounded-md"
+                  id="contact"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="requirements">
+                  Please fill us in on your requirements<span className="text-red-600">*</span>
+                </label>
+                <textarea
+                  placeholder=""
+                  className="focus:outline-none p-3 border rounded-md min-h-[12rem]"
+                  id="requirements"
+                />
+              </div>
+              <button className="bg-slate-500 w-[5rem] p-2 rounded-md text-white hover:bg-slate-800 transition duration-300">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>)}
+                </div>
               </nav>
             </div>
           </div>
