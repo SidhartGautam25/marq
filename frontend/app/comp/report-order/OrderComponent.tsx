@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import { ReportContext, ReportContextType } from "@/app/context/reportContext";
+import React, { useContext, useState } from "react";
 
 const OrderComponent: React.FC = () => {
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
+  const { state, dispatch } = useContext(ReportContext) as ReportContextType;
 
   const handleOptionClick = (option: number) => {
     setSelectedOption(option === selectedOption ? null : option);
@@ -19,7 +21,7 @@ const OrderComponent: React.FC = () => {
           }`}
           onClick={() => handleOptionClick(1)}
         >
-          <div className=" p-2">1. Data Only (MS Excel)</div>
+          <div className=" p-2">1. Data Only (MS Excel) : ${state.pSingle}</div>
           {selectedOption === 1 && (
             <div className="mt-2 text-sm bg-white text-gray-600 p-2">
               Access market data conveniently organized in an Excel spreadsheet
@@ -35,7 +37,7 @@ const OrderComponent: React.FC = () => {
           }`}
           onClick={() => handleOptionClick(2)}
         >
-          <div className="p-2">2. Full Report (PDF)</div>
+          <div className="p-2">2. Full Report (PDF) : ${state.pTeam}</div>
           {selectedOption === 2 && (
             <div className="mt-2 text-sm bg-white text-gray-600 p-2">
               Gain comprehensive market research findings and analysis in a
@@ -51,7 +53,9 @@ const OrderComponent: React.FC = () => {
           }`}
           onClick={() => handleOptionClick(3)}
         >
-          <div className=" p-2">3. Complete - Report + Data</div>
+          <div className=" p-2">
+            3. Complete - Report + Data : ${state.pCorp}
+          </div>
           {selectedOption === 3 && (
             <div className="mt-2 text-sm bg-white text-gray-600 p-2">
               Receive both an Excel Data Pack and a PDF Report for a complete
