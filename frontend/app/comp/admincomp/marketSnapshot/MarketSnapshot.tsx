@@ -13,8 +13,8 @@ const MarketSnapshot = () => {
         <thead className="border border-gray-200">
           <tr>
             {/* <th className="py-2 px-4 border">ID</th> */}
-            <th className="py-2 px-4 border">Report Attribute</th>
-            <th className="py-2 px-4 border">Details</th>
+            <th className="py-2 px-4 border border-r border-r-slate-300 bg-gray-700/10">Report Attribute</th>
+            <th className="py-2 px-4 border bg-gray-700/10">Details</th>
           </tr>
         </thead>
         <tbody>
