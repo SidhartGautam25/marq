@@ -54,7 +54,7 @@ const PdfDescription: React.FC<DynamicProps> = ({ rep }) => {
             {state?.title}
           </div>
           <div className="my-0 line-clamp-5 text-[14px] text-gray-500">
-            {state?.desc}
+            {state?.subTitle}
           </div>
           {/* <div className=" border-t-2 border-gray-300 font-extralight"></div> */}
           {/* <div className="flex justify-between">

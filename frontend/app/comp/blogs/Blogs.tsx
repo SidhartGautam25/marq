@@ -8,14 +8,13 @@ import { convert } from "@/app/utility/subind";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { my_url } from "@/app/utility/varr";
+import { BlogContext, BlogContextType } from "@/app/context/blogContext";
 interface Rep {
-  title: string;
-  linki: string;
-  createdAt: any;
+  [key: string]: any;
 }
 
 export default function Blogs() {
-  const [report, setReport] = useState<Rep[]>([]);
+  const [blog, setBlog] = useState<Rep[]>([]);
   //year and month states
   const [year1, setyear1] = useState<string>("");
   const [month1, setmonth1] = useState<string>("");
@@ -31,29 +30,29 @@ export default function Blogs() {
   // const dev_url = "http://localhost:8800";
   // const prod_url = "https://admin-backend-1-ekoa.onrender.com";
 
-  let url = `${my_url}/api/getall/pinned-report`;
+  // let url = `${my_url}/api/getall/pinned-report`;
   const [back, setBack] = useState("");
   let background;
-  const { state, dispatch } = useContext(ReportContext) as ReportContextType;
+  const { state, dispatch } = useContext(BlogContext) as BlogContextType;
   const router = useRouter();
   function clickfun(rep: Record<string, any>) {
     dispatch({
       type: "SET_CURRENT",
       payload: {
         title: rep.title,
-        desc: rep.desc,
-        linki: rep.linki,
+        // desc: rep.desc,
+        // linkt: rep.linki1,
         linkp: rep.linkp,
         createdAt: rep.createdAt,
         industry: rep.industry,
         subind: rep.subind,
         linkt: rep.linkt,
-        linkf: rep.linkf,
+        // linkf: rep.linkf,
         cpage: 0,
       },
     });
     let temp = rep.title.replace(/\s/g, "-");
-    router.push(`/report/${temp}`);
+    router.push(`/insight/${temp}`);
   }
 
   // const date = rep.createdAt;
@@ -62,16 +61,17 @@ export default function Blogs() {
   // const month = convert(mon);
 
   useEffect(() => {
+    let url = `${my_url}/api/getall/blogs`;
     const fetchReport = async () => {
       try {
         console.log("request has been sent");
         const daata = await axios.get(url);
         if (daata) {
           console.log("data in blog section is ", daata);
-          let rep = daata.data.reports;
-          setReport([...daata.data.reports]);
-          background = "bg-[url(" + daata.data.reports[0]?.linki + ")]";
-          setBack(daata.data.reports[0]?.linki);
+          let rep = daata.data.blogs;
+          setBlog([...daata.data.blogs]);
+          background = "bg-[url(" + daata.data.blogs[0]?.linkt + ")]";
+          setBack(daata.data.blogs[0]?.linkt);
           // console.log("background is ", rep.length);
           if (rep.length > 4) {
             setyear1(rep[0].createdAt.substring(0, 4));
@@ -105,7 +105,7 @@ export default function Blogs() {
         <div
           className="overflow-hidden w-full md:w-1/2 h-[24rem] md:h-auto"
           onClick={() => {
-            clickfun(report[0]);
+            clickfun(blog[0]);
           }}
         >
           <div
@@ -123,7 +123,7 @@ export default function Blogs() {
                 {month1} {year1}
               </span>
               <h1 className="md:text-3xl text-xl font-medium group-hover:text-blue-600 ">
-                {report[0]?.title}
+                {blog[0]?.title}
               </h1>
             </div>
           </div>
@@ -134,12 +134,12 @@ export default function Blogs() {
           <div
             className="relative group h-[60%] lg:flex"
             onClick={() => {
-              clickfun(report[1]);
+              clickfun(blog[1]);
             }}
           >
             <div className=" overflow-hidden w-full md:w-1/2">
               <img
-                src={report[1]?.linki}
+                src={blog[1]?.linkt}
                 className="duration-1000 group-hover:scale-110 h-full w-full"
                 alt="blog2"
               />
@@ -149,7 +149,7 @@ export default function Blogs() {
                 {month2} {year2}
               </span>
               <h1 className="group-hover:text-blue-600 text-xl text-white md:text-black">
-                {report[1]?.title}
+                {blog[1]?.title}
               </h1>
             </div>
           </div>
@@ -158,7 +158,7 @@ export default function Blogs() {
           <div
             className="group md:h-[40%] h-auto w-full bg-[#1b1f29] text-white lg:flex lg:flex-col justify-center"
             onClick={() => {
-              clickfun(report[2]);
+              clickfun(blog[2]);
             }}
           >
             <div className="lg:w-1/2 p-10 duration-1000 group-hover:translate-y-2 group-hover:text-blue-600">
@@ -166,7 +166,7 @@ export default function Blogs() {
                 {month3} {year3}
               </div>
               <h1 className="text-xl group-hover:text-blue-600 ">
-                {report[2]?.title}
+                {blog[2]?.title}
               </h1>
             </div>
           </div>
@@ -178,7 +178,7 @@ export default function Blogs() {
         <div
           className="flex md:w-1/2 w-full group md:flex-row overflow-hidden flex-col-reverse relative"
           onClick={() => {
-            clickfun(report[3]);
+            clickfun(blog[3]);
           }}
         >
           <div className=" md:bg-none absolute md:static bg-gradient-to-t from-black text-white md:text-black justify-center  duration-1000 p-10 group-hover:translate-y-2 group-hover:text-blue-600 flex flex-col md:w-1/2 z-50">
@@ -186,12 +186,12 @@ export default function Blogs() {
               {month4} {year4}
             </span>
             <h1 className="text-xl group-hover:text-blue-600 ">
-              {report[3]?.title}
+              {blog[3]?.title}
             </h1>
           </div>
           <div className=" overflow-hidden md:w-1/2">
             <img
-              src={report[3]?.linki}
+              src={blog[3]?.linkt}
               className="group-hover:scale-110 h-full duration-1000 md:w-full"
               alt="blog3"
             />
@@ -204,14 +204,14 @@ export default function Blogs() {
             <div
               className="p-10 group-hover:translate-y-2 duration-1000 flex flex-col"
               onClick={() => {
-                clickfun(report[4]);
+                clickfun(blog[4]);
               }}
             >
               <span className="font-semibold group-hover:text-blue-600 md:text-xl text-sm mb-3">
                 {month5} {year5}
               </span>
               <h1 className="text-xl group-hover:text-blue-600 ">
-                {report[4]?.title}
+                {blog[4]?.title}
               </h1>
             </div>
             <div className=" flex bg-blue-600 hover:bg-blue-700 p-5 w-full">
@@ -224,7 +224,7 @@ export default function Blogs() {
           </div>
           <div className="md:w-1/2 overflow-hidden">
             <img
-              src={report[4]?.linki}
+              src={blog[4]?.linkt}
               className="group-hover:scale-110 duration-1000 md:h-full md:w-full"
               alt="blog4"
             />

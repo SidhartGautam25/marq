@@ -44,6 +44,8 @@ export default function Report2() {
       console.log("fetch report called");
       let url = `${my_url}/api/getall/report?page=${page}`;
 
+      //this is reports for report store
+
       try {
         setLoading(true);
         const daata = await axios.get(url);
@@ -114,52 +116,52 @@ export default function Report2() {
           </div>
 
           <div className="flex justify-center flex-[4] w-full">
-          <div className="md:w-[80%] w-full">
-            <div className="p-5 pt-0">
-              <div className="titel flex justify-center text-2xl font-semibold">
-                <span className="md:mt-0 mt-6">Industries </span>
-              </div>
-              <div className="buttans flex flex-col items-center w-full">
-                {indus.map((item, index) => {
-                  return (
-                    <Fragment key={index}>
-                      <Buttons link={item.link} heading={item.head} />
-                    </Fragment>
-                  );
-                })}
-              </div>
-            </div>
-            <div className="w-full p-8 md:p-2">
-              <div className="bg-black text-white p-6 md:p-8 flex flex-col gap-10 items-center w-full">
-                <div className="flex flex-col gap-5">
-                  <span>CUSTOMIZED REPORT SOLUTION</span>
-                  <p>
-                    Obtain a personalized market intelligence solution designed
-                    specifically for your business
-                  </p>
-                  <ul className="list-disc flex flex-col gap-3">
-                    <li>
-                      Choose customized report sections that align with your
-                      requirements
-                    </li>
-                    <li>
-                      Receive a report tailored to your specific needs and
-                      preferences
-                    </li>
-                  </ul>
+            <div className="md:w-[80%] w-full">
+              <div className="p-5 pt-0">
+                <div className="titel flex justify-center text-2xl font-semibold">
+                  <span className="md:mt-0 mt-6">Industries </span>
                 </div>
-                <Link
-                  className="flex justify-center bg-white text-black p-2 md:p-3 rounded-[10px]  mt-8 w-full"
-                  href="/contact"
-                >
-                  <button className="flex gap-8 ">
-                    Contact Us
-                    <IoMdMail className=" text-xl" />
-                  </button>
-                </Link>
+                <div className="buttans flex flex-col items-center w-full">
+                  {indus.map((item, index) => {
+                    return (
+                      <Fragment key={index}>
+                        <Buttons link={item.link} heading={item.head} />
+                      </Fragment>
+                    );
+                  })}
+                </div>
+              </div>
+              <div className="w-full p-8 md:p-2">
+                <div className="bg-black text-white p-6 md:p-8 flex flex-col gap-10 items-center w-full">
+                  <div className="flex flex-col gap-5">
+                    <span>CUSTOMIZED REPORT SOLUTION</span>
+                    <p>
+                      Obtain a personalized market intelligence solution
+                      designed specifically for your business
+                    </p>
+                    <ul className="list-disc flex flex-col gap-3">
+                      <li>
+                        Choose customized report sections that align with your
+                        requirements
+                      </li>
+                      <li>
+                        Receive a report tailored to your specific needs and
+                        preferences
+                      </li>
+                    </ul>
+                  </div>
+                  <Link
+                    className="flex justify-center bg-white text-black p-2 md:p-3 rounded-[10px]  mt-8 w-full"
+                    href="/contact"
+                  >
+                    <button className="flex gap-8 ">
+                      Contact Us
+                      <IoMdMail className=" text-xl" />
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
           </div>
         </div>
         <Footer />

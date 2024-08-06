@@ -114,7 +114,7 @@ const Reducer = (
       return {
         ...state,
         title: action.payload.title,
-        desc: action.payload.desc,
+        // desc: action.payload.desc,
         linkp: action.payload.linkp,
         linkt: action.payload.linkt,
         industry: action.payload.industry,
