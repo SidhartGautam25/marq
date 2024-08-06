@@ -20,7 +20,6 @@ import Faq from "../faq/Faq";
 import ReportContect from "../../report-contact/ReportContect";
 import { useInView } from "react-intersection-observer";
 import OrderComponent from "../../report-order/OrderComponent";
-import Form from "../../report-form/Form";
 // import Faq from "../../faq-card/Faq";
 
 const NoSSR: React.FC<{ children: ReactNode }> = ({ children }) => {
