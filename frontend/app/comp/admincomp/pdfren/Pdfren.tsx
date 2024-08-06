@@ -14,7 +14,6 @@ import "@react-pdf-viewer/core/lib/styles/index.css";
 import PdfDescription from "../pdfdescription/pdfdescription";
 import { ReportContext, ReportContextType } from "@/app/context/reportContext";
 import exp from "constants";
-import Form from "../../report-form/Form";
 //this
 interface ChildComponentProps {
   reports: Record<string, any>[];
@@ -87,7 +86,6 @@ function Pdfren() {
             </div>
           </div>
           <div className=" w-full">
-            {num == 4 ? <Form /> : <span></span>}
             {/* {state.cid && reports ? `${reports[state.cid].link1}` : "nothing"} */}
 
             {num != 4 ? (
