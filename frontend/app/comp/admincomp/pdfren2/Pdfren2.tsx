@@ -1,5 +1,5 @@
 "use client";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, ReactNode } from "react";
 import Link from "next/link";
 import { IoMdMail } from "react-icons/io";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
@@ -18,12 +18,11 @@ import Toc from "../toc/Toc";
 import ScopeReport from "../scopeReport/ScopeReport";
 import Faq from "../faq/Faq";
 import ReportContect from "../../report-contact/ReportContect";
+import { useInView } from "react-intersection-observer";
+import OrderComponent from "../../report-order/OrderComponent";
 // import Faq from "../../faq-card/Faq";
 
-interface ChildComponentProps {
-  reports: Record<string, any>[];
-}
-const NoSSR: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const NoSSR: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -38,20 +37,51 @@ const NoSSR: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 };
 
 function Pdfren2() {
-  const [currentpage, setCurrentpage] = useState(0);
-  const [num, setNum] = useState<Number>(1);
+  const [currentTab, setCurrentTab] = useState<string>("snap"); // Initialize to "snap"
   const [isDropdownOpen, setDropdownOpen] = useState(true);
 
-  const { state, dispatch } = useContext(ReportContext) as ReportContextType;
-  // let pdfurl = state.linkp;
-  // let turl = state.linkt;
-  // let furl = state.linkf;
-  console.log("the report is ", state);
+  const { state } = useContext(ReportContext) as ReportContextType;
 
-  function click(n: Number) {
-    setNum(n);
-    console.log("num is ", n);
-  }
+  // Intersection observers for each section
+  const { ref: snapRef, inView: snapInView } = useInView({ threshold: 0.1 });
+  const { ref: overviewRef, inView: overviewInView } = useInView({
+    threshold: 0.1,
+  });
+  const { ref: keymarRef, inView: keymarInView } = useInView({
+    threshold: 0.1,
+  });
+  const { ref: comptRef, inView: comptInView } = useInView({ threshold: 0.1 });
+  const { ref: playersRef, inView: playersInView } = useInView({
+    threshold: 0.1,
+  });
+  const { ref: recentRef, inView: recentInView } = useInView({
+    threshold: 0.1,
+  });
+  const { ref: tocRef, inView: tocInView } = useInView({ threshold: 0.1 });
+  const { ref: scopeRef, inView: scopeInView } = useInView({ threshold: 0.1 });
+  const { ref: faqRef, inView: faqInView } = useInView({ threshold: 0.1 });
+
+  useEffect(() => {
+    if (snapInView) setCurrentTab("snap");
+    else if (overviewInView) setCurrentTab("overview");
+    else if (keymarInView) setCurrentTab("keymar");
+    else if (comptInView) setCurrentTab("compt");
+    else if (playersInView) setCurrentTab("players");
+    else if (recentInView) setCurrentTab("recent");
+    else if (tocInView) setCurrentTab("toc");
+    else if (scopeInView) setCurrentTab("scope");
+    else if (faqInView) setCurrentTab("faq");
+  }, [
+    snapInView,
+    overviewInView,
+    keymarInView,
+    comptInView,
+    playersInView,
+    recentInView,
+    tocInView,
+    scopeInView,
+    faqInView,
+  ]);
 
   return (
     <NoSSR>
@@ -61,10 +91,10 @@ function Pdfren2() {
         </div>
         <div className="flex">
           <div className="left w-[20%]">
-            <div className=" bg-white shadow-lg p-4 sticky top-0">
-              <nav className="space-y-6">
+            <div className="bg-white shadow-lg p-4 sticky top-0">
+              <nav className="space-y-1">
                 <div
-                  className="text-gray-900 cursor-pointer flex items-center"
+                  className="text-gray-900 cursor-pointer flex items-center p-2 hover:bg-gray-200"
                   onClick={() => setDropdownOpen(!isDropdownOpen)}
                 >
                   <span>ABOUT THIS REPORT</span>
@@ -75,58 +105,147 @@ function Pdfren2() {
                   )}
                 </div>
                 {isDropdownOpen && (
-                  <div className="space-y-2 flex flex-col ml-5 mt-2 gap-2">
-                    <a href="#snap" className="block text-gray-600">
+                  <div className="flex flex-col ml-5">
+                    <a
+                      href="#snap"
+                      className={`block text-gray-600 p-2 ${
+                        currentTab === "snap"
+                          ? "bg-gray-300"
+                          : "hover:bg-gray-200"
+                      }`}
+                      onClick={() => setCurrentTab("snap")}
+                    >
                       Market Snapshot
                     </a>
-                    <a href="#overview" className="block text-gray-600">
+                    <a
+                      href="#overview"
+                      className={`block text-gray-600 p-2 ${
+                        currentTab === "overview"
+                          ? "bg-gray-300"
+                          : "hover:bg-gray-200"
+                      }`}
+                      onClick={() => setCurrentTab("overview")}
+                    >
                       Market Overview
                     </a>
-                    <a href="#keymar" className="block text-gray-600">
+                    <a
+                      href="#keymar"
+                      className={`block text-gray-600 p-2 ${
+                        currentTab === "keymar"
+                          ? "bg-gray-300"
+                          : "hover:bg-gray-200"
+                      }`}
+                      onClick={() => setCurrentTab("keymar")}
+                    >
                       Key Market Trends
                     </a>
-                    <a href="#compt" className="block text-gray-600">
+                    <a
+                      href="#compt"
+                      className={`block text-gray-600 p-2 ${
+                        currentTab === "compt"
+                          ? "bg-gray-300"
+                          : "hover:bg-gray-200"
+                      }`}
+                      onClick={() => setCurrentTab("compt")}
+                    >
                       Competitive Landscape
                     </a>
-                    <a href="#players" className="block text-gray-600">
+                    <a
+                      href="#players"
+                      className={`block text-gray-600 p-2 ${
+                        currentTab === "players"
+                          ? "bg-gray-300"
+                          : "hover:bg-gray-200"
+                      }`}
+                      onClick={() => setCurrentTab("players")}
+                    >
                       Major Players
                     </a>
-                    <a href="#recent" className="block text-gray-600">
+                    <a
+                      href="#recent"
+                      className={`block text-gray-600 p-2 ${
+                        currentTab === "recent"
+                          ? "bg-gray-300"
+                          : "hover:bg-gray-200"
+                      }`}
+                      onClick={() => setCurrentTab("recent")}
+                    >
                       Recent Developments
                     </a>
                   </div>
                 )}
-                <div className="flex gap-5 flex-col">
-                  <a href="#toc" className=" text-gray-900">
+                <div className="flex flex-col">
+                  <a
+                    href="#toc"
+                    className={`text-gray-900 p-2  ${
+                      currentTab === "toc" ? "bg-gray-300" : "hover:bg-gray-200"
+                    }`}
+                    onClick={() => setCurrentTab("toc")}
+                  >
                     TABLE OF CONTENTS
                   </a>
-                  <a href="#scope" className="block  text-gray-900">
+                  <a
+                    href="#scope"
+                    className={`block text-gray-900 p-2  ${
+                      currentTab === "scope"
+                        ? "bg-gray-300"
+                        : "hover:bg-gray-200"
+                    }`}
+                    onClick={() => setCurrentTab("scope")}
+                  >
                     SCOPE OF THE REPORT
                   </a>
-                  <a href="#faq" className="block text-gray-900">
+                  <a
+                    href="#faq"
+                    className={`block text-gray-900 p-2 ${
+                      currentTab === "faq" ? "bg-gray-300" : "hover:bg-gray-200"
+                    }`}
+                    onClick={() => setCurrentTab("faq")}
+                  >
                     FREQUENTLY ASKED QUESTIONS
                   </a>
                 </div>
-                <button className="mt-6 w-full bg-red-600 text-white p-3 rounded">
-                  <i className="fas fa-download"></i> Download PDF
-                </button>
+                <Link href="/request-sample">
+                  <button className="mt-6 w-full bg-red-600 text-white p-3 rounded">
+                    Request Sample
+                  </button>
+                </Link>
               </nav>
             </div>
           </div>
           <div className="right w-[60%]">
-            <div className=" bg-white shadow-lg p-4">
-              <MarketSnapshot />
-              <MarketOverview />
-              <KeyMarket />
-              <ComptetiveLandscape />
-              <MajorPlayers />
-              <RecentDevelopments />
-              <Toc />
-              <ScopeReport />
-              <Faq />
+            <div className="bg-white shadow-lg p-6 pt-0">
+              <section ref={snapRef}>
+                <MarketSnapshot />
+              </section>
+              <section ref={overviewRef}>
+                <MarketOverview />
+              </section>
+              <section ref={keymarRef}>
+                <KeyMarket />
+              </section>
+              <section ref={comptRef}>
+                <ComptetiveLandscape />
+              </section>
+              <section ref={playersRef}>
+                <MajorPlayers />
+              </section>
+              <section ref={recentRef}>
+                <RecentDevelopments />
+              </section>
+              <section ref={tocRef}>
+                <Toc />
+              </section>
+              <section ref={scopeRef}>
+                <ScopeReport />
+              </section>
+              <section ref={faqRef}>
+                <Faq />
+              </section>
             </div>
           </div>
           <div className="w-[20%]">
+            <OrderComponent />
             <ReportContect />
             <div className="bg-black text-white p-6 md:p-8 flex flex-col gap-12 items-center w-[100%] mt-10 sticky top-0">
               <div className="flex flex-col gap-5 ">
