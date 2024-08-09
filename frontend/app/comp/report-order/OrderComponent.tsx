@@ -11,7 +11,7 @@ const OrderComponent: React.FC = () => {
 
   return (
     <div className="max-w-md mx-auto shadow-md bg-gray-50 p-2">
-      <h2 className="text-xl font-semibold mb-4 text-center">Place An Order</h2>
+      <h2 className="text-xl font-semibold mb-6 text-center">Place An Order</h2>
       <div>
         <div
           className={`mb-2 border rounded cursor-pointer transition-all duration-500 ease-in-out ${

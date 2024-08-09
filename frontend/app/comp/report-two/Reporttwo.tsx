@@ -35,6 +35,7 @@ export default function Report2() {
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
+    //this is report store
     // Code inside this function will run after every render
     // You can perform side effects, such as data fetching, subscriptions, or DOM manipulations here
 

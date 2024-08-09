@@ -2,9 +2,15 @@ import Image from "next/image";
 import img1 from "@/public/assets/report-img1.png";
 import { convert } from "@/app/utility/subind";
 import { ReportContext, ReportContextType } from "@/app/context/reportContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { title } from "process";
 import { useRouter } from "next/navigation";
+import {
+  CurrRelatedContext,
+  CurrRelatedContextType,
+} from "@/app/context/currRelated";
+import { my_url } from "@/app/utility/varr";
+import axios from "axios";
 
 export interface RepProps {
   rep: Record<string, any>;
@@ -17,9 +23,13 @@ const Card: React.FC<RepProps> = ({ rep }) => {
   const mon = date?.substring(5, 7);
   const month = convert(mon);
   const { state, dispatch } = useContext(ReportContext) as ReportContextType;
+  const { state3, dispatch3 } = useContext(
+    CurrRelatedContext
+  ) as CurrRelatedContextType;
   const router = useRouter();
+  const [rel, setRel] = useState<Record<string, any>[]>([]);
 
-  function clickfun() {
+  const clickfun = async () => {
     console.log("click fun my friend at card component ", rep);
     dispatch({
       type: "SET_CURRENT",
@@ -27,7 +37,41 @@ const Card: React.FC<RepProps> = ({ rep }) => {
     });
     let temp = rep.slug.replace(/\s/g, "-");
     router.push(`/report/${temp}`);
-  }
+
+    // let related = state.related;
+    // console.log("related eeeeports are ", related);
+    // // const [rel, setRel] = useState<Record<string, any>[]>([]);
+
+    // let url = `${my_url}/api/getall/reports/related`;
+    // // try {
+    // console.log("requesting related report for this in card section ", url);
+    // console.log("url is ", url);
+    // const daata = await axios.get(url, {
+    //   params: {
+    //     f: related[0],
+    //     s: related[1],
+    //     t: related[2],
+    //   },
+    // });
+
+    // console.log("daata on related report section is ", daata);
+    // if (daata) {
+    //   // setLoading(false);
+    //   // console.log("daaaaaattatatata is ", daata.data);
+    //   setRel([...daata.data]);
+    //   // setLen(daata.data.len);
+    // }
+
+    // dispatch3({
+    //   type: "SET_CURRENT_RELATED",
+    //   payload: daata.data,
+    // });
+    // // } catch (err) {}
+
+    //  let temp = rep.slug.replace(/\s/g, "-");
+    //  router.push(`/report/${temp}`);
+  };
+  //report card page
 
   return (
     <>
