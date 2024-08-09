@@ -10,6 +10,7 @@ const inter = Noto_Serif_Georgian({ weight: "400", subsets: ["latin"] });
 
 import { ReportContextProvider } from "./context/reportContext";
 import { BlogContextProvider } from "./context/blogContext";
+import { CurrRelatedContextProvider } from "./context/currRelated";
 
 export const metadata: Metadata = {
   title: "Marqstats",
@@ -25,7 +26,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <BlogContextProvider>
-          <ReportContextProvider>{children}</ReportContextProvider>
+          <CurrRelatedContextProvider>
+            <ReportContextProvider>{children}</ReportContextProvider>
+          </CurrRelatedContextProvider>
         </BlogContextProvider>
       </body>
     </html>

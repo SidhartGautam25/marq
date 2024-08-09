@@ -21,6 +21,12 @@ import ReportContect from "../../report-contact/ReportContect";
 import { useInView } from "react-intersection-observer";
 import OrderComponent from "../../report-order/OrderComponent";
 import Relatedreport from "../relatedreport/Relatedreport";
+import { my_url } from "@/app/utility/varr";
+import axios from "axios";
+import {
+  CurrRelatedContext,
+  CurrRelatedContextType,
+} from "@/app/context/currRelated";
 // import Faq from "../../faq-card/Faq";
 
 const NoSSR: React.FC<{ children: ReactNode }> = ({ children }) => {
@@ -42,6 +48,9 @@ function Pdfren2() {
   const [isDropdownOpen, setDropdownOpen] = useState(true);
 
   const { state } = useContext(ReportContext) as ReportContextType;
+  const { state3, dispatch3 } = useContext(
+    CurrRelatedContext
+  ) as CurrRelatedContextType;
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleModal = () => {
@@ -69,6 +78,45 @@ function Pdfren2() {
   const { ref: relatedRef, inView: relatedInView } = useInView({
     threshold: 0.1,
   });
+  useEffect(() => {
+    const myfun = async () => {
+      let related = state.related;
+      console.log("related eeeeports are ", related);
+      // const [rel, setRel] = useState<Record<string, any>[]>([]);
+
+      let url = `${my_url}/api/getall/reports/related`;
+      // try {
+      console.log("requesting related report for this in card section ", url);
+      console.log("url is ", url);
+      const daata = await axios.get(url, {
+        params: {
+          f: related[0],
+          s: related[1],
+          t: related[2],
+        },
+      });
+
+      console.log("daata on related report section is ", daata);
+      if (daata) {
+        // setLoading(false);
+        // console.log("daaaaaattatatata is ", daata.data);
+        // setRel([...daata.data]);
+        // setLen(daata.data.len);
+
+        dispatch3({
+          type: "SET_CURR_REL",
+          payload: daata.data,
+        });
+      }
+    };
+
+    myfun();
+
+    return () => {
+      // Code inside this cleanup function will run before the component is unmounted or re-rendered
+      // You can perform cleanup tasks here, such as unsubscribing from subscriptions or clearing timers
+    };
+  }, []);
 
   useEffect(() => {
     if (snapInView) setCurrentTab("snap");
