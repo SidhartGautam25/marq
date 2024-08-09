@@ -110,6 +110,7 @@ const Relatedreport = () => {
           <div
             className="flex items-center border-b border-gray-700"
             onClick={() => clickfun(index)}
+            key={index}
           >
             <div className="bg-gray-500 w-4 h-14 "></div>
             <div className="p-4 bg-gray-100 flex-1 ">{report.title}</div>
