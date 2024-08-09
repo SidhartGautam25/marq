@@ -20,6 +20,7 @@ import Faq from "../faq/Faq";
 import ReportContect from "../../report-contact/ReportContect";
 import { useInView } from "react-intersection-observer";
 import OrderComponent from "../../report-order/OrderComponent";
+import Relatedreport from "../relatedreport/Relatedreport";
 // import Faq from "../../faq-card/Faq";
 
 const NoSSR: React.FC<{ children: ReactNode }> = ({ children }) => {
@@ -65,6 +66,9 @@ function Pdfren2() {
   const { ref: tocRef, inView: tocInView } = useInView({ threshold: 0.1 });
   const { ref: scopeRef, inView: scopeInView } = useInView({ threshold: 0.1 });
   const { ref: faqRef, inView: faqInView } = useInView({ threshold: 0.1 });
+  const { ref: relatedRef, inView: relatedInView } = useInView({
+    threshold: 0.1,
+  });
 
   useEffect(() => {
     if (snapInView) setCurrentTab("snap");
@@ -76,6 +80,7 @@ function Pdfren2() {
     else if (tocInView) setCurrentTab("toc");
     else if (scopeInView) setCurrentTab("scope");
     else if (faqInView) setCurrentTab("faq");
+    else if (relatedInView) setCurrentTab("relatedreport");
   }, [
     snapInView,
     overviewInView,
@@ -86,6 +91,7 @@ function Pdfren2() {
     tocInView,
     scopeInView,
     faqInView,
+    relatedInView,
   ]);
 
   return (
@@ -115,7 +121,7 @@ function Pdfren2() {
                       href="#snap"
                       className={`block text-gray-600 p-2 ${
                         currentTab === "snap"
-                          ? "bg-gray-700/20"
+                          ? "bg-gray-700/10"
                           : "hover:bg-gray-700/10"
                       }`}
                       onClick={() => setCurrentTab("snap")}
@@ -126,7 +132,7 @@ function Pdfren2() {
                       href="#overview"
                       className={`block text-gray-600 p-2 ${
                         currentTab === "overview"
-                          ? "bg-gray-700/20"
+                          ? "bg-gray-700/10"
                           : "hover:bg-gray-700/10"
                       }`}
                       onClick={() => setCurrentTab("overview")}
@@ -137,7 +143,7 @@ function Pdfren2() {
                       href="#keymar"
                       className={`block text-gray-600 p-2 ${
                         currentTab === "keymar"
-                          ? "bg-gray-700/20"
+                          ? "bg-gray-700/10"
                           : "hover:bg-gray-700/10"
                       }`}
                       onClick={() => setCurrentTab("keymar")}
@@ -148,7 +154,7 @@ function Pdfren2() {
                       href="#compt"
                       className={`block text-gray-600 p-2 ${
                         currentTab === "compt"
-                          ? "bg-gray-700/20"
+                          ? "bg-gray-700/10"
                           : "hover:bg-gray-700/10"
                       }`}
                       onClick={() => setCurrentTab("compt")}
@@ -159,7 +165,7 @@ function Pdfren2() {
                       href="#players"
                       className={`block text-gray-600 p-2 ${
                         currentTab === "players"
-                          ? "bg-gray-700/20"
+                          ? "bg-gray-700/10"
                           : "hover:bg-gray-700/10"
                       }`}
                       onClick={() => setCurrentTab("players")}
@@ -170,7 +176,7 @@ function Pdfren2() {
                       href="#recent"
                       className={`block text-gray-600 p-2 ${
                         currentTab === "recent"
-                          ? "bg-gray-700/20"
+                          ? "bg-gray-700/10"
                           : "hover:bg-gray-700/10"
                       }`}
                       onClick={() => setCurrentTab("recent")}
@@ -184,7 +190,7 @@ function Pdfren2() {
                     href="#toc"
                     className={`text-gray-900 p-2  ${
                       currentTab === "toc"
-                        ? "bg-gray-700/20"
+                        ? "bg-gray-700/10"
                         : "hover:bg-gray-700/10"
                     }`}
                     onClick={() => setCurrentTab("toc")}
@@ -195,7 +201,7 @@ function Pdfren2() {
                     href="#scope"
                     className={`block text-gray-900 p-2  ${
                       currentTab === "scope"
-                        ? "bg-gray-700/20"
+                        ? "bg-gray-700/10"
                         : "hover:bg-gray-700/10"
                     }`}
                     onClick={() => setCurrentTab("scope")}
@@ -206,12 +212,23 @@ function Pdfren2() {
                     href="#faq"
                     className={`block text-gray-900 p-2 ${
                       currentTab === "faq"
-                        ? "bg-gray-700/20"
+                        ? "bg-gray-700/10"
                         : "hover:bg-gray-700/10"
                     }`}
                     onClick={() => setCurrentTab("faq")}
                   >
                     FREQUENTLY ASKED QUESTIONS
+                  </a>
+                  <a
+                    href="#relatedreport"
+                    className={`block text-gray-900 p-2 ${
+                      currentTab === "relatedreport"
+                        ? "bg-gray-700/10"
+                        : "hover:bg-gray-700/10"
+                    }`}
+                    onClick={() => setCurrentTab("relatedreport")}
+                  >
+                    RELATED REPORT
                   </a>
                 </div>
                 <div>
@@ -330,6 +347,9 @@ function Pdfren2() {
               </section>
               <section ref={faqRef}>
                 <Faq />
+              </section>
+              <section ref={relatedRef}>
+                <Relatedreport />
               </section>
             </div>
           </div>
