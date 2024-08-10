@@ -1,25 +1,21 @@
-"use client"
-import React, { useState } from 'react';
-import img1 from "@/public/blog1.png"
-import img2 from "@/public/blog2.png"
-import img3 from "@/public/blog3.png"
-import Image from 'next/image';
-const images = [
-    img1,
-    img2,
-    img3,
-];
+"use client";
+import React, { useState } from "react";
+import img1 from "@/public/blog1.png";
+import img2 from "@/public/blog2.png";
+import img3 from "@/public/blog3.png";
+import Image from "next/image";
+const images = [img1, img2, img3];
 
 const Slider: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handlePrevClick = () => {
+  const PrevClick = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
 
-  const handleNextClick = () => {
+  const NextClick = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
@@ -37,21 +33,21 @@ const Slider: React.FC = () => {
             src={image}
             alt={`Slide ${index + 1}`}
             className="w-full h-[80vh] object-cover flex-shrink-0"
-             style={{ minWidth: '100%' }}
+            style={{ minWidth: "100%" }}
           />
         ))}
       </div>
       <button
-        onClick={handlePrevClick}
+        onClick={PrevClick}
         className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-transparent text-gray-300 p-2 rounded-full shadow-lg h-[3rem] w-[3rem] focus:outline-none hover:text-gray-400 text-5xl ease-in-out duration-300"
       >
-        {'<'}
+        {"<"}
       </button>
       <button
-        onClick={handleNextClick}
+        onClick={NextClick}
         className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-transparent text-gray-300 p-2 rounded-full shadow-lg h-[3rem] w-[3rem] focus:outline-none hover:text-gray-400 text-5xl ease-in-out duration-300"
       >
-        {'>'}
+        {">"}
       </button>
     </div>
   );
