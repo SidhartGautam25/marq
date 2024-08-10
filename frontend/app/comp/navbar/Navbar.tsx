@@ -17,7 +17,7 @@ export default function NavBar() {
     <nav className="z-[10] border-gray-500 border-t-[0.1px] border-b-[0.1px] min-h-[14vh] p-4 lg:p-6 lg:flex w-full">
       <div className="flex items-center justify-between lg:ml-20 ">
         <Link href="/">
-          <div className="tracking-tight ">
+          <div className="">
             <Image src={marqstat} alt="" className=" h-16 w-36" />
           </div>
         </Link>
