@@ -27,6 +27,7 @@ import DataResources from "./dataResources/DataResources";
 import Conserv from "./conserv/Conserv";
 import Insightcom1 from "./insightcom1/Insightcom1";
 import Insightcomp2 from "./insightcomp2/Insightcomp2";
+import Slider from "./big-slider/Slider";
 
 export {
   Insightcomp2,
@@ -55,5 +56,6 @@ Automative,
   Blogs,
   Term,
   Priv,
-  HowToOrder
+  HowToOrder,
+  Slider,
 };
