@@ -9,6 +9,16 @@ import ind4 from "@/public/ind4.jpg";
 import ind5 from "@/public/ind5.jpg";
 import ind6 from "@/public/ind6.jpg";
 import Image from "next/image";
+import cli1 from "@/public/images/clients/client1.jpg";
+import cli2 from "@/public/images/clients/client2.jpg";
+import cli3 from "@/public/images/clients/client3.jpg";
+import cli4 from "@/public/images/clients/client4.jpg";
+import cli5 from "@/public/images/clients/client5.jpg";
+import cli6 from "@/public/images/clients/client6.jpg";
+import cli7 from "@/public/images/clients/client7.jpg";
+import cli8 from "@/public/images/clients/client8.jpg";
+import cli9 from "@/public/images/clients/client9.jpg";
+import cli10 from "@/public/images/clients/client10.jpg";
 
 export default function Home() {
   return (
@@ -22,41 +32,41 @@ export default function Home() {
       <div className={styles.slider}>
         <div className={styles.slidertrack}>
           <div className={styles.slidercom}>
-            <Image className={styles.logoimg} src={ind1} alt="" />
+            <Image className={styles.logoimg} src={cli1} alt="" />
           </div>
           <div className={styles.slidercom}>
-            <Image className={styles.logoimg} src={ind2} alt="" />
+            <Image className={styles.logoimg} src={cli2} alt="" />
           </div>
           <div className={styles.slidercom}>
-            <Image className={styles.logoimg} src={ind3} alt="" />
+            <Image className={styles.logoimg} src={cli3} alt="" />
           </div>
           <div className={styles.slidercom}>
-            <Image className={styles.logoimg} src={ind4} alt="" />
+            <Image className={styles.logoimg} src={cli4} alt="" />
           </div>
           <div className={styles.slidercom}>
-            <Image className={styles.logoimg} src={ind5} alt="" />
+            <Image className={styles.logoimg} src={cli5} alt="" />
           </div>
           <div className={styles.slidercom}>
-            <Image className={styles.logoimg} src={ind6} alt="" />
+            <Image className={styles.logoimg} src={cli6} alt="" />
           </div>
 
           <div className={styles.slidercom}>
-            <Image className={styles.logoimg} src={ind1} alt="" />
+            <Image className={styles.logoimg} src={cli7} alt="" />
           </div>
           <div className={styles.slidercom}>
-            <Image className={styles.logoimg} src={ind2} alt="" />
+            <Image className={styles.logoimg} src={cli8} alt="" />
           </div>
           <div className={styles.slidercom}>
-            <Image className={styles.logoimg} src={ind3} alt="" />
+            <Image className={styles.logoimg} src={cli9} alt="" />
           </div>
           <div className={styles.slidercom}>
-            <Image className={styles.logoimg} src={ind4} alt="" />
+            <Image className={styles.logoimg} src={cli10} alt="" />
           </div>
           <div className={styles.slidercom}>
-            <Image className={styles.logoimg} src={ind5} alt="" />
+            <Image className={styles.logoimg} src={cli1} alt="" />
           </div>
           <div className={styles.slidercom}>
-            <Image className={styles.logoimg} src={ind6} alt="" />
+            <Image className={styles.logoimg} src={cli2} alt="" />
           </div>
         </div>
       </div>
