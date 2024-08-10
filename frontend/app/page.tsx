@@ -11,6 +11,7 @@ import {
   Homethree,
   Work,
   Blogs,
+  Slider
 } from "./comp";
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
         <Slid />
         <Homefive />
         <Homesix />
+        <Slider/>
 
         <Footer />
       </div>

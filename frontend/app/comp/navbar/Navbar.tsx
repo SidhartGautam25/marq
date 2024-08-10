@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 import logo from "@/public/images/logo.png";
+import finallogo from "@/public/images/logofinal.svg";
+import marqstat from "@/public/images/Marqstats.svg";
 // import img1 from '../../../public/icon-dropdown.svg';
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +18,7 @@ export default function NavBar() {
       <div className="flex items-center justify-between lg:ml-20 ">
         <Link href="/">
           <div className="tracking-tight ">
-            <Image src={logo} alt="" className=" h-16 w-36" />
+            <Image src={marqstat} alt="" className=" h-16 w-36" />
           </div>
         </Link>
         <button
