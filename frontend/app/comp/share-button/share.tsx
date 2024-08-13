@@ -50,16 +50,16 @@ export default function MyShare() {
   let shareUrl = window?.location.href;
 
   return (
-    <>
+    <div className="flex gap-10 ">
       <WhatsappShareButton url={shareUrl} title={"this is title"}>
-        <WhatsappIcon />
+        <WhatsappIcon size={45} round={true}/>
       </WhatsappShareButton>
       <EmailShareButton url={shareUrl} title={"this is title"}>
-        <EmailIcon />
+        <EmailIcon size={45} round={true} />
       </EmailShareButton>
       <TelegramShareButton url={shareUrl} title={"this is title"}>
-        <TelegramIcon />
+        <TelegramIcon size={45} round={true}/>
       </TelegramShareButton>
-    </>
+    </div>
   );
 }

@@ -1,4 +1,4 @@
-import { Automative, Footer, Ict, Industryser, NavBar } from "../../comp";
+import { Automative, Footer, Ict, Industryser, NavBar, Slider } from "../../comp";
 
 export default function Home() {
   return (
@@ -6,7 +6,8 @@ export default function Home() {
       <div className=" bg-gray-900">
         <NavBar />
       </div>
-      <div className="lg:mx-36 xl:mx-36 mx-10 md:mx-20">
+      <Slider/>
+      <div className="lg:mx-36 xl:mx-36 mx-10 md:mx-20 mt-10">
         <Industryser />
         <div className="flex items-center justify-center my-8">
           <div className="flex-grow border-t border-gray-800"></div>
