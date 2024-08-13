@@ -27,6 +27,8 @@ import {
   CurrRelatedContext,
   CurrRelatedContextType,
 } from "@/app/context/currRelated";
+import MyShare from "../../share-button/share";
+// import { Share } from "next/font/google";
 // import Faq from "../../faq-card/Faq";
 
 const NoSSR: React.FC<{ children: ReactNode }> = ({ children }) => {
@@ -431,6 +433,7 @@ function Pdfren2() {
                   <IoMdMail className=" text-xl" />
                 </button>
               </Link>
+              <MyShare />
             </div>
           </div>
         </div>
