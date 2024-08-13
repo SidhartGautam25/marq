@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import img1 from "@/public/Slide1.jpg";
+import img1 from "@/public/Slide11.jpg";
 import img2 from "@/public/Slide2.jpg";
 import img3 from "@/public/Slide3.jpg";
 import img4 from "@/public/Slide4.jpg";
