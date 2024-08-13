@@ -1,13 +1,13 @@
 "use client";
 import React, { useState } from "react";
-import img1 from "@/public/Slide11.jpg";
-import img2 from "@/public/Slide2.jpg";
-import img3 from "@/public/Slide3.jpg";
-import img4 from "@/public/Slide4.jpg";
-import img5 from "@/public/Slide5.jpg";
-import img6 from "@/public/Slide6.jpg";
-import img7 from "@/public/Slide7.jpg";
-import img8 from "@/public/Slide8.jpg";
+import img1 from "@/public/slider1.jpg";
+import img2 from "@/public/slider2.jpg";
+import img3 from "@/public/slider3.jpg";
+import img4 from "@/public/slider4.jpg";
+import img5 from "@/public/slider5.jpg";
+import img6 from "@/public/slider6.jpg";
+import img7 from "@/public/slider7.jpg";
+import img8 from "@/public/slider8.jpg";
 
 import Image from "next/image";
 import { FaChevronRight } from "react-icons/fa6"
