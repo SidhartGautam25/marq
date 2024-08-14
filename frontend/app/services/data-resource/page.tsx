@@ -1,4 +1,4 @@
-import { DataResources, Footer, NavBar } from "../../comp";
+import { DataResources, Footer, NavBar, Slider } from "../../comp";
 
 export default function Home() {
   return (
@@ -6,7 +6,8 @@ export default function Home() {
       <div className=" bg-gray-900">
         <NavBar />
       </div>
-      <div className="lg:mx-36 xl:mx-36 mx-10 md:mx-20">
+      <Slider/>
+      <div className="lg:mx-36 xl:mx-36 mx-10 md:mx-20 mt-10">
         <DataResources />
       </div>
       <Footer />

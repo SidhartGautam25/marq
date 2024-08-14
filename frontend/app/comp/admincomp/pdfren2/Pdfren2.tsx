@@ -53,10 +53,14 @@ function Pdfren2() {
   const { state3, dispatch3 } = useContext(
     CurrRelatedContext
   ) as CurrRelatedContextType;
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [isModalOpen2, setIsModalOpen2] = useState<boolean>(false);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
+  };
+  const toggleModal2 = () => {
+    setIsModalOpen2(!isModalOpen2);
   };
 
   // Intersection observers for each section
@@ -342,7 +346,7 @@ function Pdfren2() {
                             </label>
                             <input
                               type="number"
-                              placeholder="(Country code)-Phone-Number"
+                              placeholder="(Country code)-Company Name"
                               className="focus:outline-none p-3 border rounded-md"
                               id="contact"
                             />
@@ -424,15 +428,92 @@ function Pdfren2() {
                   </li>
                 </ul>
               </div>
-              <Link
+              <div
                 className="flex justify-center bg-white text-black p-2 md:p-3 rounded-[10px]  mt-8 w-full"
-                href="/contact"
+                onClick={toggleModal2}
               >
                 <button className="flex gap-8 ">
                   Contact Us
                   <IoMdMail className=" text-xl" />
                 </button>
-              </Link>
+                {isModalOpen2 && (
+                    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+                      <div className="relative p-5 border bg-gray-50 rounded-md w-[90%] md:w-[50%]">
+                        <button
+                          onClick={toggleModal2}
+                          className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl"
+                        >
+                          &times;
+                        </button>
+                        <h1 className="text-center text-2xl">
+                          Get In Touch With us
+                        </h1>
+                        <form action="" className="flex flex-col gap-5">
+                          <div className="flex flex-col">
+                            <label htmlFor="name">
+                              Name<span className="text-red-600">*</span>
+                            </label>
+                            <input
+                              type="text"
+                              placeholder="Enter Name "
+                              className="focus:outline-none p-3 border rounded-md"
+                              id="name"
+                            />
+                          </div>
+                          <div className="flex flex-col">
+                            <label htmlFor="email">
+                              Email<span className="text-red-600">*</span>
+                            </label>
+                            <input
+                              type="email"
+                              placeholder="Enter email "
+                              className="focus:outline-none p-3 border rounded-md"
+                              id="email"
+                            />
+                          </div>
+                          <div className="flex flex-col">
+                            <label htmlFor="contact">
+                              Contact Number
+                              {/* <span className="text-red-600">*</span> */}
+                            </label>
+                            <input
+                              type="number"
+                              placeholder="(Country code)-Phone-Number"
+                              className="focus:outline-none p-3 border rounded-md"
+                              id="contact"
+                            />
+                          </div>
+                          <div className="flex flex-col">
+                            <label htmlFor="contact">
+                              Company Name
+                              {/* <span className="text-red-600">*</span> */}
+                            </label>
+                            <input
+                              type="number"
+                              placeholder="(Country code)-Company Name"
+                              className="focus:outline-none p-3 border rounded-md"
+                              id="contact"
+                            />
+                          </div>
+                          <div className="flex flex-col">
+                            <label htmlFor="requirements">
+                              How can we assist you?
+                              {/* <span className="text-red-600">*</span> */}
+                            </label>
+                            <textarea
+                              placeholder=""
+                              className="focus:outline-none p-3 border rounded-md min-h-[12rem]"
+                              id="requirements"
+                            />
+                          </div>
+                          <button className="bg-slate-500 w-[5rem] p-2 rounded-md text-white hover:bg-slate-800 transition duration-300">
+                            Submit
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  )}
+              </div>
               <MyShare />
             </div>
           </div>
