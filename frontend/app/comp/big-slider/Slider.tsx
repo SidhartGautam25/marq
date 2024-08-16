@@ -1,20 +1,14 @@
 "use client";
 import React, { useState } from "react";
-import img1 from "@/public/slider1.jpg";
-import img2 from "@/public/slider2.jpg";
-import img3 from "@/public/slider3.jpg";
-import img4 from "@/public/slider4.jpg";
-import img5 from "@/public/slider5.jpg";
-import img6 from "@/public/slider6.jpg";
-import img7 from "@/public/slider7.jpg";
-import img8 from "@/public/slider8.jpg";
 
 import Image from "next/image";
 import { FaChevronRight } from "react-icons/fa6"
 import { FaChevronLeft } from "react-icons/fa6";
-const images = [img1, img2, img3,img4,img5,img6,img7,img8];
-
-const Slider: React.FC = () => {
+// const images = [img1, img2, img3,img4,img5,img6,img7,img8];
+interface getprops {
+   images:any[]
+}
+const Slider = ({images}:getprops) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const PrevClick = () => {
@@ -40,8 +34,8 @@ const Slider: React.FC = () => {
             key={index}
             src={image}
             alt={`Slide ${index + 1}`}
-            className="w-full h-[60vh] object-cover flex-shrink-0"
-            style={{ minWidth: "100%" }}
+            className="h-[80vh] object-fill min-w-full"
+            
           />
         ))}
       </div>
