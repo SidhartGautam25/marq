@@ -12,6 +12,7 @@ import {
   Work,
   Blogs,
 } from "./comp";
+import Homefour2 from "./comp/newHomefour/Homefour2";
 export default function Home() {
   return (
     <div className="flex flex-col w-dvw">
@@ -26,9 +27,7 @@ export default function Home() {
 
         <Homethree />
         <Vision />
-        <div className="">
-          <Homefour />
-        </div>
+        <Homefour2/>,
         <Blogs />
         <Slid />
         <Homefive />
