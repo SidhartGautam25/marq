@@ -14,16 +14,16 @@ const HomeFourCard = ({ image, title, date,desc, onClick }: CardProps) => {
   return (
     <div
       onClick={onClick}
-      className="card mx-2 flex flex-col items-center hover:scale-105 ease-in duration-300 drop-shadow-sm rounded-2xl cursor-pointer shadow-md mb-8"
+      className="card mx-2 flex flex-col items-center hover:scale-105 ease-in duration-300 drop-shadow-sm cursor-pointer mb-8"
     >
       <div className="">
         <img
           src={image}
-          className="w-[23rem] h-[13rem] object-cover rounded-tl-2xl rounded-tr-2xl"
+          className="w-[21rem] h-[12rem] object-cover"
           alt="Report"
         />
       </div>
-      <div className="px-3 pb-6 ">
+      <div className=" pb-6 w-[21rem]">
         <div className="flex mt-4 justify-between items-center">
           <div className="text-red-700">Automative</div>
           <div className="date flex m-2 text-blue-600">
@@ -33,7 +33,7 @@ const HomeFourCard = ({ image, title, date,desc, onClick }: CardProps) => {
             </span>
           </div>
         </div>
-        <div className="w-[20rem] text-xl font-medium tracking-tight line-clamp-3">
+        <div className=" text-[18px] tracking-tight line-clamp-3 font-semibold">
           {title}
         </div>
         <p className="mt-3 line-clamp-3">
