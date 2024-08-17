@@ -41,11 +41,11 @@ export default function Homefour2() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center bg-[url('/images/back10.jpg')] bg-no-repeat bg-cover">
-      <div className="text-2xl lg:text-4xl font-medium mt-6 lg:mt-4 border-b-4 border-r-4 rounded-full border-gray-300 p-3">
+    <div className="flex flex-col items-center">
+      <div className="text-2xl lg:text-4xl mt-6 lg:mt-4 border-b-2 border-r-2 border-gray-300 p-3">
         Explore Our Latest Reports
       </div>
-      <div className="cards flex flex-col md:flex-row justify-center mt-10 px-3 gap-2">
+      <div className="cards flex flex-col md:flex-row justify-center mt-10 px-3 ">
         {report3.map((report, index) => (
           <HomeFourCard
             key={report?.slug}
@@ -53,6 +53,7 @@ export default function Homefour2() {
             title={report?.title}
             date={report?.createdAt}
             desc={report?.metaDesc}
+            ind={index}
             onClick={() => handleClick(index)}
           />
         ))}
