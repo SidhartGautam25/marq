@@ -112,9 +112,11 @@ const Relatedreport = () => {
             onClick={() => clickfun(index)}
             key={index}
           >
-            <div className="bg-gray-500 w-4 h-14 "></div>
-            <div className="p-4 bg-gray-100 flex-1 ">{report.title}</div>
-            {/* </Link> */}
+            <div className="flex w-full">
+              <div className="bg-gray-500 w-4 min-h-14"></div>
+              <div className="p-4 bg-gray-100 w-full">{report.title}</div>
+              {/* </Link> */}
+            </div>
           </div>
         ))}
       </div>
