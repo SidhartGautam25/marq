@@ -13,11 +13,11 @@ export default function Home() {
       </div>
       <div className="flex-1 mx-5 lg:m-10 lg:mt-20 ">
         <p className="text-md md:text-md mb-6">
-        Across industries and regions, today's competitive environment is more unpredictable than ever, with disruptions from all directions.
+        Across industries and regions, today&apos;s competitive environment is more unpredictable than ever, with disruptions from all directions.
         </p>
         <p className="text-md md:text-md mb-6">
 
-        We immerse ourselves in our clients' perspectives, delivering measurable outcomes, not just projects, to unlock their business's full potential. Our data-driven solutions enhance client capabilities, while our unwavering commitment to integrity ensures we always do the right thing.
+        We immerse ourselves in our clients&apos; perspectives, delivering measurable outcomes, not just projects, to unlock their business&apos;s full potential. Our data-driven solutions enhance client capabilities, while our unwavering commitment to integrity ensures we always do the right thing.
 
         </p>
         <Link href="/about">

@@ -13,7 +13,7 @@ export default function Homefive() {
             <div className="cards p-30 flex  flex-wrap text-gray-500 ">
               <div className="card lg:w-1/2 lg:h-1/2 p-8 ease-in duration-300 hover:shadow-2xl">
                 <p className="mb-5">
-                Marqstats' data-first approach has been instrumental in revealing the true picture of our market landscape.
+                Marqstats&apos; data-first approach has been instrumental in revealing the true picture of our market landscape.
                 </p>
                 <span className="font-bold">
                   DIRECTOR, RESEARCH AND INSIGHTS
