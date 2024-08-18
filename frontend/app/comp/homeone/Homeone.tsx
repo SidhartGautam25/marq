@@ -7,31 +7,29 @@ export default function HomeOne() {
     <div className="flex h-[86vh] w-full bg-img1 z-50 ">
       <div className="lg:w-[45vw] "></div>
       <div className="w-dvw lg:w-[55vw]   flex flex-col justify-center ">
-        <div className="text-[2rem] lg:text-[3rem] font-bold mb-2 lg:mb-3 font-serif text-white pl-5 lg:pl-0">
-          Helping You Think
+        <div className="text-[2rem] lg:text-5xl font-bold mb-2 lg:mb-3 font-serif text-white pl-5 lg:pl-0">
+          Empowering Strategic
         </div>
-        <div className="text-[2rem] lg:text-[3rem] font-bold mb-2 lg:mb-3 font-serif  text-white pl-5 lg:pl-0">
-          Strategically & Execute
+        <div className="text-[2rem] lg:text-5xl font-bold mb-2 lg:mb-3 font-serif  text-white pl-5 lg:pl-0">
+          Thinking & Flawless Execution
         </div>
-        <div className="text-[2rem] lg:text-[3rem] font-bold mb-2 lg:mb-3 font-serif  text-white pl-5 lg:pl-0">
-          Brilliantly.
+        <div className="text-[2rem] lg:text-5xl font-bold mb-2 lg:mb-3 font-serif  text-white pl-5 lg:pl-0">
+         with Data-Driven Insights.
         </div>
         <div>
           <div className="mt-2 mb-1 font-semibold text-lg  text-white pl-5 lg:pl-0">
-            Marqstats is focused on delivering exceptional client service and
-            expertise to
+          Marqstats{" "}: Delivering Exceptional Client Service and Expert Data Analytics Solutions to 
           </div>
           <div className="mt-1 mb-1 font-semibold text-lg  text-white pl-5 lg:pl-0">
-            accelerate progress.
+          Accelerate Business Growth.
           </div>
         </div>
         <div>
           <div className="mt-2 mb-1 font-semibold text-lg  text-white pl-5 lg:pl-0">
-            What&#39;s the result? Transformed experiences, decisive actions and
-            long-term value for
+          The Result? Enhanced User Experiences, Data-Driven Decisions, and Sustainable Value for 
           </div>
           <div className="mt-1 font-semibold text-lg  text-white pl-5 lg:pl-0">
-            all stakeholders.
+          All Stakeholders.
           </div>
         </div>
         <Link href="/services">

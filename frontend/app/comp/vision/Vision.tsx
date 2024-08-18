@@ -2,25 +2,22 @@ import Link from "next/link";
 import React from "react";
 export default function Home() {
   return (
-    <div className="flex flex-col md:flex-row items-center md:mx-20 lg:mx-5 lg:px-4 md:px-10 lg:py-10 my-16 ">
+    <div className="flex flex-col md:flex-row items-center md:mx-20 lg:mx-5 lg:px-4 md:px-10 lg:py-10 ">
       <div className="flex-1 ml-5 mb-16 lg:my-10 lg:m-10 ">
         <h2 className="text-xl md:text-2xl font-semibold uppercase mb-10 text-blue-600">
           Our Vision
         </h2>
         <p className="text-3xl md:text-4xl font-bold">
-          We have a clear mission: to deliver the highest quality outcome for a
-          sustainable growth.
+        We have a clear mission: to deliver the highest quality data-driven outcomes for sustainable business growth and long-term success.
         </p>
       </div>
       <div className="flex-1 mx-5 lg:m-10 lg:mt-20 ">
         <p className="text-md md:text-md mb-6">
-          Across industries and regions, the competitive environment today is
-          far more unpredictable than it was even a decade ago, with disruption
-          arising from all directions.
+        Across industries and regions, today's competitive environment is more unpredictable than ever, with disruptions from all directions.
         </p>
         <p className="text-md md:text-md mb-6">
 
-          We put ourselves in our clients shoes, selling outcomes, not projects to unlock the full potential of their business. Our solutions build our clients capabilities, and our values mean we do the right thing — always.
+        We immerse ourselves in our clients' perspectives, delivering measurable outcomes, not just projects, to unlock their business's full potential. Our data-driven solutions enhance client capabilities, while our unwavering commitment to integrity ensures we always do the right thing.
 
         </p>
         <Link href="/about">
