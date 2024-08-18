@@ -132,8 +132,8 @@ export default function NavBar() {
                   </Link>
                 </li>
                 <li className="block px-4 py-2 text-sm hover:bg-gray-600 hover:text-white">
-                  <Link href="/services/data-resource">
-                    <span>Data Resources</span>
+                  <Link href="/services/data-library">
+                    <span>Data Library</span>
                   </Link>
                 </li>
                 <li className="block px-4 py-2 text-sm hover:bg-gray-600 hover:text-white">
