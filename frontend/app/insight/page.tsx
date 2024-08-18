@@ -6,6 +6,8 @@ import Slide1 from "@/public/buss1.jpg";
 import { BlogContext, BlogContextType } from "../context/blogContext";
 import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { my_url } from "../utility/varr";
+import axios from "axios";
 // import { BlogContext, BlogContextType } from "@/app/context/blogContext";
 
 const NoSSR: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -25,6 +27,7 @@ const NoSSR: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 export default function Home() {
   const { state, dispatch } = useContext(BlogContext) as BlogContextType;
   const router = useRouter();
+  const [latest, setLatest] = useState<Record<string, any>>({});
 
   function latestClicked() {
     console.log("latest blog get clicked");
@@ -41,6 +44,47 @@ export default function Home() {
     });
     router.push(`/insight/${state.title}`);
   }
+
+  useEffect(() => {
+    // Code inside this function will run after every render
+    // You can perform side effects, such as data fetching, subscriptions, or DOM manipulations here
+
+    // For example, you can fetch data from an API
+    // const dev_url = "http://localhost:8800";
+    // const prod_url = "https://admin-backend-1-ekoa.onrender.com";
+    const fetchLatest = async () => {
+      console.log("fetch report called");
+      //  console.log(
+      //    "params slug is  in insight is ",
+      //    decodeURIComponent(params.slug)
+      //  );
+      let url = `${my_url}/api/getall/blog/latest`;
+
+      //let url = `${dev_url}/api/getall/reports?industry=${ind}&page=${page}&subind=${query}`;
+
+      try {
+        console.log("request sent");
+        const daata = await axios.get(url);
+        console.log("data is in insgiht ", daata);
+        let LatestBlogs = daata.data.data[0];
+        // let item: Record<string, any>;
+        //  relatedBlogs = relatedBlogs.filter(
+        //    (item: Record<string, any>) => item.title !== state.ctitle
+        //  );
+        setLatest(LatestBlogs);
+        console.log("related reports are ", daata);
+        console.log("latest reporttttttt is ", daata.data.data[0]);
+      } catch (err) {}
+    };
+    fetchLatest();
+
+    // You can also return a cleanup function from useEffect
+    // This cleanup function will be executed before the component is unmounted or re-rendered
+    return () => {
+      // Code inside this cleanup function will run before the component is unmounted or re-rendered
+      // You can perform cleanup tasks here, such as unsubscribing from subscriptions or clearing timers
+    };
+  }, []);
 
   return (
     <NoSSR>
@@ -64,7 +108,7 @@ export default function Home() {
         >
           <div className="md:w-1/2 w-full">
             <img
-              src={state.linkt}
+              src={latest.linkt}
               alt="Featured Insight"
               width={700}
               height={300}
@@ -75,7 +119,7 @@ export default function Home() {
             <h4 className="text-sm font-semibold text-gray-500">
               Latest Insight
             </h4>
-            <h2 className="text-3xl font-bold mt-2">{state.title}</h2>
+            <h2 className="text-3xl font-bold mt-2">{latest.title}</h2>
 
             <a
               href="#"
