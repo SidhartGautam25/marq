@@ -30,7 +30,6 @@ export default function Homefour2() {
         const daata = await axios.get(url);
         if (daata) {
           setReports([...daata.data.reports]);
-          
         }
       } catch (err) {
         console.error(err);
@@ -42,7 +41,7 @@ export default function Homefour2() {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="text-2xl lg:text-4xl mt-6 lg:mt-4 border-b-2 border-r-2 border-gray-300 p-3">
+      <div className="text-2xl lg:text-4xl mt-6 lg:mt-4 border-b-2 border-gray-300 p-3">
         Explore Our Latest Reports
       </div>
       <div className="cards flex flex-col md:flex-row justify-center mt-10 px-3 ">
