@@ -28,7 +28,7 @@ export default function Contact() {
           <div className="px-8 lg:flex p-2 lg:px-32 lg:pt-10 ">
             <div className="lg:w-1/2 lg:pr-12">
               <div className="lg:pr-28 tracking-wide font-extralight">
-              Thank you for your interest in Marqstats. Please reach out via email or phone, and we'll connect you with the right expert to assist you.
+              Thank you for your interest in Marqstats. Please reach out via email or phone, and we&apos;ll connect you with the right expert to assist you.
               </div>
               <div className="lg:my-10">
                 <div className=" border-b border-gray-500 flex flex-col lg:flex-row py-6 ">

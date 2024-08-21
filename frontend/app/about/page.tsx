@@ -29,7 +29,7 @@ export default function About() {
         </div>
         <div className=" px-10 md:px-36 md:mt-20">
           <p className=" text-lg text-center pt-20 text-[#434856] ">
-          Since our founding, every member of the Marqstats team has been dedicated to becoming a true partner to our clients. We are committed to working closely with each client on a long-term basis, ensuring we consistently deliver enhanced value. Maximizing this value and driving our clients' success are at the heart of our philosophy, supporting our continual growth and leadership on a global scale.
+          Since our founding, every member of the Marqstats team has been dedicated to becoming a true partner to our clients. We are committed to working closely with each client on a long-term basis, ensuring we consistently deliver enhanced value. Maximizing this value and driving our client&apos;s success are at the heart of our philosophy, supporting our continual growth and leadership on a global scale.
           </p>
           <div className="font-semibold mt-4 flex gap-2 justify-center">
             <button className="px-2 my-2 border-r-2 border-black">
