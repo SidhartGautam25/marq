@@ -25,7 +25,7 @@ export default function Comp2({id, para,img,heading,link}:mp) {
             </div>
             <Link href={link}>
             <button className="p-4 w-[9rem] bg-blue-500 text-white rounded-[6rem] ease-in duration-200 hover:bg-blue-700">
-              Read More
+            Discover More
             </button>
             </Link>
           </div>

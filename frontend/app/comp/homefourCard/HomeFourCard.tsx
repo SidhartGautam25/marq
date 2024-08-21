@@ -25,8 +25,8 @@ const HomeFourCard = ({ image, title, date,desc,ind, onClick }: CardProps) => {
         />
       </div>
       <div className=" px-2 w-[21rem]">
-        <div className="flex mt-4 justify-between items-center">
-          <div className="text-red-700">Automative</div>
+        <div className="flex mt-4 justify-end items-center">
+          {/* <div className="text-red-700">Automative</div> */}
           <div className="date flex m-2 text-blue-600">
             <CiCalendar className="w-[20px] h-[20px] mr-2" />
             <span className="text-blue-600">
@@ -34,10 +34,10 @@ const HomeFourCard = ({ image, title, date,desc,ind, onClick }: CardProps) => {
             </span>
           </div>
         </div>
-        <div className=" text-[18px] tracking-tight line-clamp-3 font-semibold hover:text-red-700 ease-in-out duration-300">
+        <div className=" text-[18px] tracking-tight line-clamp-3 font-semibold hover:text-blue-800 ease-in-out duration-300">
           {title}
         </div>
-        <p className="mt-3 line-clamp-3">
+        <p className="mt-3 line-clamp-3 text-gray-600">
           {desc}
         </p>
       </div>

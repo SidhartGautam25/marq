@@ -22,10 +22,10 @@ import cli10 from "@/public/images/clients/client10.jpg";
 
 export default function Home() {
   return (
-    <div className="pt-10 pb-16 flex flex-col ">
-      <div className="flex justify-center ">
+    <div className="pt-10 pb-16 flex flex-col mt-10">
+      <div className="flex justify-center mb-7">
         <div className=" lg:w-fit lg:px-6 px-4 pb-4 text-center text-xl lg:text-2xl font-semibold mt-5 border-r-4 border-b-2 border-gray-300 rounded-xl mx-2">
-          <h3>Data Driven Solutions for Automotive Organizations</h3>
+          <h3>Trusted by industry leaders</h3>
         </div>
       </div>
 
