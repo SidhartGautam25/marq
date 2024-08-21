@@ -65,15 +65,15 @@ const indus: butt[] = [
 
 const industries: Industry = {
   "Electric and Hybrid Vehicles": [
-    "Battery Technology",
-    "Electric Motors",
+    "Battery Technology & Manufacturing",
+    "EV Powertrains",
     "Charging Infrastructure",
     "Hybrid Systems",
-    "Vehicle Design"
+    "EV, Components & Services"
   ],
   "Vehicles and Components": [
-    "Chassis",
-    "Engine Components",
+    "Chassis & Design",
+    "Engine & Components",
     "Transmission Systems",
     "Braking Systems",
     "Fuel Systems"
@@ -83,7 +83,7 @@ const industries: Industry = {
     "Ride Hailing",
     "Bike Sharing",
     "Scooter Sharing",
-    "Fleet Management"
+    "Integrated & Autonomous Mobility Services"
   ],
   "Tire": [
     "Manufacturing",
@@ -93,18 +93,18 @@ const industries: Industry = {
     "Distribution"
   ],
   "Connectivity Technology": [
-    "Telematics",
+    "Telematics & Services",
     "Vehicle-to-Everything (V2X)",
     "Infotainment Systems",
     "Navigation Systems",
-    "Remote Diagnostics"
+    "Advanced Vehicle Safety & Connectivity Systems"
   ],
   "Sensors, Electronics, and Electrical Equipment": [
     "LIDAR",
     "RADAR",
     "Cameras",
     "Control Units",
-    "Wiring Harnesses"
+    "Electrical & Electronic Components"
   ]
 };
 

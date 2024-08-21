@@ -27,6 +27,7 @@ export default function Homethree() {
             </Link>
           </div>
           <div className="right lg:w-1/2 flex flex-col lg:gap-2 ">
+          <Link href="/services/industry-expertise">
             <div className="strap  flex justify-between items-center p-5 ease-in duration-400 hover:border-b border-blue-500">
               <span className="text-[2rem] md:text-3xl">
                 Industry Expertise
@@ -43,6 +44,8 @@ export default function Homethree() {
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
             </div>
+            </Link>
+            <Link href="/services/market-assessment">
             <div className="strap  flex justify-between items-center p-5 ease-in duration-400 hover:border-b border-blue-500">
               <span className="text-3xl">Market Assessment</span>
               <svg
@@ -57,6 +60,8 @@ export default function Homethree() {
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
             </div>
+            </Link>
+            <Link href="/services/data-resource">
             <div className="strap  flex justify-between items-center p-5 ease-in duration-400 hover:border-b border-blue-500">
               <span className="text-3xl">Data Resource</span>
               <svg
@@ -71,6 +76,8 @@ export default function Homethree() {
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
             </div>
+            </Link>
+            <Link href="/services/business-consulting">
             <div className="strap  flex justify-between items-center p-5 ease-in duration-400 hover:border-b border-blue-500">
               <span className="text-3xl">Business Consulting</span>
               <svg
@@ -85,6 +92,7 @@ export default function Homethree() {
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
             </div>
+            </Link>
           </div>
         </div>
       </div>

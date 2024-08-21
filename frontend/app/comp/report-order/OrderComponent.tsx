@@ -11,7 +11,7 @@ const OrderComponent: React.FC = () => {
 
   return (
     <div className="max-w-md mx-auto shadow-md bg-gray-50 p-2">
-      <h2 className="text-xl font-semibold mb-6 text-center">Place An Order</h2>
+      <h2 className="text-xl font-semibold mb-6 text-center">Start Your Order</h2>
       <div>
         <div
           className={`mb-2 border rounded cursor-pointer transition-all duration-500 ease-in-out ${
@@ -21,15 +21,14 @@ const OrderComponent: React.FC = () => {
           }`}
           onClick={() => handleOptionClick(1)}
         >
-          <div className="p-2">1. Data Only (MS Excel) : ${state.pSingle}</div>
+          <div className="p-2">1. Data Set {"("}Excel{")"} : ${state.pSingle}</div>
           <div
             className={`overflow-hidden transition-all duration-500 ease-in-out ${
               selectedOption === 1 ? "max-h-40" : "max-h-0"
             }`}
           >
             <div className="mt-2 text-sm bg-white text-gray-600 p-2">
-              Access market data conveniently organized in an Excel spreadsheet
-              for data-driven insights
+            Access well-organized market data in an easy-to-use Excel format, providing you with actionable, data-driven insights.
             </div>
           </div>
         </div>
@@ -41,15 +40,14 @@ const OrderComponent: React.FC = () => {
           }`}
           onClick={() => handleOptionClick(2)}
         >
-          <div className="p-2">2. Full Report (PDF) : ${state.pTeam}</div>
+          <div className="p-2">2. Complete Report {"("}PDF{")"} : ${state.pTeam}</div>
           <div
             className={`overflow-hidden transition-all duration-500 ease-in-out ${
               selectedOption === 2 ? "max-h-40" : "max-h-0"
             }`}
           >
             <div className="mt-2 text-sm bg-white text-gray-600 p-2">
-              Gain comprehensive market research findings and analysis in a
-              visually appealing PDF format.
+            Gain in-depth market research findings and analysis presented in a clear, visually appealing PDF format.
             </div>
           </div>
         </div>
@@ -62,7 +60,7 @@ const OrderComponent: React.FC = () => {
           onClick={() => handleOptionClick(3)}
         >
           <div className="p-2">
-            3. Complete - Report + Data : ${state.pCorp}
+            3. All-Inclusive Package : ${state.pCorp}
           </div>
           <div
             className={`overflow-hidden transition-all duration-500 ease-in-out ${
@@ -70,8 +68,7 @@ const OrderComponent: React.FC = () => {
             }`}
           >
             <div className="mt-2 text-sm bg-white text-gray-600 p-2">
-              Receive both an Excel Data Pack and a PDF Report for a complete
-              market research solution
+            Receive both the Excel Data Pack and the PDF Report, offering a comprehensive market research solution tailored to your needs.
             </div>
           </div>
         </div>

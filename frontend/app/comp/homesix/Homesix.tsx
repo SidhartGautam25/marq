@@ -16,7 +16,7 @@ export default function Homesix() {
         Our mission is client satisfaction; we strive to surpass expectations with steadfast dedication.
         </div>
         <div className="cards flex w-[96vw] md:w-auto flex-col md:flex-row justify-center mt-10">
-          <div className="card ml-1 mr-1 m-4 text-gray-500 flex flex-col items-center border-2 border-gray-300 hover:bg-blue-500 hover:text-white drop-shadow-lg  p-10 bg-white ease-in duration-300">
+          <div className="card ml-1 mr-1 m-4 text-gray-500 flex flex-col items-center border-2 border-gray-300 hover:bg-gray-500 hover:text-white drop-shadow-lg  p-10 bg-white ease-in duration-300">
             <div className="flex flex-col items-center">
             <FaRegCircleCheck className="md:w-10 md:h-10 w-8 h-9"/>
             
@@ -26,7 +26,7 @@ export default function Homesix() {
             Our unwavering commitment is to deliver information with unmatched accuracy. Through meticulous quality checks, we provide insights essential for high-level data-driven decision making, empowering your success.
             </p>
           </div>
-          <div className="card ml-1 mr-1 m-4 text-gray-500 flex flex-col items-center border-2 border-gray-300 hover:bg-blue-500 hover:text-white drop-shadow-lg  p-10 bg-white ease-in duration-300">
+          <div className="card ml-1 mr-1 m-4 text-gray-500 flex flex-col items-center border-2 border-gray-300 hover:bg-gray-500 hover:text-white drop-shadow-lg  p-10 bg-white ease-in duration-300">
             <div className="flex flex-col items-center">
             <FaRegFile className="md:w-10 md:h-10 w-8 h-9"/>
 
@@ -38,7 +38,7 @@ export default function Homesix() {
             Unlike many in the industry who conceal their sources behind proprietary models, we openly disclose the origins of our information. This transparency builds trust and confidence, ensuring the reliability and accuracy of our data.
             </p>
           </div>
-          <div className="card ml-1 mr-1 m-4 text-gray-500 flex flex-col items-center border-2 border-gray-300 hover:bg-blue-500 hover:text-white drop-shadow-lg  p-10 bg-white ease-in duration-200">
+          <div className="card ml-1 mr-1 m-4 text-gray-500 flex flex-col items-center border-2 border-gray-300 hover:bg-gray-500 hover:text-white drop-shadow-lg  p-10 bg-white ease-in duration-200">
             <div className="flex flex-col items-center">
               <MdLockOutline className="md:w-10 md:h-10 w-8 h-9 font-bold"/>
               <span className="text-xl font-bold mt-5">Security</span>

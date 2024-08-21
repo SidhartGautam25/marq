@@ -17,9 +17,7 @@ export default function About() {
         </div>
         <div className="p-10 flex flex-col md:flex-row md:py-20 md:w-1/2 md:pr-10 md:p-10 ">
           <p className="flex items-center justify-center  md:px-24 text-4xl font-semibold leading-tight">
-            With a team of global experts, we generate intelligence spanning
-            across industries, sectors, and markets using detailed insights of
-            how businesses across the world operate.
+          With a team of global experts, we provide intelligence that spans industries, sectors, and markets, offering detailed insights into how businesses operate worldwide.
           </p>
           <div className="">
             <Image
@@ -31,14 +29,7 @@ export default function About() {
         </div>
         <div className=" px-10 md:px-36 md:mt-20">
           <p className=" text-lg text-center pt-20 text-[#434856] ">
-            Ever since the founding of the firm, every member of Marqstat
-            Intelligence team has been striving to provide services that make us
-            a Partner to our clients. It is our policy to work closely with each
-            client with a sense of commitment on a long-term basis, all the
-            while ensuring that we deliver increased value. The maximization of
-            this value and the performance of our customers constitute the core
-            of our philosophy, thereby ensuring the constant ascending course of
-            the company at the global level.
+          Since our founding, every member of the Marqstats team has been dedicated to becoming a true partner to our clients. We are committed to working closely with each client on a long-term basis, ensuring we consistently deliver enhanced value. Maximizing this value and driving our clients' success are at the heart of our philosophy, supporting our continual growth and leadership on a global scale.
           </p>
           <div className="font-semibold mt-4 flex gap-2 justify-center">
             <button className="px-2 my-2 border-r-2 border-black">

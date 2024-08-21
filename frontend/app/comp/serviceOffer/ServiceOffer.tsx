@@ -22,8 +22,8 @@ const services = [
   },
   {
     id: "03.",
-    title: "Data Library",
-    page:"/services/data-library",
+    title: "Data Resource",
+    page:"/services/data-resource",
     description:
       "Our data services provide essential information at global, country, and city levels, empowering businesses with the insights needed to make strategic decisions. We offer a robust, meticulously curated data repository that includes market data, consumer insights, competitive intelligence, and industry benchmarks.",
   },
