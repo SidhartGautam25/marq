@@ -8,7 +8,7 @@ const ReportContect = () => {
     <div className="">
       <div className="">
         <div className="uppercase px-5 py-3 bg-sky-950 text-white">
-          contect with our sales team
+          Connect with Our Team
         </div>
         <div className="flex p-3 gap-5">
           <div className="w-[4rem] h-[4rem] rounded-full flex justify-center items-center text-5xl text-blue-600 border-2 border-blue-500 hover:bg-blue-500 hover:text-white ease-in-out duration-300">

@@ -162,7 +162,7 @@ function Pdfren2() {
                   className="text-gray-900 cursor-pointer flex items-center p-2 hover:bg-gray-200"
                   onClick={() => setDropdownOpen(!isDropdownOpen)}
                 >
-                  <span>ABOUT THIS REPORT</span>
+                  <span className="uppercase">Report Details</span>
                   {isDropdownOpen ? (
                     <MdKeyboardArrowUp className="ml-2 text-xl" />
                   ) : (
@@ -180,7 +180,7 @@ function Pdfren2() {
                       }`}
                       onClick={() => setCurrentTab("snap")}
                     >
-                      Market Snapshot
+                      Statistics {"&"} Highlights
                     </a>
                     <a
                       href="#overview"
@@ -191,7 +191,7 @@ function Pdfren2() {
                       }`}
                       onClick={() => setCurrentTab("overview")}
                     >
-                      Market Overview
+                      Key Takeaways
                     </a>
                     <a
                       href="#keymar"
@@ -202,7 +202,7 @@ function Pdfren2() {
                       }`}
                       onClick={() => setCurrentTab("keymar")}
                     >
-                      Key Market Trends
+                      Market Insights
                     </a>
                     <a
                       href="#compt"
@@ -235,7 +235,7 @@ function Pdfren2() {
                       }`}
                       onClick={() => setCurrentTab("recent")}
                     >
-                      Recent Developments
+                      Latest Developments
                     </a>
                   </div>
                 )}
@@ -253,25 +253,25 @@ function Pdfren2() {
                   </a>
                   <a
                     href="#scope"
-                    className={`block text-gray-900 p-2  ${
+                    className={`block text-gray-900 p-2 uppercase  ${
                       currentTab === "scope"
                         ? "bg-gray-700/10"
                         : "hover:bg-gray-700/10"
                     }`}
                     onClick={() => setCurrentTab("scope")}
                   >
-                    SCOPE OF THE REPORT
+                    Study Scope {"&"} Focus
                   </a>
                   <a
                     href="#faq"
-                    className={`block text-gray-900 p-2 ${
+                    className={`block text-gray-900 p-2 uppercase ${
                       currentTab === "faq"
                         ? "bg-gray-700/10"
                         : "hover:bg-gray-700/10"
                     }`}
                     onClick={() => setCurrentTab("faq")}
                   >
-                    FREQUENTLY ASKED QUESTIONS
+                    Frequently Asked Questions
                   </a>
                   <a
                     href="#relatedreport"

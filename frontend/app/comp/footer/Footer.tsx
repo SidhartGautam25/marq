@@ -70,47 +70,47 @@ export default function Footer() {
             <nav className="list-none mb-10 flex gap-5 font-medium flex-col">
               {/* Repeat for other offerings */}
               <li>
+                <Link href="/services/industry-expertise">
+                  <div className="text-gray-600 hover:text-gray-800">
+                  Industry Expertise
+                  </div>
+                </Link>
+              </li>
+              <li>
                 <Link href="/services/market-assessment">
                   <div className="text-gray-600 hover:text-gray-800">
-                    Market Assessment
+                  Market Assessment
                   </div>
                 </Link>
               </li>
               <li>
                 <Link href="/services/data-resource">
                   <div className="text-gray-600 hover:text-gray-800">
-                    Data Resource
+                  Data Resources
                   </div>
                 </Link>
               </li>
               <li>
                 <Link href="/services/business-consulting">
                   <div className="text-gray-600 hover:text-gray-800">
-                    consulting services
-                  </div>
-                </Link>
-              </li>
-              <li>
-                <Link href="/report-store">
-                  <div className="text-gray-600 hover:text-gray-800">
-                    Market Research reports
+                  Business Consulting
                   </div>
                 </Link>
               </li>
               <li>
                 <Link href="/">
                   <div className="text-gray-600 hover:text-gray-800">
-                    Custom Research srvices
+                  Reports
                   </div>
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/">
                   <div className="text-gray-600 hover:text-gray-800">
                     Subscription
                   </div>
                 </Link>
-              </li>
+              </li> */}
               {/* ... */}
             </nav>
           </div>
@@ -195,13 +195,13 @@ export default function Footer() {
                   </div>
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/">
                   <div className="text-gray-600 hover:text-gray-800">
                     Research Methodology
                   </div>
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/career">
                   <div className="text-gray-600 hover:text-gray-800">
