@@ -5,6 +5,8 @@ import Link from "next/link";
 import img2 from "@/public/youtube_1384060.png";
 import img3 from "@/public/instagram_2111463.png";
 import img4 from "@/public/linkedin_145807.png";
+import marqstat from "@/public/images/Marqstats.svg";
+
 export default function Footer() {
   return (
     <footer className="bg-white text-gray-600 body-font ">
@@ -13,15 +15,20 @@ export default function Footer() {
         <div className="w-64 m flex-shrink-0 md:mx-0 mx-auto text-center md:text-left ">
           <Link href="/">
             <div className="flex title-font font-medium items-center md:justify-start justify-center text-black text-3xl">
-              {/* <Image src="/logo.svg" alt="Marqstats logo" width={120} height={60} /> */}
-              <span>Marqstats</span>
+              <Image
+                src={marqstat}
+                alt="Marqstats logo"
+                width={130}
+                height={70}
+              />
+              {/* <span>Marqstats</span> */}
             </div>
           </Link>
-          <div className="mt-4 lg:max-w-sm">
+          <div className="mt-4 md:ml-3 lg:max-w-sm">
             <h2 className="text-lg font-semibold">Follow Us</h2>
             {/* Social Icons */}
             {/* Include the actual paths to the social icons in the src attributes */}
-            <div className="flex mt-4 mb-6 gap-4 ">
+            <div className="flex mt-4 mb-6 gap-4 justify-center md:justify-normal">
               <Link href="https://linkedin.com">
                 <div className="text-gray-600 hover:text-gray-800">
                   <Image src={img4} alt="LinkedIn" width={24} height={24} />
