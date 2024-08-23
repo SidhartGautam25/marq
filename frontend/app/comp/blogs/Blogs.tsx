@@ -101,9 +101,9 @@ export default function Blogs() {
   return (
     <div className="flex flex-col items-center">
       <span className="text-2xl lg:text-4xl mt-6 lg:mt-4 p-3 border-b-2 border-gray-300 text-center">
-      Discover Our Latest Insights
+        Discover Our Latest Insights
       </span>
-      <div className="flex flex-col md:flex-row mt-5">
+      <div className="flex flex-col md:flex-row mt-5 cursor-pointer">
         {/* 1st card */}
         <div
           className="overflow-hidden w-full md:w-1/2 h-[24rem] md:h-auto"
@@ -176,7 +176,7 @@ export default function Blogs() {
         </div>
       </div>
 
-      <div className="md:h-[400px] h-auto flex md:flex-row flex-col">
+      <div className="md:h-[400px] h-auto flex md:flex-row flex-col cursor-pointer">
         {/* 4th card */}
         <div
           className="flex md:w-1/2 w-full group md:flex-row overflow-hidden flex-col-reverse relative"

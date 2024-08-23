@@ -21,7 +21,7 @@ export default function Footer() {
             <h2 className="text-lg font-semibold">Follow Us</h2>
             {/* Social Icons */}
             {/* Include the actual paths to the social icons in the src attributes */}
-            <div className="flex justify-center mt-4 mb-6 gap-4 ">
+            <div className="flex mt-4 mb-6 gap-4 ">
               <Link href="https://linkedin.com">
                 <div className="text-gray-600 hover:text-gray-800">
                   <Image src={img4} alt="LinkedIn" width={24} height={24} />
@@ -72,35 +72,35 @@ export default function Footer() {
               <li>
                 <Link href="/services/industry-expertise">
                   <div className="text-gray-600 hover:text-gray-800">
-                  Industry Expertise
+                    Industry Expertise
                   </div>
                 </Link>
               </li>
               <li>
                 <Link href="/services/market-assessment">
                   <div className="text-gray-600 hover:text-gray-800">
-                  Market Assessment
+                    Market Assessment
                   </div>
                 </Link>
               </li>
               <li>
                 <Link href="/services/data-resource">
                   <div className="text-gray-600 hover:text-gray-800">
-                  Data Resources
+                    Data Resources
                   </div>
                 </Link>
               </li>
               <li>
                 <Link href="/services/business-consulting">
                   <div className="text-gray-600 hover:text-gray-800">
-                  Business Consulting
+                    Business Consulting
                   </div>
                 </Link>
               </li>
               <li>
                 <Link href="/">
                   <div className="text-gray-600 hover:text-gray-800">
-                  Reports
+                    Reports
                   </div>
                 </Link>
               </li>

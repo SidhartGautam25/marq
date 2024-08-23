@@ -28,7 +28,9 @@ export default function Contact() {
           <div className="px-8 lg:flex p-2 lg:px-32 lg:pt-10 ">
             <div className="lg:w-1/2 lg:pr-12">
               <div className="lg:pr-28 tracking-wide font-extralight">
-              Thank you for your interest in Marqstats. Please reach out via email or phone, and we&apos;ll connect you with the right expert to assist you.
+                Thank you for your interest in Marqstats. Please reach out via
+                email or phone, and we&apos;ll connect you with the right expert
+                to assist you.
               </div>
               <div className="lg:my-10">
                 <div className=" border-b border-gray-500 flex flex-col lg:flex-row py-6 ">
@@ -102,7 +104,7 @@ export default function Contact() {
 
                 <div className="pt-6">
                   <p className="font-bold">KEEP IN TOUCH</p>
-                  <div className="flex py-4">
+                  <div className="flex py-4 ">
                     {/* className="w-10 h-10 mx-4" */}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +112,7 @@ export default function Contact() {
                       height="102"
                       viewBox="0 0 101.996 102"
                       id="instagram"
-                      className="w-10 h-10 mx-4"
+                      className="w-10 h-10 mx-4 cursor-pointer"
                     >
                       <defs>
                         <radialGradient
@@ -153,7 +155,7 @@ export default function Contact() {
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 28.87 28.87"
                       id="linkedin"
-                      className="w-10 h-10 mx-4"
+                      className="w-10 h-10 mx-4 cursor-pointer"
                     >
                       <g data-name="Layer 2">
                         <g data-name="Layer 1">
@@ -190,13 +192,17 @@ export default function Contact() {
         <div className=" lg:flex lg:mx-32 lg:py-24">
           <div className="px-8 pt-6 flex flex-col justify-center lg:w-1/2">
             <h1 className="py-2 text-blue-700 font-semibold lg:py-6 text-xl">
-            Partner with Us
+              Partner with Us
             </h1>
             <p className="py-2 lg:py-6 font-semibold text-3xl md:pr-6">
-            If you&apos;re ready to elevate your success and see the bigger picture, let&apos;s start a conversation.
+              If you&apos;re ready to elevate your success and see the bigger
+              picture, let&apos;s start a conversation.
             </p>
             <p className="py-2 md:pr-20 text-lg font-light  lg:py-6">
-            Our experienced team of analysts, data scientists, and industry specialists brings deep expertise across various sectors, including leadership roles in energy, healthcare, and transportation.
+              Our experienced team of analysts, data scientists, and industry
+              specialists brings deep expertise across various sectors,
+              including leadership roles in energy, healthcare, and
+              transportation.
             </p>
             <ul className="py-2 lg:py-6 font-semibold text-gray-700 lg:text-lg ">
               <li className="py-1 flex">
