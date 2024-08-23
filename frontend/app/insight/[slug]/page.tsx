@@ -134,7 +134,7 @@ export default function Page({ params }: { params: { slug: string } }) {
             {blog.map((insight, index) => (
               <div
                 key={index}
-                className=""
+                className="cursor-pointer"
                 onClick={() => {
                   clickedBlog(index);
                 }}
