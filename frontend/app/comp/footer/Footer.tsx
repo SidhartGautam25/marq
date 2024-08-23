@@ -6,6 +6,7 @@ import img2 from "@/public/youtube_1384060.png";
 import img3 from "@/public/instagram_2111463.png";
 import img4 from "@/public/linkedin_145807.png";
 import marqstat from "@/public/images/Marqstats.svg";
+import marqlogo from "@/public/marqlogo.svg"
 
 export default function Footer() {
   return (
@@ -16,7 +17,7 @@ export default function Footer() {
           <Link href="/">
             <div className="flex title-font font-medium items-center md:justify-start justify-center text-black text-3xl">
               <Image
-                src={marqstat}
+                src={marqlogo}
                 alt="Marqstats logo"
                 width={130}
                 height={70}
