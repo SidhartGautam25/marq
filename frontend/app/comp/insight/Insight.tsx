@@ -332,7 +332,7 @@ export default function Insight() {
             </select>
           </div>
         </div>
-        <div className="flex flex-wrap justify-center gap-5 mt-5">
+        <div className="flex flex-wrap justify-center gap-5 mt-5 cursor-pointer">
           {blogs.map((insight, index) => (
             <div
               key={index}
