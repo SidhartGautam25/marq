@@ -63,7 +63,7 @@ export default function Home() {
       //let url = `${dev_url}/api/getall/reports?industry=${ind}&page=${page}&subind=${query}`;
 
       try {
-        console.log("request sent");
+        console.log("request senttttttt");
         const daata = await axios.get(url);
         console.log("data is in insgiht ", daata);
         let LatestBlogs = daata.data.data[0];
