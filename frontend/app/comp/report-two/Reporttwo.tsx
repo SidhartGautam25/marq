@@ -120,7 +120,7 @@ export default function Report2() {
             <div className="md:w-[80%] w-full">
               <div className="p-5 pt-0">
                 <div className="titel flex justify-center text-2xl font-semibold">
-                  <span className="md:mt-0 mt-6">Industries </span>
+                  <span className="md:mt-0 mt-6">Specialized Sectors</span>
                 </div>
                 <div className="buttans flex flex-col items-center w-full">
                   {indus.map((item, index) => {
@@ -135,19 +135,16 @@ export default function Report2() {
               <div className="w-full p-8 md:p-2">
                 <div className="bg-black text-white p-6 md:p-8 flex flex-col gap-10 items-center w-full">
                   <div className="flex flex-col gap-5">
-                    <span>CUSTOMIZED REPORT SOLUTION</span>
+                    <span className="uppercase text-[14px]">Tailored Intelligence Solution</span>
                     <p>
-                      Obtain a personalized market intelligence solution
-                      designed specifically for your business
+                    Access a market intelligence solution crafted exclusively for your business.
                     </p>
                     <ul className="list-disc flex flex-col gap-3">
                       <li>
-                        Choose customized report sections that align with your
-                        requirements
+                      Select modules that precisely match your requirements.
                       </li>
                       <li>
-                        Receive a report tailored to your specific needs and
-                        preferences
+                      Receive a fully customized solution designed to meet your unique needs.
                       </li>
                     </ul>
                   </div>

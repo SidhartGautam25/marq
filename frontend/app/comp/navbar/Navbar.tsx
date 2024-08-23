@@ -62,7 +62,7 @@ export default function NavBar() {
                 onMouseLeave={() => setIsDropdownOpen(false)}
                 className="block px-2 py-1 text-white font-semibold rounded hover:bg-gray-700 lg:mt-0"
               >
-                Industry Coverage
+                Industries
               </span>
             </Link>
             {/* <Image src={img1} alt="" className='w-4 h-4'/> */}
@@ -133,7 +133,7 @@ export default function NavBar() {
                 </li>
                 <li className="block px-4 py-2 text-sm hover:bg-gray-600 hover:text-white">
                   <Link href="/services/data-resource">
-                    <span>Data Resources</span>
+                    <span>Data Resource</span>
                   </Link>
                 </li>
                 <li className="block px-4 py-2 text-sm hover:bg-gray-600 hover:text-white">
@@ -146,25 +146,25 @@ export default function NavBar() {
           </div>
           <Link href="/insight">
             <span className="block px-2 py-1 text-white font-semibold rounded hover:bg-gray-700 lg:mt-0">
-              Insight
+              Insights
             </span>
           </Link>
 
           <Link href="/report-store">
             <span className="block px-2 py-1 text-white font-semibold rounded hover:bg-gray-700 lg:mt-0">
-              Report Store
+              Reports
             </span>
           </Link>
           {/* <Image src={img1} alt="" className='w-4 h-4'/> */}
 
           <Link href="/contact">
             <span className="block px-2 py-1 text-white font-semibold rounded hover:bg-gray-700 lg:mt-0">
-              Contact
+              Contact Us
             </span>
           </Link>
           <Link href="/about">
             <span className="block px-2 py-1 text-white font-semibold rounded hover:bg-gray-700 lg:mt-0">
-              About
+              About Us
             </span>
           </Link>
         </div>

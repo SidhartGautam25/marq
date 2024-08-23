@@ -5,51 +5,51 @@ export default function Work() {
   const reasons = [
     {
       number: "01.",
-      title: "Strategic Vision",
+      title: "Visionary Strategy",
       description:
-        "Through the sustainable and effective implementation of strategies, we support clients in improving their performance and innovative strength.",
+        "Implementing sustainable strategies to enhance client performance and foster innovative strength effectively.",
     },
     {
       number: "02.",
-      title: "Comprehensive Support",
+      title: "Holistic Support",
       description:
-        "We work with your team to create comprehensive and customised services that will augment your growth.",
+        "Collaborating with your team to deliver customized services that drive and augment your business growth.",
     },
     {
       number: "03.",
-      title: "Capabilities Driven",
+      title: "Capability-Focused",
       description:
-        "Our approach, built on distinctive capabilities, enables businesses to focus on their strengths and gain a competitive advantage.",
+        "Leveraging distinctive capabilities to help businesses focus on strengths and gain a competitive edge.",
     },
     {
       number: "04.",
-      title: "Client Centric",
+      title: "Client-Centric",
       description:
-        "The team adopts a customer-centric approach to unlock value powered by the in-depth analysis.",
+        "Adopting a customer-centric approach to unlock value through in-depth, data-driven analysis.",
     },
     {
       number: "05.",
-      title: "Extensive Data",
+      title: "Extensive Data Solutions",
       description:
-        "Custom designed solutions you require based on our extensive portfolio of information, analysis and expertise.",
+        "Providing custom solutions based on an extensive portfolio of information, expert analysis, and industry knowledge.",
     },
     {
       number: "06.",
-      title: "Result Oriented",
+      title: "Results-Driven",
       description:
-        "Driven by our industry experience, we are fiercely devoted to help our clients capture growth opportunities around the world.",
+        "Utilizing industry experience to help clients seize global growth opportunities with unwavering dedication.",
     },
     {
       number: "07.",
-      title: "Defined Ambition",
+      title: "Ambitious Quality",
       description:
-        "We are an ambitious firm with an aim to provide best-in-class solutions guided by our well-defined quality assurance system.",
+        " Offering best-in-class solutions guided by a well-defined quality assurance system and ambitious goals.",
     },
     {
       number: "08.",
-      title: "Actionable Intelligence",
+      title: "Actionable Insights",
       description:
-        "Team of industry experts providing actionable insights to make informed decisions.",
+        "Delivering insights from industry experts to empower informed decision-making and strategic actions.",
     },
     // Add more reasons...
   ];
@@ -58,7 +58,7 @@ export default function Work() {
     <div className="bg-white py-12">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold">Why Work With Us?</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold">Why Choose Marqstats?</h2>
           <div className="mt-2">
             <hr className="inline-block w-16 border-2 border-blue-600" />
           </div>

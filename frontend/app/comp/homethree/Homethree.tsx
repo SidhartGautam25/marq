@@ -7,9 +7,7 @@ export default function Homethree() {
         <div className="main w-[100%] lg:w-[85%] flex flex-col lg:flex-row  gap-6 lg:gap-20">
           <div className="left lg:w-1/2 p-5 ">
             <p className=" mb-8 lg:mb-16 text-2xl lg:text-3xl font-bold lg:leading-[50px]">
-              The global market is defined by its complexity and fluidity.
-              That&apos;s where we come in.Marqstats offers a range of solutions
-              to support your goal.
+            The global market&apos;s complexity and fluidity demand expert navigation. That&apos;s where Marqstats excels. We provide a comprehensive range of data-driven solutions to support and achieve your business goals.
             </p>
             <Link href="/services">
             <button className="btn-blue text-sm pr-10 md:pr-6 pl-6 font-semibold flex items-center border-[1px] rounded border-blue-500 p-3 hover:bg-blue-500 text-blue-500 hover:text-white">
@@ -29,6 +27,7 @@ export default function Homethree() {
             </Link>
           </div>
           <div className="right lg:w-1/2 flex flex-col lg:gap-2 ">
+          <Link href="/services/industry-expertise">
             <div className="strap  flex justify-between items-center p-5 ease-in duration-400 hover:border-b border-blue-500">
               <span className="text-[2rem] md:text-3xl">
                 Industry Expertise
@@ -45,6 +44,8 @@ export default function Homethree() {
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
             </div>
+            </Link>
+            <Link href="/services/market-assessment">
             <div className="strap  flex justify-between items-center p-5 ease-in duration-400 hover:border-b border-blue-500">
               <span className="text-3xl">Market Assessment</span>
               <svg
@@ -59,6 +60,8 @@ export default function Homethree() {
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
             </div>
+            </Link>
+            <Link href="/services/data-resource">
             <div className="strap  flex justify-between items-center p-5 ease-in duration-400 hover:border-b border-blue-500">
               <span className="text-3xl">Data Resource</span>
               <svg
@@ -73,6 +76,8 @@ export default function Homethree() {
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
             </div>
+            </Link>
+            <Link href="/services/business-consulting">
             <div className="strap  flex justify-between items-center p-5 ease-in duration-400 hover:border-b border-blue-500">
               <span className="text-3xl">Business Consulting</span>
               <svg
@@ -87,6 +92,7 @@ export default function Homethree() {
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
             </div>
+            </Link>
           </div>
         </div>
       </div>
