@@ -103,7 +103,7 @@ export default function Home() {
         </div>
         <hr className="w-full h-[2px] my-6 bg-gray-400" />
         <div
-          className="flex flex-col md:flex-row items-center bg-white p-8"
+          className="flex flex-col md:flex-row items-center bg-white p-8 cursor-pointer"
           onClick={latestClicked}
         >
           <div className="md:w-1/2 w-full">
