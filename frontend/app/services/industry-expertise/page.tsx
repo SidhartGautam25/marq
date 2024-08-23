@@ -1,7 +1,8 @@
 import { Automative, Footer, Ict, Industryser, NavBar, Slider } from "../../comp";
 import img1 from "@/public/slider1.jpg";
 import img2 from "@/public/slider2.jpg";
-const images = [img1, img2];
+import img3 from "@/public/service1.svg"
+const images = [img3, img3];
 export default function Home() {
   return (
     <div className="">
