@@ -103,19 +103,19 @@ export default function Home() {
         </div>
         <hr className="w-full h-[2px] my-6 bg-gray-400" />
         <div
-          className="flex flex-col md:flex-row items-center bg-white p-8 cursor-pointer"
+          className="flex flex-col md:flex-row items-center bg-white p-8 mx-10 cursor-pointer"
           onClick={latestClicked}
         >
-          <div className="md:w-1/2 w-full">
+          <div className="md:w-1/3 md:h-1/2 h-full w-full">
             <img
               src={latest.linkt}
               alt="Featured Insight"
-              width={700}
-              height={300}
+              width={400}
+              height={100}
               className="object-cover"
             />
           </div>
-          <div className="md:w-1/2 w-full md:pl-8 pl-0 mt-4 md:mt-0">
+          <div className="md:w-2/3 w-full md:pl-8 pl-0 mt-4 md:mt-0">
             <h4 className="text-sm font-semibold text-gray-500">
               Latest Insight
             </h4>

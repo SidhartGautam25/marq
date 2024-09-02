@@ -155,7 +155,7 @@ function Pdfren2() {
           <PdfDescription rep={state} />
         </div>
         <div className="flex">
-          <div className="left w-[20%]">
+          <div className="left w-[20%] md:block hidden">
             <div className="bg-white shadow-lg p-4 sticky top-0">
               <nav className="space-y-1">
                 <div
@@ -373,7 +373,7 @@ function Pdfren2() {
               </nav>
             </div>
           </div>
-          <div className="right w-[60%]">
+          <div className="right md:w-[60%] w-full">
             <div className="bg-white shadow-lg p-6 pt-0">
               <section ref={snapRef}>
                 <MarketSnapshot />
@@ -407,7 +407,7 @@ function Pdfren2() {
               </section>
             </div>
           </div>
-          <div className="w-[20%]">
+          <div className="w-[20%] md:block hidden">
             <OrderComponent />
             <ReportContect />
             <div className="bg-black text-white p-6 md:p-8 flex flex-col gap-12 items-center w-[100%] mt-10 sticky top-0">
@@ -437,86 +437,169 @@ function Pdfren2() {
                   <IoMdMail className=" text-xl" />
                 </button>
                 {isModalOpen2 && (
-                    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-                      <div className="relative p-5 border bg-gray-50 rounded-md w-[90%] md:w-[50%]">
-                        <button
-                          onClick={toggleModal2}
-                          className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl"
-                        >
-                          &times;
+                  <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+                    <div className="relative p-5 border bg-gray-50 rounded-md w-[90%] md:w-[50%]">
+                      <button
+                        onClick={toggleModal2}
+                        className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl"
+                      >
+                        &times;
+                      </button>
+                      <h1 className="text-center text-2xl">
+                        Get In Touch With us
+                      </h1>
+                      <form action="" className="flex flex-col gap-5">
+                        <div className="flex flex-col">
+                          <label htmlFor="name">
+                            Name<span className="text-red-600">*</span>
+                          </label>
+                          <input
+                            type="text"
+                            placeholder="Enter Name "
+                            className="focus:outline-none p-3 border rounded-md"
+                            id="name"
+                          />
+                        </div>
+                        <div className="flex flex-col">
+                          <label htmlFor="email">
+                            Email<span className="text-red-600">*</span>
+                          </label>
+                          <input
+                            type="email"
+                            placeholder="Enter email "
+                            className="focus:outline-none p-3 border rounded-md"
+                            id="email"
+                          />
+                        </div>
+                        <div className="flex flex-col">
+                          <label htmlFor="contact">
+                            Contact Number
+                            {/* <span className="text-red-600">*</span> */}
+                          </label>
+                          <input
+                            type="number"
+                            placeholder="(Country code)-Phone-Number"
+                            className="focus:outline-none p-3 border rounded-md"
+                            id="contact"
+                          />
+                        </div>
+                        <div className="flex flex-col">
+                          <label htmlFor="contact">
+                            Company Name
+                            {/* <span className="text-red-600">*</span> */}
+                          </label>
+                          <input
+                            type="number"
+                            placeholder="(Country code)-Company Name"
+                            className="focus:outline-none p-3 border rounded-md"
+                            id="contact"
+                          />
+                        </div>
+                        <div className="flex flex-col">
+                          <label htmlFor="requirements">
+                            How can we assist you?
+                            {/* <span className="text-red-600">*</span> */}
+                          </label>
+                          <textarea
+                            placeholder=""
+                            className="focus:outline-none p-3 border rounded-md min-h-[12rem]"
+                            id="requirements"
+                          />
+                        </div>
+                        <button className="bg-slate-500 w-[5rem] p-2 rounded-md text-white hover:bg-slate-800 transition duration-300">
+                          Submit
                         </button>
-                        <h1 className="text-center text-2xl">
-                          Get In Touch With us
-                        </h1>
-                        <form action="" className="flex flex-col gap-5">
-                          <div className="flex flex-col">
-                            <label htmlFor="name">
-                              Name<span className="text-red-600">*</span>
-                            </label>
-                            <input
-                              type="text"
-                              placeholder="Enter Name "
-                              className="focus:outline-none p-3 border rounded-md"
-                              id="name"
-                            />
-                          </div>
-                          <div className="flex flex-col">
-                            <label htmlFor="email">
-                              Email<span className="text-red-600">*</span>
-                            </label>
-                            <input
-                              type="email"
-                              placeholder="Enter email "
-                              className="focus:outline-none p-3 border rounded-md"
-                              id="email"
-                            />
-                          </div>
-                          <div className="flex flex-col">
-                            <label htmlFor="contact">
-                              Contact Number
-                              {/* <span className="text-red-600">*</span> */}
-                            </label>
-                            <input
-                              type="number"
-                              placeholder="(Country code)-Phone-Number"
-                              className="focus:outline-none p-3 border rounded-md"
-                              id="contact"
-                            />
-                          </div>
-                          <div className="flex flex-col">
-                            <label htmlFor="contact">
-                              Company Name
-                              {/* <span className="text-red-600">*</span> */}
-                            </label>
-                            <input
-                              type="number"
-                              placeholder="(Country code)-Company Name"
-                              className="focus:outline-none p-3 border rounded-md"
-                              id="contact"
-                            />
-                          </div>
-                          <div className="flex flex-col">
-                            <label htmlFor="requirements">
-                              How can we assist you?
-                              {/* <span className="text-red-600">*</span> */}
-                            </label>
-                            <textarea
-                              placeholder=""
-                              className="focus:outline-none p-3 border rounded-md min-h-[12rem]"
-                              id="requirements"
-                            />
-                          </div>
-                          <button className="bg-slate-500 w-[5rem] p-2 rounded-md text-white hover:bg-slate-800 transition duration-300">
-                            Submit
-                          </button>
-                        </form>
-                      </div>
+                      </form>
                     </div>
-                  )}
+                  </div>
+                )}
               </div>
               <MyShare />
             </div>
           </div>
+        </div>
+        <div>
+          <button
+            className="mt-6 w-full bg-red-600 text-white p-3 rounded md:hidden block bottom-0 left-0 fixed"
+            onClick={toggleModal}
+          >
+            Request Sample
+          </button>
+          {isModalOpen && (
+            <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+              <div className="relative p-5 border bg-gray-50 rounded-md w-[90%] md:w-[50%]">
+                <button
+                  onClick={toggleModal}
+                  className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl"
+                >
+                  &times;
+                </button>
+                <h1 className="text-center text-2xl">Requst Sample Form</h1>
+                <form action="" className="flex flex-col gap-5">
+                  <div className="flex flex-col">
+                    <label htmlFor="name">
+                      Name<span className="text-red-600">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Enter Name "
+                      className="focus:outline-none p-3 border rounded-md"
+                      id="name"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <label htmlFor="email">
+                      Email<span className="text-red-600">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      placeholder="Enter email "
+                      className="focus:outline-none p-3 border rounded-md"
+                      id="email"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <label htmlFor="contact">
+                      Contact Number
+                      {/* <span className="text-red-600">*</span> */}
+                    </label>
+                    <input
+                      type="number"
+                      placeholder="(Country code)-Phone-Number"
+                      className="focus:outline-none p-3 border rounded-md"
+                      id="contact"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <label htmlFor="contact">
+                      Company Name
+                      {/* <span className="text-red-600">*</span> */}
+                    </label>
+                    <input
+                      type="number"
+                      placeholder="(Country code)-Company Name"
+                      className="focus:outline-none p-3 border rounded-md"
+                      id="contact"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <label htmlFor="requirements">
+                      Do you have any specific requirements?
+                      {/* <span className="text-red-600">*</span> */}
+                    </label>
+                    <textarea
+                      placeholder=""
+                      className="focus:outline-none p-3 border rounded-md min-h-[12rem]"
+                      id="requirements"
+                    />
+                  </div>
+                  <button className="bg-slate-500 w-[5rem] p-2 rounded-md text-white hover:bg-slate-800 transition duration-300">
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </NoSSR>

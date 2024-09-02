@@ -71,13 +71,13 @@ const PdfDescription: React.FC<DynamicProps> = ({ rep }) => {
               <div className="">2018</div>
             </div>
           </div> */}
-          <div className="md:p-3 p-2 w-[10rem] flex justify-center items-center rounded-sm mb-5 md:mb-1">
+          <div className="md:p-3 p-2 w-[10rem] flex rounded-sm mb-5 md:mb-1">
             <span>
               {month} {year}{" "}
             </span>
           </div>
         </div>
-        <div className="flex-[1] bg-gray-200">
+        <div className="flex-[1] md:block hidden bg-gray-200">
           <div
             className="md:h-full h-[15rem] flex items-center justify-center"
             style={{
