@@ -22,7 +22,6 @@ export default function Page({ params }: { params: { slug: string } }) {
       <div className="">
         <div className="w-[96%] ml-auto mr-auto">
           <Pdfren2 />
-
           {/* <!--         <div className="flex justify-center">
           <Pdfren /> --> */}
         </div>
