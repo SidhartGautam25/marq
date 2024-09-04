@@ -54,10 +54,10 @@ export default function MyShare() {
 
   return (
     <div className="flex gap-5 ">
-      <WhatsappShareButton url={shareUrl} title={"this is title"}>
+      <WhatsappShareButton url={shareUrl} title="">
         <WhatsappIcon size={45} round={true} />
       </WhatsappShareButton>
-      <EmailShareButton url={shareUrl} title={"this is title"}>
+      <EmailShareButton url={shareUrl} title="">
         <EmailIcon size={45} round={true} />
       </EmailShareButton>
       {/* <TelegramShareButton url={shareUrl} title={"this is title"}>

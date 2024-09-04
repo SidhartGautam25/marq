@@ -9,24 +9,7 @@ const MarketSnapshot = () => {
   return (
     <div id="snap" className="container mx-auto p-4">
       <h1 className="text-xl font-semibold mb-4">{state?.msHeading}</h1>
-      <table className="min-w-full bg-white border border-gray-400">
-        <thead className="border border-gray-200">
-          <tr>
-            {/* <th className="py-2 px-4 border">ID</th> */}
-            <th className="py-2 px-4 border border-r border-r-slate-300 bg-gray-700/10">Report Attribute</th>
-            <th className="py-2 px-4 border bg-gray-700/10">Details</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data?.map((item: any, ind: any) => (
-            <tr key={ind}>
-              {/* <td className="py-2 px-4 border">{ind + 1}</td> */}
-              <td className="py-2 px-4 border">{item.key}</td>
-              <td className="py-2 px-4 border">{item.value}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+
       <div className="h-5"></div>
       <div
         // className="mt-6 border border-gray-300 p-4 min-h-[200px]"
