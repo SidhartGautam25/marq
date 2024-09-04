@@ -7,6 +7,7 @@ import { useContext, useState } from "react";
 import { ReportContext, ReportContextType } from "@/app/context/reportContext";
 import Report from "../comp/report-two/Reporttwo";
 import Report2 from "../comp/report-two/Reporttwo";
+import Head from "next/head";
 
 export default function Page() {
   const [industry, setIndustry] = useState("all");
@@ -16,6 +17,32 @@ export default function Page() {
 
   return (
     <>
+      <Head>
+        <title>Report Store - Marqstats</title>
+        <meta
+          name="description"
+          content="Browse and download various reports from our company store."
+        />
+        <meta
+          name="keywords"
+          content="reports, company store, download reports, business reports, PDF reports"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Report Store - Your Company Name" />
+        <meta
+          property="og:description"
+          content="Browse and download various reports from our company store."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://www.marqstats.com/report-store"
+        />
+        {/* <meta
+          property="og:image"
+          content="https://www.yourcompany.com/images/report-store-thumbnail.jpg"
+        /> */}
+      </Head>
       <div className="bg-gray-900">
         <NavBar />
       </div>

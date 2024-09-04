@@ -5,8 +5,10 @@ import Link from "next/link";
 import img2 from "@/public/youtube_1384060.png";
 import img3 from "@/public/instagram_2111463.png";
 import img4 from "@/public/linkedin_145807.png";
-// import marqstat from "@/public/images/Marqstats.svg";
+import marqstat from "@/public/images/Marqstats.svg";
 import marqlogo from "@/public/marqlogo.svg";
+import medium from "@/public/meduim-logo.jpg";
+import xlogo from "@/public/xlogo.png";
 
 export default function Footer() {
   return (
@@ -15,7 +17,7 @@ export default function Footer() {
         {/* Follow Us Section */}
         <div className="w-64 m flex-shrink-0 md:mx-0 mx-auto text-center md:text-left ">
           <Link href="/">
-            <div className="flex title-font font-medium items-center md:justify-start justify-center text-black text-3xl">
+            <div className="flex title-font font-medium items-center justify-center text-black text-3xl">
               <Image
                 src={marqlogo}
                 alt="Marqstats logo"
@@ -25,30 +27,32 @@ export default function Footer() {
               {/* <span>Marqstats</span> */}
             </div>
           </Link>
-          <div className="mt-4 md:ml-3 lg:max-w-sm">
-            <h2 className="text-lg font-semibold">Follow Us</h2>
+          <div className="mt-4 lg:max-w-sm">
+            <h2 className="text-lg font-semibold justify-center flex">
+              Follow Us
+            </h2>
             {/* Social Icons */}
             {/* Include the actual paths to the social icons in the src attributes */}
-            <div className="flex mt-4 mb-6 gap-4 justify-center md:justify-normal">
+            <div className="flex mt-4 mb-6 gap-4 justify-center">
               <Link href="https://linkedin.com">
                 <div className="text-gray-600 hover:text-gray-800">
                   <Image src={img4} alt="LinkedIn" width={24} height={24} />
                 </div>
               </Link>
-              <Link href="https://youtube.com">
+              <Link href="https://x.com/">
                 <div className="text-gray-600 hover:text-gray-800">
-                  <Image src={img2} alt="youtube" width={24} height={24} />
+                  <Image src={xlogo} alt="youtube" width={26} height={26} />
                 </div>
               </Link>
               <Link href="https://instagram.com">
                 <div className="text-gray-600 hover:text-gray-800">
-                  <Image src={img3} alt="instagram" width={24} height={24} />
+                  <Image src={img3} alt="instagram" width={22} height={22} />
                 </div>
               </Link>
               {/* Repeat for other social icons */}
             </div>
             {/* Newsletter Form */}
-            <div className="mt-4">
+            <div className="mt-4 flex items-center flex-col">
               <h2 className="text-lg font-semibold">
                 Subscribe to our Newsletter
               </h2>
