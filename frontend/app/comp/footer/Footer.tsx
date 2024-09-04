@@ -7,6 +7,8 @@ import img3 from "@/public/instagram_2111463.png";
 import img4 from "@/public/linkedin_145807.png";
 import marqstat from "@/public/images/Marqstats.svg";
 import marqlogo from "@/public/marqlogo.svg";
+import medium from "@/public/meduim-logo.jpg";
+import xlogo from "@/public/xlogo.png";
 
 export default function Footer() {
   return (
@@ -37,14 +39,14 @@ export default function Footer() {
                   <Image src={img4} alt="LinkedIn" width={24} height={24} />
                 </div>
               </Link>
-              <Link href="https://youtube.com">
+              <Link href="https://x.com/">
                 <div className="text-gray-600 hover:text-gray-800">
-                  <Image src={img2} alt="youtube" width={24} height={24} />
+                  <Image src={xlogo} alt="youtube" width={26} height={26} />
                 </div>
               </Link>
               <Link href="https://instagram.com">
                 <div className="text-gray-600 hover:text-gray-800">
-                  <Image src={img3} alt="instagram" width={24} height={24} />
+                  <Image src={img3} alt="instagram" width={22} height={22} />
                 </div>
               </Link>
               {/* Repeat for other social icons */}

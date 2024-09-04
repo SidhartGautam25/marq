@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   EmailShareButton,
   FacebookShareButton,
@@ -45,6 +46,8 @@ import {
   WorkplaceIcon,
   XIcon,
 } from "react-share";
+import xlogo from "@/public/xlogo.png";
+import Image from "next/image";
 
 export default function MyShare() {
   let shareUrl = window?.location.href;
@@ -52,7 +55,7 @@ export default function MyShare() {
   return (
     <div className="flex gap-5 ">
       <WhatsappShareButton url={shareUrl} title={"this is title"}>
-        <WhatsappIcon size={45} round={true}/>
+        <WhatsappIcon size={45} round={true} />
       </WhatsappShareButton>
       <EmailShareButton url={shareUrl} title={"this is title"}>
         <EmailIcon size={45} round={true} />
@@ -61,13 +64,16 @@ export default function MyShare() {
         <TelegramIcon size={45} round={true}/>
       </TelegramShareButton> */}
       <LinkedinShareButton url={shareUrl} title="">
-        <LinkedinIcon size={45} round={true}/>
+        <LinkedinIcon size={45} round={true} />
       </LinkedinShareButton>
       <TwitterShareButton url={shareUrl} title="">
-        <TwitterIcon size={45} round={true}/>
-
+        {/* <Link href="https://x.com/">
+          <div className="text-gray-600 hover:text-gray-800">
+            <Image src={xlogo} alt="youtube" width={26} height={26} />
+          </div>
+        </Link> */}
+        <XIcon size={45} round={true} />
       </TwitterShareButton>
-
     </div>
   );
 }
