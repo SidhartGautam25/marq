@@ -5,8 +5,8 @@ import Link from "next/link";
 import img2 from "@/public/youtube_1384060.png";
 import img3 from "@/public/instagram_2111463.png";
 import img4 from "@/public/linkedin_145807.png";
-import marqstat from "@/public/images/Marqstats.svg";
-import marqlogo from "@/public/marqlogo.svg"
+// import marqstat from "@/public/images/Marqstats.svg";
+import marqlogo from "@/public/marqlogo.svg";
 
 export default function Footer() {
   return (
