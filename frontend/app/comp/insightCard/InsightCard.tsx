@@ -14,7 +14,7 @@ const InsightCard: React.FC<InsightCardProps> = ({
   category,
 }) => {
   return (
-    <div className=" flex gap-2 flex-col md:w-[435px] shadow-lg">
+    <div className=" flex gap-2 flex-col md:w-[435px] shadow-lg h-[520px]">
       <img
         className="w-full md:h-[360px] h-[250px] object-cover"
         src={imageSrc}
@@ -26,7 +26,7 @@ const InsightCard: React.FC<InsightCardProps> = ({
         <div className="font-bold text-[18px] line-clamp-2 text-gray-600">{title}</div>
         {/* <p className="text-gray-700 text-base">{description}</p> */}
         <div className="mt-5 mb-2">
-        <span className=" bg-gray-200 rounded-full  font-semibold text-gray-700 px-5 py-2">
+        <span className=" bg-gray-200 rounded-full font-semibold text-gray-700 px-5 py-2">
           {category}
         </span>
       </div>

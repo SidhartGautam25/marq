@@ -13,7 +13,7 @@ export default function DataResources() {
           style={{ maxHeight: "500px" }}
         ></video>
       </div>
-      <div className="w-full md:w-1/2 p-8 text-lg font-medium">
+      <div className="w-full md:w-1/2 md:p-8 py-4 md:py-0 text-lg font-medium">
         <p className="mb-4">
           We provide dependable data that you need to start making informed
           decisions on the opportunities and risks that the market poses for
