@@ -9,7 +9,7 @@ export default function Home() {
         <NavBar />
       </div>
       <Slider images={images}/>
-      <div className="lg:mx-36 xl:mx-36 mx-10 md:mx-20 mt-5">
+      <div className="lg:mx-36 xl:mx-36 mx-5 md:mx-20 mt-5">
         <Marketass />
       </div>
       <Footer />

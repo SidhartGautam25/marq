@@ -4,7 +4,7 @@ import marketImage from "@/public/marketImage.jpg";
 
 export default function Marketass() {
   return (
-    <div className="text-center py-4 px-4">
+    <div className="md:text-center md:py-4 md:px-4">
       <div className="inline-block">
         {/* Ensure the path to the image is correct */}
         <Image
@@ -15,7 +15,7 @@ export default function Marketass() {
           objectFit="cover"
         />
       </div>
-      <h2 className="text-2xl font-semibold mt-8 mb-4">
+      <h2 className="md:text-2xl text-xl font-semibold mt-8 mb-4">
         Through our on-demand market assessment solutions, we help organizations
         take well-informed strategic decisions.
       </h2>

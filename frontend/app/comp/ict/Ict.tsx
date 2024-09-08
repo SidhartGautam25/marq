@@ -5,7 +5,7 @@ import globalTechImage from "@/public/globalTechImage.jpg";
 export default function Ict() {
   return (
     <>
-      <h2 className="text-4xl font-bold mb-10">
+      <h2 className="md:text-4xl text-2xl font-bold mb-10">
         Information and Communication Technology (ICT)
       </h2>
       <section className="flex flex-col md:flex-row items-center">
@@ -20,7 +20,7 @@ export default function Ict() {
             height={400}
           />
         </div>
-        <div className="w-full md:w-1/2 p-4 md:p-8">
+        <div className="w-full md:w-1/2 py-3 md:p-8">
           <p className="text-base md:text-lg">
             Increasing competitive pressure in the tech industry is leading to
             sharpening attention on speed, agility and flexibility. The key to

@@ -7,7 +7,7 @@ import serv4 from "@/public/serv4.jpg";
 
 export default function Automative() {
   return (
-    <div className="bg-white py-8">
+    <div className="bg-white md:py-8">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold mb-8">Automotive & Transportation</h2>
         <div className="flex flex-wrap -mx-4">
