@@ -36,7 +36,7 @@ const Card: React.FC<RepProps> = ({ rep }) => {
       payload: rep,
     });
     let temp = rep.slug.replace(/\s/g, "-");
-    router.push(`/report/${temp}`);
+    router.push(`/reports/${temp}`);
 
     // let related = state.related;
     // console.log("related eeeeports are ", related);
