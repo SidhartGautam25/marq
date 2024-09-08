@@ -105,9 +105,9 @@ const Card: React.FC<RepProps> = ({ rep }) => {
             <div className="md:line-clamp-4 line-clamp-3">{rep.subTitle}</div>
           </div>
           <div className=" text-gray-900 flex flex-col justify-center bg-white items-center">
-            <div className="">Study Period: {rep.study}</div>
-            <div className="">Base Year: {rep.base}</div>
-            <div className="">Forecost Period: {rep.forcast}</div>
+            <div className="">Study Period : 2019–2030</div>
+            <div className="">Base Year : 2023 </div>
+            <div className="">Forecost Period : 2024–2030</div>
           </div>
         </div>
       </div>
