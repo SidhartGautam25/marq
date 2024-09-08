@@ -520,7 +520,7 @@ function Pdfren2() {
         </div>
         <div>
           <button
-            className="mt-6 w-full bg-red-600 text-white p-3 rounded md:hidden block bottom-0 left-0 fixed"
+            className="mt-6 w-full bg-sky-950 md:bg-red-600 text-white p-3 rounded md:hidden block bottom-0 left-0 fixed"
             onClick={toggleModal}
           >
             Request Sample
