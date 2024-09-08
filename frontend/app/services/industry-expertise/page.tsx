@@ -10,7 +10,7 @@ export default function Home() {
         <NavBar />
       </div>
       <Slider images={images}/>
-      <div className="lg:mx-36 xl:mx-36 mx-10 md:mx-20 mt-10">
+      <div className="lg:mx-36 xl:mx-36 mx-3 md:mx-20 md:mt-10">
         <Industryser />
         <div className="flex items-center justify-center my-8">
           <div className="flex-grow border-t border-gray-800"></div>
@@ -20,7 +20,7 @@ export default function Home() {
           <div className="flex-grow border-t border-gray-800"></div>
         </div>
         <Automative />
-        <div className="mb-16 bg-black h-[1px]"></div>
+        <div className="md:mb-16 mb-8 bg-black h-[1px]"></div>
         <Ict />
       </div>
       <Footer />

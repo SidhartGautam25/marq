@@ -34,14 +34,14 @@ const Slider = ({images}:getprops) => {
             key={index}
             src={image}
             alt={`Slide ${index + 1}`}
-            className="h-[80vh] object-fill min-w-full"
+            className="md:h-[80vh] object-fill min-w-full"
             
           />
         ))}
       </div>
       <FaChevronLeft
       onClick={PrevClick}
-      className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-transparent text-gray-400 p-2 rounded-full focus:outline-none hover:text-gray-500 text-6xl ease-in-out duration-300"/>
+      className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-transparent text-gray-400 p-2 rounded-full focus:outline-none hover:text-gray-500 md:text-6xl text-4xl ease-in-out duration-300"/>
       {/* <button
         onClick={PrevClick}
         className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-transparent text-gray-400 p-2 rounded-full focus:outline-none hover:text-gray-500 text-6xl ease-in-out duration-300"
@@ -50,7 +50,7 @@ const Slider = ({images}:getprops) => {
       </button> */}
       <FaChevronRight 
       onClick={NextClick}
-      className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-transparent text-gray-400 p-2 rounded-full focus:outline-none hover:text-gray-500 text-6xl ease-in-out duration-300"/>
+      className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-transparent text-gray-400 p-2 rounded-full focus:outline-none hover:text-gray-500 md:text-6xl text-4xl ease-in-out duration-300"/>
       {/* <button
         onClick={NextClick}
         className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-transparent text-gray-400 p-2 rounded-full focus:outline-none hover:text-gray-500 text-6xl ease-in-out duration-300"

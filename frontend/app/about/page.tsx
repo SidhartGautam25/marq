@@ -15,8 +15,8 @@ export default function About() {
             About Us
           </h1>
         </div>
-        <div className="p-10 flex flex-col md:flex-row md:py-20 md:w-1/2 md:pr-10 md:p-10 ">
-          <p className="flex items-center justify-center  md:px-24 text-4xl font-semibold leading-tight">
+        <div className="p-5 flex flex-col-reverse md:flex-row md:py-20 md:w-1/2 md:pr-10 md:p-10 ">
+          <p className="flex items-center justify-center  md:px-24 md:text-4xl text-2xl font-semibold leading-tight mt-6">
           With a team of global experts, we provide intelligence that spans industries, sectors, and markets, offering detailed insights into how businesses operate worldwide.
           </p>
           <div className="">
@@ -27,8 +27,8 @@ export default function About() {
             />
           </div>
         </div>
-        <div className=" px-10 md:px-36 md:mt-20">
-          <p className=" text-lg text-center pt-20 text-[#434856] ">
+        <div className=" px-5 md:px-36 md:mt-20">
+          <p className=" text-lg md:text-center md:pt-20 text-[#434856] ">
           Since our founding, every member of the Marqstats team has been dedicated to becoming a true partner to our clients. We are committed to working closely with each client on a long-term basis, ensuring we consistently deliver enhanced value. Maximizing this value and driving our client&apos;s success are at the heart of our philosophy, supporting our continual growth and leadership on a global scale.
           </p>
           <div className="font-semibold mt-4 flex gap-2 justify-center">

@@ -101,29 +101,29 @@ export default function Home() {
             Insight
           </h1>
         </div>
-        <hr className="w-full h-[2px] my-6 bg-gray-400" />
+        <hr className="w-full h-[2px] my-3 md:my-6 bg-gray-400" />
         <div
-          className="flex flex-col md:flex-row items-center bg-white p-8 mx-10 cursor-pointer"
+          className="flex flex-col md:flex-row items-center bg-white md:p-8 md:mx-10 px-3 cursor-pointer"
           onClick={latestClicked}
         >
-          <div className="md:w-1/3 md:h-1/2 h-full w-full">
+          <div className="md:w-1/3 md:h-1/2 w-full h-full">
             <img
               src={latest.linkt}
               alt="Featured Insight"
               width={400}
               height={100}
-              className="object-cover"
+              className="object-cover h-[14rem]"
             />
           </div>
           <div className="md:w-2/3 w-full md:pl-8 pl-0 mt-4 md:mt-0">
             <h4 className="text-sm font-semibold text-gray-500">
               Latest Insight
             </h4>
-            <h2 className="text-3xl font-bold mt-2">{latest.title}</h2>
+            <h2 className="md:text-3xl font-bold mt-2 text-xl">{latest.title}</h2>
 
             <a
               href="#"
-              className="text-blue-500 font-semibold mt-4 inline-block"
+              className="text-blue-500 font-semibold mt-2 inline-block text-[12px] md:text-xl"
             >
               Learn More
             </a>
