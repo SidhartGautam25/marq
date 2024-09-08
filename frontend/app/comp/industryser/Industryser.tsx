@@ -5,8 +5,8 @@ import industrialImage from "@/public/industrial-image.jpg";
 export default function Industry() {
   return (
     <div className="flex flex-col md:flex-row items-center">
-      <div className="md:flex-1 p-4 text-left">
-        <p className="md:text-3xl text-2xl leading-10 font-semibold mb-4">
+      <div className="md:flex-1 md:p-4 p-2 text-left">
+        <p className="md:text-3xl text-xl md:leading-10 leading-8 font-semibold mb-4">
           Increasing disposable income and urbanization has paved the path for
           robust growth of industries across the world. In an increasingly
           competitive environment, use our solutions to leverage opportunities
@@ -17,7 +17,7 @@ export default function Industry() {
           <span> →</span>
         </button> */}
       </div>
-      <div className="md:flex-1 p-4">
+      <div className="md:flex-1 md:p-4 p-2">
         {/* Ensure the path to the image is correct */}
         <Image
           src={industrialImage}
