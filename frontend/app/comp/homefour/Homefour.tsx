@@ -43,7 +43,7 @@ export default function Homefour() {
       payload: rep,
     });
     let temp = rep.slug.replace(/\s/g, "-");
-    router.push(`/report/${temp}`);
+    router.push(`/reports/${temp}`);
   }
 
   useEffect(() => {
