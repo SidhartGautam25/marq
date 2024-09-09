@@ -52,7 +52,7 @@ export default function Blogs() {
       },
     });
     let temp = rep.title.replace(/\s/g, "-");
-    router.push(`/insight/${temp}`);
+    router.push(`/insights/${temp}`);
   }
 
   // const date = rep.createdAt;
