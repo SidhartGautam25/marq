@@ -82,7 +82,7 @@ const Card: React.FC<RepProps> = ({ rep }) => {
         <div
           className=" relative md:flex-[1] flex items-center p-3 md:h-full h-[15rem] rounded-bl-[8px] rounded-tl-[8px]"
           style={{
-            backgroundImage: `url(${rep.linki2})`,
+            backgroundImage: `url(${rep?.linki2})`,
             backgroundSize: "cover",
           }}
         >
@@ -107,7 +107,7 @@ const Card: React.FC<RepProps> = ({ rep }) => {
           <div className=" text-gray-900 flex flex-col justify-center bg-white items-center">
             <div className="">Study Period : 2019–2030</div>
             <div className="">Base Year : 2023 </div>
-            <div className="">Forecost Period : 2024–2030</div>
+            <div className="">Forecast Period : 2024–2030</div>
           </div>
         </div>
       </div>

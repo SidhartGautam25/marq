@@ -108,7 +108,7 @@ export default function Home() {
         >
           <div className="md:w-1/3 md:h-1/2 w-full h-full">
             <img
-              src={latest.linkt}
+              src={latest?.linkt}
               alt="Featured Insight"
               width={400}
               height={100}
@@ -119,7 +119,9 @@ export default function Home() {
             <h4 className="text-sm font-semibold text-gray-500">
               Latest Insight
             </h4>
-            <h2 className="md:text-3xl font-bold mt-2 text-xl">{latest.title}</h2>
+            <h2 className="md:text-3xl font-bold mt-2 text-xl">
+              {latest?.title}
+            </h2>
 
             <a
               href="#"

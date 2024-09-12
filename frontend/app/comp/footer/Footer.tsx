@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import img2 from "@/public/youtube_1384060.png";
+import img2 from "@/public/icons8-medium-50.png";
 import img3 from "@/public/instagram_2111463.png";
 import img4 from "@/public/linkedin_145807.png";
 import marqstat from "@/public/images/Marqstats.svg";
@@ -34,19 +34,30 @@ export default function Footer() {
             {/* Social Icons */}
             {/* Include the actual paths to the social icons in the src attributes */}
             <div className="flex mt-4 mb-6 gap-4 justify-center">
-              <Link href="https://linkedin.com">
+              <Link
+                href="https://www.linkedin.com/company/marq-stats"
+                target="_blank"
+              >
                 <div className="text-gray-600 hover:text-gray-800">
                   <Image src={img4} alt="LinkedIn" width={24} height={24} />
                 </div>
               </Link>
-              <Link href="https://x.com/">
+              <Link href="https://x.com/Marqstats_" target="_blank">
                 <div className="text-gray-600 hover:text-gray-800">
                   <Image src={xlogo} alt="youtube" width={26} height={26} />
                 </div>
               </Link>
-              <Link href="https://instagram.com">
+              <Link href="https://www.instagram.com/marqstats" target="_blank">
                 <div className="text-gray-600 hover:text-gray-800">
                   <Image src={img3} alt="instagram" width={22} height={22} />
+                </div>
+              </Link>
+              <Link
+                href="https://medium.com/@marqstatssocialmedia"
+                target="_blank"
+              >
+                <div className="text-gray-600 hover:text-gray-800">
+                  <Image src={img2} alt="instagram" width={22} height={22} />
                 </div>
               </Link>
               {/* Repeat for other social icons */}
