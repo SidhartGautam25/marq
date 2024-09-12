@@ -81,7 +81,7 @@ const PdfDescription: React.FC<DynamicProps> = ({ rep }) => {
           <div
             className="md:h-full h-[15rem] flex items-center justify-center"
             style={{
-              backgroundImage: `url(${state?.linki1})`,
+              backgroundImage: `url(${state?.linki2})`,
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
             }}

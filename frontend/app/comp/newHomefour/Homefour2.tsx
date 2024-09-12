@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState, useContext } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
@@ -12,16 +12,16 @@ export default function Homefour2() {
   const router = useRouter();
   let page = 1;
   let url = `${my_url}/api/getall/report?page=${page}`;
-  let report3=[reports[0],reports[1],reports[2],reports[3]];
+  let report3 = [reports[0], reports[1], reports[2], reports[3]];
   const handleClick = (ind: number) => {
     let rep = reports[ind];
     dispatch({
       type: "SET_CURRENT",
       payload: rep,
     });
-    
+
     let temp = rep.slug.replace(/\s/g, "-");
-    router.push(`/report/${temp}`);
+    router.push(`/reports/${temp}`);
   };
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export default function Homefour2() {
       }
     };
     fetchReport();
-    console.log("report homefore",reports);
+    console.log("report homefore", reports);
   }, []);
 
   return (
