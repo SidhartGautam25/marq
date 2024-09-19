@@ -56,7 +56,8 @@ export default function Page({ params }: { params: { slug: string } }) {
         linkt: rep.linkt,
       },
     });
-    router.push(`/insight/${blog[ind].title}`);
+    let temp = rep.title.replace(/\s/g, "-");
+    router.push(`/insights/${temp}`);
   }
 
   useEffect(() => {
