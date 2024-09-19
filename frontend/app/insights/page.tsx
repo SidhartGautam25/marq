@@ -42,7 +42,7 @@ export default function Home() {
         linkt: state.linkt,
       },
     });
-    router.push(`/insight/${state.title}`);
+    router.push(`/insights/${state.title}`);
   }
 
   useEffect(() => {
