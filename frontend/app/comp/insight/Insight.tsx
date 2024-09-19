@@ -245,7 +245,7 @@ export default function Insight() {
         linkt: rep.linkt,
       },
     });
-    router.push(`/insight/${blogs[ind].title}`);
+    router.push(`/insights/${blogs[ind].title}`);
   }
 
   useEffect(() => {
