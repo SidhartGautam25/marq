@@ -34,15 +34,16 @@ export default function Home() {
     dispatch({
       type: "SET_CURRENT",
       payload: {
-        title: state.title,
-        linkp: state.linkp,
-        createdAt: state.createdAt,
-        industry: state.industry,
-        subind: state.subind,
-        linkt: state.linkt,
+        title: latest.title,
+        linkp: latest.linkp,
+        createdAt: latest.createdAt,
+        industry: latest.industry,
+        subind: latest.subind,
+        linkt: latest.linkt,
       },
     });
-    router.push(`/insights/${state.title}`);
+    let temp = latest.title.replace(/\s/g, "-");
+    router.push(`/insights/${temp}`);
   }
 
   useEffect(() => {

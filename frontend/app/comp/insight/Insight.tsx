@@ -245,7 +245,8 @@ export default function Insight() {
         linkt: rep.linkt,
       },
     });
-    router.push(`/insights/${blogs[ind].title}`);
+    let temp = blogs[ind].title.replace(/\s/g, "-");
+    router.push(`/insights/${temp}`);
   }
 
   useEffect(() => {
