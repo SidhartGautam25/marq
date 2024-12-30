@@ -18,7 +18,7 @@ export default function Page() {
   return (
     <>
       <Head>
-        <title>Report Store - Marqstats</title>
+        {/* <title>Report Store - Marqstats</title> */}
         <meta
           name="description"
           content="Browse and download various reports from our company store."
@@ -27,7 +27,7 @@ export default function Page() {
           name="keywords"
           content="reports, company store, download reports, business reports, PDF reports"
         />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content="noindex, follow" />
         <meta property="og:title" content="Report Store - Your Company Name" />
         <meta
           property="og:description"

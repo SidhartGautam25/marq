@@ -21,9 +21,14 @@ export default function Page({ params }: { params: { slug: string } }) {
       <Head>
         <title>Marqstats - {state?.title}</title>
         <meta name="description" content={state?.desc} />
+        <meta name="robots" content="index, follow" />
         <meta
           name="keywords"
           content={`reports, ${state?.title}, company store, business reports, PDF reports, download ${state?.title}`}
+        />
+        <link
+          rel="canonical"
+          href={`https://www.marqstats.com/reports/${state?.slug}`}
         />
         {/* <meta
           name="keywords"
