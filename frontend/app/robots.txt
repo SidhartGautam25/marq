@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /reports/
+Disallow: /reports/private
+Sitemap: https://marqstats.com/sitemap.xml
