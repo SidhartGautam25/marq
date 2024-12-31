@@ -15,9 +15,9 @@ const MajorPlayers = () => {
           </tr>
         </thead> */}
         <tbody>
-          {data.map((item: any, ind: any) => (
+          {data?.map((item: any, ind: any) => (
             <tr key={ind}>
-              <td className="py-2 px-4 border">{ind + 1}</td>
+              <td className="py-2 px-2 w-16 border">{ind + 1}.</td>
               <td className="py-2 px-4 border">{item}</td>
             </tr>
           ))}

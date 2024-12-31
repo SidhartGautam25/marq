@@ -6,6 +6,6 @@ const prod_url3 = "http://api.rahulsinghwebsite.online"
 const prod_url4 = "https://api.marqstat.online"
 const final_prod_url= "https://api.marqstats.com"
 
-const my_url = final_prod_url;
+const my_url = dev_url;
 
 export {my_url}
