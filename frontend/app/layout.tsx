@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   title: "Marqstats",
   description: "Data drivin solution",
   icons: {
-    icon: ["../public/favicon.ico"],
-    apple: ["../public/favicon.ico"],
-    shortcut: ["../public/favicon.ico"],
+    icon: ["./favicon.ico"],
+    apple: ["./favicon.ico"],
+    shortcut: ["./favicon.ico"],
   },
 };
 
