@@ -44,6 +44,7 @@ const PdfDescription: React.FC<DynamicProps> = ({ rep }) => {
   let year = date?.substring(0, 4);
   let mon = date?.substring(5, 7);
   let month = convert(mon);
+  console.log("state is this in pdfdescription ", state);
 
   return (
     <NoSSR>

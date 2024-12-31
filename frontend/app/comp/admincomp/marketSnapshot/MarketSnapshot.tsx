@@ -17,7 +17,7 @@ const MarketSnapshot = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item: any, ind: any) => (
+          {data?.map((item: any, ind: any) => (
             <tr key={ind}>
               <td className="py-2 px-4 border">{item.key}</td>
               <td className="py-2 px-4 border">{item.value}</td>

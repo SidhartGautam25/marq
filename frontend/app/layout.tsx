@@ -19,11 +19,11 @@ import Head from "next/head";
 export const metadata: Metadata = {
   title: "Marqstats",
   description: "Data drivin solution",
-  // icons: {
-  //   icon: ["../public/marqFav.png"],
-  //   apple: ["../public/marqFav.png"],
-  //   shortcut: ["../public/marqFav.png"],
-  // },
+  icons: {
+    icon: ["../public/favicon.ico"],
+    apple: ["../public/favicon.ico"],
+    shortcut: ["../public/favicon.ico"],
+  },
 };
 
 export default function RootLayout({

@@ -86,7 +86,7 @@ function Pdfren2() {
   });
   useEffect(() => {
     const myfun = async () => {
-      let related = state.related;
+      let related = state?.related ?? ["", "", ""];
       console.log("related eeeeports are ", related);
       // const [rel, setRel] = useState<Record<string, any>[]>([]);
 
@@ -96,9 +96,9 @@ function Pdfren2() {
       console.log("url is ", url);
       const daata = await axios.get(url, {
         params: {
-          f: related[0],
-          s: related[1],
-          t: related[2],
+          f: related[0] ?? "",
+          s: related[1] ?? "",
+          t: related[2] ?? "",
         },
       });
 
@@ -534,7 +534,7 @@ function Pdfren2() {
                 >
                   &times;
                 </button>
-                <h1 className="text-center text-2xl">Requst Sample Form</h1>
+                <h1 className="text-center text-2xl">Reqeust Sample Form</h1>
                 <form action="" className="flex flex-col gap-5">
                   <div className="flex flex-col">
                     <label htmlFor="name">
