@@ -104,8 +104,6 @@
 //   );
 // }
 
-"use client";
-
 import { Footer, NavBar } from "@/app/comp";
 import Pdfren2 from "@/app/comp/admincomp/pdfren2/Pdfren2";
 import { useContext, useEffect, useState } from "react";
