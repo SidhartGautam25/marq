@@ -84,7 +84,7 @@ export default function Page({ params }: { params: { slug: string } }) {
   return (
     <>
       <Head>
-        <title>Marqstats - {rep?.title}</title>
+        <title>Marqstats - {rep?.shortTitle}</title>
         <meta name="description" content={rep?.desc} />
         <meta name="robots" content="index, follow" />
         <meta
@@ -115,6 +115,7 @@ export default function Page({ params }: { params: { slug: string } }) {
           content="https://www.yourcompany.com/images/report-store-thumbnail.jpg"
         /> */}
       </Head>
+
       <div>
         <div className="bg-black">
           <NavBar />
