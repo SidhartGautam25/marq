@@ -7,7 +7,7 @@ import { ReportContext, ReportContextType } from "@/app/context/reportContext";
 import axios from "axios";
 import { my_url } from "@/app/utility/varr";
 
-export default function reportPage({ slug }: { slug: string }) {
+export default function ReportPage({ slug }: { slug: string }) {
   const { state, dispatch } = useContext(ReportContext) as ReportContextType;
   const [rep, setRep] = useState(state);
   const [loading, setLoading] = useState(true);
