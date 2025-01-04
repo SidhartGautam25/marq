@@ -151,11 +151,13 @@
 import { Metadata } from "next";
 import axios from "axios";
 import dynamic from "next/dynamic";
+import { my_url } from "@/app/utility/varr";
 
 // Import Client Component
 const ReportClient = dynamic(() => import("../../comp/reportPage/reportPage"), {
   ssr: false,
 });
+// import ReportClient from "../../comp/reportPage/reportPage";
 
 // Fetch Metadata for SEO
 export async function generateMetadata({
@@ -167,8 +169,19 @@ export async function generateMetadata({
     return str.replace(/-/g, " ");
   };
 
+  let url = `${my_url}/api/getall/report/slug?slug=${params.slug}`;
+  let data: any = null;
+
+  try {
+    const response = await axios.get(url);
+    data = response.data?.data[0];
+  } catch (err) {
+    console.error("Error fetching report:", err);
+  } finally {
+  }
+
   return {
-    title: formatTitle(params.slug),
+    title: data?.shortTitle,
     description: "Data-driven insights and reports.",
     alternates: {
       canonical: `https://www.marqstats.com/reports/${params.slug}`,
