@@ -534,7 +534,7 @@ function Pdfren2() {
                 >
                   &times;
                 </button>
-                <h1 className="text-center text-2xl">Reqeust Sample Form</h1>
+                <h1 className="text-center text-2xl">Request Sample Form</h1>
                 <form action="" className="flex flex-col gap-5">
                   <div className="flex flex-col">
                     <label htmlFor="name">

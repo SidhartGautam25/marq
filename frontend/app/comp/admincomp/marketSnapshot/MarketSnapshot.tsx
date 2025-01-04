@@ -12,8 +12,10 @@ const MarketSnapshot = () => {
       <table className="min-w-full bg-white border border-gray-400">
         <thead className="border border-gray-200">
           <tr>
-            <th className="py-2 px-4 border">Report Attributes</th>
-            <th className="py-2 px-4 border">Details</th>
+            <th className="py-2 px-4 border bg-gray-700/10">
+              Report Attributes
+            </th>
+            <th className="py-2 px-4 border bg-gray-700/10">Details</th>
           </tr>
         </thead>
         <tbody>

@@ -35,11 +35,7 @@ export default function ReportPage({ slug }: { slug: string }) {
       }
     };
 
-    if (Object.keys(state).length < 2) {
-      fetchReport();
-    } else {
-      setLoading(false);
-    }
+    fetchReport();
   }, []);
 
   if (loading) {
