@@ -302,7 +302,7 @@ function Pdfren2() {
                           &times;
                         </button>
                         <h1 className="text-center text-2xl">
-                          Requst Sample Form
+                          Request Sample Form
                         </h1>
                         <form action="" className="flex flex-col gap-5">
                           <div className="flex flex-col">
@@ -311,18 +311,18 @@ function Pdfren2() {
                             </label>
                             <input
                               type="text"
-                              placeholder="Enter Name "
+                              // placeholder="Enter Name "
                               className="focus:outline-none p-3 border rounded-md"
                               id="name"
                             />
                           </div>
                           <div className="flex flex-col">
                             <label htmlFor="email">
-                              Email<span className="text-red-600">*</span>
+                              Emails<span className="text-red-600">*</span>
                             </label>
                             <input
                               type="email"
-                              placeholder="Enter email "
+                              // placeholder="Enter email "
                               className="focus:outline-none p-3 border rounded-md"
                               id="email"
                             />
@@ -346,7 +346,7 @@ function Pdfren2() {
                             </label>
                             <input
                               type="number"
-                              placeholder="(Country code)-Company Name"
+                              // placeholder="(Country code)-Company Name"
                               className="focus:outline-none p-3 border rounded-md"
                               id="contact"
                             />
@@ -451,11 +451,11 @@ function Pdfren2() {
                       <form action="" className="flex flex-col gap-5">
                         <div className="flex flex-col">
                           <label htmlFor="name">
-                            Name<span className="text-red-600">*</span>
+                            Names<span className="text-red-600">*</span>
                           </label>
                           <input
                             type="text"
-                            placeholder="Enter Name "
+                            // placeholder="Enter Name "
                             className="focus:outline-none p-3 border rounded-md"
                             id="name"
                           />
@@ -466,7 +466,7 @@ function Pdfren2() {
                           </label>
                           <input
                             type="email"
-                            placeholder="Enter email "
+                            // placeholder="Enter email "
                             className="focus:outline-none p-3 border rounded-md"
                             id="email"
                           />
@@ -490,7 +490,7 @@ function Pdfren2() {
                           </label>
                           <input
                             type="number"
-                            placeholder="(Country code)-Company Name"
+                            // placeholder="(Country code)-Company Name"
                             className="focus:outline-none p-3 border rounded-md"
                             id="contact"
                           />
@@ -542,7 +542,7 @@ function Pdfren2() {
                     </label>
                     <input
                       type="text"
-                      placeholder="Enter Name "
+                      // placeholder="Enter Name "
                       className="focus:outline-none p-3 border rounded-md"
                       id="name"
                     />
@@ -553,7 +553,7 @@ function Pdfren2() {
                     </label>
                     <input
                       type="email"
-                      placeholder="Enter email "
+                      // placeholder="Enter email "
                       className="focus:outline-none p-3 border rounded-md"
                       id="email"
                     />
@@ -577,7 +577,7 @@ function Pdfren2() {
                     </label>
                     <input
                       type="number"
-                      placeholder="(Country code)-Company Name"
+                      // placeholder="(Country code)-Company Name"
                       className="focus:outline-none p-3 border rounded-md"
                       id="contact"
                     />
