@@ -83,7 +83,9 @@ const Card: React.FC<RepProps> = ({ rep }) => {
           className=" relative md:flex-[1] flex items-center p-3 md:h-full h-[15rem] rounded-bl-[8px] rounded-tl-[8px]"
           style={{
             backgroundImage: `url(${rep?.linki2})`,
+            //
             backgroundSize: "cover",
+            // backgroundRepeat: "no-repeat",
           }}
         >
           <div className="w-full ">

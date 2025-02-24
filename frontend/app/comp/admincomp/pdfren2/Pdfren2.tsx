@@ -84,6 +84,44 @@ function Pdfren2() {
   const { ref: relatedRef, inView: relatedInView } = useInView({
     threshold: 0.1,
   });
+
+  const [ReqName, setReqName] = useState("");
+  const [ReqEmail, setReqEmail] = useState("");
+  const [ReqPhone, setReqPhone] = useState("");
+  const [ReqCompany, setReqCompany] = useState("");
+  const [ReqRequirement, setReqRequirement] = useState("");
+
+  const handleRequestForm = async (e: any) => {
+    e.preventDefault();
+    console.log("on req form fucntion");
+    console.log("state for handle Request form is ", state);
+    try {
+      let url = `${my_url}/api/mail/sendMail`;
+      // try {
+      console.log("requesting the server to send mail using this url ", url);
+      console.log("url is ", url);
+      const data = {
+        text: `
+    <p><strong>Name:</strong> ${ReqName}</p>
+    <p><strong>Email:</strong> ${ReqEmail}</p>
+    <p><strong>Phone:</strong> ${ReqPhone}</p>
+    <p><strong>Requirement:</strong> ${ReqRequirement}</p>
+    <p><strong>Company:</strong> ${ReqCompany}</p>
+    <p><strong>Requested Report ID:</strong> ${state.id}</p>
+    <p><strong>Requested Report Title:</strong> ${state.title}</p>
+  `,
+      };
+      const daata = await axios.post(url, data);
+      if (daata.data) {
+        setReqName("");
+        setReqCompany("");
+        setReqPhone("");
+        setReqRequirement("");
+        setIsModalOpen(false);
+      }
+    } catch (err) {}
+  };
+
   useEffect(() => {
     const myfun = async () => {
       let related = state?.related ?? ["", "", ""];
@@ -314,6 +352,8 @@ function Pdfren2() {
                               // placeholder="Enter Name "
                               className="focus:outline-none p-3 border rounded-md"
                               id="name"
+                              value={ReqName}
+                              onChange={(e) => setReqName(e.target.value)}
                             />
                           </div>
                           <div className="flex flex-col">
@@ -325,6 +365,8 @@ function Pdfren2() {
                               // placeholder="Enter email "
                               className="focus:outline-none p-3 border rounded-md"
                               id="email"
+                              value={ReqEmail}
+                              onChange={(e) => setReqEmail(e.target.value)}
                             />
                           </div>
                           <div className="flex flex-col">
@@ -337,18 +379,22 @@ function Pdfren2() {
                               placeholder="(Country code)-Phone-Number"
                               className="focus:outline-none p-3 border rounded-md"
                               id="contact"
+                              value={ReqPhone}
+                              onChange={(e) => setReqPhone(e.target.value)}
                             />
                           </div>
                           <div className="flex flex-col">
                             <label htmlFor="contact">
-                              Company Name
+                              Company Names
                               {/* <span className="text-red-600">*</span> */}
                             </label>
                             <input
-                              type="number"
+                              // type="number"
                               // placeholder="(Country code)-Company Name"
                               className="focus:outline-none p-3 border rounded-md"
                               id="contact"
+                              value={ReqCompany}
+                              onChange={(e) => setReqCompany(e.target.value)}
                             />
                           </div>
                           <div className="flex flex-col">
@@ -360,9 +406,16 @@ function Pdfren2() {
                               placeholder=""
                               className="focus:outline-none p-3 border rounded-md min-h-[12rem]"
                               id="requirements"
+                              value={ReqRequirement}
+                              onChange={(e) =>
+                                setReqRequirement(e.target.value)
+                              }
                             />
                           </div>
-                          <button className="bg-slate-500 w-[5rem] p-2 rounded-md text-white hover:bg-slate-800 transition duration-300">
+                          <button
+                            onClick={handleRequestForm}
+                            className="bg-slate-500 w-[5rem] p-2 rounded-md text-white hover:bg-slate-800 transition duration-300"
+                          >
                             Submit
                           </button>
                         </form>
@@ -485,7 +538,7 @@ function Pdfren2() {
                         </div>
                         <div className="flex flex-col">
                           <label htmlFor="contact">
-                            Company Name
+                            Company Names
                             {/* <span className="text-red-600">*</span> */}
                           </label>
                           <input
@@ -545,6 +598,8 @@ function Pdfren2() {
                       // placeholder="Enter Name "
                       className="focus:outline-none p-3 border rounded-md"
                       id="name"
+                      value={ReqName}
+                      onChange={(e) => setReqName(e.target.value)}
                     />
                   </div>
                   <div className="flex flex-col">
@@ -556,6 +611,8 @@ function Pdfren2() {
                       // placeholder="Enter email "
                       className="focus:outline-none p-3 border rounded-md"
                       id="email"
+                      value={ReqEmail}
+                      onChange={(e) => setReqEmail(e.target.value)}
                     />
                   </div>
                   <div className="flex flex-col">
@@ -568,6 +625,8 @@ function Pdfren2() {
                       placeholder="(Country code)-Phone-Number"
                       className="focus:outline-none p-3 border rounded-md"
                       id="contact"
+                      value={ReqPhone}
+                      onChange={(e) => setReqPhone(e.target.value)}
                     />
                   </div>
                   <div className="flex flex-col">
@@ -576,10 +635,12 @@ function Pdfren2() {
                       {/* <span className="text-red-600">*</span> */}
                     </label>
                     <input
-                      type="number"
+                      // type="number"
                       // placeholder="(Country code)-Company Name"
                       className="focus:outline-none p-3 border rounded-md"
                       id="contact"
+                      value={ReqCompany}
+                      onChange={(e) => setReqCompany(e.target.value)}
                     />
                   </div>
                   <div className="flex flex-col">
@@ -593,7 +654,10 @@ function Pdfren2() {
                       id="requirements"
                     />
                   </div>
-                  <button className="bg-slate-500 w-[5rem] p-2 rounded-md text-white hover:bg-slate-800 transition duration-300">
+                  <button
+                    onClick={handleRequestForm}
+                    className="bg-slate-500 w-[5rem] p-2 rounded-md text-white hover:bg-slate-800 transition duration-300"
+                  >
                     Submit
                   </button>
                 </form>
