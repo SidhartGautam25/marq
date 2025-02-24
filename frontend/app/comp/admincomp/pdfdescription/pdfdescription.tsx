@@ -2,6 +2,7 @@
 import { ReportContext, ReportContextType } from "@/app/context/reportContext";
 import { convert } from "@/app/utility/subind";
 import React, { useContext, useEffect, useState } from "react";
+import Image from "next/image";
 
 interface Option {
   label: string;
@@ -79,14 +80,24 @@ const PdfDescription: React.FC<DynamicProps> = ({ rep }) => {
           </div>
         </div>
         <div className="flex-[1] md:block hidden bg-gray-200">
-          <div
+          {/* <div
             className="md:h-full h-[15rem] flex items-center justify-center"
             style={{
               backgroundImage: `url(${state?.linki2})`,
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
             }}
-          ></div>
+          ></div> */}
+          <div className="md:h-full h-[15rem] flex items-center justify-center relative">
+            <Image
+              src={state?.linki2}
+              alt="Background"
+              layout="fill"
+              objectFit="cover"
+              className="absolute"
+            />
+          </div>
+          ;
           {/* <div className="h-1/3 pt-2 flex flex-col gap-3 p-3 md:p-4">
             <span className="text-black">Choose your best option</span>
             <div className="flex items-center space-x-4 mb-4">
