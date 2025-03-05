@@ -93,8 +93,8 @@ const PdfDescription: React.FC<DynamicProps> = ({ rep }) => {
               src={state?.linki2}
               alt="Background"
               layout="fill"
-              objectFit="cover"
-              className="absolute"
+              // objectFit="cover"
+              // className="absolute"
             />
           </div>
           ;

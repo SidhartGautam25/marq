@@ -23,6 +23,10 @@ import OrderComponent from "../../report-order/OrderComponent";
 import Relatedreport from "../relatedreport/Relatedreport";
 import { my_url } from "@/app/utility/varr";
 import axios from "axios";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import {
   CurrRelatedContext,
   CurrRelatedContextType,
@@ -58,6 +62,7 @@ function Pdfren2() {
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
+    // showPopup();
   };
   const toggleModal2 = () => {
     setIsModalOpen2(!isModalOpen2);
@@ -91,6 +96,71 @@ function Pdfren2() {
   const [ReqCompany, setReqCompany] = useState("");
   const [ReqRequirement, setReqRequirement] = useState("");
 
+  const [ReqName2, setReqName2] = useState("");
+  const [ReqEmail2, setReqEmail2] = useState("");
+  const [ReqPhone2, setReqPhone2] = useState("");
+  const [ReqCompany2, setReqCompany2] = useState("");
+  const [ReqRequirement2, setReqRequirement2] = useState("");
+
+  const [popOpen, setPopOpen] = useState(false);
+
+  function showSuccessPopup() {
+    toast.success("Sample requested successfully", {
+      position: "top-center",
+      autoClose: 3000, // Disappears after 3 seconds
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      theme: "colored",
+    });
+  }
+
+  function showFailurePopup() {
+    toast.error("Error occured while sending request,please try again", {
+      position: "top-center",
+      autoClose: 3000, // Disappears after 3 seconds
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      theme: "colored",
+    });
+  }
+
+  const handleRequestForm2 = async (e: any) => {
+    e.preventDefault();
+    console.log("on req form fucntion");
+    console.log("state for handle Request form is ", state);
+    try {
+      let url = `${my_url}/api/mail/sendMail`;
+      // try {
+      console.log("requesting the server to send mail using this url ", url);
+      console.log("url is ", url);
+      const data = {
+        text: `
+    <p><strong>Name:</strong> ${ReqName2}</p>
+    <p><strong>Email:</strong> ${ReqEmail2}</p>
+    <p><strong>Phone:</strong> ${ReqPhone2}</p>
+    <p><strong>Requirement:</strong> ${ReqRequirement2}</p>
+    <p><strong>Company:</strong> ${ReqCompany2}</p>
+    
+  `,
+      };
+      const daata = await axios.post(url, data);
+      if (daata.data) {
+        showSuccessPopup();
+        setReqName2("");
+        setReqCompany2("");
+        setReqPhone2("");
+        setReqRequirement2("");
+        setIsModalOpen2(false);
+      }
+    } catch (err) {
+      showFailurePopup();
+    }
+  };
+
   const handleRequestForm = async (e: any) => {
     e.preventDefault();
     console.log("on req form fucntion");
@@ -118,8 +188,11 @@ function Pdfren2() {
         setReqPhone("");
         setReqRequirement("");
         setIsModalOpen(false);
+        showSuccessPopup();
       }
-    } catch (err) {}
+    } catch (err) {
+      showFailurePopup();
+    }
   };
 
   useEffect(() => {
@@ -323,106 +396,14 @@ function Pdfren2() {
                     RELATED REPORT
                   </a>
                 </div>
-                <div>
-                  <button
-                    className="mt-6 w-full bg-red-600 text-white p-3 rounded"
-                    onClick={toggleModal}
-                  >
-                    Request Sample
-                  </button>
-                  {isModalOpen && (
-                    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-                      <div className="relative p-5 border bg-gray-50 rounded-md w-[90%] md:w-[50%]">
-                        <button
-                          onClick={toggleModal}
-                          className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl"
-                        >
-                          &times;
-                        </button>
-                        <h1 className="text-center text-2xl">
-                          Request Sample Form
-                        </h1>
-                        <form action="" className="flex flex-col gap-5">
-                          <div className="flex flex-col">
-                            <label htmlFor="name">
-                              Name<span className="text-red-600">*</span>
-                            </label>
-                            <input
-                              type="text"
-                              // placeholder="Enter Name "
-                              className="focus:outline-none p-3 border rounded-md"
-                              id="name"
-                              value={ReqName}
-                              onChange={(e) => setReqName(e.target.value)}
-                            />
-                          </div>
-                          <div className="flex flex-col">
-                            <label htmlFor="email">
-                              Emails<span className="text-red-600">*</span>
-                            </label>
-                            <input
-                              type="email"
-                              // placeholder="Enter email "
-                              className="focus:outline-none p-3 border rounded-md"
-                              id="email"
-                              value={ReqEmail}
-                              onChange={(e) => setReqEmail(e.target.value)}
-                            />
-                          </div>
-                          <div className="flex flex-col">
-                            <label htmlFor="contact">
-                              Contact Number
-                              {/* <span className="text-red-600">*</span> */}
-                            </label>
-                            <input
-                              type="number"
-                              placeholder="(Country code)-Phone-Number"
-                              className="focus:outline-none p-3 border rounded-md"
-                              id="contact"
-                              value={ReqPhone}
-                              onChange={(e) => setReqPhone(e.target.value)}
-                            />
-                          </div>
-                          <div className="flex flex-col">
-                            <label htmlFor="contact">
-                              Company Names
-                              {/* <span className="text-red-600">*</span> */}
-                            </label>
-                            <input
-                              // type="number"
-                              // placeholder="(Country code)-Company Name"
-                              className="focus:outline-none p-3 border rounded-md"
-                              id="contact"
-                              value={ReqCompany}
-                              onChange={(e) => setReqCompany(e.target.value)}
-                            />
-                          </div>
-                          <div className="flex flex-col">
-                            <label htmlFor="requirements">
-                              Do you have any specific requirements?
-                              {/* <span className="text-red-600">*</span> */}
-                            </label>
-                            <textarea
-                              placeholder=""
-                              className="focus:outline-none p-3 border rounded-md min-h-[12rem]"
-                              id="requirements"
-                              value={ReqRequirement}
-                              onChange={(e) =>
-                                setReqRequirement(e.target.value)
-                              }
-                            />
-                          </div>
-                          <button
-                            onClick={handleRequestForm}
-                            className="bg-slate-500 w-[5rem] p-2 rounded-md text-white hover:bg-slate-800 transition duration-300"
-                          >
-                            Submit
-                          </button>
-                        </form>
-                      </div>
-                    </div>
-                  )}
-                </div>
+
+                <button
+                  className="mt-6 w-full bg-red-600 text-white p-3 rounded"
+                  onClick={toggleModal}
+                >
+                  Request Sample
+                </button>
+                <ToastContainer />
               </nav>
             </div>
           </div>
@@ -481,11 +462,8 @@ function Pdfren2() {
                   </li>
                 </ul>
               </div>
-              <div
-                className="flex justify-center bg-white text-black p-2 md:p-3 rounded-[10px]  mt-8 w-full"
-                onClick={toggleModal2}
-              >
-                <button className="flex gap-8 ">
+              <div className="flex justify-center bg-white text-black p-2 md:p-3 rounded-[10px]  mt-8 w-full">
+                <button className="flex gap-8 " onClick={toggleModal2}>
                   Contact Us
                   <IoMdMail className=" text-xl" />
                 </button>
@@ -511,6 +489,8 @@ function Pdfren2() {
                             // placeholder="Enter Name "
                             className="focus:outline-none p-3 border rounded-md"
                             id="name"
+                            value={ReqName2}
+                            onChange={(e) => setReqName2(e.target.value)}
                           />
                         </div>
                         <div className="flex flex-col">
@@ -522,6 +502,8 @@ function Pdfren2() {
                             // placeholder="Enter email "
                             className="focus:outline-none p-3 border rounded-md"
                             id="email"
+                            value={ReqEmail2}
+                            onChange={(e) => setReqEmail2(e.target.value)}
                           />
                         </div>
                         <div className="flex flex-col">
@@ -530,10 +512,11 @@ function Pdfren2() {
                             {/* <span className="text-red-600">*</span> */}
                           </label>
                           <input
-                            type="number"
                             placeholder="(Country code)-Phone-Number"
                             className="focus:outline-none p-3 border rounded-md"
                             id="contact"
+                            value={ReqPhone2}
+                            onChange={(e) => setReqPhone2(e.target.value)}
                           />
                         </div>
                         <div className="flex flex-col">
@@ -546,6 +529,8 @@ function Pdfren2() {
                             // placeholder="(Country code)-Company Name"
                             className="focus:outline-none p-3 border rounded-md"
                             id="contact"
+                            value={ReqCompany2}
+                            onChange={(e) => setReqCompany2(e.target.value)}
                           />
                         </div>
                         <div className="flex flex-col">
@@ -557,9 +542,14 @@ function Pdfren2() {
                             placeholder=""
                             className="focus:outline-none p-3 border rounded-md min-h-[12rem]"
                             id="requirements"
+                            value={ReqRequirement2}
+                            onChange={(e) => setReqRequirement2(e.target.value)}
                           />
                         </div>
-                        <button className="bg-slate-500 w-[5rem] p-2 rounded-md text-white hover:bg-slate-800 transition duration-300">
+                        <button
+                          onClick={handleRequestForm2}
+                          className="bg-slate-500 w-[5rem] p-2 rounded-md text-white hover:bg-slate-800 transition duration-300"
+                        >
                           Submit
                         </button>
                       </form>
@@ -621,7 +611,6 @@ function Pdfren2() {
                       {/* <span className="text-red-600">*</span> */}
                     </label>
                     <input
-                      type="number"
                       placeholder="(Country code)-Phone-Number"
                       className="focus:outline-none p-3 border rounded-md"
                       id="contact"
